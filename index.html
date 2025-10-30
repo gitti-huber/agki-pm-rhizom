@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forschungsblog – AGKI PM</title>
+  <style>
+    body { max-width: 800px; margin: 2rem auto; font: 16px/1.6 system-ui, sans-serif; padding: 0 1rem; }
+    nav a { margin-right: 1rem; }
+    article { margin: 2rem 0; }
+    .meta { color: #666; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Forschungsblog</h1>
+    <nav>
+      <a href="./">Home</a>
+      <a href="./about.html">Über</a>
+    </nav>
+  </header>
+
+  <article>
+    <h2>Willkommen 👋</h2>
+    <p class="meta">Stand: <span id="today"></span></p>
+    <p>Dies ist die Startseite deines Projektblogs (GitHub Pages). Ergänze hier kurz dein Thema, Ziele und Team.</p>
+    <ul>
+      <li><a href="./posts/erste-notizen.html">Erste Notizen</a></li>
+    </ul>
+  </article>
+
+  <script>
+    document.getElementById('today').textContent = new Date().toLocaleDateString('de-AT');
+  </script>
+</body>
+</html>
