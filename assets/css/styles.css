@@ -90,11 +90,10 @@ a:hover {
   text-underline-offset: 2px;
 }
 
+/* sorgt für gleichen Abstand zwischen allen Menüelementen */
+nav a,
 nav span[aria-current="page"] {
-  font-weight: 600;
-  color: var(--accent);
-  border-bottom: 2px solid var(--accent);
-  cursor: default;
+  margin-right: 1rem;
 }
 
 /* ───────────────────────────────────────────────
