@@ -1,5 +1,9 @@
 /* CSS */
 
+html {
+  overflow-y: scroll; /* erzwingt immer eine Scroll-Leiste, auch wenn sie nicht gebraucht wird */
+}
+
 :root {
   --w: 900px;
   --text: #1a1a1a;
