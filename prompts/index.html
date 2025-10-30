@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prompt Engineering Tagebuch</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    .entry { border-left: 3px solid var(--accent); padding-left: 1rem; margin-bottom: 1.5rem; }
+    .entry h3 { margin-top: 0; }
+  </style>
+</head>
+<body>
+  <header data-date="30. Oktober 2025" data-url="https://[username].github.io/agki-pm-rhizom/prompts/">
+    <h1>Prompt Engineering Tagebuch</h1>
+    <p class="subtitle">Versuche, Experimente & Reflexionen zur Arbeit mit LLMs</p>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">Über das Projekt</a>
+      <a href="../posts/index.html">Forschungsblog</a>
+      <span aria-current="page">Prompt Engineering Tagebuch</span>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <p class="meta">Stand: <span id="today"></span></p>
+
+      <section class="entry">
+        <h3>Eintrag 1 – Erste Prompt-Strategien</h3>
+        <p>Beispielhafte Beschreibung deines ersten Vorgehens: Ziel, Systemprompt, beobachtetes Verhalten, Lerneffekt …</p>
+        <ul>
+          <li><strong>Ziel:</strong> z. B. automatische Entitätsextraktion</li>
+          <li><strong>Prompt-Typ:</strong> Few-Shot mit Beispielen</li>
+          <li><strong>Ergebnis:</strong> LLM erkannte 80 % der Namen korrekt</li>
+          <li><strong>Verbesserungsidee:</strong> klare Formatvorgaben</li>
+        </ul>
+      </section>
+
+      <section class="entry">
+        <h3>Eintrag 2 – Vergleich verschiedener LLMs</h3>
+        <p>Kurzer Vergleich (Claude vs. GPT vs. Gemini) im Hinblick auf Konsistenz, Kontextverständnis und Output-Struktur.</p>
+      </section>
+
+      <section class="entry">
+        <h3>Eintrag 3 – Prompt-Reflexion</h3>
+        <p>Welche Strategien funktionierten gut? Welche nicht? Wie verändert sich das Verständnis des Projekts durch Interaktion mit dem LLM?</p>
+      </section>
+
+      <p class="meta">Neue Einträge fügst du einfach als weitere <code>&lt;section class="entry"&gt;</code> hinzu.</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2025 Rhizom-Projekt</p>
+  </footer>
+
+  <script>
+    document.getElementById('today').textContent =
+      new Date().toLocaleDateString('de-AT', { year:'numeric', month:'long', day:'numeric' });
+  </script>
+</body>
+</html>
