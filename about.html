@@ -4,24 +4,50 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Über das Projekt</title>
+  <!-- about.html liegt im Repo-Root → Pfad ohne ../ -->
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-  <article>
+  <header data-date="30. Oktober 2025" data-url="https://[username].github.io/agki-pm-rhizom">
     <h1>Über das Projekt</h1>
-    <p class="meta">Stand: 30. October 2025</p>
-    <p>Dieses Projekt verbindet qualitative kulturwissenschaftliche Fragestellungen
-    mit quantitativen Methoden der Netzwerkanalyse, um rhizomatische Strukturen
-    im Kulturbereich sichtbar zu machen.</p>
+    <p class="subtitle">Hintergrund und Forschungsrahmen</p>
+    <nav>
+      <a href="./index.html">Home</a>
+      <span aria-current="page">Über das Projekt</span>
+      <a href="./posts/index.html">Forschungsblog</a>
+      <a href="./prompts/index.html">Prompt Engineering Tagebuch</a>
+    </nav>
+  </header>
 
-    <h2>Ziele</h2>
-    <ul>
-      <li>Rekonstruktion von personellen und projektbezogenen Netzwerken</li>
-      <li>Analyse von Rollen, Kooperationen und zeitlicher Entwicklung</li>
-      <li>Interaktive Webvisualisierung</li>
-    </ul>
+  <main>
+    <article>
+      <h2>Überblick</h2>
+      <p class="meta">Stand: <span id="today"></span></p>
 
-    <p><a href="./index.html">← Zurück zur Startseite</a></p>
-  </article>
+      <p>Dieses Projekt verbindet qualitative kulturwissenschaftliche Fragestellungen
+      mit quantitativen Methoden der Netzwerkanalyse, um rhizomatische Strukturen
+      im Kulturbereich sichtbar zu machen.</p>
+
+      <h2>Ziele</h2>
+      <ul>
+        <li>Rekonstruktion von personellen und projektbezogenen Netzwerken</li>
+        <li>Analyse von Rollen, Kooperationen und zeitlicher Entwicklung</li>
+        <li>Interaktive Webvisualisierung</li>
+      </ul>
+
+      <p><a href="./index.html">← Zurück zur Startseite</a></p>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2025 Rhizom-Projekt</p>
+  </footer>
+
+  <script>
+    // Datum automatisch setzen (lokalisiert)
+    document.getElementById('today').textContent = new Date().toLocaleDateString('de-AT', {
+      year: 'numeric', month: 'long', day: 'numeric'
+    });
+  </script>
 </body>
 </html>
