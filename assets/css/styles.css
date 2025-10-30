@@ -95,15 +95,13 @@ a:hover {
    ─────────────────────────────────────────────── */
 @media print {
 
-    /* ─── Druck-Kopfzeile ───────────────────────────── */
+  /* ─── Kopfzeile ───────────────────────────── */
+  /* Verwende das echte <h1>, kein zusätzliches "before"-Element */
   header::before {
-    content: "Rhizomatische Strukturen im Kulturbereich";
-    display: block;
-    font-size: 14pt;
-    font-weight: 600;
-    margin-bottom: 0.2cm;
+    content: none !important;
   }
 
+  /* Datum und URL automatisch aus Attributen im <header> */
   header::after {
     content: "Gedruckt am " attr(data-date) " – " attr(data-url);
     display: block;
@@ -120,12 +118,20 @@ a:hover {
     line-height: 1.5;
   }
 
-  /* Entfernt Navigation & Footer */
+  /* Hauptüberschrift etwas kleiner */
+  header h1 {
+    font-size: 18pt;
+    margin-top: 0.8em;
+    margin-bottom: 0.3em;
+    color: #000;
+  }
+
+  /* Navigation & Footer ausblenden */
   nav, footer {
     display: none !important;
   }
 
-  /* Artikel im Fokus */
+  /* Artikel fokussiert darstellen */
   article {
     border: none;
     box-shadow: none;
@@ -134,7 +140,7 @@ a:hover {
     background: transparent;
   }
 
-  /* Links werden mit URL angezeigt */
+  /* Links mit URL anzeigen */
   a {
     color: #000;
     text-decoration: none;
@@ -146,7 +152,7 @@ a:hover {
     color: #555;
   }
 
-  /* Überschriften etwas kompakter */
+  /* Überschriften kompakter */
   h1, h2, h3 {
     color: #000;
     page-break-after: avoid;
@@ -165,7 +171,7 @@ a:hover {
     widows: 3;
   }
 
-  /* Optional: dezente Linie oben auf jeder Seite */
+  /* Optionale Linie oben auf jeder Seite */
   @page {
     @top-left {
       content: "";
