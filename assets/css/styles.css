@@ -1,5 +1,6 @@
 /* CSS */
 
+/* Scrollbalken erzwingen, um Layout-Verschiebungen zu vermeiden */
 html {
   overflow-y: scroll; /* erzwingt immer eine Scroll-Leiste, auch wenn sie nicht gebraucht wird */
 }
