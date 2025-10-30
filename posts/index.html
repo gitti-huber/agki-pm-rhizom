@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forschungsblog – Rhizomatische Strukturen</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <style>
+    /* Mini-Ergänzungen: nur für diese Seite */
+    .toc { padding: .5rem 1rem; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
+    .toc h2 { margin: .5rem 0; font-size: 1.1rem; }
+    .toc ul { margin: .25rem 0 0; }
+    .section { scroll-margin-top: 1rem; }
+    .ref { font-size: .95rem; }
+    sup.fn a { text-decoration: none; }
+    .pill { display:inline-block; padding:.1rem .5rem; border:1px solid var(--border); border-radius:999px; font-size:.85rem; color:#555; }
+  </style>
+</head>
+<body>
+  <header data-date="30. Oktober 2025" data-url="https://[username].github.io/agki-pm-rhizom">
+    <h1>Rhizomatische Strukturen im Kulturbereich</h1>
+    <p class="subtitle">Forschungsblog – laufende Dokumentation, Daten & Quellen</p>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../about.html">Über das Projekt</a>
+      <span aria-current="page">Blog</span>
+    </nav>
+  </header>
+
+  <main>
+    <article>
+      <p class="meta">Stand: <span id="today"></span> • <span class="pill">Single-Page Forschungsblog</span></p>
+
+      <!-- Inhaltsverzeichnis -->
+      <div class="toc">
+        <h2>Inhalt</h2>
+        <ul>
+          <li><a href="#abstract">Kurzüberblick</a></li>
+          <li><a href="#datenbasis">Datenbasis &amp; Aufbereitung</a></li>
+          <li><a href="#kontext">Projektkontext</a></li>
+          <li><a href="#frage">Forschungsfrage</a></li>
+          <li><a href="#methodik">Methodik</a></li>
+          <li><a href="#netzwerkmodell">Netzwerkmodell</a></li>
+          <li><a href="#ergebnisse">Zwischenergebnisse</a></li>
+          <li><a href="#ref">Quellen &amp; Literatur</a></li>
+        </ul>
+      </div>
+
+      <!-- 1: Abstract -->
+      <section id="abstract" class="section">
+        <h2>Kurzüberblick</h2>
+        <p>Dieses Forschungsblog dokumentiert fortlaufend die datenbasierte Rekonstruktion und Visualisierung der personellen und projektbezogenen Netzwerke des Vereins <strong>RHIZOM</strong>. Im Fokus stehen <em>rhizomatische</em> Verflechtungen, Rollenverschiebungen und Knotenpunkte kultureller Aktivität.</p>
+      </section>
+
+      <!-- 2: Datenbasis -->
+      <section id="datenbasis" class="section">
+        <h2>Datenbasis &amp; Aufbereitung</h2>
+        <p>Quellen: öffentlich zugängliche Inhalte der (im Aufbau befindlichen) RHIZOM-Website sowie bislang unveröffentlichte Materialien (Word, PDF, HTML, Bilddaten). Umfang: &gt;700 Personen, &gt;200 Projekte.</p>
+        <ul>
+          <li>Extraktion &amp; Normalisierung von Entitäten (Personen, Projekte, Rollen, Zeiten, Orte)</li>
+          <li>Bereinigung von Namensvarianten; Zuordnung Personen ↔ Projekte</li>
+          <li>Relationale Struktur für Analysen &amp; Visualisierungen (Knoten/Kanten)</li>
+        </ul>
+        <p class="meta">Siehe auch Datenordner im Repo: <code>/data/</code> (Roh- &amp; Cleaned-CSV).</p>
+      </section>
+
+      <!-- 3: Kontext -->
+      <section id="kontext" class="section">
+        <h2>Projektkontext</h2>
+        <p>Verortung in Kulturwissenschaften &amp; Digital Humanities. RHIZOM (seit 1988) als Fallbeispiel für transdisziplinäre, kollektive Arbeitsweisen in der freien Kulturszene – ideal zur Analyse netzwerkartiger Organisationsformen.</p>
+      </section>
+
+      <!-- 4: Forschungsfrage -->
+      <section id="frage" class="section">
+        <h2>Forschungsfrage</h2>
+        <p>Wie lassen sich die personellen und projektbezogenen Netzwerke des Vereins RHIZOM datenbasiert rekonstruieren, und welche Muster der Zusammenarbeit und Vernetzung lassen sich daraus über die Zeit erkennen?</p>
+      </section>
+
+      <!-- 5: Methodik -->
+      <section id="methodik" class="section">
+        <h2>Methodik</h2>
+        <ol>
+          <li><strong>Datenerhebung:</strong> Webscraping, manuelle Korrektur</li>
+          <li><strong>Automatische Verarbeitung:</strong> NER (LLMs), Disambiguierung, Themencluster</li>
+          <li><strong>Netzwerkanalyse:</strong> Knoten (Personen/Projekte), Kanten (Beteiligungen/Kooperationen)</li>
+          <li><strong>Visualisierung:</strong> interaktive Webdarstellung</li>
+        </ol>
+        <blockquote>Hinweis: Für die Reproduzierbarkeit werden Skripte und Notebooks im Ordner <code>/notebooks/</code> versioniert.</blockquote>
+      </section>
+
+      <!-- 6: Netzwerkmodell -->
+      <section id="netzwerkmodell" class="section">
+        <h2>Netzwerkmodell</h2>
+        <p>Minimaler Satz an CSVs:</p>
+        <ul>
+          <li><code>personen_clean.csv</code>: <code>person_id,name,canonical_role</code></li>
+          <li><code>projekte_clean.csv</code>: <code>project_id,title,type</code></li>
+          <li><code>edges.csv</code>: <code>source_id,target_id,relation_type,start_year,end_year</code></li>
+        </ul>
+        <p class="meta">Relationstypen: Beteiligung, Kooperation, Zugehörigkeit (erweiterbar).</p>
+      </section>
+
+      <!-- 7: Ergebnisse (Platzhalter, wächst mit) -->
+      <section id="ergebnisse" class="section">
+        <h2>Zwischenergebnisse</h2>
+        <p><em>Platzhalter:</em> Hier folgen nach und nach Befunde, Visualisierungen und Interpretationen (zentralität, Rollenverläufe, Zeitachsen …).</p>
+      </section>
+
+      <!-- 8: Quellen -->
+      <section id="ref" class="section">
+        <h2>Quellen &amp; Literatur</h2>
+        <ol class="ref">
+          <li id="r1">[1] RHIZOM – Vereinsmaterialien, interne Dokumente (unveröffentlicht).</li>
+          <li id="r2">[2] Öffentliche Website-Inhalte des Vereins (Erhebungszeitraum: fortlaufend).</li>
+          <li id="r3">[3] Methodische Grundlagen: Netzwerkanalyse &amp; DH (Standardwerke, werden fortlaufend ergänzt).</li>
+        </ol>
+        <p class="meta">Verweise im Text als Fußnoten wie so: Beispiel&nbsp;<sup class="fn"><a href="#r2">[2]</a></sup></p>
+      </section>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2025 Rhizom-Projekt</p>
+  </footer>
+
+  <script>
+    // Datum automatisch setzen (lokalisiert)
+    document.getElementById('today').textContent = new Date().toLocaleDateString('de-AT', {
+      year: 'numeric', month: 'long', day: 'numeric'
+    });
+  </script>
+</body>
+</html>
