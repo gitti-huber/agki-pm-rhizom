@@ -103,6 +103,48 @@ nav span[aria-current="page"] {
   cursor: default;
 }
 
+
+/* ────────────────────────────────
+   Gemeinsame Erweiterungen (TOC, Quellen, Pills, Scroll)
+   ──────────────────────────────── */
+.toc {
+  padding: .5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  margin: 1rem 0;
+}
+
+.toc h2 {
+  margin: .5rem 0;
+  font-size: 1.1rem;
+}
+
+.toc ul {
+  margin: .25rem 0 0;
+}
+
+.section {
+  scroll-margin-top: 1rem;
+}
+
+.ref {
+  font-size: .95rem;
+}
+
+sup.fn a {
+  text-decoration: none;
+}
+
+.pill {
+  display: inline-block;
+  padding: .1rem .5rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: .85rem;
+  color: #555;
+}
+
 /* ───────────────────────────────────────────────
    DRUCKANSICHT (automatisch bei Print/PDF)
    ─────────────────────────────────────────────── */
