@@ -100,7 +100,6 @@ nav span[aria-current="page"] {
 nav span[aria-current="page"] {
   color: var(--accent);
   font-weight: 600;
-  border-bottom: 2px solid var(--accent);
   cursor: default;
 }
 
