@@ -90,3 +90,69 @@ a:hover {
   text-underline-offset: 2px;
 }
 
+/* ───────────────────────────────────────────────
+   DRUCKANSICHT (automatisch bei Print/PDF)
+   ─────────────────────────────────────────────── */
+@media print {
+
+  /* Grundlayout */
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 12pt;
+    line-height: 1.5;
+  }
+
+  /* Entfernt Navigation & Footer */
+  nav, footer {
+    display: none !important;
+  }
+
+  /* Artikel im Fokus */
+  article {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+  }
+
+  /* Links werden mit URL angezeigt */
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #555;
+  }
+
+  /* Überschriften etwas kompakter */
+  h1, h2, h3 {
+    color: #000;
+    page-break-after: avoid;
+    margin-top: 1em;
+    margin-bottom: 0.4em;
+  }
+
+  /* Seitenränder für PDF */
+  @page {
+    margin: 2cm 2cm;
+  }
+
+  /* Keine Umbrüche mitten im Absatz */
+  p, h1, h2, h3, ul, ol {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Optional: dezente Linie oben auf jeder Seite */
+  @page {
+    @top-left {
+      content: "";
+      border-top: 1px solid #aaa;
+    }
+  }
+}
