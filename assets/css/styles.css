@@ -93,6 +93,7 @@ a:hover {
 /* sorgt für gleichen Abstand zwischen allen Menüelementen */
 nav a,
 nav span[aria-current="page"] {
+  color: var(--accent);
   margin-right: 1rem;
 }
 
