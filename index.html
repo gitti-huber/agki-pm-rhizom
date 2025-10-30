@@ -3,34 +3,43 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Forschungsblog – AGKI PM</title>
-  <style>
-    body { max-width: 800px; margin: 2rem auto; font: 16px/1.6 system-ui, sans-serif; padding: 0 1rem; }
-    nav a { margin-right: 1rem; }
-    article { margin: 2rem 0; }
-    .meta { color: #666; font-size: 0.9rem; }
-  </style>
+  <title>Rhizomatische Strukturen im Kulturbereich</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
   <header>
-    <h1>Forschungsblog</h1>
+    <h1>Rhizomatische Strukturen im Kulturbereich</h1>
+    <p class="subtitle">Analyse kultureller Netzwerke mit digitalen Methoden</p>
     <nav>
       <a href="./">Home</a>
-      <a href="./about.html">Über</a>
+      <a href="./about.html">Über das Projekt</a>
+      <a href="./posts/01-datenbasis.html">Blog</a>
     </nav>
   </header>
 
-  <article>
-    <h2>Willkommen 👋</h2>
-    <p class="meta">Stand: <span id="today"></span></p>
-    <p>Dies ist die Startseite deines Projektblogs (GitHub Pages). Ergänze hier kurz dein Thema, Ziele und Team.</p>
-    <ul>
-      <li><a href="./posts/erste-notizen.html">Erste Notizen</a></li>
-    </ul>
-  </article>
+  <main>
+    <section>
+      <h2>Projektidee</h2>
+      <p>
+        Das Projekt untersucht die Verflechtungen zwischen Personen, Projekten und Strukturen
+        im Kulturbereich anhand des Vereins <strong>RHIZOM</strong>. Ziel ist eine datenbasierte
+        Rekonstruktion und Visualisierung rhizomatischer Netzwerke, die Formen
+        kultureller Zusammenarbeit sichtbar machen.
+      </p>
+    </section>
 
-  <script>
-    document.getElementById('today').textContent = new Date().toLocaleDateString('de-AT');
-  </script>
+    <section>
+      <h2>Aktuelle Beiträge</h2>
+      <ul>
+        <li><a href="posts/01-datenbasis.html">Datenbasis &amp; Extraktion</a></li>
+        <li><a href="posts/03-forschungsfrage.html">Forschungsfrage</a></li>
+        <li><a href="posts/04-methodik.html">Methodik &amp; Analyse</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Rhizom-Projekt • GitHub Pages Starter</p>
+  </footer>
 </body>
 </html>
