@@ -90,12 +90,18 @@ a:hover {
   text-underline-offset: 2px;
 }
 
-/* sorgt für gleichen Abstand zwischen allen Menüelementen */
+/* gleicher Abstand für alle Menüelemente */
 nav a,
 nav span[aria-current="page"] {
-  color: var(--accent);
-  font-weight: 600;   /* → macht die Schrift fett */
   margin-right: 1rem;
+}
+
+/* nur "Home" (also das <span>) farbig & fett */
+nav span[aria-current="page"] {
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+  cursor: default;
 }
 
 /* ───────────────────────────────────────────────
