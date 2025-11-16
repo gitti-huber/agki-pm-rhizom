@@ -1,251 +1,786 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forschungsblog</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Forschungsblog</title>
-  <link rel="stylesheet" href="../assets/css/styles.css">
-  <style>
-    /* Mini-Ergänzungen: nur für diese Seite */
-    .toc {
-      padding: .5rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background: #fff;
-    }
+  <body>
+    <a id="top"></a>
+    <header
+      data-date="30. Oktober 2025"
+      data-url="https://[username].github.io/agki-pm-rhizom"
+    >
+      <h1>Forschungsblog</h1>
+      <p class="subtitle">Laufende Dokumentation, Daten & Quellen</p>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../about.html">Über das Projekt</a>
+        <span aria-current="page">Forschungsblog</span>
+        <a href="../prompts/index.html">Prompt Engineering Tagebuch</a>
+      </nav>
+    </header>
 
-    .toc h2 {
-      margin: .5rem 0;
-      font-size: 1.1rem;
-    }
-
-    .toc ul {
-      margin: .25rem 0 0;
-    }
-
-    .section {
-      scroll-margin-top: 1rem;
-    }
-
-    .ref {
-      font-size: .95rem;
-    }
-
-    sup.fn a {
-      text-decoration: none;
-    }
-
-    .pill {
-      display: inline-block;
-      padding: .1rem .5rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      font-size: .85rem;
-      color: #555;
-    }
-  </style>
-</head>
-
-<body>
-  <header data-date="30. Oktober 2025" data-url="https://[username].github.io/agki-pm-rhizom">
-    <h1>Forschungsblog</h1>
-    <p class="subtitle">Laufende Dokumentation, Daten & Quellen</p>
-    <nav>
-      <a href="../index.html">Home</a>
-      <a href="../about.html">Über das Projekt</a>
-      <span aria-current="page">Forschungsblog</span>
-      <a href="../prompts/index.html">Prompt Engineering Tagebuch</a>
-    </nav>
-  </header>
-
-  <main>
-    <article>
-      <p class="meta">Stand: <span id="today"></span> • <span class="pill">Forschungsblog</span></p>
-
-      <!-- Inhaltsverzeichnis -->
-      <div class="toc">
-        <h2>Inhalt</h2>
-        <ul>
-          <li><a href="#abstract">Kurzüberblick</a></li>
-          <li><a href="#datenbasis">Datenbasis &amp; Aufbereitung</a></li>
-          <li><a href="#kontext">Projektkontext</a></li>
-          <li><a href="#frage">Forschungsfrage</a></li>
-          <li><a href="#methodik">Methodik</a></li>
-          <li><a href="#netzwerkmodell">Netzwerkmodell</a></li>
-          <li><a href="#ergebnisse">Zwischenergebnisse</a></li>
-          <li><a href="#ref">Quellen &amp; Literatur</a></li>
-        </ul>
-      </div>
-
-      <!-- 1: Abstract -->
-      <section id="abstract" class="section">
-        <h2>Kurzüberblick</h2>
-        <p>Dieses Forschungsblog dokumentiert fortlaufend die datenbasierte Rekonstruktion und Visualisierung der
-          personellen und projektbezogenen Netzwerke des Vereins <strong>RHIZOM</strong>. Im Fokus stehen
-          <em>rhizomatische</em> Verflechtungen, Rollenverschiebungen und Knotenpunkte kultureller Aktivität.</p>
-      </section>
-
-      <!-- 2: Datenbasis -->
-      <section id="datenbasis" class="section">
-        <h2>Datenbasis &amp; Aufbereitung</h2>
-        <p>Quellen: öffentlich zugängliche Inhalte der (im Aufbau befindlichen) <a href="https://rhizom.mur.at/"
-            target="_blank">RHIZOM-Website</a> sowie bislang unveröffentlichte Materialien (Word, PDF, Bilddaten).
-          Umfang: 700+ Personen, 200+ Projekte.</p>
-        <ul>
-          <li>Extraktion &amp; Normalisierung von Entitäten (Personen, Projekte, Rollen, Zeiten, Orte)</li>
-          <li>Bereinigung von Namensvarianten; Zuordnung Personen ↔ Projekte</li>
-          <li>Relationale Struktur für Analysen &amp; Visualisierungen (Knoten/Kanten)</li>
-        </ul>
-        <p class="meta">Siehe auch Datenordner im Repo: <code>/data/</code> (Roh- &amp; Cleaned-CSV).</p>
-      </section>
-
-      <!-- 3: Kontext -->
-      <section id="kontext" class="section">
-        <h2>Projektkontext</h2>
-        <p>Verortung in Kulturwissenschaften &amp; Digital Humanities. RHIZOM (seit 1988) als Fallbeispiel für
-          transdisziplinäre, kollektive Arbeitsweisen in der freien Kulturszene – ideal zur Analyse netzwerkartiger
-          Organisationsformen.</p>
-      </section>
-
-      <!-- 4: Forschungsfrage -->
-      <section id="frage" class="section">
-        <h2>Forschungsfrage</h2>
-        <p>Wie lassen sich die personellen und projektbezogenen Netzwerke des Vereins RHIZOM datenbasiert
-          rekonstruieren, und welche Muster der Zusammenarbeit und Vernetzung lassen sich daraus über die Zeit erkennen?
+    <main>
+      <article>
+        <p class="meta">
+          Stand: <span id="today"></span> •
+          <span class="pill">Forschungsblog</span>
         </p>
-      </section>
 
-      <!-- 5: Methodik -->
-      <section id="methodik" class="section">
-        <h2>Methodik</h2>
-        <ol>
-          <li><strong>Datenerhebung:</strong> Webscraping, manuelle Korrektur</li>
-          <li><strong>Automatische Verarbeitung:</strong> NER (LLMs), Disambiguierung, Themencluster</li>
-          <li><strong>Netzwerkanalyse:</strong> Knoten (Personen/Projekte), Kanten (Beteiligungen/Kooperationen)</li>
-          <li><strong>Visualisierung:</strong> interaktive Webdarstellung</li>
-        </ol>
-        <blockquote>Hinweis: Für die Reproduzierbarkeit werden Skripte und Notebooks im Ordner <code>/notebooks/</code>
-          versioniert.</blockquote>
-      </section>
+        <!-- Inhaltsverzeichnis -->
+        <nav class="toc toc-collapsed" aria-label="Inhaltsverzeichnis">
+          <button
+            class="toc-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="toc-inner"
+          >
+            Inhalt
+            <span class="toc-toggle-icon" aria-hidden="true">▾</span>
+          </button>
 
-      <!-- 6: Netzwerkmodell -->
-      <section id="netzwerkmodell" class="section">
-        <h2>Netzwerkmodell</h2>
-        <p>Minimaler Satz an CSVs:</p>
-        <ul>
-          <li><code>personen_clean.csv</code>: <code>person_id,name,canonical_role</code></li>
-          <li><code>projekte_clean.csv</code>: <code>project_id,title,type</code></li>
-          <li><code>edges.csv</code>: <code>source_id,target_id,relation_type,start_year,end_year</code></li>
-        </ul>
-        <p class="meta">Relationstypen: Beteiligung, Kooperation, Zugehörigkeit (erweiterbar).</p>
-      </section>
+          <div class="toc-inner" id="toc-inner">
+            <ul>
+              <li><a href="#abstract">Kurzüberblick</a></li>
+              <li><a href="#datenbasis">Datenbasis</a></li>
+              <li><a href="#kontext">Projektkontext</a></li>
+              <li><a href="#frage">Forschungsfrage</a></li>
+              <li><a href="#methodik">Methodik</a></li>
+              <li><a href="#netzwerkmodell">Netzwerkmodell</a></li>
+              <li><a href="#ergebnisse">Zwischenergebnisse</a></li>
+              <li><a href="#ref">Quellen &amp; Literatur</a></li>
+            </ul>
+          </div>
+        </nav>
 
-      <!-- 7: Ergebnisse (Platzhalter, wächst mit) -->
-      <section id="ergebnisse" class="section">
-        <h2>Zwischenergebnisse</h2>
-        <p><em>Platzhalter:</em> Hier folgen nach und nach Befunde, Visualisierungen und Interpretationen (zentralität,
-          Rollenverläufe, Zeitachsen …).</p>
-      </section>
+        <!--  Inhalt des Forschungsblogs -->
 
-      <!-- 8: Quellen -->
-      <section id="ref" class="section">
-        <h2>Quellen &amp; Literatur</h2>
-<ol class="ref">
-  <li id="r1">RHIZOM – Vereinsmaterialien, interne Dokumente (unveröffentlicht).</li>
-  <li id="r2">Öffentliche Website-Inhalte des Vereins (Erhebungszeitraum: fortlaufend).</li>
-  <li id="r3">Methodische Grundlagen: Netzwerkanalyse &amp; DH (Standardwerke, werden fortlaufend ergänzt).</li>
+        <!-- 1: Abstract -->
+        <section id="abstract" class="section">
+          <h2>Kurzüberblick</h2>
+          <p>
+            Dieses Forschungsblog dokumentiert fortlaufend die datenbasierte
+            Rekonstruktion und Visualisierung der personellen und
+            projektbezogenen Netzwerke des Vereins <strong>RHIZOM</strong>. Im
+            Fokus stehen <em>rhizomatische</em> Verflechtungen,
+            Rollenverschiebungen und Knotenpunkte kultureller Aktivität.
+          </p>
+        </section>
 
-  <li id="r4">Abbott, J. (2024). <i>Everyday Data Visualization</i> [PDF].</li>
-  <li id="r5">Abbott, J. (2025). <i>Datenvisualisierung im praktischen Einsatz</i> [EPUB].</li>
-  <li id="r6">(n. a.). (n. d.). <i>A comprehensive guide to data visualisation in R for beginners</i> [URL].</li>
-  <li id="r7">Andry, N., et al. (2022). <i>Les fondamentaux de la visualisation de données</i> [EPUB].</li>
-  <li id="r8">(n. a.). (n. d.). <i>An incomplete guide to accessible data visualization</i> [URL].</li>
-  <li id="r9">Banissi, E., &amp; Marchese, F. (2014). <i>Information visualisation</i> [PDF].</li>
-  <li id="r10">Barker, S., &amp; Westfall, J. (2021). <i>Pro Data Visualization Using R and JavaScript</i> [PDF].</li>
-  <li id="r11">Barrasa, J., &amp; Webber, J. (2023). <i>Building knowledge graphs</i> [PDF].</li>
-  <li id="r12">Boaler, J., et al. (2022). <i>Mindset mathematics</i> [PDF].</li>
-  <li id="r13">Bock von Wülfingen, A. (2019). <i>Science in Color</i> [PDF].</li>
-  <li id="r14">Bowen, J., et al. (2013). <i>Electronic visualisation in arts and culture</i> [PDF].</li>
-  <li id="r15">Brath, R. (2020). <i>Visualizing with text</i> [PDF].</li>
-  <li id="r16">Bremer, J., &amp; Wu, N. (2021). <i>Data Sketches</i> [PDF].</li>
-  <li id="r17">Brooks, M. (2023). <i>ArtsIT</i> [PDF].</li>
-  <li id="r18">Bubenhofer, N., &amp; Kupietz, M. (2018). <i>Visualisierung sprachlicher Daten</i> [PDF].</li>
-  <li id="r19">Bulathwela, S., et al. (2023). <i>Semantic AI in knowledge graphs</i> [PDF].</li>
-  <li id="r20">Camm, J., et al. (2022). <i>Data visualization</i> [PDF].</li>
-  <li id="r21">Carreira, J. (2016). <i>Geospatial development by example with Python</i> [PDF].</li>
-  <li id="r22">Chen, M., et al. (2017). <i>Information theory tools for visualization</i> [PDF].</li>
-  <li id="r23">Ciaburro, G. (2024). <i>MATLAB for machine learning</i> [PDF].</li>
-  <li id="r24">Cook, D. (2022). <i>Fundamentals of HTML, SVG, CSS and JS for data visualization</i> [PDF].</li>
-  <li id="r25">(n. a.). (n. d.). <i>Cool infographics</i> [PDF].</li>
-  <li id="r26">(n. a.). (n. d.). <i>D3.1 handbook of good practices for digitalisation</i> [PDF].</li>
-  <li id="r27">(n. a.). (n. d.). <i>Data visualization &amp; mapping tools</i> [URL].</li>
-  <li id="r28">Dorling, D. (2012). <i>The visualisation of spatial social structure</i> [PDF].</li>
-  <li id="r29">(n. a.). (n. d.). <i>Dynamic visualisation tools</i> [PDF].</li>
-  <li id="r30">Eagle, S. (2025). <i>From chaos to clarity</i> [PDF].</li>
-  <li id="r31">Estermann, B. (2023). <i>Mit Daten sprechen</i> [PDF].</li>
-  <li id="r32">Evergreen, S. (2020). <i>Effective data visualization</i> [PDF].</li>
-  <li id="r33">Ferreira, J. (2017). <i>A primer on process mining</i> [LNK].</li>
-  <li id="r34">Geoghan, M. (2016). <i>Visualizing technology</i> [PDF].</li>
-  <li id="r35">(n. a.). (2025). <i>Getting (more out of) graphics</i> [PDF].</li>
-  <li id="r36">Giannini, T., &amp; Bowen, J. (2019). <i>Museums and digital culture</i> [PDF].</li>
-  <li id="r37">Grant, L. (2019). <i>Data visualization</i> [PDF].</li>
-  <li id="r38">Granville, V. (2022). <i>The art of visualizing high dimensional data</i> [PDF].</li>
-  <li id="r39">Grosvenor, M., et al. (2021). <i>Visualizing nutrition</i> [PDF].</li>
-  <li id="r40">Hammond, D. (2022). <i>Exploring graphs with Elixir</i> [PDF].</li>
-  <li id="r41">Hil, R., &amp; Lachenmeier, B. (2022). <i>Visualizing complexity</i> [PDF].</li>
-  <li id="r42">Hogan, A. (2020). <i>The web of data</i> [PDF].</li>
-  <li id="r43">Hogan, A., et al. (2021). <i>Knowledge graphs</i> [PDF].</li>
-  <li id="r44">Ieno, E., &amp; Zuur, A. (2015). <i>Beginner’s guide to data exploration</i> [PDF].</li>
-  <li id="r45">Isaacson, E. (2023). <i>Visualizing music</i> [EPUB].</li>
-  <li id="r46">Kahl, M., &amp; Zimmer, T. (2020). <i>Interaktive Datenvisualisierung</i> [PDF].</li>
-  <li id="r47">(n. a.). (n. d.). <i>KI-basierte Textanalyse</i> [URL].</li>
-  <li id="r48">(n. a.). (n. d.). <i>Knowledge graphs – foundations and applications</i> [URL].</li>
-  <li id="r49">Kolokolov, S., &amp; Zelensky, I. (2025). <i>Data visualization with Power BI</i> [EPUB].</li>
-  <li id="r50">Kumar, A. (2022). <i>The art of visualizing data in Google Data Studio</i> [PDF].</li>
-  <li id="r51">Lagnel, J. (2020). <i>Manuel de data visualisation</i> [PDF].</li>
-  <li id="r52">Marriott, J. (2025). <i>The golden age of data visualization</i> [PDF].</li>
-  <li id="r53">McConnell, S. (2002). <i>Computer graphics companion</i> [PDF].</li>
-  <li id="r54">Memmert, D. (2009). <i>Sportinformatik</i> [PDF].</li>
-  <li id="r55">Meroño-Peñuela, A., et al. (2021). <i>WebData APIs for knowledge graphs</i> [PDF].</li>
-  <li id="r56">Mitchell, M. (2021). <i>Interpreting and visualizing regression models</i> [PDF].</li>
-  <li id="r57">Munzner, T. (2014). <i>Visualization analysis and design</i> [PDF].</li>
-  <li id="r58">Murray, S. (2017). <i>Interactive data visualization for the web</i> [PDF].</li>
-  <li id="r59">Organ, G. (2024). <i>Data visualization for people of all ages</i> [PDF].</li>
-  <li id="r60">Paulheim, H., et al. (2023). <i>Embedding knowledge graphs with RDF2vec</i> [PDF].</li>
-  <li id="r61">Piccoli, C. (2018). <i>Visualizing cityscapes of classical antiquity</i> [PDF].</li>
-  <li id="r62">Prodromou, T. (2017). <i>Data visualization and statistical literacy</i> [PDF].</li>
-  <li id="r63">Raieli, M., &amp; Iuculano, G. (2025). <i>Building AI agents with LLMs</i> [PDF].</li>
-  <li id="r64">Raj, A., et al. (2022). <i>Demystifying graph data science</i> [EPUB].</li>
-  <li id="r65">Richards, T. (2023). <i>Questions in dataviz</i> [PDF].</li>
-  <li id="r66">Sequeda, J., &amp; Lassila, O. (2021). <i>Designing enterprise knowledge graphs</i> [PDF].</li>
-  <li id="r67">Serles, A., &amp; Fensel, D. (2024). <i>An introduction to knowledge graphs</i> [PDF].</li>
-  <li id="r68">Stapelkamp, T. (2013). <i>Informationsvisualisierung</i> [PDF].</li>
-  <li id="r69">(n. a.). (n. d.). <i>The data visualisation catalogue</i> [URL].</li>
-  <li id="r70">(n. a.). (n. d.). <i>TreeTagger – output visualisation module</i> [URL].</li>
-  <li id="r71">Ursyn, A. (n. d.). <i>Graphical thinking for science and technology</i> [PDF].</li>
-  <li id="r72">Van der Post, R. (2024). <i>Data science with Rust</i> [PDF].</li>
-  <li id="r73">Vergadia, P. (2022). <i>Visualizing Google Cloud</i> [PDF].</li>
-  <li id="r74">Villazón-Terrazas, B., et al. (2022). <i>Knowledge graphs and semantic web</i> [PDF].</li>
-  <li id="r75">Wills, L. (2020). <i>Data visualization made simple</i> [PDF].</li>
-</ol>
+        <!-- 2: Datenbasis-->
+        <section id="datenbasis" class="section">
+          <h2>Datenbasis</h2>
+          <h4>Format, Umfang, Struktur, Aufbereitung</h4>
 
-        <p class="meta">Verweise im Text als Fußnoten wie so: Beispiel&nbsp;<sup class="fn"><a href="#r2">[2]</a></sup>
-        </p>
-      </section>
-    </article>
-  </main>
+          <p>
+            Der Aufbau der Datenbasis erfolgt aus öffentlich zugänglichen
+            Inhalten der kontinuierlich weiterentwickelten
+            <a
+              href="https://rhizom.mur.at/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >RHIZOM-Website</a
+            >
+            sowie aus bislang unveröffentlichten Materialien (Word, PDF,
+            Bilddaten).
+          </p>
 
-  <footer>
-    <p>© 2025 Rhizom-Projekt | <a href="https://github.com/gitti-huber/agki-pm-rhizom">GitHub Repository</a></p>
-  </footer>
+          <ul>
+            <li><strong>Zeitraum:</strong> 1988 bis heute (laufend)</li>
+            <li><strong>Umfang:</strong> 700+ Personen, 200+ Projekte</li>
+            <li>
+              <strong>Datenstruktur:</strong> Personen, Projekte,
+              Rollen/Beteiligungen, Kooperationen
+            </li>
+            <li><strong>Rohdatenformate:</strong> CSV, JSON, TXT</li>
+            <li><strong>Bereinigte Daten:</strong> Cleaned-CSV</li>
+            <li>
+              <strong>Metadaten:</strong> README.md, Dokumentation der
+              Datensätze
+            </li>
+            <li>
+              <strong>Speicherung & Versionierung:</strong> GitHub Repository
+            </li>
+            <li><strong>Datenlizenz:</strong> CC BY-SA (Open Data)</li>
+            <li><strong>Datensicherung:</strong> regelmäßige Backups</li>
+            <li><strong>Datenzugriff:</strong> öffentlich im Repo</li>
+            <li>
+              <strong>Qualitätssicherung:</strong> Plausibilitätsprüfungen,
+              Feedback-Integration
+            </li>
+            <li>
+              <strong>Langfristige Archivierung:</strong> Sicherstellung der
+              Nachnutzbarkeit
+            </li>
+          </ul>
 
-  <script>
-    // Datum automatisch setzen (lokalisiert)
-    document.getElementById('today').textContent = new Date().toLocaleDateString('de-AT', {
-      year: 'numeric', month: 'long', day: 'numeric'
-    });
-  </script>
-</body>
+          <!-- INFO/HELP-->
+          <div class="note-box">
+            Siehe auch Datenordner im Repo: <code>/data/</code> (Roh- &amp;
+            Cleaned-CSV).
+          </div>
+        </section>
 
+        <!-- 3: Kontext -->
+        <section id="kontext" class="section">
+          <h2>Projektkontext</h2>
+          <p>
+            Das Projekt untersucht RHIZOM als langjährig aktiven Akteur der
+            freien Kulturarbeit, dessen kollaborative, selbstorganisierte und
+            transdisziplinäre Praxis seit 1988 eine einzigartige Dokumentations-
+            und Forschungsgrundlage bildet. Die vielschichtigen personellen und
+            projektbezogenen Beziehungsgeflechte ermöglichen einen
+            exemplarischen Blick auf Netzwerkstrukturen in der unabhängigen
+            Kulturszene und deren Wandel über mehrere Jahrzehnte. In Anlehnung
+            an das Konzept rhizomatischer Strukturen nach Deleuze/Guattari –
+            geprägt durch Nicht-Hierarchie, Vielheit und dynamische
+            Verknüpfungen – bietet RHIZOM ein ideales Fallbeispiel, um
+            kulturelle Organisationsformen jenseits linearer oder institutionell
+            fixierter Modelle zu analysieren. Die Verbindung
+            kulturwissenschaftlicher Perspektiven mit Methoden der Digital
+            Humanities – insbesondere Netzwerkanalyse, Datenmodellierung und
+            Visualisierung – erlaubt es, Muster der Zusammenarbeit,
+            Rollenentwicklungen und Dynamiken kultureller Praxis sichtbar zu
+            machen. RHIZOM fungiert somit einerseits als empirisches Beispiel
+            kollaborativer Kulturproduktion jenseits etablierter
+            institutioneller Strukturen und eröffnet andererseits ein
+            theoretisch ergiebiges Untersuchungsfeld für datenbasierte Analysen
+            rhizomatischer Kulturpraxis.
+          </p>
+        </section>
+
+        <!-- 4: Forschungsfrage -->
+        <section id="frage" class="section">
+          <h2>Forschungsfrage</h2>
+          <p>
+            Wie lassen sich die personellen und projektbezogenen Netzwerke des
+            Vereins RHIZOM datenbasiert rekonstruieren, und welche Muster der
+            Zusammenarbeit und Vernetzung lassen sich daraus über die Zeit
+            erkennen?
+          </p>
+        </section>
+
+        <!-- 5: Methodik -->
+        <section id="methodik" class="section">
+          <h2>Methodik</h2>
+
+          <ol>
+            <li>
+              <strong>Datenerhebung:</strong>
+              Webscraping, Extraktion aus Dokumenten, manuelle Ergänzungen und
+              Korrekturen
+            </li>
+
+            <li>
+              <strong>Datenaufbereitung:</strong>
+              Bereinigung von Namensvarianten und Dubletten, Normalisierung,
+              Disambiguierung, strukturelle Vereinheitlichung
+            </li>
+
+            <li>
+              <strong>Automatisierte Verarbeitung:</strong>
+              NER und Entitätenextraktion (LLMs), thematische Clusterbildung,
+              Validierung durch Hybridverfahren (automatisch + manuell)
+            </li>
+
+            <li>
+              <strong>Modellierung:</strong>
+              Aufbau einer relationalen Datenstruktur (Knoten =
+              Personen/Projekte, Kanten = Beteiligungen/Kooperationen)
+            </li>
+
+            <li>
+              <strong>Netzwerkanalyse:</strong>
+              Identifikation von Mustern der Zusammenarbeit, Zeitverläufe,
+              zentrale Akteur:innen, Clusterdynamiken
+            </li>
+
+            <li>
+              <strong>Visualisierung:</strong>
+              Interaktive Graphdarstellungen (Webvisualisierung)
+            </li>
+
+            <li>
+              <strong>Software & Reproduzierbarkeit:</strong>
+              Python, Pandas, OpenRefine, Jupyter; sämtliche Skripte im Ordner
+              <code>/notebooks/</code> versioniert
+            </li>
+          </ol>
+
+          <blockquote>
+            Hinweis: Alle Verarbeitungsschritte werden nachvollziehbar
+            dokumentiert, um Reproduzierbarkeit sicherzustellen.
+          </blockquote>
+        </section>
+
+        <!-- 6: Netzwerkmodell -->
+        <section id="netzwerkmodell" class="section">
+          <h2>Netzwerkmodell (Teil I)</h2>
+          <h3>Modelltheoretische Grundlagen</h3>
+          <p>
+            Die Konzeption des Datenmodells folgt einem modelltheoretischen
+            Verständnis im Sinne von Stachowiak (1973). Modelle sind demnach
+            <em>Abbildungen</em> eines Originals, jedoch stets verkürzt und auf
+            spezifische Zwecke hin konstruiert. Auch das hier entwickelte
+            Datenmodell erfasst den Kulturverein <strong>RHIZOM</strong> nicht
+            in seiner Gesamtheit, sondern bildet jene Aspekte ab, die für eine
+            datenbasierte Analyse kultureller Praxis relevant sind: Projekte,
+            beteiligte Personen, Rollen, Orte, Medienobjekte und
+            Veranstaltungsdaten.
+          </p>
+
+          <p>
+            Diese Verkürzung ist nicht nur unvermeidbar, sondern produktiv:
+            Durch die formale Modellierung werden Strukturen erkennbar, die in
+            den heterogenen Originaldaten nur implizit vorliegen. Im Sinne des
+            <em>pragmatischen Merkmals</em> nach Stachowiak richtet sich das
+            Modell damit auf den Untersuchungsschwerpunkt der Netzwerkanalyse
+            aus. Es dient zugleich als Dokumentationsgrundlage, als Werkzeug zum
+            Hypothesentesten und als Ausgangspunkt für Visualisierungen, die
+            kulturelle Zusammenhänge sichtbar machen.
+          </p>
+
+          <p>
+            Die Entwicklung des Modells erfolgte zunächst in Form eines
+            ER-Diagramms (ERDPlus), das mehrere Iterationen durchlief. Besonders
+            herausfordernd war die sinnvolle Trennung von Personengruppen,
+            Organisationsformen und Projektreihen sowie die Abbildung der
+            vielfältigen Medienobjekte. Erst durch die Aufspaltung der
+            ursprünglichen Sammelentitäten in differenzierte Tabellen – etwa für
+            <em>Künstler:innen</em>, <em>Mitglieder</em>,
+            <em>Kooperationspartner:innen</em>, <em>Orte</em> und
+            <em>Medientypen</em> – wurde eine Struktur möglich, die sowohl
+            konsistent als auch analytisch verwertbar ist.
+          </p>
+
+          <p>
+            Die resultierende Datenbank (<code>rhizom.db</code>) bildet nun die
+            Grundgesamtheit der erhobenen Informationen ab. Sie stellt sicher,
+            dass alle Projekte, Veranstaltungen, Objekte und beteiligten
+            Personen relational verknüpft erfasst werden. Das Netzwerk, das
+            später visualisiert wird, ergibt sich unmittelbar aus diesen
+            Relationen.
+          </p>
+
+          <div class="section highlight-box">
+            <strong>Ausführliche Dokumentation:</strong><br />
+            Die Ausarbeitung der modelltheoretischen Grundlagen sowie die
+            Beschreibung der einzelnen Modellierungsentscheidungen finden sich
+            in folgendem Dokument:<br><br>
+            <a class="download-btn" href="../data/rhizom_text.pdf" target="_blank">
+              📄 rhizom_text.pdf (Modelltheorie + Datenmodellierung)
+            </a>
+          </div>
+
+          <h2>Netzwerkmodell (Teil II)</h2>
+          <p>
+            Die Datenbasis des Projekts liegt als SQLite-Datenbank
+            (<code>rhizom.db</code>) vor und umfasst vier Kernbereiche:
+            Personen, Projekte, Rollen sowie konkrete Beteiligungsbeziehungen.
+            Die Tabellen bilden gemeinsam ein relationales Modell, das sowohl
+            individuelle Akteur:innen als auch projektbezogene Aktivitäten und
+            ihre zeitlichen Verläufe erfasst.
+          </p>
+
+          <h3>Datenstruktur</h3>
+          <ul>
+            <li>
+              <strong>persons</strong> – Stammdaten von Personen (ID, Name,
+              optionale Kurzbeschreibung/Bio).
+            </li>
+            <li>
+              <strong>projects</strong> – Projekte und Aktivitäten des Vereins
+              (ID, Titel, Typ/Kategorie, Jahr oder Zeitraum, Beschreibung).
+            </li>
+            <li>
+              <strong>roles</strong> – Mögliche Rollen innerhalb von Projekten
+              (z.&nbsp;B. Organisation, Mitarbeit, Konzept, Performance).
+            </li>
+            <li>
+              <strong>edges</strong> – Relationen zwischen Personen und
+              Projekten, bestehend aus:
+              <ul>
+                <li>person_id – Verweis auf eine Person</li>
+                <li>project_id – Verweis auf ein Projekt</li>
+                <li>role_id – zugeordnete Rolle</li>
+                <li>
+                  year_start / year_end – Zeitliche Eingrenzung der Beteiligung
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <p>
+            Die Tabelle <strong>edges</strong> bildet damit den zentralen
+            „Relationsteil“ des Modells: Sie verknüpft Personen mit Projekten,
+            differenziert nach Rolle und Zeitraum. Auf dieser Basis lassen sich
+            Netzwerkstrukturen rekonstruieren – etwa wiederkehrende
+            Kooperationen, Rollenverläufe oder Knotenpunkte hoher Aktivität.
+          </p>
+
+          <p class="intro-note">
+            Relationstypen ergeben sich implizit über die Kombination aus
+            person_id, project_id und role_id und können bei Bedarf erweitert
+            werden (z.&nbsp;B. um Kategorien wie Leitung, kuratorische
+            Mitarbeit, technische Unterstützung oder künstlerische Beteiligung).
+          </p>
+        </section>
+
+        <!-- 7: Ergebnisse (Platzhalter, wächst mit) -->
+        <section id="ergebnisse" class="section">
+          <h2>Zwischenergebnisse</h2>
+          <p>
+            <em>Platzhalter:</em> An dieser Stelle werden nach und nach Befunde,
+            Visualisierungen und interpretative Analysen ergänzt – etwa zur
+            <strong>Zentralität einzelner Akteur:innen</strong> im Netzwerk, zu
+            <strong>Rollenverläufen und Veränderungen über die Zeit</strong>
+            sowie zu
+            <strong>zeitlichen Entwicklungslinien und Projektclustern</strong>.
+          </p>
+        </section>
+
+        <!-- 8: Quellen -->
+        <section id="ref" class="section">
+          <h2>Quellen &amp; Literatur</h2>
+
+          <!-- Immer sichtbare Einträge -->
+          <ol class="ref">
+            <li id="r1">
+              RHIZOM – Vereinsmaterialien, interne Dokumente (unveröffentlicht).
+            </li>
+            <li id="r2">
+              Öffentliche Website-Inhalte des Vereins (Erhebungszeitraum:
+              fortlaufend).
+            </li>
+            <li id="r3">
+              Methodische Grundlagen: Netzwerkanalyse &amp; DH (Standardwerke,
+              werden fortlaufend ergänzt).
+            </li>
+          </ol>
+          <!-- Ausklappbare komplette Literaturliste -->
+          <details class="refs-collapsible">
+            <summary>Komplette Literaturliste anzeigen</summary>
+
+            <ol class="ref">
+              <li id="r4">
+                Abbott, J. (2024). <i>Everyday Data Visualization</i> [PDF].
+              </li>
+              <li id="r5">
+                Abbott, J. (2025).
+                <i>Datenvisualisierung im praktischen Einsatz</i> [EPUB].
+              </li>
+              <li id="r6">
+                (n. a.). (n. d.).
+                <i
+                  >A comprehensive guide to data visualisation in R for
+                  beginners</i
+                >
+                [URL].
+              </li>
+              <li id="r7">
+                Andry, N., et al. (2022).
+                <i>Les fondamentaux de la visualisation de données</i> [EPUB].
+              </li>
+              <li id="r8">
+                (n. a.). (n. d.).
+                <i>An incomplete guide to accessible data visualization</i>
+                [URL].
+              </li>
+              <li id="r9">
+                Banissi, E., &amp; Marchese, F. (2014).
+                <i>Information visualisation</i> [PDF].
+              </li>
+              <li id="r10">
+                Barker, S., &amp; Westfall, J. (2021).
+                <i>Pro Data Visualization Using R and JavaScript</i> [PDF].
+              </li>
+              <li id="r11">
+                Barrasa, J., &amp; Webber, J. (2023).
+                <i>Building knowledge graphs</i> [PDF].
+              </li>
+              <li id="r12">
+                Boaler, J., et al. (2022). <i>Mindset mathematics</i> [PDF].
+              </li>
+              <li id="r13">
+                Bock von Wülfingen, A. (2019). <i>Science in Color</i> [PDF].
+              </li>
+              <li id="r14">
+                Bowen, J., et al. (2013).
+                <i>Electronic visualisation in arts and culture</i> [PDF].
+              </li>
+              <li id="r15">
+                Brath, R. (2020). <i>Visualizing with text</i> [PDF].
+              </li>
+              <li id="r16">
+                Bremer, J., &amp; Wu, N. (2021). <i>Data Sketches</i> [PDF].
+              </li>
+              <li id="r17">Brooks, M. (2023). <i>ArtsIT</i> [PDF].</li>
+              <li id="r18">
+                Bubenhofer, N., &amp; Kupietz, M. (2018).
+                <i>Visualisierung sprachlicher Daten</i> [PDF].
+              </li>
+              <li id="r19">
+                Bulathwela, S., et al. (2023).
+                <i>Semantic AI in knowledge graphs</i> [PDF].
+              </li>
+              <li id="r20">
+                Camm, J., et al. (2022). <i>Data visualization</i> [PDF].
+              </li>
+              <li id="r21">
+                Carreira, J. (2016).
+                <i>Geospatial development by example with Python</i> [PDF].
+              </li>
+              <li id="r22">
+                Chen, M., et al. (2017).
+                <i>Information theory tools for visualization</i> [PDF].
+              </li>
+              <li id="r23">
+                Ciaburro, G. (2024). <i>MATLAB for machine learning</i> [PDF].
+              </li>
+              <li id="r24">
+                Cook, D. (2022).
+                <i
+                  >Fundamentals of HTML, SVG, CSS and JS for data
+                  visualization</i
+                >
+                [PDF].
+              </li>
+              <li id="r25">
+                (n. a.). (n. d.). <i>Cool infographics</i> [PDF].
+              </li>
+              <li id="r26">
+                (n. a.). (n. d.).
+                <i>D3.1 handbook of good practices for digitalisation</i> [PDF].
+              </li>
+              <li id="r27">
+                (n. a.). (n. d.).
+                <i>Data visualization &amp; mapping tools</i> [URL].
+              </li>
+              <li id="r28">
+                Dorling, D. (2012).
+                <i>The visualisation of spatial social structure</i> [PDF].
+              </li>
+              <li id="r29">
+                (n. a.). (n. d.). <i>Dynamic visualisation tools</i> [PDF].
+              </li>
+              <li id="r30">
+                Eagle, S. (2025). <i>From chaos to clarity</i> [PDF].
+              </li>
+              <li id="r31">
+                Estermann, B. (2023). <i>Mit Daten sprechen</i> [PDF].
+              </li>
+              <li id="r32">
+                Evergreen, S. (2020). <i>Effective data visualization</i> [PDF].
+              </li>
+              <li id="r33">
+                Ferreira, J. (2017). <i>A primer on process mining</i> [LNK].
+              </li>
+              <li id="r34">
+                Geoghan, M. (2016). <i>Visualizing technology</i> [PDF].
+              </li>
+              <li id="r35">
+                (n. a.). (2025). <i>Getting (more out of) graphics</i> [PDF].
+              </li>
+              <li id="r36">
+                Giannini, T., &amp; Bowen, J. (2019).
+                <i>Museums and digital culture</i> [PDF].
+              </li>
+              <li id="r37">
+                Grant, L. (2019). <i>Data visualization</i> [PDF].
+              </li>
+              <li id="r38">
+                Granville, V. (2022).
+                <i>The art of visualizing high dimensional data</i> [PDF].
+              </li>
+              <li id="r39">
+                Grosvenor, M., et al. (2021).
+                <i>Visualizing nutrition</i> [PDF].
+              </li>
+              <li id="r40">
+                Hammond, D. (2022). <i>Exploring graphs with Elixir</i> [PDF].
+              </li>
+              <li id="r41">
+                Hil, R., &amp; Lachenmeier, B. (2022).
+                <i>Visualizing complexity</i> [PDF].
+              </li>
+              <li id="r42">Hogan, A. (2020). <i>The web of data</i> [PDF].</li>
+              <li id="r43">
+                Hogan, A., et al. (2021). <i>Knowledge graphs</i> [PDF].
+              </li>
+              <li id="r44">
+                Ieno, E., &amp; Zuur, A. (2015).
+                <i>Beginner’s guide to data exploration</i> [PDF].
+              </li>
+              <li id="r45">
+                Isaacson, E. (2023). <i>Visualizing music</i> [EPUB].
+              </li>
+              <li id="r46">
+                Kahl, M., &amp; Zimmer, T. (2020).
+                <i>Interaktive Datenvisualisierung</i> [PDF].
+              </li>
+              <li id="r47">
+                (n. a.). (n. d.). <i>KI-basierte Textanalyse</i> [URL].
+              </li>
+              <li id="r48">
+                (n. a.). (n. d.).
+                <i>Knowledge graphs – foundations and applications</i> [URL].
+              </li>
+              <li id="r49">
+                Kolokolov, S., &amp; Zelensky, I. (2025).
+                <i>Data visualization with Power BI</i> [EPUB].
+              </li>
+              <li id="r50">
+                Kumar, A. (2022).
+                <i>The art of visualizing data in Google Data Studio</i> [PDF].
+              </li>
+              <li id="r51">
+                Lagnel, J. (2020). <i>Manuel de data visualisation</i> [PDF].
+              </li>
+              <li id="r52">
+                Marriott, J. (2025).
+                <i>The golden age of data visualization</i> [PDF].
+              </li>
+              <li id="r53">
+                McConnell, S. (2002). <i>Computer graphics companion</i> [PDF].
+              </li>
+              <li id="r54">
+                Memmert, D. (2009). <i>Sportinformatik</i> [PDF].
+              </li>
+              <li id="r55">
+                Meroño-Peñuela, A., et al. (2021).
+                <i>WebData APIs for knowledge graphs</i> [PDF].
+              </li>
+              <li id="r56">
+                Mitchell, M. (2021).
+                <i>Interpreting and visualizing regression models</i> [PDF].
+              </li>
+              <li id="r57">
+                Munzner, T. (2014).
+                <i>Visualization analysis and design</i> [PDF].
+              </li>
+              <li id="r58">
+                Murray, S. (2017).
+                <i>Interactive data visualization for the web</i> [PDF].
+              </li>
+              <li id="r59">
+                Organ, G. (2024).
+                <i>Data visualization for people of all ages</i> [PDF].
+              </li>
+              <li id="r60">
+                Paulheim, H., et al. (2023).
+                <i>Embedding knowledge graphs with RDF2vec</i> [PDF].
+              </li>
+              <li id="r61">
+                Piccoli, C. (2018).
+                <i>Visualizing cityscapes of classical antiquity</i> [PDF].
+              </li>
+              <li id="r62">
+                Prodromou, T. (2017).
+                <i>Data visualization and statistical literacy</i> [PDF].
+              </li>
+              <li id="r63">
+                Raieli, M., &amp; Iuculano, G. (2025).
+                <i>Building AI agents with LLMs</i> [PDF].
+              </li>
+              <li id="r64">
+                Raj, A., et al. (2022).
+                <i>Demystifying graph data science</i> [EPUB].
+              </li>
+              <li id="r65">
+                Richards, T. (2023). <i>Questions in dataviz</i> [PDF].
+              </li>
+              <li id="r66">
+                Sequeda, J., &amp; Lassila, O. (2021).
+                <i>Designing enterprise knowledge graphs</i> [PDF].
+              </li>
+              <li id="r67">
+                Serles, A., &amp; Fensel, D. (2024).
+                <i>An introduction to knowledge graphs</i> [PDF].
+              </li>
+              <li id="r68">
+                Stapelkamp, T. (2013). <i>Informationsvisualisierung</i> [PDF].
+              </li>
+              <li id="r69">
+                (n. a.). (n. d.). <i>The data visualisation catalogue</i> [URL].
+              </li>
+              <li id="r70">
+                (n. a.). (n. d.).
+                <i>TreeTagger – output visualisation module</i> [URL].
+              </li>
+              <li id="r71">
+                Ursyn, A. (n. d.).
+                <i>Graphical thinking for science and technology</i> [PDF].
+              </li>
+              <li id="r72">
+                Van der Post, R. (2024). <i>Data science with Rust</i> [PDF].
+              </li>
+              <li id="r73">
+                Vergadia, P. (2022). <i>Visualizing Google Cloud</i> [PDF].
+              </li>
+              <li id="r74">
+                Villazón-Terrazas, B., et al. (2022).
+                <i>Knowledge graphs and semantic web</i> [PDF].
+              </li>
+              <li id="r75">
+                Wills, L. (2020). <i>Data visualization made simple</i> [PDF].
+              </li>
+            </ol>
+          </details>
+
+          <!-- INFO/HELP-->
+          <div class="note-box">
+            Verweise im Text als Fußnoten: Beispiel&nbsp;<sup class="fn"
+              ><a href="#r28">[28]</a></sup
+            >
+          </div>
+        </section>
+
+        <p><a href="../index.html">← Zurück zur Startseite</a></p>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        © 2025 Rhizom-Projekt |
+        <a href="https://github.com/gitti-huber/agki-pm-rhizom"
+          >GitHub Repository</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Tooltip-Element einmalig erzeugen
+        const tooltip = document.createElement("div");
+        tooltip.className = "fn-tooltip";
+        document.body.appendChild(tooltip);
+
+        // Alle Fußnotenlinks holen
+        const fnLinks = document.querySelectorAll('sup.fn a[href^="#r"]');
+
+        fnLinks.forEach((link) => {
+          link.addEventListener("mouseenter", (e) => {
+            const id = link.getAttribute("href").substring(1); // "r28"
+            const target = document.getElementById(id);
+            if (!target) return;
+
+            // Inhalt der Vorschau holen (nur Text, kein Nummernblock)
+            let preview = target.innerHTML.trim();
+
+            // → Nummer entfernen („[28] “)
+            preview = preview.replace(/^\[[0-9]+\]\s*/, "");
+
+            tooltip.innerHTML = preview;
+            tooltip.classList.add("show");
+
+            // Position über dem Mauszeiger
+            const rect = link.getBoundingClientRect();
+            tooltip.style.left = rect.left + window.scrollX + "px";
+            tooltip.style.top = rect.bottom + window.scrollY + 6 + "px";
+          });
+
+          link.addEventListener("mouseleave", () => {
+            tooltip.classList.remove("show");
+          });
+        });
+      });
+    </script>
+
+    <script>
+      // Datum automatisch setzen (lokalisiert)
+      document.getElementById("today").textContent =
+        new Date().toLocaleDateString("de-AT", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
+      // ToC ein-/ausklappen + beim Anklicken von Links wieder schließen
+      document.addEventListener("DOMContentLoaded", function () {
+        const toc = document.querySelector(".toc");
+        const toggle = document.querySelector(".toc-toggle");
+        const icon = toggle ? toggle.querySelector(".toc-toggle-icon") : null;
+        const tocLinks = document.querySelectorAll(".toc-inner a");
+
+        if (!toc || !toggle) return;
+
+        // Toggle öffnen/schließen
+        toggle.addEventListener("click", function () {
+          const collapsed = toc.classList.toggle("toc-collapsed");
+          toggle.setAttribute("aria-expanded", String(!collapsed));
+          if (icon) {
+            icon.textContent = collapsed ? "▸" : "▾";
+          }
+        });
+
+        // Beim Klick auf einen Menüpunkt automatisch schließen
+        tocLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            toc.classList.add("toc-collapsed");
+            toggle.setAttribute("aria-expanded", "false");
+            if (icon) icon.textContent = "▸";
+          });
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const footnoteLinks = document.querySelectorAll('sup.fn a[href^="#r"]');
+
+        footnoteLinks.forEach(function (link) {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const href = link.getAttribute("href");
+            const id = href.substring(1);
+            const target = document.getElementById(id);
+            if (!target) return;
+
+            const parentDetails = target.closest("details");
+            if (parentDetails && !parentDetails.open) {
+              parentDetails.open = true;
+            }
+
+            // kurzes Delay → Details öffnen zuerst
+            setTimeout(function () {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+
+              /*
+               * WICHTIG:
+               * location.hash = … löst :target SOFORT aus
+               */
+              location.hash = id;
+
+              /*
+               * Optional: Hash wieder optisch schön machen,
+               * aber ohne :target zu verlieren
+               */
+              if (history.replaceState) {
+                history.replaceState(null, "", href);
+              }
+            }, 50);
+          });
+        });
+      });
+    </script>
+
+    <a href="#top" class="back-to-top">↑</a>
+    <script>
+      document.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          document.body.classList.add("scrolled");
+        } else {
+          document.body.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
 </html>

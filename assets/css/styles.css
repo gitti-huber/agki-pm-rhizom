@@ -3,6 +3,7 @@
 /* Scrollbalken erzwingen, um Layout-Verschiebungen zu vermeiden */
 html {
   overflow-y: scroll; /* erzwingt immer eine Scroll-Leiste, auch wenn sie nicht gebraucht wird */
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -122,20 +123,77 @@ nav span[aria-current="page"] {
   border: 1px solid var(--border);
   border-radius: 8px;
   background: #fff;
-  margin: 1rem 0;
+
+  /* NEU: sticky */
+  position: sticky;
+  top: 1rem;
+  z-index: 10;
 }
 
-.toc h2 {
-  margin: .5rem 0;
-  font-size: 1.1rem;
+/* ToC-Button */
+.toc-toggle {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #f4f6f8;
+  cursor: pointer;
+}
+
+.toc-toggle:hover {
+  background: var(--accent-light);
+}
+
+.toc-toggle-icon {
+  float: right;
+}
+
+/* Inhalt des ToC */
+.toc-inner {
+  margin-top: 0.5rem;
 }
 
 .toc ul {
   margin: .25rem 0 0;
+  padding-left: 1rem;
+}
+
+/* etwas Abstand vor und nach dem ausgeklappten Literaturverzeichnis */
+.refs-collapsible summary {
+  margin-bottom: 0.8rem;   /* Abstand nach unten */
+}
+
+.refs-collapsible {
+  margin-top: 0.8rem;
+}
+
+.toc-inner a {
+  text-decoration: none;
+}
+
+/* eingeklappt: Inhalt verstecken */
+.toc.toc-collapsed .toc-inner {
+  display: none;
 }
 
 .section {
-  scroll-margin-top: 1rem;
+  scroll-margin-top: 4rem;
+}
+
+sup.fn a {
+  text-decoration: none;
+}
+
+.pill {
+  display: inline-block;
+  padding: .1rem .5rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: .85rem;
+  color: #555;
 }
 
 /* -------------------------------
@@ -143,35 +201,56 @@ nav span[aria-current="page"] {
    kompakt + kleinere Schrift
    ------------------------------- */
 
-.ref {
+/* Counter wird nur EINMAL global zurückgesetzt */
+body {
   counter-reset: ref;
+}
+
+.ref {
   list-style: none;
   padding-left: 0;
   margin: 0;
 
-  font-size: 0.78rem;    /* kleiner */
-  line-height: 1.35;     /* kompakter */
+  font-size: 0.78rem;
+  line-height: 1.35;
 }
 
 .ref li {
   counter-increment: ref;
   position: relative;
 
-  padding-left: 2rem;     /* etwas weniger Platz reicht */
-  text-indent: -0.3rem;   /* harmonischere Hanging-Indent */
+  padding-left: 2rem;  /* bündiger! */
+  text-indent: -0.3rem;
 
-  margin-bottom: 0.28rem; /* kleinerer Abstand */
+  margin-bottom: 0.28rem;
 }
 
 .ref li::before {
   content: "[" counter(ref) "] ";
   position: absolute;
-  left: 0;
+  left: 0.3rem;         /* bündig! */
   top: 0;
 
   font-weight: 600;
-  font-size: 0.8rem;      /* Nummern leicht kleiner, integriert sich besser */
+  font-size: 0.8rem;
 }
+
+.ref li:target {
+  background: var(--accent-light);
+  border-radius: 8px;
+}
+
+.ref li:target::before {
+  background: var(--accent-light);
+  border-radius: 8px 0 0 8px;
+  padding: 0.05rem 0.25rem 0.05rem 0.3rem;
+  margin-left: -0.3rem;
+}
+
+
+/* -------------------------------
+   Intro-Note & Hinweis-Box
+   ------------------------------- */
 
 .intro-note {
   font-size: 0.85rem;
@@ -184,6 +263,244 @@ nav span[aria-current="page"] {
   line-height: 1.5;
   font-style: italic;
 }
+
+.note-box {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  padding: 0.6rem 0.9rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.45;
+
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.note-box::before {
+  content: "💡 ";
+  font-size: 1.1rem;
+}
+
+.highlight-box {
+  background: var(--bg-alt);
+  border-left: 4px solid var(--accent);
+  padding: 1rem 1.2rem;
+  margin: 2rem 0;
+  border-radius: 6px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.small-note {
+  font-size: 0.75em;
+  font-weight: normal;
+  margin-left: 0.4em;
+  color: var(--text-light, #666);
+}
+
+.small-note a {
+  color: var(--accent-color, #4466cc);
+  text-decoration: none;
+}
+
+.small-note a:hover {
+  text-decoration: underline;
+}
+
+
+/* ───────────────────────────────
+   Download-Buttons
+   ─────────────────────────────── */
+
+.highlight-box {
+  background: #fafafa;
+  border-left: 4px solid #999;
+  padding: 1.2rem 1.4rem;
+  margin: 2rem 0;
+  border-radius: 6px;
+}
+
+.download-btn {
+  display: inline-block;
+  background: #444;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.download-btn:hover {
+  background: #222;
+}
+
+
+/* ───────────────────────────────
+   Fußnoten-Hover-Vorschau (Tooltip)
+   ─────────────────────────────── */
+
+.fn-tooltip {
+  position: absolute;
+  max-width: 340px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: var(--text);
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.fn-tooltip.show {
+  opacity: 1;
+}
+
+/* ─────────────────────────────
+   FOOTNOTE PREVIEW TOOLTIP
+   ───────────────────────────── */
+
+.fn-preview {
+  position: absolute;
+  max-width: 320px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.6rem 0.8rem;
+  font-size: 0.8rem;
+  color: var(--text);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  z-index: 9999;
+  display: none;
+}
+
+.fn-preview .jump-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--accent);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Mobile: Tooltip fix unten */
+@media (max-width: 700px) {
+  .fn-preview {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: none;
+    border-radius: 12px 12px 0 0;
+    padding: 1rem;
+  }
+}
+
+/* -----------------------------------------
+   Back-to-top Button
+----------------------------------------- */
+.back-to-top {
+  position: fixed;
+  right: 1.2rem;
+  bottom: 1.2rem;
+  width: 38px;
+  height: 38px;
+
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2rem;
+  color: var(--accent);
+  text-decoration: none;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+/* sichtbar, sobald die Seite scrollt */
+body.scrolled .back-to-top {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hover */
+.back-to-top:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+
+/* -----------------------------------------
+   Images
+----------------------------------------- */
+
+/* Image */
+.image {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.image img {
+  width: 100%;
+  max-width: 900px;   /* Bild nie größer als 900px */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.image.narrow {
+  max-width: 450px;   /* gewünschte Gesamtbreite */
+  margin: 2rem auto;  /* automatisch zentrieren */
+}
+
+/* Bild schmäler zentriert */
+.image.narrow img {
+  max-width: 450px;   /* oder z.B. 400px */
+}
+
+/* Bildunterschrift */
+.image figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+figure.image {
+  margin: 2rem auto;
+  text-align: center;
+}
+
+figure.image img {
+  width: 60%;            /* oder eine fixe Größe; kannst du anpassen */
+  max-width: 600px;      /* Hard-Limit */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+figure.image figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-light);   /* oder eine eigene helle Farbe */
+}
+
 
 /* ───────────────────────────────────────────────
    DRUCKANSICHT (automatisch bei Print/PDF)

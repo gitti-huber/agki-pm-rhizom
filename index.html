@@ -1,62 +1,113 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rhizomatische Strukturen im Kulturbereich</title>
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-  <header data-date="30. Oktober 2025" data-url="https://gitti-huber.github.io/agki-pm-rhizom">
-    <h1>Rhizomatische Strukturen im Kulturbereich</h1>
-    <p class="subtitle">Ein digitales Netzwerkporträt des Grazer Kulturvereins RHIZOM</p>
-    <nav>
-      <span aria-current="page">Home</span>
-      <a href="./about.html">Über das Projekt</a>
-      <a href="./posts/index.html">Forschungsblog</a>
-      <a href="./prompts/index.html">Prompt Engineering Tagebuch</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rhizomatische Strukturen im Kulturbereich</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <a id="top"></a>
+    <header
+      data-date="30. Oktober 2025"
+      data-url="https://gitti-huber.github.io/agki-pm-rhizom"
+    >
+      <h1>Rhizomatische Strukturen im Kulturbereich</h1>
+      <p class="subtitle">
+        Ein digitales Netzwerkporträt des Grazer Kulturvereins RHIZOM
+      </p>
+      <nav>
+        <span aria-current="page">Home</span>
+        <a href="./about.html">Über das Projekt</a>
+        <a href="./posts/index.html">Forschungsblog</a>
+        <a href="./prompts/index.html">Prompt Engineering Tagebuch</a>
+      </nav>
+    </header>
 
-  <main>
-    <article>
-      <p class="meta">Stand: <span id="today"></span> • <span class="pill">Home</span></p>
-
-      <section class="section">
-        <h2>Projektidee</h2>
-        <p>
-          Das Projekt untersucht die Verflechtungen zwischen Personen, Projekten und Strukturen
-          im Kulturbereich anhand des Vereins <strong>RHIZOM</strong>. Ziel ist eine datenbasierte
-          Rekonstruktion und Visualisierung rhizomatischer Netzwerke, die Formen
-          kultureller Zusammenarbeit sichtbar machen.
+    <main>
+      <article>
+        <p class="meta">
+          Stand: <span id="today"></span> • <span class="pill">Home</span>
         </p>
-      </section>
 
-      <section class="section">
-        <h2>Aktuelle Beiträge</h2>
-        <ul>
-          <li><a href="posts/01-datenbasis.html">Datenbasis</a></li>
-          <li><a href="posts/02-projektkontext.html">Projektkontext</a></li>
-          <li><a href="posts/03-forschungsfrage.html">Forschungsfrage</a></li>
-          <li><a href="posts/04-methodik.html">Methodik</a></li>
-          <li><a href="posts/05-visualisierung.html">Visualisierung</a></li>
-        </ul>
-      </section>
-    </article>
-  </main>
+        <section class="section">
+          <!-- Optionales Bild: visueller Einstieg -->
+          <figure class="image narrow">
+            <img src="./images/outofspace_small.png" alt="RHIZOM: OutofSpace" />
+            <figcaption>RHIZOM: OutofSpace</figcaption>
+          </figure>
 
-  <footer>
-    <p>© 2025 Rhizom-Projekt | <a href="https://github.com/gitti-huber/agki-pm-rhizom">GitHub Repository</a></p>
-  </footer>
+          <h2>Rhizomatische Strukturen im Kulturbereich</h2>
 
-  <script>
-    document.getElementById('today') &&
-      (document.getElementById('today').textContent =
-        new Date().toLocaleDateString('de-AT', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric'
-        }));
-  </script>
-</body>
+          <div class="highlight-box">
+            In einer zunehmend vernetzten Welt gewinnen rhizomatische Strukturen
+            immer mehr an Bedeutung – ganz besonders im Kulturbereich, wo
+            Kooperationen und kollaborative Projekte essenziell sind. Der Grazer
+            Kulturverein
+            <strong>RHIZOM</strong> fungiert seit den späten 1980er-Jahren als
+            Knotenpunkt für kulturelle Initiativen, künstlerische Projekte und
+            Kooperationen, die sich durch flexible Netzwerkstrukturen
+            auszeichnen.
+          </div>
+
+          <h3>Ein digitales Netzwerkporträt des Grazer Kulturvereins RHIZOM</h3>
+
+          <p>
+            Das Forschungsprojekt zielt darauf ab, die komplexen Beziehungen und
+            Interaktionen innerhalb des RHIZOM-Netzwerks zu erfassen und zu
+            visualisieren. Mit Methoden der Digital Humanities werden verstreute
+            Datenquellen zusammengeführt, strukturiert und visualisiert. So
+            entsteht ein dynamisches Bild kultureller Produktion, bestehend aus
+            einem Geflecht aus Personen, Initiativen, Orten und langfristigen
+            Verbindungen, das zeigt, wie sich Rollen, Kollaborationen und
+            Projekte über mehrere Jahrzehnte hinweg entwickeln und überlagern,
+            wodurch neue Perspektiven auf kulturelle Arbeit eröffnet werden.
+          </p>
+
+          <p>
+            Eine ausführliche Darstellung der theoretischen Grundlagen,
+            methodischen Ansätze und Ziele findet sich auf der Seite
+            <a href="./about.html">Über das Projekt</a>. Laufende
+            Arbeitsschritte, Zwischenergebnisse und Notizen werden im
+            <a href="./posts/index.html">Forschungsblog</a> dokumentiert. Die
+            konkrete Arbeit mit Sprachmodellen kann im
+            <a href="./prompts/index.html">Prompt Engineering Tagebuch</a>
+            nachverfolgt werden.
+          </p>
+
+        </section>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        © 2025 Rhizom-Projekt |
+        <a href="https://github.com/gitti-huber/agki-pm-rhizom"
+          >GitHub Repository</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      document.getElementById("today") &&
+        (document.getElementById("today").textContent =
+          new Date().toLocaleDateString("de-AT", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }));
+    </script>
+
+    <a href="#top" class="back-to-top">↑</a>
+    <script>
+      document.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          document.body.classList.add("scrolled");
+        } else {
+          document.body.classList.remove("scrolled");
+        }
+      });
+    </script>
+  </body>
 </html>
