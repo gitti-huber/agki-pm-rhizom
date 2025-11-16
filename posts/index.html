@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="de">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -7,15 +8,45 @@
   <link rel="stylesheet" href="../assets/css/styles.css">
   <style>
     /* Mini-Ergänzungen: nur für diese Seite */
-    .toc { padding: .5rem 1rem; border: 1px solid var(--border); border-radius: 8px; background: #fff; }
-    .toc h2 { margin: .5rem 0; font-size: 1.1rem; }
-    .toc ul { margin: .25rem 0 0; }
-    .section { scroll-margin-top: 1rem; }
-    .ref { font-size: .95rem; }
-    sup.fn a { text-decoration: none; }
-    .pill { display:inline-block; padding:.1rem .5rem; border:1px solid var(--border); border-radius:999px; font-size:.85rem; color:#555; }
+    .toc {
+      padding: .5rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .toc h2 {
+      margin: .5rem 0;
+      font-size: 1.1rem;
+    }
+
+    .toc ul {
+      margin: .25rem 0 0;
+    }
+
+    .section {
+      scroll-margin-top: 1rem;
+    }
+
+    .ref {
+      font-size: .95rem;
+    }
+
+    sup.fn a {
+      text-decoration: none;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: .1rem .5rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: .85rem;
+      color: #555;
+    }
   </style>
 </head>
+
 <body>
   <header data-date="30. Oktober 2025" data-url="https://[username].github.io/agki-pm-rhizom">
     <h1>Forschungsblog</h1>
@@ -50,13 +81,17 @@
       <!-- 1: Abstract -->
       <section id="abstract" class="section">
         <h2>Kurzüberblick</h2>
-        <p>Dieses Forschungsblog dokumentiert fortlaufend die datenbasierte Rekonstruktion und Visualisierung der personellen und projektbezogenen Netzwerke des Vereins <strong>RHIZOM</strong>. Im Fokus stehen <em>rhizomatische</em> Verflechtungen, Rollenverschiebungen und Knotenpunkte kultureller Aktivität.</p>
+        <p>Dieses Forschungsblog dokumentiert fortlaufend die datenbasierte Rekonstruktion und Visualisierung der
+          personellen und projektbezogenen Netzwerke des Vereins <strong>RHIZOM</strong>. Im Fokus stehen
+          <em>rhizomatische</em> Verflechtungen, Rollenverschiebungen und Knotenpunkte kultureller Aktivität.</p>
       </section>
 
       <!-- 2: Datenbasis -->
       <section id="datenbasis" class="section">
         <h2>Datenbasis &amp; Aufbereitung</h2>
-        <p>Quellen: öffentlich zugängliche Inhalte der (im Aufbau befindlichen) <a href="https://rhizom.mur.at/" target="_blank">RHIZOM-Website</a> sowie bislang unveröffentlichte Materialien (Word, PDF, Bilddaten). Umfang: 700+ Personen, 200+ Projekte.</p>
+        <p>Quellen: öffentlich zugängliche Inhalte der (im Aufbau befindlichen) <a href="https://rhizom.mur.at/"
+            target="_blank">RHIZOM-Website</a> sowie bislang unveröffentlichte Materialien (Word, PDF, Bilddaten).
+          Umfang: 700+ Personen, 200+ Projekte.</p>
         <ul>
           <li>Extraktion &amp; Normalisierung von Entitäten (Personen, Projekte, Rollen, Zeiten, Orte)</li>
           <li>Bereinigung von Namensvarianten; Zuordnung Personen ↔ Projekte</li>
@@ -68,13 +103,17 @@
       <!-- 3: Kontext -->
       <section id="kontext" class="section">
         <h2>Projektkontext</h2>
-        <p>Verortung in Kulturwissenschaften &amp; Digital Humanities. RHIZOM (seit 1988) als Fallbeispiel für transdisziplinäre, kollektive Arbeitsweisen in der freien Kulturszene – ideal zur Analyse netzwerkartiger Organisationsformen.</p>
+        <p>Verortung in Kulturwissenschaften &amp; Digital Humanities. RHIZOM (seit 1988) als Fallbeispiel für
+          transdisziplinäre, kollektive Arbeitsweisen in der freien Kulturszene – ideal zur Analyse netzwerkartiger
+          Organisationsformen.</p>
       </section>
 
       <!-- 4: Forschungsfrage -->
       <section id="frage" class="section">
         <h2>Forschungsfrage</h2>
-        <p>Wie lassen sich die personellen und projektbezogenen Netzwerke des Vereins RHIZOM datenbasiert rekonstruieren, und welche Muster der Zusammenarbeit und Vernetzung lassen sich daraus über die Zeit erkennen?</p>
+        <p>Wie lassen sich die personellen und projektbezogenen Netzwerke des Vereins RHIZOM datenbasiert
+          rekonstruieren, und welche Muster der Zusammenarbeit und Vernetzung lassen sich daraus über die Zeit erkennen?
+        </p>
       </section>
 
       <!-- 5: Methodik -->
@@ -86,7 +125,8 @@
           <li><strong>Netzwerkanalyse:</strong> Knoten (Personen/Projekte), Kanten (Beteiligungen/Kooperationen)</li>
           <li><strong>Visualisierung:</strong> interaktive Webdarstellung</li>
         </ol>
-        <blockquote>Hinweis: Für die Reproduzierbarkeit werden Skripte und Notebooks im Ordner <code>/notebooks/</code> versioniert.</blockquote>
+        <blockquote>Hinweis: Für die Reproduzierbarkeit werden Skripte und Notebooks im Ordner <code>/notebooks/</code>
+          versioniert.</blockquote>
       </section>
 
       <!-- 6: Netzwerkmodell -->
@@ -104,18 +144,94 @@
       <!-- 7: Ergebnisse (Platzhalter, wächst mit) -->
       <section id="ergebnisse" class="section">
         <h2>Zwischenergebnisse</h2>
-        <p><em>Platzhalter:</em> Hier folgen nach und nach Befunde, Visualisierungen und Interpretationen (zentralität, Rollenverläufe, Zeitachsen …).</p>
+        <p><em>Platzhalter:</em> Hier folgen nach und nach Befunde, Visualisierungen und Interpretationen (zentralität,
+          Rollenverläufe, Zeitachsen …).</p>
       </section>
 
       <!-- 8: Quellen -->
       <section id="ref" class="section">
         <h2>Quellen &amp; Literatur</h2>
-        <ol class="ref">
-          <li id="r1">[1] RHIZOM – Vereinsmaterialien, interne Dokumente (unveröffentlicht).</li>
-          <li id="r2">[2] Öffentliche Website-Inhalte des Vereins (Erhebungszeitraum: fortlaufend).</li>
-          <li id="r3">[3] Methodische Grundlagen: Netzwerkanalyse &amp; DH (Standardwerke, werden fortlaufend ergänzt).</li>
-        </ol>
-        <p class="meta">Verweise im Text als Fußnoten wie so: Beispiel&nbsp;<sup class="fn"><a href="#r2">[2]</a></sup></p>
+<ol class="ref">
+  <li id="r1">RHIZOM – Vereinsmaterialien, interne Dokumente (unveröffentlicht).</li>
+  <li id="r2">Öffentliche Website-Inhalte des Vereins (Erhebungszeitraum: fortlaufend).</li>
+  <li id="r3">Methodische Grundlagen: Netzwerkanalyse &amp; DH (Standardwerke, werden fortlaufend ergänzt).</li>
+
+  <li id="r4">Abbott, J. (2024). <i>Everyday Data Visualization</i> [PDF].</li>
+  <li id="r5">Abbott, J. (2025). <i>Datenvisualisierung im praktischen Einsatz</i> [EPUB].</li>
+  <li id="r6">(n. a.). (n. d.). <i>A comprehensive guide to data visualisation in R for beginners</i> [URL].</li>
+  <li id="r7">Andry, N., et al. (2022). <i>Les fondamentaux de la visualisation de données</i> [EPUB].</li>
+  <li id="r8">(n. a.). (n. d.). <i>An incomplete guide to accessible data visualization</i> [URL].</li>
+  <li id="r9">Banissi, E., &amp; Marchese, F. (2014). <i>Information visualisation</i> [PDF].</li>
+  <li id="r10">Barker, S., &amp; Westfall, J. (2021). <i>Pro Data Visualization Using R and JavaScript</i> [PDF].</li>
+  <li id="r11">Barrasa, J., &amp; Webber, J. (2023). <i>Building knowledge graphs</i> [PDF].</li>
+  <li id="r12">Boaler, J., et al. (2022). <i>Mindset mathematics</i> [PDF].</li>
+  <li id="r13">Bock von Wülfingen, A. (2019). <i>Science in Color</i> [PDF].</li>
+  <li id="r14">Bowen, J., et al. (2013). <i>Electronic visualisation in arts and culture</i> [PDF].</li>
+  <li id="r15">Brath, R. (2020). <i>Visualizing with text</i> [PDF].</li>
+  <li id="r16">Bremer, J., &amp; Wu, N. (2021). <i>Data Sketches</i> [PDF].</li>
+  <li id="r17">Brooks, M. (2023). <i>ArtsIT</i> [PDF].</li>
+  <li id="r18">Bubenhofer, N., &amp; Kupietz, M. (2018). <i>Visualisierung sprachlicher Daten</i> [PDF].</li>
+  <li id="r19">Bulathwela, S., et al. (2023). <i>Semantic AI in knowledge graphs</i> [PDF].</li>
+  <li id="r20">Camm, J., et al. (2022). <i>Data visualization</i> [PDF].</li>
+  <li id="r21">Carreira, J. (2016). <i>Geospatial development by example with Python</i> [PDF].</li>
+  <li id="r22">Chen, M., et al. (2017). <i>Information theory tools for visualization</i> [PDF].</li>
+  <li id="r23">Ciaburro, G. (2024). <i>MATLAB for machine learning</i> [PDF].</li>
+  <li id="r24">Cook, D. (2022). <i>Fundamentals of HTML, SVG, CSS and JS for data visualization</i> [PDF].</li>
+  <li id="r25">(n. a.). (n. d.). <i>Cool infographics</i> [PDF].</li>
+  <li id="r26">(n. a.). (n. d.). <i>D3.1 handbook of good practices for digitalisation</i> [PDF].</li>
+  <li id="r27">(n. a.). (n. d.). <i>Data visualization &amp; mapping tools</i> [URL].</li>
+  <li id="r28">Dorling, D. (2012). <i>The visualisation of spatial social structure</i> [PDF].</li>
+  <li id="r29">(n. a.). (n. d.). <i>Dynamic visualisation tools</i> [PDF].</li>
+  <li id="r30">Eagle, S. (2025). <i>From chaos to clarity</i> [PDF].</li>
+  <li id="r31">Estermann, B. (2023). <i>Mit Daten sprechen</i> [PDF].</li>
+  <li id="r32">Evergreen, S. (2020). <i>Effective data visualization</i> [PDF].</li>
+  <li id="r33">Ferreira, J. (2017). <i>A primer on process mining</i> [LNK].</li>
+  <li id="r34">Geoghan, M. (2016). <i>Visualizing technology</i> [PDF].</li>
+  <li id="r35">(n. a.). (2025). <i>Getting (more out of) graphics</i> [PDF].</li>
+  <li id="r36">Giannini, T., &amp; Bowen, J. (2019). <i>Museums and digital culture</i> [PDF].</li>
+  <li id="r37">Grant, L. (2019). <i>Data visualization</i> [PDF].</li>
+  <li id="r38">Granville, V. (2022). <i>The art of visualizing high dimensional data</i> [PDF].</li>
+  <li id="r39">Grosvenor, M., et al. (2021). <i>Visualizing nutrition</i> [PDF].</li>
+  <li id="r40">Hammond, D. (2022). <i>Exploring graphs with Elixir</i> [PDF].</li>
+  <li id="r41">Hil, R., &amp; Lachenmeier, B. (2022). <i>Visualizing complexity</i> [PDF].</li>
+  <li id="r42">Hogan, A. (2020). <i>The web of data</i> [PDF].</li>
+  <li id="r43">Hogan, A., et al. (2021). <i>Knowledge graphs</i> [PDF].</li>
+  <li id="r44">Ieno, E., &amp; Zuur, A. (2015). <i>Beginner’s guide to data exploration</i> [PDF].</li>
+  <li id="r45">Isaacson, E. (2023). <i>Visualizing music</i> [EPUB].</li>
+  <li id="r46">Kahl, M., &amp; Zimmer, T. (2020). <i>Interaktive Datenvisualisierung</i> [PDF].</li>
+  <li id="r47">(n. a.). (n. d.). <i>KI-basierte Textanalyse</i> [URL].</li>
+  <li id="r48">(n. a.). (n. d.). <i>Knowledge graphs – foundations and applications</i> [URL].</li>
+  <li id="r49">Kolokolov, S., &amp; Zelensky, I. (2025). <i>Data visualization with Power BI</i> [EPUB].</li>
+  <li id="r50">Kumar, A. (2022). <i>The art of visualizing data in Google Data Studio</i> [PDF].</li>
+  <li id="r51">Lagnel, J. (2020). <i>Manuel de data visualisation</i> [PDF].</li>
+  <li id="r52">Marriott, J. (2025). <i>The golden age of data visualization</i> [PDF].</li>
+  <li id="r53">McConnell, S. (2002). <i>Computer graphics companion</i> [PDF].</li>
+  <li id="r54">Memmert, D. (2009). <i>Sportinformatik</i> [PDF].</li>
+  <li id="r55">Meroño-Peñuela, A., et al. (2021). <i>WebData APIs for knowledge graphs</i> [PDF].</li>
+  <li id="r56">Mitchell, M. (2021). <i>Interpreting and visualizing regression models</i> [PDF].</li>
+  <li id="r57">Munzner, T. (2014). <i>Visualization analysis and design</i> [PDF].</li>
+  <li id="r58">Murray, S. (2017). <i>Interactive data visualization for the web</i> [PDF].</li>
+  <li id="r59">Organ, G. (2024). <i>Data visualization for people of all ages</i> [PDF].</li>
+  <li id="r60">Paulheim, H., et al. (2023). <i>Embedding knowledge graphs with RDF2vec</i> [PDF].</li>
+  <li id="r61">Piccoli, C. (2018). <i>Visualizing cityscapes of classical antiquity</i> [PDF].</li>
+  <li id="r62">Prodromou, T. (2017). <i>Data visualization and statistical literacy</i> [PDF].</li>
+  <li id="r63">Raieli, M., &amp; Iuculano, G. (2025). <i>Building AI agents with LLMs</i> [PDF].</li>
+  <li id="r64">Raj, A., et al. (2022). <i>Demystifying graph data science</i> [EPUB].</li>
+  <li id="r65">Richards, T. (2023). <i>Questions in dataviz</i> [PDF].</li>
+  <li id="r66">Sequeda, J., &amp; Lassila, O. (2021). <i>Designing enterprise knowledge graphs</i> [PDF].</li>
+  <li id="r67">Serles, A., &amp; Fensel, D. (2024). <i>An introduction to knowledge graphs</i> [PDF].</li>
+  <li id="r68">Stapelkamp, T. (2013). <i>Informationsvisualisierung</i> [PDF].</li>
+  <li id="r69">(n. a.). (n. d.). <i>The data visualisation catalogue</i> [URL].</li>
+  <li id="r70">(n. a.). (n. d.). <i>TreeTagger – output visualisation module</i> [URL].</li>
+  <li id="r71">Ursyn, A. (n. d.). <i>Graphical thinking for science and technology</i> [PDF].</li>
+  <li id="r72">Van der Post, R. (2024). <i>Data science with Rust</i> [PDF].</li>
+  <li id="r73">Vergadia, P. (2022). <i>Visualizing Google Cloud</i> [PDF].</li>
+  <li id="r74">Villazón-Terrazas, B., et al. (2022). <i>Knowledge graphs and semantic web</i> [PDF].</li>
+  <li id="r75">Wills, L. (2020). <i>Data visualization made simple</i> [PDF].</li>
+</ol>
+
+        <p class="meta">Verweise im Text als Fußnoten wie so: Beispiel&nbsp;<sup class="fn"><a href="#r2">[2]</a></sup>
+        </p>
       </section>
     </article>
   </main>
@@ -131,4 +247,5 @@
     });
   </script>
 </body>
+
 </html>

@@ -138,21 +138,51 @@ nav span[aria-current="page"] {
   scroll-margin-top: 1rem;
 }
 
+/* -------------------------------
+   APA-Stil: automatische [1]–Nummern
+   kompakt + kleinere Schrift
+   ------------------------------- */
+
 .ref {
-  font-size: .95rem;
+  counter-reset: ref;
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+
+  font-size: 0.78rem;    /* kleiner */
+  line-height: 1.35;     /* kompakter */
 }
 
-sup.fn a {
-  text-decoration: none;
+.ref li {
+  counter-increment: ref;
+  position: relative;
+
+  padding-left: 2rem;     /* etwas weniger Platz reicht */
+  text-indent: -0.3rem;   /* harmonischere Hanging-Indent */
+
+  margin-bottom: 0.28rem; /* kleinerer Abstand */
 }
 
-.pill {
-  display: inline-block;
-  padding: .1rem .5rem;
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  font-size: .85rem;
-  color: #555;
+.ref li::before {
+  content: "[" counter(ref) "] ";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  font-weight: 600;
+  font-size: 0.8rem;      /* Nummern leicht kleiner, integriert sich besser */
+}
+
+.intro-note {
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: #f6f7f9;
+  border-left: 3px solid var(--accent);
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+  line-height: 1.5;
+  font-style: italic;
 }
 
 /* ───────────────────────────────────────────────
