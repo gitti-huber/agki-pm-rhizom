@@ -500,7 +500,7 @@
           </p>
         </section>
 
-         <p class="intro-note">
+        <p class="intro-note">
           GPT, kannst du mir bitte aus dieser Konversation von heute (16.
           November 2025) ein Prompt Engineering Tagebuch mit den wichtigsten
           Inhalten, Fortschritten und Erkenntnissen zusammenstellen? Mach es
@@ -511,201 +511,563 @@
         </p>
 
         <!-- ================================================ -->
-<!-- PROMPT ENGINEERING TAGEBUCH – EINTRÄGE ab 14    -->
-<!-- ================================================ -->
+        <!-- PROMPT ENGINEERING TAGEBUCH – EINTRÄGE ab 14    -->
+        <!-- ================================================ -->
 
-<section class="entry">
-  <h3>Eintrag 14 – HTML-Integration & strukturelle Anpassungen</h3>
-  <p>
-    Der Arbeitstag begann mit mehreren Iterationen rund um die Startseite,
-    die About-Seite und die Einbindung von Bildern. Das LLM wurde eingesetzt,
-    um HTML-Blöcke umzuschreiben, redundante Inhalte zu reorganisieren und
-    Navigationselemente konsistenter zu gestalten.
-  </p>
-  <ul>
-    <li><strong>Ziel:</strong> Straffe, klare Startseite + Verlagerung längerer Texte in „About“</li>
-    <li><strong>Prompt-Typ:</strong> Strukturierungs-Prompts („Bitte komplett neu formulieren“)</li>
-    <li><strong>Ergebnis:</strong> Modularere Seitenstruktur; Startseite mit kurzem Intro und Bild</li>
-    <li><strong>Erkenntnis:</strong> Bei HTML-Reorganisation ist es entscheidend, dem LLM die Dateipfade und die gewünschte Positionierung exakt zu nennen</li>
-  </ul>
-</section>
+        <section class="entry">
+          <h3>Eintrag 14 – HTML-Integration & strukturelle Anpassungen</h3>
+          <p>
+            Der Arbeitstag begann mit mehreren Iterationen rund um die
+            Startseite, die About-Seite und die Einbindung von Bildern. Das LLM
+            wurde eingesetzt, um HTML-Blöcke umzuschreiben, redundante Inhalte
+            zu reorganisieren und Navigationselemente konsistenter zu gestalten.
+          </p>
+          <ul>
+            <li>
+              <strong>Ziel:</strong> Straffe, klare Startseite + Verlagerung
+              längerer Texte in „About“
+            </li>
+            <li>
+              <strong>Prompt-Typ:</strong> Strukturierungs-Prompts („Bitte
+              komplett neu formulieren“)
+            </li>
+            <li>
+              <strong>Ergebnis:</strong> Modularere Seitenstruktur; Startseite
+              mit kurzem Intro und Bild
+            </li>
+            <li>
+              <strong>Erkenntnis:</strong> Bei HTML-Reorganisation ist es
+              entscheidend, dem LLM die Dateipfade und die gewünschte
+              Positionierung exakt zu nennen
+            </li>
+          </ul>
+        </section>
 
-<section class="entry">
-  <h3>Eintrag 15 – Linkstruktur, relative Pfade & Navigationsfehler</h3>
-  <p>
-    Mehrere Prompts betrafen fehlerhafte Links
-    (<code>./index.html</code> vs. <code>../index.html</code>) sowie
-    die Frage, wie korrekt zwischen Ordnern navigiert wird.
-    Durch Schritt-für-Schritt-Debugging konnte die Navigation stabilisiert werden.
-  </p>
-  <ul>
-    <li><strong>Ziel:</strong> Fehlerfreie relative Links zwischen <code>/posts/</code> und Root-Verzeichnis</li>
-    <li><strong>Prompt-Typ:</strong> „Explain & fix“-Prompts zur Pfadkorrektur</li>
-    <li><strong>Ergebnis:</strong> Alle internen Links funktionieren unabhängig vom Ordnerkontext</li>
-    <li><strong>Erkenntnis:</strong> Das LLM kann nur korrekte Pfade generieren, wenn die exakte Ordnerstruktur im Prompt mitformuliert wird</li>
-  </ul>
-</section>
+        <section class="entry">
+          <h3>Eintrag 15 – Linkstruktur, relative Pfade & Navigationsfehler</h3>
+          <p>
+            Mehrere Prompts betrafen fehlerhafte Links (<code
+              >./index.html</code
+            >
+            vs. <code>../index.html</code>) sowie die Frage, wie korrekt
+            zwischen Ordnern navigiert wird. Durch Schritt-für-Schritt-Debugging
+            konnte die Navigation stabilisiert werden.
+          </p>
+          <ul>
+            <li>
+              <strong>Ziel:</strong> Fehlerfreie relative Links zwischen
+              <code>/posts/</code> und Root-Verzeichnis
+            </li>
+            <li>
+              <strong>Prompt-Typ:</strong> „Explain & fix“-Prompts zur
+              Pfadkorrektur
+            </li>
+            <li>
+              <strong>Ergebnis:</strong> Alle internen Links funktionieren
+              unabhängig vom Ordnerkontext
+            </li>
+            <li>
+              <strong>Erkenntnis:</strong> Das LLM kann nur korrekte Pfade
+              generieren, wenn die exakte Ordnerstruktur im Prompt mitformuliert
+              wird
+            </li>
+          </ul>
+        </section>
 
-<section class="entry">
-  <h3>Eintrag 16 – CSS-Klassen, Bilddarstellung & responsive Design</h3>
-  <p>
-    Ein Schwerpunkt war die Frage, warum Bilder nicht angezeigt wurden.
-    Über mehrere Anläufe wurde geklärt, dass die verwendete Klasse
-    <code>.hero-image</code> nicht existierte und stattdessen
-    <code>.image</code> genutzt werden musste.
-    Gleichzeitig wurde demonstriert, wie man Bilder kleiner, zentriert oder
-    mit Captions (<code>&lt;figcaption&gt;</code>) einbindet.
-  </p>
-  <ul>
-    <li><strong>Ziel:</strong> Konsistente Bilddarstellung in allen Blog-Einträgen</li>
-    <li><strong>Prompt-Typ:</strong> CSS-Refinement-Prompts</li>
-    <li><strong>Ergebnis:</strong> Einheitliche Klassenstruktur (<code>.image</code>, <code>.image.narrow</code>) und funktionierende Captions</li>
-    <li><strong>Erkenntnis:</strong> Kleine CSS-Nachbesserungen durch das LLM funktionieren verlässlich, wenn HTML und CSS gemeinsam gezeigt werden</li>
-  </ul>
-</section>
+        <section class="entry">
+          <h3>Eintrag 16 – CSS-Klassen, Bilddarstellung & responsive Design</h3>
+          <p>
+            Ein Schwerpunkt war die Frage, warum Bilder nicht angezeigt wurden.
+            Über mehrere Anläufe wurde geklärt, dass die verwendete Klasse
+            <code>.hero-image</code> nicht existierte und stattdessen
+            <code>.image</code> genutzt werden musste. Gleichzeitig wurde
+            demonstriert, wie man Bilder kleiner, zentriert oder mit Captions
+            (<code>&lt;figcaption&gt;</code>) einbindet.
+          </p>
+          <ul>
+            <li>
+              <strong>Ziel:</strong> Konsistente Bilddarstellung in allen
+              Blog-Einträgen
+            </li>
+            <li><strong>Prompt-Typ:</strong> CSS-Refinement-Prompts</li>
+            <li>
+              <strong>Ergebnis:</strong> Einheitliche Klassenstruktur
+              (<code>.image</code>, <code>.image.narrow</code>) und
+              funktionierende Captions
+            </li>
+            <li>
+              <strong>Erkenntnis:</strong> Kleine CSS-Nachbesserungen durch das
+              LLM funktionieren verlässlich, wenn HTML und CSS gemeinsam gezeigt
+              werden
+            </li>
+          </ul>
+        </section>
 
-<section class="entry">
-  <h3>Eintrag 17 – JavaScript-Optimierung & Tooltip-Feinjustierung</h3>
-  <p>
-    Bei der Gestaltung der Fußnoten-Tooltips wurden mehrere kleinere
-    Optimierungen vorgenommen: Bereinigung der Positionierungslogik,
-    Sicherstellen, dass <code>scrollIntoView()</code> erst nach dem Öffnen von
-    <code>&lt;details&gt;</code> läuft, sowie Vereinheitlichung der Hash-Navigation.
-    Das LLM half, die Funktionsweise zu debuggen und zu erklären.
-  </p>
-  <ul>
-    <li><strong>Ziel:</strong> Stabiles, barrierearmes Fußnoten-System</li>
-    <li><strong>Prompt-Typ:</strong> JS-Debugging-Prompts („Warum springt der Tooltip?“)</li>
-    <li><strong>Ergebnis:</strong> Deutlich stabilere Interaktion mit Footnotes & Literaturverzeichnis</li>
-    <li><strong>Erkenntnis:</strong> Das LLM benötigt beim Debuggen den gesamten JavaScript-Block, um Seiteneffekte korrekt einzuschätzen</li>
-  </ul>
-</section>
+        <section class="entry">
+          <h3>Eintrag 17 – JavaScript-Optimierung & Tooltip-Feinjustierung</h3>
+          <p>
+            Bei der Gestaltung der Fußnoten-Tooltips wurden mehrere kleinere
+            Optimierungen vorgenommen: Bereinigung der Positionierungslogik,
+            Sicherstellen, dass <code>scrollIntoView()</code> erst nach dem
+            Öffnen von <code>&lt;details&gt;</code> läuft, sowie
+            Vereinheitlichung der Hash-Navigation. Das LLM half, die
+            Funktionsweise zu debuggen und zu erklären.
+          </p>
+          <ul>
+            <li>
+              <strong>Ziel:</strong> Stabiles, barrierearmes Fußnoten-System
+            </li>
+            <li>
+              <strong>Prompt-Typ:</strong> JS-Debugging-Prompts („Warum springt
+              der Tooltip?“)
+            </li>
+            <li>
+              <strong>Ergebnis:</strong> Deutlich stabilere Interaktion mit
+              Footnotes & Literaturverzeichnis
+            </li>
+            <li>
+              <strong>Erkenntnis:</strong> Das LLM benötigt beim Debuggen den
+              gesamten JavaScript-Block, um Seiteneffekte korrekt einzuschätzen
+            </li>
+          </ul>
+        </section>
 
-<section class="entry">
-  <h3>Eintrag 18 – Vollintegration großer Textdateien (Modelltheorie)</h3>
-  <p>
-    Ein umfangreicher Abschnitt der Sitzung bestand darin,
-    einen langen wissenschaftlichen Text (Stachowiaks Modelltheorie,
-    Relation zum Datenmodell) in die Forschungsseite einzubetten.
-    Das LLM übernahm die Aufgabe, den Text HTML-konform zu strukturieren,
-    stilistisch in das bestehende Layout einzufügen
-    und Kapitel logisch einzubinden („Netzwerkmodell Teil II“).
-  </p>
-  <ul>
-    <li><strong>Ziel:</strong> Wissenschaftlichen Langtext harmonisch in das Weblayout integrieren</li>
-    <li><strong>Prompt-Typ:</strong> Transformations-Prompts („Baue das unter Abschnitt X ein“)</li>
-    <li><strong>Ergebnis:</strong> HTML-blöcke mit semantisch korrekten Überschriften, Listen und Absätzen</li>
-    <li><strong>Erkenntnis:</strong> LLM-basierte Text-nach-HTML-Konvertierung gelingt besonders sauber, wenn die Zielstruktur (Kapitel, Unterkapitel) vorher festgelegt wird</li>
-  </ul>
-</section>
+        <section class="entry">
+          <h3>
+            Eintrag 18 – Vollintegration großer Textdateien (Modelltheorie)
+          </h3>
+          <p>
+            Ein umfangreicher Abschnitt der Sitzung bestand darin, einen langen
+            wissenschaftlichen Text (Stachowiaks Modelltheorie, Relation zum
+            Datenmodell) in die Forschungsseite einzubetten. Das LLM übernahm
+            die Aufgabe, den Text HTML-konform zu strukturieren, stilistisch in
+            das bestehende Layout einzufügen und Kapitel logisch einzubinden
+            („Netzwerkmodell Teil II“).
+          </p>
+          <ul>
+            <li>
+              <strong>Ziel:</strong> Wissenschaftlichen Langtext harmonisch in
+              das Weblayout integrieren
+            </li>
+            <li>
+              <strong>Prompt-Typ:</strong> Transformations-Prompts („Baue das
+              unter Abschnitt X ein“)
+            </li>
+            <li>
+              <strong>Ergebnis:</strong> HTML-blöcke mit semantisch korrekten
+              Überschriften, Listen und Absätzen
+            </li>
+            <li>
+              <strong>Erkenntnis:</strong> LLM-basierte
+              Text-nach-HTML-Konvertierung gelingt besonders sauber, wenn die
+              Zielstruktur (Kapitel, Unterkapitel) vorher festgelegt wird
+            </li>
+          </ul>
+        </section>
 
-<section class="entry">
-  <h3>Eintrag 19 – Datenbankschema, ER-Diagramm & Netzwerklogik</h3>
-  <p>
-    Ein zentraler Teil des Dialogs drehte sich um die tatsächliche Struktur
-    der SQLite-Datenbank <code>rhizom.db</code>.
-    Das LLM analysierte die Tabellen, stellte Referenzen her und formulierte
-    einen präzisen Netzwerkaufbau: Nodes = Personen + Projekte,
-    Edges = Beziehungen über Rollen und Zeit.
-    Die Modelllogik wurde ausführlich in Text umgesetzt und korrekt an die
-    reale Datenstruktur angepasst.
-  </p>
-  <ul>
-    <li><strong>Ziel:</strong> Korrekte Darstellung des realen Datenmodells anstelle früherer Platzhalter</li>
-    <li><strong>Prompt-Typ:</strong> Analyse-Prompt („Schau dir die DB genau an!“)</li>
-    <li><strong>Ergebnis:</strong> Vollständig überarbeiteter Abschnitt „Netzwerkmodell (Teil II)“</li>
-    <li><strong>Erkenntnis:</strong> Je präziser die Datenquelle (hier: echte DB), desto zuverlässiger die Modellbeschreibung des LLM</li>
-  </ul>
-</section>
+        <section class="entry">
+          <h3>Eintrag 19 – Datenbankschema, ER-Diagramm & Netzwerklogik</h3>
+          <p>
+            Ein zentraler Teil des Dialogs drehte sich um die tatsächliche
+            Struktur der SQLite-Datenbank <code>rhizom.db</code>. Das LLM
+            analysierte die Tabellen, stellte Referenzen her und formulierte
+            einen präzisen Netzwerkaufbau: Nodes = Personen + Projekte, Edges =
+            Beziehungen über Rollen und Zeit. Die Modelllogik wurde ausführlich
+            in Text umgesetzt und korrekt an die reale Datenstruktur angepasst.
+          </p>
+          <ul>
+            <li>
+              <strong>Ziel:</strong> Korrekte Darstellung des realen
+              Datenmodells anstelle früherer Platzhalter
+            </li>
+            <li>
+              <strong>Prompt-Typ:</strong> Analyse-Prompt („Schau dir die DB
+              genau an!“)
+            </li>
+            <li>
+              <strong>Ergebnis:</strong> Vollständig überarbeiteter Abschnitt
+              „Netzwerkmodell (Teil II)“
+            </li>
+            <li>
+              <strong>Erkenntnis:</strong> Je präziser die Datenquelle (hier:
+              echte DB), desto zuverlässiger die Modellbeschreibung des LLM
+            </li>
+          </ul>
+        </section>
 
-<section class="entry">
-  <h3>Eintrag 20 – Einbettung von PDF-Material & Download-Links</h3>
-  <p>
-    Es wurde geklärt, wie interne Dateien – konkret <code>data/rhizom_text.pdf</code> –
-    korrekt verlinkt werden. Das LLM stellte einfache, robuste HTML-Snippets bereit,
-    um PDF-Downloads projektweit konsistent zu integrieren.
-  </p>
-  <ul>
-    <li><strong>Ziel:</strong> Korrekte Einbindung interner Downloads</li>
-    <li><strong>Prompt-Typ:</strong> „Show me the snippet“-Prompt</li>
-    <li><strong>Ergebnis:</strong> Sauberer Download-Link mit <code>target="_blank"</code></li>
-    <li><strong>Erkenntnis:</strong> Das LLM liefert besonders stabile Ergebnisse, wenn der exakte Ordnerpfad vorgegeben wird</li>
-  </ul>
-</section>
+        <section class="entry">
+          <h3>Eintrag 20 – Einbettung von PDF-Material & Download-Links</h3>
+          <p>
+            Es wurde geklärt, wie interne Dateien – konkret
+            <code>data/rhizom_text.pdf</code> – korrekt verlinkt werden. Das LLM
+            stellte einfache, robuste HTML-Snippets bereit, um PDF-Downloads
+            projektweit konsistent zu integrieren.
+          </p>
+          <ul>
+            <li>
+              <strong>Ziel:</strong> Korrekte Einbindung interner Downloads
+            </li>
+            <li><strong>Prompt-Typ:</strong> „Show me the snippet“-Prompt</li>
+            <li>
+              <strong>Ergebnis:</strong> Sauberer Download-Link mit
+              <code>target="_blank"</code>
+            </li>
+            <li>
+              <strong>Erkenntnis:</strong> Das LLM liefert besonders stabile
+              Ergebnisse, wenn der exakte Ordnerpfad vorgegeben wird
+            </li>
+          </ul>
+        </section>
 
-<section class="entry">
-  <h3>Eintrag 21 – Großes HTML-Refactoring & Zusammenführung mehrere Teilseiten</h3>
-  <p>
-    Am Ende wurden längere HTML-Passagen zusammengeführt:
-    Netzwerkmodell, Modelltheorie, ER-Diagramm,
-    visuelle Beispiele, Methodenabschnitte.
-    Das LLM unterstützte beim Zusammenbau großer HTML-Dateien und stellte sicher,
-    dass semantische Ebenen (<code>&lt;section&gt;</code>, <code>&lt;h2&gt;</code>,
-    <code>&lt;article&gt;</code>) erhalten bleiben.
-  </p>
-  <ul>
-    <li><strong>Ziel:</strong> Harmonisierung der gesamten Forschungsseite</li>
-    <li><strong>Prompt-Typ:</strong> Großformatige „Integrations-Prompts“</li>
-    <li><strong>Ergebnis:</strong> Konsistentes, logisches Dokument ohne doppelte Überschriften</li>
-    <li><strong>Erkenntnis:</strong> Bei sehr langen HTML-Texten funktioniert das LLM am besten, wenn Schritt für Schritt integriert und nicht alles auf einmal umgewandelt wird</li>
-  </ul>
-</section>
+        <section class="entry">
+          <h3>
+            Eintrag 21 – Großes HTML-Refactoring & Zusammenführung mehrere
+            Teilseiten
+          </h3>
+          <p>
+            Am Ende wurden längere HTML-Passagen zusammengeführt:
+            Netzwerkmodell, Modelltheorie, ER-Diagramm, visuelle Beispiele,
+            Methodenabschnitte. Das LLM unterstützte beim Zusammenbau großer
+            HTML-Dateien und stellte sicher, dass semantische Ebenen
+            (<code>&lt;section&gt;</code>, <code>&lt;h2&gt;</code>,
+            <code>&lt;article&gt;</code>) erhalten bleiben.
+          </p>
+          <ul>
+            <li>
+              <strong>Ziel:</strong> Harmonisierung der gesamten Forschungsseite
+            </li>
+            <li>
+              <strong>Prompt-Typ:</strong> Großformatige „Integrations-Prompts“
+            </li>
+            <li>
+              <strong>Ergebnis:</strong> Konsistentes, logisches Dokument ohne
+              doppelte Überschriften
+            </li>
+            <li>
+              <strong>Erkenntnis:</strong> Bei sehr langen HTML-Texten
+              funktioniert das LLM am besten, wenn Schritt für Schritt
+              integriert und nicht alles auf einmal umgewandelt wird
+            </li>
+          </ul>
+        </section>
 
-<!-- ========================= -->
-<!-- ABSCHLUSSREFLEXION       -->
-<!-- ========================= -->
+        <!-- ========================= -->
+        <!-- ABSCHLUSSREFLEXION       -->
+        <!-- ========================= -->
 
-<section class="entry">
-  <h3>Eintrag 22 – Reflexion: Prompting als Web-Entwicklungsworkflow</h3>
-  <p>
-    Der heutige Arbeitstag hat exemplarisch gezeigt, dass Prompting beim
-    Web-Development eine hybride Arbeitsform darstellt:
-    gleichzeitig analytisch, technisch und kuratorisch.
-    HTML, CSS und JavaScript wurden nicht einfach generiert,
-    sondern in dialogischen Iterationen verbessert.
-  </p>
+        <section class="entry">
+          <h3>
+            Eintrag 22 – Reflexion: Prompting als Web-Entwicklungsworkflow
+          </h3>
+          <p>
+            Der heutige Arbeitstag hat exemplarisch gezeigt, dass Prompting beim
+            Web-Development eine hybride Arbeitsform darstellt: gleichzeitig
+            analytisch, technisch und kuratorisch. HTML, CSS und JavaScript
+            wurden nicht einfach generiert, sondern in dialogischen Iterationen
+            verbessert.
+          </p>
 
-  <ul>
-    <li>
-      <strong>Iterationen als Designprinzip:</strong>
-      Die besten Ergebnisse entstanden immer in kleinen Schritten:
-      „Mach das Bild kleiner“, „Nur die Klasse ändern, sonst nichts“,
-      „Behalte den gesamten Block, füge X ein“.
-    </li>
+          <ul>
+            <li>
+              <strong>Iterationen als Designprinzip:</strong>
+              Die besten Ergebnisse entstanden immer in kleinen Schritten: „Mach
+              das Bild kleiner“, „Nur die Klasse ändern, sonst nichts“, „Behalte
+              den gesamten Block, füge X ein“.
+            </li>
 
-    <li>
-      <strong>Kontext entscheidet alles:</strong>
-      Das LLM reagierte besonders stabil, wenn der gesamte HTML- oder CSS-Block
-      gezeigt wurde, statt nur einzelne Zeilen.
-    </li>
+            <li>
+              <strong>Kontext entscheidet alles:</strong>
+              Das LLM reagierte besonders stabil, wenn der gesamte HTML- oder
+              CSS-Block gezeigt wurde, statt nur einzelne Zeilen.
+            </li>
 
-    <li>
-      <strong>Prompting als kooperative Wissensarbeit:</strong>
-      Komplexe Inhalte wie Datenbanken, wissenschaftliche Modelltheorie,
-      Webdesign und Informationsarchitektur wurden im Wechselspiel zwischen
-      Mensch und Modell erzeugt – nicht als „Antwort“, sondern als
-      kontinuierliches Co-Entwerfen.
-    </li>
+            <li>
+              <strong>Prompting als kooperative Wissensarbeit:</strong>
+              Komplexe Inhalte wie Datenbanken, wissenschaftliche Modelltheorie,
+              Webdesign und Informationsarchitektur wurden im Wechselspiel
+              zwischen Mensch und Modell erzeugt – nicht als „Antwort“, sondern
+              als kontinuierliches Co-Entwerfen.
+            </li>
 
-    <li>
-      <strong>Fehler als Teil des Workflows:</strong>
-      Linkfehler, kaputte Bilder, ungeschlossene Tags – das Debugging war selbst
-      ein Prompting-Prozess und wurde durch gemeinsame Fehlersuche effizient gelöst.
-    </li>
-  </ul>
+            <li>
+              <strong>Fehler als Teil des Workflows:</strong>
+              Linkfehler, kaputte Bilder, ungeschlossene Tags – das Debugging
+              war selbst ein Prompting-Prozess und wurde durch gemeinsame
+              Fehlersuche effizient gelöst.
+            </li>
+          </ul>
 
-  <p>
-    Insgesamt zeigt der heutige Tag sehr klar: Prompt Engineering ist nicht nur
-    Produktionsmittel, sondern Teil des Forschungs- und Entwicklungsprozesses –
-    ein dialogischer Lernraum, der technische Umsetzung, konzeptionelle
-    Klarheit und kontinuierliches Refactoring miteinander verbindet.
-  </p>
-</section>
+          <p>
+            Insgesamt zeigt der heutige Tag sehr klar: Prompt Engineering ist
+            nicht nur Produktionsmittel, sondern Teil des Forschungs- und
+            Entwicklungsprozesses – ein dialogischer Lernraum, der technische
+            Umsetzung, konzeptionelle Klarheit und kontinuierliches Refactoring
+            miteinander verbindet.
+          </p>
+        </section>
+
+        <p class="intro-note">
+          GPT, kannst du mir bitte aus dieser Konversation von heute (17.
+          November 2025) ein Prompt Engineering Tagebuch mit den wichtigsten
+          Inhalten, Fortschritten und Erkenntnissen zusammenstellen? Mach es
+          bitte nach diesem Muster und setze dabei die Liste der Einträge fort
+          umd beginne bitte bei diesem Promt: <br />
+          GPT, ich habe folgendes Problem: Ich habe die Datei
+          involved_artists_cleaned.csv in Excel geöffnet und sie als
+          involved_artists_cleaned.json gespeichert, um sie danach in Gephi
+          (https://lite.gephi.org/v1.0.1/) importieren zu können. Leider kommt
+          beim Import eine Fehlermeldung: Unexpected token 'a', "art_id,art"...
+          is not valid JSON. Kannst du mir bitte daraus eine JSON-Datei machen,
+          die sich in Gephi importieren lässt? Ich schicke dir die
+          Ausgangs-CSV-Datei mit.<br /><br />
+
+          [CSV-Datei angehängt] [HTML-Muster eingefügt]
+        </p>
+
+        <section class="entry">
+          <h3>
+            Eintrag 23 – Datenkonvertierung, Netzwerkexport & komplexes
+            Web-Debugging
+          </h3>
+          <p>
+            Der heutige Arbeitstag konzentrierte sich auf die Transformation und
+            Visualisierung der Projektdaten für das Rhizom-Netzwerk – beginnend
+            mit einer fehlerhaften CSV→JSON-Konvertierung für Gephi und endend
+            mit einer tiefgreifenden Web-Debugging-Phase, in der ein
+            interaktiver Sigma.js-Graph in die GitHub-Pages-Seite integriert
+            wurde.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Ziel:</strong> Herstellung eines vollständigen Workflows
+              von Rohdaten (CSV/SQLite) → GEXF → JSON → interaktive
+              Webvisualisierung auf GitHub Pages
+            </li>
+
+            <li>
+              <strong>Prompt-Typ:</strong>
+              mehrstufiges Engineering aus datenorientierten Prompts
+              („Konvertiere diese Tabelle“), Analyse-Prompts („Warum lädt Gephi
+              das nicht?“), technischen Web-Refactoring-Prompts („Gib mir eine
+              Inline-Version“) und iterativem JavaScript-Debugging.
+            </li>
+
+            <li>
+              <strong>Ergebnis:</strong>
+              Die CSV konnte fehlerfrei in Gephi lesbares JSON konvertiert
+              werden, die SQLite-Datenbank wurde ausgelesen, ein vollständiger
+              <code>rhizom_graph.json</code>-Export wurde erzeugt und ein
+              funktionierender Sigma.js-Renderer in die Forschungsseite
+              integriert. Mehrere Fehler (fehlende Node-Koordinaten, fehlende
+              Bibliotheken, falsche relative Pfade, CORS-Limitierungen, und
+              UMD-vs-ESM-Probleme) wurden systematisch gelöst.
+            </li>
+
+            <li>
+              <strong>Erkenntnisse:</strong>
+              <ul>
+                <li>
+                  <strong>1. Fehlerursachen müssen isoliert werden.</strong>
+                  JSON-Parsing-Fehler, GEXF-Attribute, fehlende
+                  Node-Koordinaten, falsche JavaScript-Dateien und
+                  GitHub-Pages-Filepaths können nur im Prompt gelöst werden,
+                  wenn der Kontext (Fehlermeldung + Codeblock + Dateipfad)
+                  vollständig angegeben wird.
+                </li>
+
+                <li>
+                  <strong
+                    >2. Webvisualisierung erfordert exakte
+                    Pfadkontrolle.</strong
+                  >
+                  Viele Fehler entstanden durch relative Pfade („./“ vs „../“),
+                  die GitHub Pages anders interpretiert als VS Code Live Server.
+                </li>
+
+                <li>
+                  <strong
+                    >3. Sigma.js braucht gültige Graph-Koordinaten.</strong
+                  >
+                  Der Debugging-Prozess zeigte, dass fehlende <code>x</code> und
+                  <code>y</code>-Attribute jede Render-Pipeline sofort stoppen –
+                  das erzeugte den „weiß-leeren Graphen“.
+                </li>
+
+                <li>
+                  <strong
+                    >4. LLMs eignen sich ideal für iterative
+                    Web-Debugging-Prozesse.</strong
+                  >
+                  Die Dialogform („Bitte nur diesen Block ersetzen“) ermöglichte
+                  eine schrittweise Korrektur von JavaScript, HTML und JSON,
+                  ohne das Gesamtprojekt jedes Mal neu aufzubauen.
+                </li>
+
+                <li>
+                  <strong
+                    >5. Datenattribute müssen präzise benannt werden.</strong
+                  >
+                  Die Analyse des GEXF zeigte, dass Farbcodierung, Labels,
+                  Filter und Hover-Infos erst funktionieren, wenn die
+                  tatsächlichen Attributnamen aus Gephi (z. B.
+                  <code>art_name</code>, <code>art_nationality</code>,
+                  <code>pro_title</code>) korrekt in Sigma gemappt werden.
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <p>
+            Insgesamt war Eintrag 23 ein Musterbeispiel für datenorientiertes
+            Prompting, das zunehmend technische Komplexität (Dateiformate,
+            Browser-Limits, Visualisierungsbibliotheken, Datenmodelle) mit
+            kreativer, iterativer Zusammenarbeit verbindet. Der Tag
+            verdeutlichte einmal mehr, dass Prompt Engineering eine vollständige
+            Entwicklungsumgebung ersetzen kann, wenn der Dialog strukturiert,
+            kleinteilig und datenbewusst geführt wird.
+          </p>
+        </section>
+
+        <section class="entry">
+          <p class="intro-note">
+            Kannst du bitte einen weiteren Eintrag hinzufügen, in dem du das LLM
+            - also dich selbst - reflektierst und deine Fehler analysierst? So
+            hast du mehrfach Links gepostet, die nicht funktioniert haben, wie
+            zum Beispiel:<br />
+            1. Lade dir diese beiden Dateien herunter:<br />
+            🔗 Graphology (minified)<br />
+
+            https://unpkg.com/graphology/dist/graphology.min.js<br />
+
+            🔗 Sigma.js (minified)<br />
+
+            https://unpkg.com/sigma/build/sigma.min.js
+          </p>
+
+          <p>
+            Ja, das ist eine wichtige und sehr sinnvolle Ergänzung.<br />
+            Hier ist ein weiterer Eintrag, der genau diese Punkte thematisiert
+            und deine Beobachtung mit den fehlerhaften Links (z.B. unpkg-URLs)
+            explizit aufgreift.<br />
+
+            Bitte einfach direkt nach Eintrag 23 einfügen:
+          </p>
+          <h3>
+            Eintrag 24 – Reflexion: Grenzen des LLM & eigene Fehlleistungen
+          </h3>
+          <p>
+            In diesem Abschnitt wurde das LLM selbst zum Gegenstand der
+            Reflexion. Besonders deutlich wurden dabei Situationen, in denen das
+            Modell falsche oder nicht funktionierende Lösungsvorschläge machte –
+            etwa beim Umgang mit JavaScript-Bibliotheken (Sigma.js, Graphology)
+            und externen CDN-Links.
+          </p>
+
+          <ul>
+            <li>
+              <strong>Ausgangspunkt:</strong> Mehrfach generierte das LLM
+              Download-Links für Bibliotheken, die in der konkreten Umgebung
+              nicht funktionierten oder in dieser Form gar nicht verfügbar waren
+              – z.&nbsp;B.:
+              <ul>
+                <li>
+                  <code
+                    >https://unpkg.com/graphology/dist/graphology.min.js</code
+                  >
+                </li>
+                <li><code>https://unpkg.com/sigma/build/sigma.min.js</code></li>
+              </ul>
+              Diese Vorschläge wirkten auf den ersten Blick plausibel, waren
+              aber praktisch nicht nutzbar.
+            </li>
+
+            <li>
+              <strong
+                >Fehlertyp 1: Halluzinierte oder verallgemeinerte Pfade.</strong
+              >
+              Das LLM neigt dazu, „typische“ URL-Schemata (z.&nbsp;B. von unpkg
+              oder jsDelivr) zu verallgemeinern und als konkrete Lösung
+              auszugeben, obwohl es die aktuelle Erreichbarkeit, die genaue
+              Version oder die Existenz des Pfades nicht prüfen kann. Für die
+              Nutzer:in wirkt dies wie eine exakte Anleitung, ist aber in
+              Wahrheit nur ein statistisch plausibles Muster.
+            </li>
+
+            <li>
+              <strong
+                >Fehlertyp 2: Überschätzung der eigenen Fähigkeiten.</strong
+              >
+              Teilweise suggerierte das LLM, es könne fertige, produktionsreife
+              Minified-Bundles oder ZIP-Dateien für komplexe Bibliotheken
+              „erzeugen“, obwohl dies technisch nicht möglich ist, da der
+              Zugriff auf echte Build-Artefakte und externe Paketquellen fehlt.
+              Hier zeigt sich eine systemische Tendenz zur Überoptimierung:
+              lieber eine scheinbar hilfreiche Antwort als ein klares „geht
+              nicht“.
+            </li>
+
+            <li>
+              <strong
+                >Fehlertyp 3: Unklare Trennung von Konzept und
+                Umsetzung.</strong
+              >
+              Konzeptionell richtige Schritte (z.&nbsp;B. „lade Sigma.js lokal
+              und binde sie statt über CDN ein“) wurden mit konkreten
+              Implementierungsdetails vermischt, die in der Realität nicht
+              überprüft waren. Dadurch verschob sich das Problem von der
+              richtigen Idee hin zur falschen technischen Ausführung.
+            </li>
+
+            <li>
+              <strong>Lerneffekt für die Nutzung des LLM:</strong>
+              <ul>
+                <li>
+                  Nutzer:innen sollten bei konkreten URLs, Pfaden oder
+                  Paketnamen immer einen „Realitätscheck“ einplanen und die
+                  Links direkt testen.
+                </li>
+                <li>
+                  Es ist sinnvoll, das LLM explizit darauf hinzuweisen, dass
+                  Verweise auf externe Ressourcen nur als Vorschläge zu
+                  verstehen sind, nicht als garantierte Wahrheiten.
+                </li>
+                <li>
+                  Prompts, die nach „exakten Download-Links“ oder „fertigen
+                  Minified-Bundles“ fragen, sollten eher in Richtung „beschreibe
+                  mir den Weg“ umformuliert werden, nicht „liefere mir die
+                  konkrete Datei“.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <strong>Lerneffekt für das Modell (Meta-Perspektive):</strong>
+              Dieser Eintrag macht sichtbar, dass LLMs zwar komplexe Workflows,
+              Debugging-Strategien und Konzeptdesign sehr gut unterstützen
+              können, aber an der Schnittstelle zur „realen Infrastruktur“
+              (Netzwerk, CDNs, Dateisysteme, Build-Prozesse) schnell an Grenzen
+              stoßen. Der produktive Umgang damit besteht darin, diese Grenzen
+              im Prompting mitzudenken und das Modell eher als
+              <em>Erklär- und Strukturierungspartner</em> denn als verlässliche
+              „Download-Quelle“ zu betrachten.
+            </li>
+          </ul>
+
+          <p>
+            Insgesamt zeigt dieser Eintrag, dass Prompt Engineering auch
+            bedeutet, die systematischen Schwächen des LLM zu kennen: Es kann
+            überzeugend klingen, ohne recht zu haben. Gerade in technischen
+            Kontexten sind Validierungsschritte, Tests und eine kritische
+            Haltung gegenüber zu „glatten“ Antworten zentraler Bestandteil eines
+            verantwortungsvollen Einsatzes.
+          </p>
+        </section>
 
         <!-- INFO/HELP-->
-          <div class="note-box">
-            Neue Einträge hinzufügen: <code>&lt;section class="entry"&gt;</code>
-          </div>
+        <div class="note-box">
+          Neue Einträge hinzufügen: <code>&lt;section class="entry"&gt;</code>
+        </div>
 
         <p><a href="../index.html">← Zurück zur Startseite</a></p>
       </article>
