@@ -1,0 +1,99 @@
+SQLite Queries/Commands - Final Submission
+Sandra Ziagos
+
+-----------
+
+-- Open file and show table names
+
+.open art_association.db
+.mode columns
+.headers ON
+.tables
+
+----------
+
+-- Queries/Commands
+
+-- 1) sortieren (SORT): alle Künstler:innen aufsteigend alphabetisch nach Nachnamen (und gleichzeitig in einer zweiten Spalte den vollen Namen anzeigen lassen)
+SELECT art_name, art_name_last FROM involved_artists ORDER BY art_name_last COLLATE NOCASE ASC;
+
+-- 2) abfragen (SELECT): alle bereits verstorbenen Künstler:innen (nach Sterbejahr sortiert)
+SELECT art_name, art_year_death FROM involved_artists
+WHERE art_year_death != ''
+ORDER BY art_year_death;
+
+-- 3) abfragen (SELECT): alle Projekte, die Teil einer Serie sind
+SELECT pro_title, ser_id FROM projects 
+WHERE ser_id != '1';
+
+-- 4) abfragen (SELECT): alle Projekte, die nicht Teil einer Serie sind
+SELECT pro_title, ser_id FROM projects 
+WHERE ser_id == '1';
+
+-- 5) abfragen (SELECT): alle Projekte, die 2020 stattgefunden haben
+SELECT pro_title, pro_year_end FROM projects 
+WHERE pro_year_end = 2020;
+
+-- 6) abfragen (SELECT): alle Projekte, die noch keine URL haben (mit absteigender Sortierung nach Jahr)
+SELECT pro_title, pro_year_end, pro_url FROM projects 
+WHERE pro_url = '(no URL)' ORDER BY pro_year_end DESC;
+
+-- 7) abfragen (SELECT): alle Projekte, bei denen noch keine Supporter angegeben sind (mit Jahr);
+SELECT pro_year_end, pro_title FROM projects
+WHERE sup_id1 = '' ORDER BY pro_year_end DESC;
+
+-- 8) zählen (COUNT): Anzahl der Projekte in der Datenbank
+SELECT COUNT(pro_id) FROM projects;
+
+-- 9) zählen (COUNT): Anzahl der in Odessa geborenen Künstler:innen
+SELECT COUNT(art_name) FROM involved_artists WHERE art_place_birth = 'Odessa';
+
+-- 10) zählen (COUNT + GROUP_CONCAT): Anzahl der bisherigen Medien-Typen + Typen anzeigen
+SELECT COUNT(med_type_id), GROUP_CONCAT(med_type_name) FROM media_type;
+
+-- 11) komplexere Abfrage (JOIN): alle Projekte, die Teil einer Serie sind + Titel der Serie, sortiert nach Serien-ID
+SELECT projects.pro_title, projects.ser_id, series.ser_title 
+FROM projects
+JOIN series ON projects.ser_id = series.ser_id
+WHERE projects.ser_id != '1'
+ORDER BY projects.ser_id;
+
+-- 12) komplexere Abfrage (JOIN): alle Künstler:innen, die zwischen 2013 und 2014 an einem Projekt beteiligt waren + Nationalität + Region/Kontinent (jede Person nur jeweils 1x anzeigen)
+SELECT DISTINCT involved_artists.art_id, involved_artists.art_name, involved_artists.art_place_birth, involved_artists.art_nationality, involved_artists.art_area
+FROM involved_artists
+JOIN artists_projects_relation ON involved_artists.art_id = artists_projects_relation.art_id
+JOIN projects ON artists_projects_relation.pro_id = projects.pro_id
+WHERE projects.pro_year_begin BETWEEN 2013 AND 2014;
+
+-- 13) komplexere Abfrage (JOIN): alle in Graz geborenen Künstler:innen, die zwischen 2013 und 2014 an einem Projekt beteiligt waren (jede Person nur jeweils 1x anzeigen)
+SELECT DISTINCT involved_artists.art_id, involved_artists.art_name, involved_artists.art_place_birth
+FROM involved_artists
+JOIN artists_projects_relation ON involved_artists.art_id = artists_projects_relation.art_id
+JOIN projects ON artists_projects_relation.pro_id = projects.pro_id
+WHERE involved_artists.art_place_birth = 'Graz'
+AND projects.pro_year_begin BETWEEN 2013 AND 2014;
+
+-- 14) komplexere Abfrage (JOIN): die 10 Projekte mit den meisten beteiligten Künstler:innen
+SELECT projects.pro_id, projects.pro_title, 
+COUNT(artists_projects_relation.art_id) AS number_of_involved_artists
+FROM projects
+JOIN artists_projects_relation ON projects.pro_id = artists_projects_relation.pro_id
+GROUP BY projects.pro_id, projects.pro_title
+ORDER BY number_of_involved_artists DESC
+LIMIT 10;
+
+-- 15) abfragen mit Wildcard (SELECT + %): alle Projekte, die Teil von akig (Aktuelle Kunst in Graz) waren
+SELECT pro_title, pro_part_of 
+FROM projects 
+WHERE pro_part_of LIKE 'Aktuelle Kunst in Graz %';
+
+
+----------
+
+-- dump
+.output art_association.txt
+.dump
+.exit
+
+----------
+
