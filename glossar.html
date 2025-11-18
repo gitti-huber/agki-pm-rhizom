@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Glossar</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+
+    <style>
+      /* Glossar-Suche */
+      #glossarSearch {
+        width: 100%;
+        padding: 0.6rem 0.8rem;
+        margin: 1rem 0 2rem 0;
+        font-size: 1rem;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+      }
+
+      /* Hervorhebung */
+      mark {
+        background: #ffeb3b;
+        padding: 0 2px;
+      }
+
+      /* Abstand zwischen Einträgen */
+      dl dt {
+        font-weight: 600;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <a id="top"></a>
+    <header
+      data-date="30. Oktober 2025"
+      data-url="https://gitti-huber.github.io/agki-pm-rhizom"
+    >
+      <h1>Glossar</h1>
+      <p class="subtitle">Zentrale Begriffe des Projekts</p>
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">Über das Projekt</a>
+        <a href="./posts/index.html">Forschungsblog</a>
+        <a href="./posts/index.html#ergebnisse">Visualisierung</a>
+        <a href="./prompts/index.html">Prompt Engineering Tagebuch</a>
+        <span aria-current="page">Glossar</span>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <p class="meta">
+          Stand: <span id="today"></span> • <span class="pill">Glossar</span>
+        </p>
+
+        <p>
+          Das Glossar bündelt zentrale Fachbegriffe, die in den Projektseiten,
+          im Forschungsblog und im Prompt Engineering Tagebuch verwendet werden.
+          Die Erläuterungen sind auf den spezifischen Einsatz im RHIZOM-Projekt
+          zugeschnitten.
+        </p>
+
+        <section>
+          <h2>Begriffe von A–Z</h2>
+
+          <!-- 🔍 SUCHFELD -->
+          <input
+            id="glossarSearch"
+            type="text"
+            placeholder="Begriff suchen … (z. B. NER, Visualisierung, Knoten)"
+          />
+
+          <dl>
+            <dt id="digital-humanities">Digital Humanities</dt>
+            <dd>
+              Forschungsfeld, das geisteswissenschaftliche Fragestellungen mit
+              digitalen Methoden verbindet – etwa Datenmodellierung,
+              Netzwerkanalyse, Visualisierung und den Einsatz von LLMs.
+            </dd>
+
+            <dt id="large-language-models-llms">
+              Large Language Models (LLMs)
+            </dt>
+            <dd>
+              Große Sprachmodelle, die zur automatisierten Textextraktion,
+              Entitätenerkennung, Disambiguierung und Unterstützung bei der
+              Modellierung eingesetzt werden. Im Projekt dienen LLMs dazu, aus
+              heterogenen Quellen strukturierte Daten zu gewinnen.
+            </dd>
+
+            <dt id="netzwerkanalyse">Netzwerkanalyse</dt>
+            <dd>
+              Analytischer Ansatz, der Beziehungen zwischen Akteur:innen,
+              Projekten und Objekten als Netzwerke aus Knoten und Kanten
+              beschreibt. Im Projekt wird Netzwerkanalyse genutzt, um Muster
+              kultureller Zusammenarbeit sichtbar zu machen.
+            </dd>
+
+            <dt id="netzwerkmodell">Netzwerkmodell</dt>
+            <dd>
+              Abstrakte Darstellung der RHIZOM-Strukturen als Graph: Knoten
+              repräsentieren Personen, Projekte oder andere Entitäten, Kanten
+              deren Beziehungen (z.&nbsp;B. Beteiligungen, Kooperationen). Das
+              Modell bildet die Grundlage für Auswertung und Visualisierung.
+            </dd>
+
+            <dt id="knoten">Knoten</dt>
+            <dd>
+              Elemente eines Netzwerks, die im Projekt typischerweise Personen,
+              Projekte oder andere Einheiten (z.&nbsp;B. Orte) repräsentieren.
+            </dd>
+
+            <dt id="kanten">Kanten</dt>
+            <dd>
+              Verbindungen zwischen Knoten, die Beziehungen modellieren – im
+              RHIZOM-Projekt insbesondere Beteiligungen von Personen an
+              Projekten oder Kooperationen zwischen Akteur:innen.
+            </dd>
+
+            <dt id="zentralitaet">Zentralität</dt>
+            <dd>
+              Maße, mit denen die Bedeutung oder Vernetztheit einzelner Knoten
+              im Netzwerk beschrieben wird (z.&nbsp;B. wie stark eine Person als
+              Verbindungsglied in verschiedenen Projektkonstellationen wirkt).
+            </dd>
+
+            <dt id="datenmodellierung">Datenmodellierung</dt>
+            <dd>
+              Prozess der Überführung heterogener Materialien (Texte, Listen,
+              Dokumente, Webinhalte) in eine konsistente, formale Struktur. Im
+              Projekt geschieht dies u.&nbsp;a. über Entitäten- und
+              Relationsdefinition, ER-Diagramme und relationale Tabellen.
+            </dd>
+
+            <dt id="er-diagramm">ER-Diagramm</dt>
+            <dd>
+              Diagrammtyp zur Darstellung eines Entity-Relationship-Modells.
+              Hier wird er genutzt, um Entitäten wie Personen, Projekte, Orte
+              oder Rollen und deren Beziehungen im RHIZOM-Kontext zu
+              strukturieren.
+            </dd>
+
+            <dt id="sqlite">SQLite</dt>
+            <dd>
+              Leichtgewichtige relationale Datenbank, in der die bereinigten
+              Projektdaten als <code>rhizom.db</code> gespeichert werden. Sie
+              bildet die Grundlage für Auswertungen und Netzwerkgenerierung.
+            </dd>
+
+            <dt id="webscraping">Webscraping</dt>
+            <dd>
+              Automatisiertes Auslesen von Inhalten aus Webseiten. Im Projekt
+              wird es genutzt, um Material von der RHIZOM-Website für die
+              weitere Verarbeitung aufzubereiten.
+            </dd>
+
+            <dt id="named-entity-recognition-ner">
+              Named Entity Recognition (NER)
+            </dt>
+            <dd>
+              Verfahren zur automatischen Erkennung benannter Entitäten in
+              Texten (z.&nbsp;B. Personen, Orte, Organisationen). Im Projekt
+              dient NER – häufig in Kombination mit LLMs – dazu, relevante
+              Einheiten für das Datenmodell zu identifizieren.
+            </dd>
+
+            <dt id="disambiguierung">Disambiguierung</dt>
+            <dd>
+              Auflösung von Mehrdeutigkeiten, etwa bei gleichen oder ähnlichen
+              Namen. Ziel ist, sicherzustellen, dass eine Person oder ein Ort im
+              Datenmodell eindeutig und konsistent repräsentiert wird.
+            </dd>
+
+            <dt id="clusterbildung">Clusterbildung</dt>
+            <dd>
+              Gruppierung von Knoten oder Dokumenten nach bestimmten
+              Ähnlichkeiten, etwa thematischen Schwerpunkten, gemeinsamen
+              Projekten oder Zeiträumen. Cluster können Hinweise auf
+              Projektlinien oder Netzwerkteilräume geben.
+            </dd>
+
+            <dt id="visualisierung">Visualisierung</dt>
+            <dd>
+              Grafische Darstellung von Daten und Netzwerken, um Strukturen,
+              Muster und Dynamiken sichtbar zu machen. Im Projekt umfasst dies
+              u.&nbsp;a. interaktive Netzwerkgraphen, ER-Diagramme,
+              Gephi-Layouts und Wordclouds.
+            </dd>
+
+            <dt id="communities-of-practice">Communities of Practice</dt>
+            <dd>
+              Konzept nach Lave &amp; Wenger für Gemeinschaften, die durch
+              geteilte Praxis, Wissensaustausch und gemeinsames Lernen verbunden
+              sind. RHIZOM wird im Projekt u.&nbsp;a. als solche Community of
+              Practice verstanden.
+            </dd>
+
+            <dt id="infrastrukturen-des-kulturellen">
+              Infrastrukturen des Kulturellen
+            </dt>
+            <dd>
+              Begriff nach Star &amp; Bowker, der Organisationen, Werkzeuge und
+              Praktiken beschreibt, die kulturelle Produktion ermöglichen.
+              RHIZOM wird als infrastruktureller Knoten kultureller Praxis
+              gelesen.
+            </dd>
+
+            <dt id="akteur-netzwerk-theorien">Akteur-Netzwerk-Theorien</dt>
+            <dd>
+              Theoretischer Zugang (u.&nbsp;a. Latour, White), der soziale und
+              materielle Elemente als vernetzte Akteur:innen begreift. Im
+              Projekt dient dieser Ansatz als Referenzrahmen, um Beziehungen
+              zwischen Personen, Dingen und Strukturen zu modellieren.
+            </dd>
+
+            <dt id="knowledge-graphs">Knowledge Graphs</dt>
+            <dd>
+              Wissensrepräsentationen in Form von Graphen, in denen Entitäten
+              und ihre Relationen explizit modelliert werden. Viele im Projekt
+              genutzte Methoden (z.&nbsp;B. Netzwerkanalyse, semantische
+              Modellierung) stehen in Nähe zu Konzepten der Knowledge-Graph-
+              Forschung.
+            </dd>
+
+            <dt id="semantic-ai">Semantic AI</dt>
+            <dd>
+              Formen künstlicher Intelligenz, die auf semantisch strukturierten
+              Daten (z.&nbsp;B. Wissensgraphen) aufbauen. Im Kontext des
+              Projekts relevant als Referenzrahmen für die Anbindung von
+              Netzwerken und Metadaten an semantische Infrastrukturen.
+            </dd>
+
+            <dt id="api">API</dt>
+            <dd>
+              Programmierschnittstelle, über die Softwarekomponenten miteinander
+              kommunizieren können. In der Netzwerkvisualisierung werden APIs
+              etwa für den Import von Daten und die Interaktion mit Bibliotheken
+              wie Sigma.js genutzt.
+            </dd>
+
+            <dt id="backend">Backend</dt>
+            <dd>
+              System- oder Serverseite eines Projekts, auf der
+              Datenverarbeitung, Modellierung oder Analyse erfolgt. Im
+              RHIZOM-Projekt bezieht sich das Backend vor allem auf Skripte,
+              Datenbanken und Aufbereitungsprozesse.
+            </dd>
+
+            <dt id="csv">CSV</dt>
+            <dd>
+              Einfaches Textformat („Comma Separated Values“) zur tabellarischen
+              Speicherung von Daten. Es dient im Projekt als Austausch- und
+              Bereinigungsformat für Personen-, Projekt- und Beteiligungsdaten.
+            </dd>
+
+            <dt id="data-cleaning">Data Cleaning</dt>
+            <dd>
+              Prozess der Bereinigung von Rohdaten, z.&nbsp;B. Entfernung von
+              Dubletten, Vereinheitlichung von Schreibweisen und Korrektur von
+              Fehlern. Grundlage für verlässliche Netzwerkanalysen.
+            </dd>
+
+            <dt id="datenbank">Datenbank</dt>
+            <dd>
+              Strukturierte Sammlung von Daten, die über Tabellen, Beziehungen
+              und Abfragen organisiert ist. Im Projekt wird eine
+              SQLite-Datenbank (<code>rhizom.db</code>) eingesetzt.
+            </dd>
+
+            <dt id="edge-list">Edge List</dt>
+            <dd>
+              Liste von Kanten eines Netzwerks, meist in Form von Tabellen mit
+              <code>source</code>–<code>target</code>-Einträgen. Grundlage für
+              Visualisierung und Analyse.
+            </dd>
+
+            <dt id="entitaet">Entität</dt>
+            <dd>
+              Abstrakte, klar definierte Einheit in einem Datenmodell, etwa eine
+              Person, ein Projekt oder ein Ort. Entitäten bilden die Knoten des
+              RHIZOM-Netzwerks.
+            </dd>
+
+            <dt id="gexf">GEXF</dt>
+            <dd>
+              XML-basiertes Dateiformat („Graph Exchange XML Format“) zur
+              Speicherung von Netzwerken, das u.&nbsp;a. von Gephi genutzt wird.
+              Die interaktive Webvisualisierung liest GEXF-Dateien ein.
+            </dd>
+
+            <dt id="gephi">Gephi</dt>
+            <dd>
+              Open-Source-Software zur Netzwerkvisualisierung und -analyse. Im
+              Projekt wird sie für Layouts, Snapshot-Generierung und
+              Clusteranalysen verwendet.
+            </dd>
+
+            <dt id="graph">Graph</dt>
+            <dd>
+              Mathematische Struktur aus Knoten und Kanten. Grundlage für
+              Netzwerkmodelle, Visualisierungen und zentrale Analysen im
+              Projekt.
+            </dd>
+
+            <dt id="graphdatenbank">Graphdatenbank</dt>
+            <dd>
+              Datenbankform, in der Beziehungen ebenso wichtig sind wie die
+              Entitäten selbst. Konzepte aus Graphdatenbanken inspirieren das
+              Modell des RHIZOM-Netzwerks.
+            </dd>
+
+            <dt id="graphology">Graphology</dt>
+            <dd>
+              JavaScript-Bibliothek zur Modellierung, Manipulation und Analyse
+              von Graphen. Sie bildet im Projekt die Grundlage für die
+              interaktive Visualisierung im Web.
+            </dd>
+
+            <dt id="interaktive-visualisierung">Interaktive Visualisierung</dt>
+            <dd>
+              Form visueller Darstellung, bei der Nutzer:innen Elemente wie
+              Knoten, Filter oder Zoom manipulieren können. Im Projekt geschieht
+              dies über Sigma.js.
+            </dd>
+
+            <dt id="json">JSON</dt>
+            <dd>
+              Textbasiertes Datenformat („JavaScript Object Notation“), häufig
+              zur strukturierten Speicherung oder Übertragung komplexerer
+              Datenmodelle genutzt.
+            </dd>
+
+            <dt id="kollaboration">Kollaboration</dt>
+            <dd>
+              Zusammenarbeit von Akteur:innen innerhalb kultureller,
+              organisatorischer oder projektbezogener Kontexte. Ein zentrales
+              Untersuchungskonzept des RHIZOM-Projekts.
+            </dd>
+
+            <dt id="layout-algorithmus">Layout-Algorithmus</dt>
+            <dd>
+              Verfahren zur räumlichen Anordnung von Knoten in
+              Netzwerkvisualisierungen. Beispiele sind ForceAtlas2,
+              Fruchterman-Reingold oder OpenOrd.
+            </dd>
+
+            <dt id="metadata">Metadata</dt>
+            <dd>
+              Beschreibende Daten über Objekte, Dokumente oder Entitäten
+              (z.&nbsp;B. Jahresangaben, Kategorien, Orte). Sie strukturieren
+              den Datenbestand des Projekts.
+            </dd>
+
+            <dt id="normalisierung">Normalisierung</dt>
+            <dd>
+              Vereinheitlichung der Datenformate und Schreibweisen, z.&nbsp;B.
+              bei Namen oder Datumsangaben, um eine konsistente
+              Weiterverarbeitung zu ermöglichen.
+            </dd>
+
+            <dt id="openrefine">OpenRefine</dt>
+            <dd>
+              Tool zur interaktiven Datenbereinigung und -vereinheitlichung. Im
+              Projekt für Cleaning, Clustering und Qualitätssicherung
+              eingesetzt.
+            </dd>
+
+            <dt id="rolle">Rolle</dt>
+            <dd>
+              Art der Beteiligung einer Person an einem Projekt (z.&nbsp;B.
+              Organisation, Konzept, Performance). Rollen werden im Datenmodell
+              als eigene Entität geführt.
+            </dd>
+
+            <dt id="sigma-js">Sigma.js</dt>
+            <dd>
+              JavaScript-Bibliothek zur Darstellung interaktiver Netzwerkgraphen
+              im Browser. Sie ermöglicht Zoom, Suchfunktionen, Filter und
+              dynamische Elemente.
+            </dd>
+
+            <dt id="sqlite-datenbank">SQLite-Datenbank</dt>
+            <dd>
+              Kompakte relationale Datenbank, die lokal ohne Server betrieben
+              werden kann. Das Projekt nutzt sie als persistente Datenbasis.
+            </dd>
+
+            <dt id="temporalitaet">Temporalität</dt>
+            <dd>
+              Zeitliche Dimension kultureller Praxis, etwa Veränderungen von
+              Rollen, Projektbeteiligungen oder Netzwerkkonstellationen über
+              mehrere Jahrzehnte.
+            </dd>
+
+            <dt id="visualisierungslayout">Visualisierungslayout</dt>
+            <dd>
+              Anordnung von Knoten und Kanten in einer Graphdarstellung.
+              Verschiedene Layouts können unterschiedliche Muster hervorheben.
+            </dd>
+
+            <dt id="wissensgraph">Wissensgraph</dt>
+            <dd>
+              Strukturierte Darstellung von Wissen als Netzwerk aus Entitäten
+              und Relationen. Schnittstelle zwischen semantischen Technologien
+              und Netzwerkanalyse.
+            </dd>
+
+            <dt id="zoom-interaktion">Zoom-Interaktion</dt>
+            <dd>
+              Bedienungsfeature interaktiver Visualisierungen, das Nutzer:innen
+              erlaubt, in Details zu navigieren oder Gesamtstrukturen zu
+              erfassen.
+            </dd>
+          </dl>
+        </section>
+
+        <p><a href="./index.html">← Zurück zur Startseite</a></p>
+      </article>
+    </main>
+
+    <footer>
+      <p>
+        © 2025 Rhizom-Projekt |
+        <a href="https://github.com/gitti-huber/agki-pm-rhizom"
+          >GitHub Repository</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      // Datum automatisch setzen (lokalisiert)
+      document.getElementById("today").textContent =
+        new Date().toLocaleDateString("de-AT", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+    </script>
+
+    <a href="#top" class="back-to-top">↑</a>
+    <script>
+      document.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          document.body.classList.add("scrolled");
+        } else {
+          document.body.classList.remove("scrolled");
+        }
+      });
+    </script>
+
+    <!-- 🔍 FUNKTIONIERENDE LIVE-SUCHE MIT BUGFIX (NER etc.) -->
+    <script>
+      const input = document.getElementById("glossarSearch");
+
+      function clearMarks(el) {
+        if (!el) return;
+        const marks = el.querySelectorAll("mark");
+        marks.forEach((m) => {
+          const parent = m.parentNode;
+          parent.replaceChild(document.createTextNode(m.textContent), m);
+          parent.normalize();
+        });
+      }
+
+      function highlight(el, query) {
+        if (!el || !query) return;
+        const text = el.textContent;
+        const escaped = query.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        const regex = new RegExp("(" + escaped + ")", "gi");
+        el.innerHTML = text.replace(regex, "<mark>$1</mark>");
+      }
+
+      input.addEventListener("input", function () {
+        const query = this.value.toLowerCase().trim();
+        const entries = document.querySelectorAll("dl > dt");
+
+        entries.forEach((dt) => {
+          const dd = dt.nextElementSibling;
+
+          // alte Hervorhebungen entfernen
+          clearMarks(dt);
+          clearMarks(dd);
+
+          if (query === "") {
+            dt.style.display = "";
+            dd.style.display = "";
+            return;
+          }
+
+          const combinedText = (
+            dt.textContent +
+            " " +
+            dd.textContent
+          ).toLowerCase();
+
+          if (combinedText.includes(query)) {
+            dt.style.display = "";
+            dd.style.display = "";
+            highlight(dt, query);
+          } else {
+            dt.style.display = "none";
+            dd.style.display = "none";
+          }
+        });
+      });
+    </script>
+
+    <script>
+      // ===============================
+      //   AUTOMATISCHE ALPHABETISIERUNG
+      // ===============================
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const dl = document.querySelector("dl");
+        if (!dl) return;
+
+        // dt+dd-Paare sammeln
+        const items = [];
+        let current = dl.firstElementChild;
+
+        while (current) {
+          if (current.tagName.toLowerCase() === "dt") {
+            const dt = current;
+            const dd =
+              dt.nextElementSibling?.tagName.toLowerCase() === "dd"
+                ? dt.nextElementSibling
+                : null;
+
+            items.push({ dt, dd });
+            current = dd ? dd.nextElementSibling : dt.nextElementSibling;
+          } else {
+            current = current.nextElementSibling;
+          }
+        }
+
+        // alphabetisch sortieren (case-insensitive)
+        items.sort((a, b) => {
+          return a.dt.textContent
+            .trim()
+            .localeCompare(b.dt.textContent.trim(), "de", {
+              sensitivity: "base",
+            });
+        });
+
+        // dl leeren
+        dl.innerHTML = "";
+
+        // sortierte Paare wieder einsetzen
+        items.forEach(({ dt, dd }) => {
+          dl.appendChild(dt);
+          if (dd) dl.appendChild(dd);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -40,6 +40,15 @@ h1 {
   color: var(--accent);
 }
 
+
+  h3.centered {
+  text-align: center !important;;
+  font-weight: 500;
+  color: var(--accent);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
 .subtitle {
   color: var(--muted);
   font-size: 1.1rem;
@@ -335,6 +344,58 @@ body {
   background: #222;
 }
 
+/* ───────────────────────────────
+   Infotexte bei Hover
+   ─────────────────────────────── */
+
+.hover-info {
+  display: inline-block;
+  position: relative;
+}
+
+.info-text {
+  display: none;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+.hover-info:hover .info-text {
+  display: block;
+}
+
+
+/* ───────────────────────────────
+   Tooltip bei Hover
+   ─────────────────────────────── */
+
+.has-tooltip {
+  position: relative;
+}
+
+.has-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 130%;                /* über dem Element */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 999;
+}
+
+.has-tooltip:hover::after {
+  opacity: 1;
+}
+
 
 /* ───────────────────────────────
    Fußnoten-Hover-Vorschau (Tooltip)
@@ -442,6 +503,61 @@ body.scrolled .back-to-top {
   transform: translateY(-2px);
 }
 
+/* -----------------------------------------
+   Links
+----------------------------------------- */
+
+.link-box {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+
+  margin-top: 2rem;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+
+  position: relative;   /* ⇐ NEU UND WICHTIG */
+  overflow: visible;    /* ⇐ NEU UND WICHTIG */
+}
+
+
+.link-box a {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--accent);
+
+  padding: 0.2rem 0.4rem;          /* fix, damit nichts wackelt */
+  border-radius: 4px;
+  border: 1px solid transparent;  /* verhindert Layout-Sprünge */
+}
+
+.link-box a:hover {
+  background: var(--accent-light); /* ruhiger Hover */
+  border-color: var(--accent);     /* kein Wackeln */
+}
+
+/* -----------------------------------------
+   Glossar-Links
+----------------------------------------- */
+
+.glossar-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 98, 170, 0.35); /* sehr dezentes Blau */
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  cursor: help;
+}
+
+.glossar-link:hover {
+  color: var(--accent-color-hover);
+  text-decoration-color: var(--accent-color-hover);
+}
+
 
 /* -----------------------------------------
    Images
@@ -499,6 +615,135 @@ figure.image figcaption {
   margin-top: 0.5rem;
   font-size: 0.85rem;
   color: var(--text-light);   /* oder eine eigene helle Farbe */
+}
+
+.inline-logo {
+  height: 1em;          /* exakt so hoch wie der Text */
+  width: auto;          /* Breite automatisch */
+  vertical-align: -0.1em;  /* kleine optische Korrektur */
+}
+
+
+/* -----------------------------------------
+   Full-width Images (100% der Artikelbreite)
+----------------------------------------- */
+.image-full {
+  margin: 2rem 0;
+  text-align: center;     /* Caption zentrieren */
+}
+
+.image-full img {
+  width: 100%;            /* volle Breite */
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Bildunterschrift */
+.image-full figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;     /* explizit zentriert */
+}
+
+.image-full img:hover {
+  transform: scale(1.2);             /* Zoom */
+  z-index: 10;
+}
+
+
+/* -----------------------------------------
+   Full-width + Hover-Zoom (image-full-hover)
+----------------------------------------- */
+.image-full-hover {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.image-full-hover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+
+.image-full-hover img:hover {
+  transform: scale(1.2);   /* Zoom */
+  z-index: 10;
+}
+
+.image-full-hover figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+
+/* -----------------------------------------
+   LIGHTBOX: Bild anklicken → groß anzeigen
+----------------------------------------- */
+
+/* Container für Bilder mit Lightbox */
+.image-lightbox {
+  margin: 2rem 0;
+  text-align: center;
+  cursor: zoom-in;
+}
+
+.image-lightbox img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  transition: opacity 0.3s ease;
+}
+
+/* --- Lightbox-Overlay --- */
+
+.lightbox-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  /* neues helles Overlay passend zu deinem Design */
+  background: #ffffff;   
+  backdrop-filter: blur(3px); /* optional: sanfter Blur */
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+
+  z-index: 9999;
+}
+
+.lightbox-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-overlay img {
+  max-width: 95vw;
+  max-height: 95vh;
+  border-radius: 12px;
+
+  /* etwas weicherer Schatten passend zum hellen Overlay */
+  box-shadow: 0 0 20px rgba(0,0,0,0.25);
+
+  cursor: zoom-out;
 }
 
 
