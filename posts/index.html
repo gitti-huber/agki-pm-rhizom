@@ -419,7 +419,93 @@
 
           <h3 class="centered">Interaktive Netzwerkvisualisierung</h3>
 
-          <div id="sigma-container" style="width: 100%; height: 700px"></div>
+<!-- 🔧 Bedienelemente für die Netzwerkvisualisierung -->
+<div class="network-controls">
+
+  <!-- 🔎 Suche -->
+  <div class="control-group">
+    <label for="search">Suche nach Namen:</label>
+    <input id="search" type="text" placeholder="Name eingeben …">
+  </div>
+
+  <!-- 🧭 Zoom -->
+  <div class="control-group">
+    <label>Zoom:</label>
+    <button id="zoom-in">+</button>
+    <button id="zoom-out">–</button>
+    <button id="zoom-reset">Reset</button>
+  </div>
+
+  <!-- 🧲 Layout -->
+  <div class="control-group">
+    <label>Layout (ForceAtlas2):</label>
+    <button id="layout-start">Start</button>
+    <button id="layout-stop">Stop</button>
+  </div>
+
+  <!-- 🏷 Label-Dichte -->
+  <div class="control-group">
+    <label for="label-density">Label-Dichte:</label>
+    <input id="label-density" type="range" min="5" max="200" step="5" value="60">
+  </div>
+
+  <!-- 🌍 Filter -->
+  <div class="control-group">
+    <label for="filter-nationality">Nationalität:</label>
+    <select id="filter-nationality">
+      <option value="">Alle</option>
+      <!-- JS füllt Optionen automatisch -->
+    </select>
+  </div>
+
+  <div class="control-group">
+    <label for="filter-type">Typ:</label>
+    <select id="filter-type">
+      <option value="">Alle</option>
+      <option value="person">Person</option>
+      <option value="project">Projekt</option>
+    </select>
+  </div>
+
+  <!-- 🧹 Filtersteuerung -->
+<div class="control-group button-row">
+  <button id="filter-clear">Clear</button>
+  <button id="filter-undo">Undo</button>
+</div>
+
+
+
+</div>
+
+<!-- 🔹 Farblegende -->
+<div id="legend" style="
+  background:#f8f8f8;
+  border:1px solid #ddd;
+  padding:10px;
+  margin:10px 0;
+  border-radius:6px;
+  font-size:0.9rem;
+"></div>
+
+<!-- 🔹 Info-Panel bei Klick -->
+<div id="info-panel" style="
+  display:none;
+  background:#fffbe6;
+  border:1px solid #e0d689;
+  padding:12px;
+  margin:10px 0 20px;
+  border-radius:6px;
+">
+  <h4 style="margin-top:0;">Ausgewählter Knoten</h4>
+  <p><strong>Name:</strong> <span id="info-name"></span></p>
+  <p><strong>Nationalität:</strong> <span id="info-nat"></span></p>
+  <p><strong>Verbunden mit:</strong></p>
+  <ul id="info-projects" style="margin-top:5px;"></ul>
+</div>
+
+<!-- Sigma Container -->
+<div id="sigma-container" style="width: 100%; height: 700px"></div>
+
 
           <h3 class="centered">Gephi-Snapshots</h3>
           <!-- Image (Gephi-Snapshot 1) -->
@@ -886,212 +972,338 @@
     <script src="./sigma.js"></script>
 
     <script>
-      // ===== ForceAtlas2 Algorithmus hinzufügen =====
-      function forceAtlas2(graph, settings) {
-        let running = false;
-        let raf = null;
+/* ============================================================
+   ForceAtlas2 – Platzhalter (damit keine Fehlermeldungen kommen)
+   ============================================================ */
+function forceAtlas2(graph, settings) {
+  return {
+    start() {
+      console.warn("ForceAtlas2: Platzhalter aktiv. In der GitHub-Version läuft kein echtes FA2-Layout.");
+    },
+    stop() {}
+  };
+}
 
-        function step() {
-          if (!running) return;
-          graphology.library.forceAtlas2.assign(graph, settings);
-          raf = requestAnimationFrame(step);
+/* ============================================================
+   Interaktive Netzwerkvisualisierung
+   ============================================================ */
+(async function () {
+  try {
+    /* ------------------------------------------------------------
+       GEXF-Datei laden
+       ------------------------------------------------------------ */
+    const response = await fetch("../data/rhizom_gephi.gexf");
+    if (!response.ok) throw new Error("Konnte GEXF nicht laden: " + response.status);
+    const gexfText = await response.text();
+
+    /* ------------------------------------------------------------
+       Mapping der <attributes> – wir ersetzen "type" → "node_type"
+       ------------------------------------------------------------ */
+    function buildNodeAttributeMap(xml) {
+      const map = {};
+      xml.querySelectorAll('attributes[class="node"] > attribute').forEach(att => {
+        const id = att.getAttribute("id");
+        let title = att.getAttribute("title") || id;
+
+        // SIGMA FIX: niemals "type" als Attribut einlesen → Crash!
+        if (title === "type") title = "node_type";
+
+        map[id] = title;
+      });
+      return map;
+    }
+
+    /* ------------------------------------------------------------
+       GEXF parsen → graphology-Graph erzeugen
+       ------------------------------------------------------------ */
+    function parseGexf(gexfString) {
+      const parser = new DOMParser();
+      const xml = parser.parseFromString(gexfString, "application/xml");
+
+      const graph = new graphology.Graph({ type: "undirected" });
+      const attrMap = buildNodeAttributeMap(xml);
+
+      xml.querySelectorAll("node").forEach(n => {
+        const id = n.getAttribute("id");
+        const attrs = {};
+
+        // Attribute lesen
+        n.querySelectorAll("attvalues > attvalue").forEach(a => {
+          const keyId = a.getAttribute("for");
+          const title = attrMap[keyId] || keyId;
+          attrs[title] = a.getAttribute("value");
+        });
+
+        // node_type (artist/project)
+        const nodeType = attrs.node_type || null;
+
+        // Sichtbares Label korrekt setzen
+        if (nodeType === "artist" && attrs.art_name) {
+          attrs.label = attrs.art_name;
+        } else if (nodeType === "project" && attrs.pro_title) {
+          attrs.label = attrs.pro_title;
+        } else {
+          attrs.label = n.getAttribute("label") || id;
         }
 
-        return {
-          start() {
-            if (!running) {
-              running = true;
-              step();
-            }
-          },
-          stop() {
-            running = false;
-            if (raf) cancelAnimationFrame(raf);
-          },
-        };
-      }
+        // Startposition
+        attrs.x = Math.random() * 1000;
+        attrs.y = Math.random() * 1000;
+        attrs.size = 5;
 
-      (async function () {
-        try {
-          // GEXF laden
-          const response = await fetch("./rhizom_gephi.gexf");
-          const gexfText = await response.text();
+        // WICHTIG: Kein attrs.type setzen → sonst SIGMA-Absturz
+        graph.addNode(id, attrs);
+      });
 
-          // Minimalparser
-          function parseGexf(gexfString) {
-            const parser = new DOMParser();
-            const xml = parser.parseFromString(gexfString, "application/xml");
-            const graph = new graphology.Graph({ type: "undirected" });
+      // Kanten
+      xml.querySelectorAll("edge").forEach(e => {
+        const s = e.getAttribute("source");
+        const t = e.getAttribute("target");
+        if (graph.hasNode(s) && graph.hasNode(t)) graph.addEdge(s, t);
+      });
 
-            xml.querySelectorAll("node").forEach((n) => {
-              const id = n.getAttribute("id");
-              const label = n.getAttribute("label") || "";
-              const attEls = n.querySelectorAll("attvalue");
+      return graph;
+    }
 
-              const attrs = { label };
+    /* ------------------------------------------------------------
+       Graph erzeugen & Sigma starten
+       ------------------------------------------------------------ */
+    const graph = parseGexf(gexfText);
+    const container = document.getElementById("sigma-container");
+    const renderer = new Sigma(graph, container);
 
-              attEls.forEach((a) => {
-                attrs[a.getAttribute("for")] = a.getAttribute("value");
-              });
+    /* ------------------------------------------------------------
+       Farbcodierung nach art_nationality
+       ------------------------------------------------------------ */
+    // 🎨 Farbpalette
+const palette = [
+  "#e41a1c", "#377eb8", "#4daf4a", "#984ea3", "#ff7f00",
+  "#ffff33", "#a65628", "#f781bf", "#999999",
 
-              attrs.x = Math.random() * 1000;
-              attrs.y = Math.random() * 1000;
-              attrs.size = 5;
+  "#66c2a5", "#fc8d62", "#8da0cb", "#e78ac3", "#a6d854",
+  "#ffd92f", "#e5c494", "#b3b3b3",
 
-              graph.addNode(id, attrs);
-            });
+  "#1b9e77", "#d95f02", "#7570b3", "#e7298a", "#66a61e",
+  "#e6ab02", "#a6761d", "#666666",
 
-            xml.querySelectorAll("edge").forEach((e) => {
-              graph.addEdge(e.getAttribute("source"), e.getAttribute("target"));
-            });
+  "#8dd3c7", "#ffffb3", "#bebada", "#fb8072", "#80b1d3",
+  "#fdb462", "#b3de69", "#fccde5"
+];
 
-            return graph;
-          }
+const colorMap = {};
+let nextColor = 0;
+const nationalities = new Set();
 
-          const graph = parseGexf(gexfText);
-          const container = document.getElementById("sigma-container");
-          const renderer = new Sigma(graph, container);
+// 2) Nationalitäten-Farben
+graph.forEachNode((n, attrs) => {
+  const natRaw = attrs.art_nationality || "Unbekannt";
+  const parts = natRaw.split(/[,/;]+/).map(s => s.trim()).filter(Boolean);
+  const natList = parts.length ? parts : ["Unbekannt"];
+  const mainNat = natList[0];
 
-          // 🎨 Farbcodierung nach Nationalität
-          const palette = [
-            "#e41a1c",
-            "#377eb8",
-            "#4daf4a",
-            "#984ea3",
-            "#ff7f00",
-            "#ffff33",
-            "#a65628",
-            "#f781bf",
-            "#999999",
-          ];
-          const colorMap = {};
-          let nextColor = 0;
-          const nationalities = new Set();
+  if (!colorMap[mainNat]) {
+    colorMap[mainNat] = palette[nextColor % palette.length];
+    nextColor++;
+  }
 
-          graph.forEachNode((n, attrs) => {
-            const nat = attrs.art_nationality || "Unknown";
-            nationalities.add(nat);
-            if (!colorMap[nat])
-              colorMap[nat] = palette[nextColor++ % palette.length];
-            graph.setNodeAttribute(n, "color", colorMap[nat]);
-          });
+  graph.setNodeAttribute(n, "color", colorMap[mainNat]);
+  graph.setNodeAttribute(n, "_natList", natList);
+  natList.forEach(nat => nationalities.add(nat));
+});
 
-          // 🎨 Farblegende anzeigen
-          const legend = document.getElementById("legend");
-          legend.innerHTML = "<strong>Farblegende:</strong><br>";
-          nationalities.forEach((nat) => {
-            legend.innerHTML += `<div>
-        <span style="display:inline-block;width:12px;height:12px;background:${colorMap[nat]};"></span>
-        ${nat}
-      </div>`;
-          });
+// 3) Projektfarbe **ZU ALLERLETZT überschreiben**
+const PROJECT_COLOR = "#00ccff"; // <— HIER ändern
 
-          // 🏷 Labels nur bei Hover sichtbar
-          renderer.setSetting("labelRenderedSizeThreshold", 12);
-          renderer.setSetting("labelDensity", 0.3);
+graph.forEachNode((n, attrs) => {
+  if (attrs.node_type === "project") {
+    graph.setNodeAttribute(n, "color", PROJECT_COLOR);
+    graph.setNodeAttribute(n, "size", 7);
+  }
+});
 
-          renderer.on("enterNode", (e) =>
-            graph.setNodeAttribute(e.node, "highlighted", true)
-          );
-          renderer.on("leaveNode", (e) =>
-            graph.setNodeAttribute(e.node, "highlighted", false)
-          );
 
-          renderer.setSetting("nodeReducer", (n, data) => {
-            const d = { ...data };
-            if (!data.highlighted) d.label = "";
-            return d;
-          });
+    /* ------------------------------------------------------------
+       Farblegende
+       ------------------------------------------------------------ */
+    legend.innerHTML = "<strong>Farblegende:</strong>";
 
-          // 🔍 Suchfeld
-          const searchInput = document.getElementById("search");
-          searchInput.addEventListener("input", () => {
-            const q = searchInput.value.toLowerCase();
-            graph.forEachNode((node, attrs) => {
-              graph.setNodeAttribute(
-                node,
-                "hidden",
-                q && !attrs.label.toLowerCase().includes(q)
-              );
-            });
-          });
+const legendContent = document.createElement("div");
+legendContent.className = "legend-grid";
 
-          // 🧭 Zoom-Steuerung
-          const camera = renderer.getCamera();
-          document.getElementById("zoom-in").onclick = () =>
-            camera.animatedZoom({ duration: 300 });
-          document.getElementById("zoom-out").onclick = () =>
-            camera.animatedUnzoom({ duration: 300 });
-          document.getElementById("zoom-reset").onclick = () =>
-            camera.animatedReset({ duration: 300 });
+[...nationalities].sort().forEach(nat => {
+  const item = document.createElement("div");
+  item.className = "legend-item";
+  item.innerHTML = `
+    <span class="legend-color" style="background:${colorMap[nat]}"></span>
+    <span class="legend-label">${nat}</span>
+  `;
+  legendContent.appendChild(item);
+});
 
-          // 🧠 ForceAtlas2 Layout
-          const layout = forceAtlas2(graph, { settings: { slowDown: 10 } });
-          document.getElementById("layout-start").onclick = () =>
-            layout.start();
-          document.getElementById("layout-stop").onclick = () => layout.stop();
+legend.appendChild(legendContent);
 
-          // 🏷 Label-Dichte Slider
-          const densitySlider = document.getElementById("label-density");
-          densitySlider.addEventListener("input", () => {
-            renderer.setSetting(
-              "labelDensity",
-              parseFloat(densitySlider.value)
-            );
-          });
 
-          // 🗂 Filter nach Nationalität + Knotenart
-          const natFilter = document.getElementById("filter-nationality");
-          nationalities.forEach((nat) => {
-            natFilter.innerHTML += `<option value="${nat}">${nat}</option>`;
-          });
+    /* ------------------------------------------------------------
+       Labelverhalten
+       ------------------------------------------------------------ */
+    renderer.setSetting("labelRenderedSizeThreshold", 0);
+    renderer.setSetting("labelGridCellSize", 60);
 
-          const typeFilter = document.getElementById("filter-type");
+    renderer.on("enterNode", e => graph.setNodeAttribute(e.node, "highlighted", true));
+    renderer.on("leaveNode", e => graph.setNodeAttribute(e.node, "highlighted", false));
 
-          function applyFilters() {
-            const fNat = natFilter.value;
-            const fType = typeFilter.value;
 
-            graph.forEachNode((n, attrs) => {
-              let hide = false;
+    /* ------------------------------------------------------------
+       Suche (Künstler*innen + Projektnamen)
+       ------------------------------------------------------------ */
+    const searchInput = document.getElementById("search");
+    if (searchInput) {
+      searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+        graph.forEachNode((n, attrs) => {
+          const match = attrs.label.toLowerCase().includes(query);
+          graph.setNodeAttribute(n, "hidden", query && !match);
+        });
+      });
+    }
 
-              if (fNat && attrs.art_nationality !== fNat) hide = true;
-              if (fType === "person" && attrs.type !== "person") hide = true;
-              if (fType === "project" && attrs.type !== "project") hide = true;
+    /* ------------------------------------------------------------
+       Zoom
+       ------------------------------------------------------------ */
+    const camera = renderer.getCamera();
+    document.getElementById("zoom-in").onclick = () => camera.animatedZoom({ duration: 300 });
+    document.getElementById("zoom-out").onclick = () => camera.animatedUnzoom({ duration: 300 });
+    document.getElementById("zoom-reset").onclick = () => camera.animatedReset({ duration: 300 });
 
-              graph.setNodeAttribute(n, "hidden", hide);
-            });
-          }
+    /* ------------------------------------------------------------
+       ForceAtlas2 (Platzhalter)
+       ------------------------------------------------------------ */
+    const layout = forceAtlas2(graph, { settings: { slowDown: 10 } });
+    document.getElementById("layout-start").onclick = () => layout.start();
+    document.getElementById("layout-stop").onclick = () => layout.stop();
 
-          natFilter.onchange = applyFilters;
-          typeFilter.onchange = applyFilters;
+    /* ------------------------------------------------------------
+       Label-Dichte
+       ------------------------------------------------------------ */
+    const density = document.getElementById("label-density");
+    density.addEventListener("input", () => {
+  const val = parseInt(density.value);
+  renderer.setSetting("labelGridCellSize", val);
+});
 
-          // 💬 Klick-Panel: Name, Nationalität, Projekte
-          const panel = document.getElementById("info-panel");
-          renderer.on("clickNode", ({ node }) => {
-            const attrs = graph.getNodeAttributes(node);
+    /* ------------------------------------------------------------
+       Dropdown-Filter (Nationalität + Typ)
+       ------------------------------------------------------------ */
+    const natFilter = document.getElementById("filter-nationality");
+    const typeFilter = document.getElementById("filter-type");
 
-            document.getElementById("info-name").textContent =
-              attrs.label || "(ohne Name)";
-            document.getElementById("info-nat").textContent =
-              attrs.art_nationality || "Unbekannt";
+    // Nationalitäten-Optionen automatisch füllen
+    [...nationalities].sort().forEach(nat => {
+      const opt = document.createElement("option");
+      opt.value = nat;
+      opt.textContent = nat;
+      natFilter.appendChild(opt);
+    });
 
-            const list = document.getElementById("info-projects");
-            list.innerHTML = "";
+    function applyFilters() {
+  const fNat = natFilter.value;
+  const fType = typeFilter.value;
 
-            graph.forEachNeighbor(node, (n2, a2) => {
-              const li = document.createElement("li");
-              li.textContent = a2.label || n2;
-              list.appendChild(li);
-            });
+  graph.forEachNode((n, attrs) => {
+    let hide = false;
 
-            panel.style.display = "block";
-          });
-        } catch (err) {
-          console.error("Fehler beim Laden des Graphen:", err);
-        }
-      })();
-    </script>
+    // korrektes Array verwenden
+    const natList = attrs._natList || ["Unbekannt"];
+    const nodeType = attrs.node_type || "";
+
+    // 1) Nationalität-Filter berücksichtigt Mehrfachwerte
+    if (fNat && !natList.includes(fNat)) hide = true;
+
+    // 2) Typ-Filter
+    if (fType === "person" && nodeType !== "artist") hide = true;
+    if (fType === "project" && nodeType !== "project") hide = true;
+
+    graph.setNodeAttribute(n, "hidden", hide);
+  });
+}
+
+    natFilter.onchange = applyFilters;
+    typeFilter.onchange = applyFilters;
+
+    document.getElementById("filter-clear").onclick = () => {
+  searchInput.value = "";
+  natFilter.value = "";
+  typeFilter.value = "";
+  camera.animatedReset({ duration: 300 });
+
+  graph.forEachNode(n => graph.setNodeAttribute(n, "hidden", false));
+
+  document.getElementById("info-panel").style.display = "none";
+};
+
+/* ============================================================
+   Undo-Funktion – merkt sich vorherige Suche / Filter / Kamera
+   ============================================================ */
+let lastState = null;
+
+function saveState() {
+  lastState = {
+    search: searchInput.value,
+    nat: natFilter.value,
+    type: typeFilter.value,
+    camera: camera.getState()
+  };
+}
+
+// Bei jeder Filter-/Suchänderung Zustand merken
+searchInput.addEventListener("input", saveState);
+natFilter.addEventListener("change", saveState);
+typeFilter.addEventListener("change", saveState);
+
+// Undo-Button
+document.getElementById("filter-undo").onclick = () => {
+  if (!lastState) return;
+
+  searchInput.value = lastState.search;
+  natFilter.value = lastState.nat;
+  typeFilter.value = lastState.type;
+
+  camera.animate(lastState.camera, { duration: 300 });
+
+  applyFilters();
+};
+
+
+    /* ------------------------------------------------------------
+       Klick-Panel
+       ------------------------------------------------------------ */
+    const panel = document.getElementById("info-panel");
+    const infoName = document.getElementById("info-name");
+    const infoNat = document.getElementById("info-nat");
+    const infoProjects = document.getElementById("info-projects");
+
+    renderer.on("clickNode", ({ node }) => {
+      const attrs = graph.getNodeAttributes(node);
+
+      infoName.textContent = attrs.label || "(ohne Name)";
+      infoNat.textContent = attrs.art_nationality || "Unbekannt";
+
+      infoProjects.innerHTML = "";
+      graph.forEachNeighbor(node, (n2, a2) => {
+        const li = document.createElement("li");
+        li.textContent = a2.label || n2;
+        infoProjects.appendChild(li);
+      });
+
+      panel.style.display = "block";
+    });
+
+  } catch (err) {
+    console.error("❌ Fehler beim Laden/Verarbeiten des Graphen:", err);
+  }
+})();
+</script>
+
 
     <script src="../assets/js/lightbox.js"></script>
     <script src="../assets/js/glossar-linker.js"></script>

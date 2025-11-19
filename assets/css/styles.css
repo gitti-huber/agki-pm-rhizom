@@ -777,6 +777,113 @@ figure.image figcaption {
   background: #000;
 }
 
+/* ───────────────────────────────────────────────
+   network-controls
+   ─────────────────────────────────────────────── */
+
+.network-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  background: #f6f6f6;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.control-group label {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.control-group input[type="text"],
+.control-group select,
+.control-group input[type="range"] {
+  padding: 0.3rem 0.4rem;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+.control-group button {
+  padding: 0.3rem 0.6rem;
+  margin-right: 0.3rem;
+  border: 1px solid #888;
+  border-radius: 4px;
+  background: white;
+  cursor: pointer;
+}
+
+.control-group button:hover {
+  background: #ddd;
+}
+
+/* Farblegende */
+#legend {
+  background: #f8f8f8 !important;
+  border: 1px solid #ddd !important;
+  padding: 8px !important;
+  border-radius: 6px !important;
+  font-size: 0.7rem !important;     /* deutlich kleiner */
+  max-width: 100% !important;
+}
+
+#legend .legend-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)) !important;
+  grid-auto-flow: row !important;
+  gap: 4px 10px !important;          /* kleine Abstände */
+  margin-top: 6px !important;
+}
+
+#legend .legend-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+#legend .legend-color {
+  display: inline-block !important;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 2px !important;
+}
+
+#legend .legend-label {
+  font-size: 0.65rem !important;     /* sehr klein */
+  line-height: 1.1 !important;
+  color: #333 !important;
+  white-space: nowrap !important;    /* keine Zeilenumbrüche */
+}
+
+/* Button-Reihe für Clear + Undo */
+.button-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.button-row button {
+  background: #eee;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.button-row button:hover {
+  background: #ddd;
+}
+
 
 /* ───────────────────────────────────────────────
    DRUCKANSICHT (automatisch bei Print/PDF)
