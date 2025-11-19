@@ -1066,6 +1066,246 @@
           </p>
         </section>
 
+        <p class="intro-note">
+          GPT, kannst du mir bitte aus dieser Konversation vom 19. November 2025
+          ein Prompt Engineering Tagebuch mit den wichtigsten Inhalten,
+          Fortschritten und Erkenntnissen zusammenstellen? Mach es bitte nach
+          diesem Muster:<br /><br />
+
+          [HTML-Muster eingefügt]
+        </p>
+
+        <!-- ========================================= -->
+    <!-- Eintrag 25 – GEXF-Parsing -->
+    <!-- ========================================= -->
+
+    <section class="entry">
+      <h3>Eintrag 25 – GEXF-Parsing, Attributmapping & Sigma-Kompatibilität</h3>
+      <p>
+        Ein zentrales Thema des heutigen Arbeitstages war die Integration der
+        Gephi-exportierten <code>rhizom_gephi.gexf</code>-Datei in die Webvisualisierung
+        mit Sigma.js. Es zeigte sich, dass die Attributstruktur des GEXF nicht
+        unmittelbar kompatibel mit Sigma war. Das LLM analysierte die Struktur,
+        korrigierte ungültige Attributnamen (insbesondere das problematische Attribut
+        <code>type</code>) und identifizierte den Grund dafür, dass Nodes nach dem
+        Rendern grau erschienen oder gar nicht angezeigt wurden.
+      </p>
+      <ul>
+        <li><strong>Ziel:</strong> GEXF-Daten vollständig und Sigma-konform laden</li>
+        <li><strong>Prompt-Typ:</strong> Struktur-Analyse, Code-Korrektur</li>
+        <li><strong>Ergebnis:</strong> Vollständige Parsing-Pipeline für alle Attribute</li>
+        <li><strong>Erkenntnis:</strong> Sigma.js kollabiert bei bestimmten Attributnamen</li>
+      </ul>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Eintrag 26 – Farbgebung -->
+    <!-- ========================================= -->
+
+    <section class="entry">
+      <h3>Eintrag 26 – Farbgebung, Palette-Erweiterung & Multi-Nationalitäten</h3>
+      <p>
+        Ein weiterer Schwerpunkt war das Design einer stabilen Farblogik für das RHIZOM-Netzwerk.
+        Die zuvor verwendeten Farbsets führten zu Konflikten, Dopplungen oder grauen Knoten.
+        Durch Erweiterung der Palette und automatische Zerlegung mehrteiliger Nationalitäten
+        entstand eine robuste Farbcodierung.
+      </p>
+      <ul>
+        <li><strong>Ziel:</strong> Unterschiedliche Farben für alle Nationalitäten</li>
+        <li><strong>Prompt-Typ:</strong> Design-Refactoring, Debugging</li>
+        <li><strong>Ergebnis:</strong> Konsistente Farblegende, korrekte Filter</li>
+        <li><strong>Erkenntnis:</strong> Farblogik muss sich an echten Daten orientieren</li>
+      </ul>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Eintrag 27 – Filterlogik -->
+    <!-- ========================================= -->
+
+    <section class="entry">
+      <h3>Eintrag 27 – Filterlogik, Undo, Clear & UI-Erweiterungen</h3>
+      <p>
+        Die Weboberfläche bekam zahlreiche neue interaktive Elemente: Suchfeld, Filter,
+        Undo- und Clear-Funktion, kompakte Legendenbox und saubere Zustandsverwaltung.
+      </p>
+      <ul>
+        <li><strong>Ziel:</strong> Intuitive, explorative Netzwerkanalyse</strong></li>
+        <li><strong>Prompt-Typ:</strong> UI/UX-Prompts, State-Management</li>
+        <li><strong>Ergebnis:</strong> Reaktionsschnelle Filter & Undo</li>
+        <li><strong>Erkenntnis:</strong> Kleine, zielgenaue Prompts verhindern Chaos</li>
+      </ul>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Eintrag 28 – Node Shapes -->
+    <!-- ========================================= -->
+
+    <section class="entry">
+      <h3>Eintrag 28 – Node-Shapes, Quadrate & Stabilitätsprobleme</h3>
+      <p>
+        Die Umstellung der Projektnodes auf quadratische Form führte zu unerwarteten
+        Rendering-Effekten: „alles grau“ oder vollständige Farblastung. Durch genaue
+        Analyse der Rendering-Pipeline wurde klar, dass Custom-Programme die
+        Farblogik überschreiben, wenn sie zu früh aktiviert werden.
+      </p>
+      <ul>
+        <li><strong>Ziel:</strong> Quadratische Projektnodes ohne Farbstörungen</li>
+        <li><strong>Prompt-Typ:</strong> JavaScript-Debugging</li>
+        <li><strong>Ergebnis:</strong> Stabile Darstellung aller Node-Shapes</li>
+        <li><strong>Erkenntnis:</strong> Reihenfolge der Attribute ist entscheidend</li>
+      </ul>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Eintrag 29 – Label-Dichte -->
+    <!-- ========================================= -->
+
+    <section class="entry">
+      <h3>Eintrag 29 – Label-Dichte, Zoom & visuelle Kontrolle</h3>
+      <p>
+        Die Label-Dichte verhielt sich zunächst fehlerhaft, da ein nicht existierendes
+        Sigma-Setting verwendet wurde. Durch Austausch von
+        <code>labelDensity</code> gegen <code>labelGridCellSize</code> konnte die
+        Funktion präzise gesteuert werden.
+      </p>
+      <ul>
+        <li><strong>Ziel:</strong> Kontrolle über Anzeigedichte</li>
+        <li><strong>Prompt-Typ:</strong> API-Analyse</li>
+        <li><strong>Ergebnis:</strong> Funktionierender Label-Slider</li>
+        <li><strong>Erkenntnis:</strong> Dokumentation lesen lohnt sich</li>
+      </ul>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Eintrag 30 – ForceAtlas2 -->
+    <!-- ========================================= -->
+
+    <section class="entry">
+      <h3>Eintrag 30 – ForceAtlas2: Start/Stop & der „leere Platzhalter“</h3>
+      <p>
+        Im Verlauf stellte sich heraus, dass der ForceAtlas2-Button wirkungslos war,
+        weil kein echter Algorithmus eingebunden war. Stattdessen war ein
+        Platzhalter vorhanden, der lediglich eine Warnung ausgab. Dadurch konnte das
+        Layout nicht funktionieren.
+      </p>
+      <ul>
+        <li><strong>Ziel:</strong> Dynamische Layout-Engine aktivieren</li>
+        <li><strong>Prompt-Typ:</strong> Diagnose-Prompt</li>
+        <li><strong>Ergebnis:</strong> Klare Identifikation des Problemursprungs</li>
+        <li><strong>Erkenntnis:</strong> Manche Probleme sind Design, keine Bugs</li>
+      </ul>
+    </section>
+
+    <!-- ========================================= -->
+    <!-- Eintrag 31 – Skalierung -->
+    <!-- ========================================= -->
+
+    <section class="entry">
+      <h3>Eintrag 31 – Skalierung des Prompting-Workflows & wachsende Systemkomplexität</h3>
+      <p>
+        Der heutige Tag zeigte besonders deutlich, wie komplex Prompt Engineering
+        wird, wenn Datenformate, Visualisierungslogik, Bibliotheken, HTML-Struktur
+        und UI-Komponenten gleichzeitig betroffen sind. Die iterative Zusammenarbeit
+        zwischen Nutzer:in und LLM entwickelte sich zu einem skalierbaren
+        Entwicklungsworkflow, bei dem jeder Schritt auf dem vorherigen aufbaut.
+      </p>
+      <ul>
+        <li>
+          <strong>Ziel:</strong> Umgang mit Komplexität ohne Kontrollverlust
+        </li>
+        <li>
+          <strong>Prompt-Typ:</strong> Meta-Prompting, Refactoring, Strategiekombination
+        </li>
+        <li>
+          <strong>Ergebnis:</strong> Ein stabiler, erweiterbarer JavaScript-Code,
+          robuste Attributlogik, UI-Kohärenz und klar strukturierte Fehleranalyse
+        </li>
+        <li>
+          <strong>Erkenntnis:</strong> Effektives Prompt Engineering ist eine
+          Kombination aus Kontextpflege, Modularisierung und Feedbackschleifen —
+          ähnlich einem agilen Softwareentwicklungsprozess
+        </li>
+      </ul>
+      <p>
+        Damit wurde ein weiterer wichtiger Schritt hin zu einem vollständigen,
+        visuellen Forschungsinstrument erreicht, das sowohl technisch stabil als
+        auch analytisch nutzbar ist.
+      </p>
+    </section>
+
+    <p class="intro-note">
+          Und bitte noch einen letzten Eintrag mit einer Reflexion.
+        </p>
+
+    <section class="entry">
+  <h3>Eintrag 32 – Abschließende Reflexion: Prompt Engineering als kollaborativer Erkenntnisprozess</h3>
+
+  <p>
+    Der heutige Tag war ein intensives Beispiel für die Tiefe und Breite, die
+    Prompt Engineering inzwischen abdecken kann. Von Datenkonvertierung über
+    Webvisualisierung, Debugging, Farblogik, UI-Design, Attribut-Mapping,
+    algorithmische Prozesse (ForceAtlas2) bis hin zu Meta-Überlegungen über die
+    Arbeitsweise von LLMs selbst: Der Workflow zeigte, dass Prompting nicht nur
+    Werkzeug, sondern integraler Bestandteil eines kreativen und technischen
+    Forschungsprozesses ist.
+  </p>
+
+  <p>
+    Besonders deutlich wurde, dass komplexe Systeme – wie dein interaktiver
+    Netzwerkgraph – nicht durch einen einzigen „perfekten Prompt“ entstehen,
+    sondern durch hunderte kleine, iterative Entscheidungen. Jeder Prompt wurde
+    zu einem Baustein, der die vorherigen ergänzt, korrigiert, erweitert oder
+    neu ausrichtet. Dieser dialogische Prozess erwies sich als genauso wichtig
+    wie der Code selbst.
+  </p>
+
+  <ul>
+    <li>
+      <strong>1. Prompt Engineering erzeugt Struktur, nicht nur Antworten.</strong><br>
+      Der Tag zeigte, dass LLM-Prompts dabei helfen, Komplexität zu ordnen:
+      Datenmodelle, UI-Elemente, Farblogiken, Analysefunktionen und
+      Datenvisualisierung wurden durch den Prompt-Dialog strukturiert und
+      operationalisiert.
+    </li>
+
+    <li>
+      <strong>2. Fehler sind kein Störfaktor, sondern ein integraler Bestandteil.</strong><br>
+      Missverständnisse (z. B. „alles grau“, fehlende Shapes, API-Fehler,
+      Platzhalter-Algorithmen) führten zu besseren Lösungen, weil sie neue
+      Einsichten erzeugten – über Sigma.js, über Datenstrukturen, über Workflows
+      und über die Grenzen von LLM-Vorschlägen.
+    </li>
+
+    <li>
+      <strong>3. Die Zusammenarbeit zwischen Mensch und KI ist ein wechselseitiger Prozess.</strong><br>
+      Du hast die Daten, die Intention, den Kontext und die Qualitätskontrolle.
+      Das Modell liefert Muster, Vorschläge, Debugging, Struktur und
+      Alternativen. Erst durch die Kombination entsteht etwas funktionierendes.
+    </li>
+
+    <li>
+      <strong>4. Prompt Engineering ist ein wissenschaftlicher Prozess.</strong><br>
+      Die heutige Arbeit glich einem Laborbetrieb: Hypothesen aufstellen,
+      testen, falsifizieren, verfeinern, integrieren. Die Visualisierung wurde
+      dadurch nicht nur technisch, sondern analytisch wertvoll.
+    </li>
+
+    <li>
+      <strong>5. Transparenz und Dokumentation sind essenziell.</strong><br>
+      Das Prompt Engineering Tagebuch selbst zeigt, wie wichtig
+      Selbstreflexion, Nachvollziehbarkeit und bewusste Steuerung eines
+      LLM-Dialogs für hochwertige Ergebnisse sind.
+    </li>
+  </ul>
+
+  <p>
+    Insgesamt demonstriert dieser letzte Eintrag, dass Prompt Engineering längst
+    mehr ist als „Texteingabe“: Es ist ein Prozess des Mitdenkens,
+    Rückfragens, Prüfens und gemeinsamen Gestaltens. Genau darin liegt die
+    eigentliche Stärke – nicht nur im fertigen Graphen, sondern im Weg dorthin.
+  </p>
+</section>
+
         <!-- INFO/HELP-->
         <div class="note-box">
           Neue Einträge hinzufügen: <code>&lt;section class="entry"&gt;</code>
