@@ -3,80 +3,100 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Wörterbuch mit allen Begriffen → korrekte Glossar-IDs
   const terms = {
-    "Digital Humanities": "digital-humanities",
-    "Large Language Models": "large-language-models-llms",
-    "LLMs": "large-language-models-llms",
-    "LLM": "large-language-models-llms",
+  "Akteur-Netzwerk-Theorien": "akteur-netzwerk-theorien",
+  "API": "api",
 
-    "Netzwerkanalyse": "netzwerkanalyse",
-    "Netzwerkmodell": "netzwerkmodell",
+  "Art World": "art-world",
+  "Artworld": "artworld-danto",
 
-    "Knoten": "knoten",
-    "Node": "knoten",
+  "Backend": "backend",
 
-    "Kanten": "kanten",
-    "Zentralität": "zentralitaet",
+  "CSV": "csv",
+  "Cluster": "clusterbildung",
+  "Clusterbildung": "clusterbildung",
+  "Communities of Practice": "communities-of-practice",
 
-    "Datenmodellierung": "datenmodellierung",
-    "Datenbank": "datenbank",
-    "SQLite": "sqlite",
-    "SQLite-Datenbank": "sqlite-datenbank",
+  "Consistent Lines of Activity": "consistent-lines-of-activity",
 
-    "ER-Diagramm": "er-diagramm",
-    "Entität": "entitaet",
-    "Metadata": "metadata",
-    "Normalisierung": "normalisierung",
+  "Datenbank": "datenbank",
+  "Datenmodellierung": "datenmodellierung",
+  "Data Cleaning": "data-cleaning",
+  "Disambiguierung": "disambiguierung",
+  "Digital Humanities": "digital-humanities",
 
-    "Webscraping": "webscraping",
+  "Entität": "entitaet",
+  "ER-Diagramm": "er-diagramm",
 
-    "Named Entity Recognition": "named-entity-recognition-ner",
-    "NER": "named-entity-recognition-ner",
+  "Feld": "feld-bourdieu",
+  "Feld (Bourdieu)": "feld-bourdieu",
 
-    "Disambiguierung": "disambiguierung",
-    "Clusterbildung": "clusterbildung",
-    "Cluster": "clusterbildung",
+  "Gephi": "gephi",
+  "GEXF": "gexf",
+  "Graph": "graph",
+  "Graphdatenbank": "graphdatenbank",
+  "Graphology": "graphology",
 
-    "Visualisierung": "visualisierung",
-    "Interaktive Visualisierung": "interaktive-visualisierung",
-    "Visualisierungslayout": "visualisierungslayout",
-    "Zoom-Interaktion": "zoom-interaktion",
+  "Infrastrukturen des Kulturellen": "infrastrukturen-des-kulturellen",
+  "Institutionelle Logiken": "institutionelle-logiken",
+  "Interaktive Visualisierung": "interaktive-visualisierung",
+  "Interpretativer Rahmen": "interpretativer-rahmen",
 
-    "Gephi": "gephi",
-    "Graphology": "graphology",
-    "Sigma.js": "sigma-js",
-    "API": "api",
+  "Kanten": "kanten",
+  "Knowledge Graph": "knowledge-graphs",
+  "Knowledge Graphs": "knowledge-graphs",
+  "Knoten": "knoten",
 
-    "Graph": "graph",
-    "Graphdatenbank": "graphdatenbank",
-    "GEXF": "gexf",
+  "Large Language Models": "large-language-models-llms",
+  "Layout-Algorithmus": "layout-algorithmus",
+  "LLM": "large-language-models-llms",
+  "LLMs": "large-language-models-llms",
 
-    "Knowledge Graphs": "knowledge-graphs",
-    "Knowledge Graph": "knowledge-graphs",
-    "Wissensgraph": "wissensgraph",
+  "Metadata": "metadata",
 
-    "Semantic AI": "semantic-ai",
+  "Named Entity Recognition": "named-entity-recognition-ner",
+  "NER": "named-entity-recognition-ner",
+  "Neo-Institutionalismus": "neo-institutionalismus",
+  "Netzwerkanalyse": "netzwerkanalyse",
+  "Netzwerkmodell": "netzwerkmodell",
+  "Node": "knoten",
+  "Normalisierung": "normalisierung",
 
-    "Backend": "backend",
-    "CSV": "csv",
-    "Data Cleaning": "data-cleaning",
+  "Production of Culture Perspective": "production-of-culture",
 
-    "Rolle": "rolle",
-    "Temporalität": "temporalitaet",
+  "Relationale Muster": "relationale-muster",
 
-    "Communities of Practice": "communities-of-practice",
-    "Infrastrukturen des Kulturellen": "infrastrukturen-des-kulturellen",
+  "Rolle": "rolle",
 
-    "Akteur-Netzwerk-Theorien": "akteur-netzwerk-theorien",
+  "Rhizomatische Strukturen": "rhizomatische-strukturen",
+  "rhizomatische Strukturen": "rhizomatische-strukturen",
+  "Rhizom": "rhizomatische-strukturen",
+  "rhizomatisch": "rhizomatische-strukturen",
 
-    "Layout-Algorithmus": "layout-algorithmus",
-  };
+  "Semantic AI": "semantic-ai",
+  "Sigma.js": "sigma-js",
+  "Soziale Netzwerktheorie": "soziale-netzwerktheorie",
+  "SQLite": "sqlite",
+  "SQLite-Datenbank": "sqlite-datenbank",
+  "Symbolisches Kapital": "symbolisches-kapital",
+  "System": "system-luhmann",
+  "System (Luhmann)": "system-luhmann",
+
+  "Temporalität": "temporalitaet",
+
+  "Visualisierung": "visualisierung",
+  "Visualisierungslayout": "visualisierungslayout",
+  "Webscraping": "webscraping",
+
+  "Wissensgraph": "wissensgraph",
+
+  "Zentralität": "zentralitaet"
+};
+
 
   // Elemente, in denen NICHT verlinkt werden soll
   const forbiddenParents = ["A", "CODE", "PRE", "H1", "H2", "H3", "H4"];
 
   // 🔹 Basis-Pfad für den Glossar-Link je nach Verzeichnis
-  // Root-Seiten:   "glossar.html#…"
-  // Unterordner (z.B. /posts/): "../glossar.html#…"
   let baseHref = "glossar.html";
   const path = window.location.pathname;
 

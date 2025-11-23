@@ -210,7 +210,7 @@ sup.fn a {
    kompakt + kleinere Schrift
    ------------------------------- */
 
-/* Counter wird nur EINMAL global zurückgesetzt */
+/* Globale Fußnoten-Zählung */
 body {
   counter-reset: ref;
 }
@@ -228,34 +228,40 @@ body {
   counter-increment: ref;
   position: relative;
 
-  padding-left: 2rem;  /* bündiger! */
+  padding-left: 2rem;
   text-indent: -0.3rem;
 
   margin-bottom: 0.28rem;
 }
 
+/* Automatisch generierte Zähler */
 .ref li::before {
   content: "[" counter(ref) "] ";
   position: absolute;
-  left: 0.3rem;         /* bündig! */
+  left: 0.3rem;
   top: 0;
 
   font-weight: 600;
   font-size: 0.8rem;
 }
 
-.ref li:target {
+/* -----------------------------------------
+   Dynamische Hervorhebung per JavaScript
+   (ersetzt komplett :target-Mechanismus)
+   ----------------------------------------- */
+
+.ref li.fn-highlight {
   background: var(--accent-light);
   border-radius: 8px;
+  transition: background 0.4s ease, border-radius 0.4s ease;
 }
 
-.ref li:target::before {
+.ref li.fn-highlight::before {
   background: var(--accent-light);
   border-radius: 8px 0 0 8px;
   padding: 0.05rem 0.25rem 0.05rem 0.3rem;
   margin-left: -0.3rem;
 }
-
 
 /* -------------------------------
    Intro-Note & Hinweis-Box
@@ -883,6 +889,22 @@ figure.image figcaption {
 .button-row button:hover {
   background: #ddd;
 }
+
+/* ───────────────────────────────────────────────
+   Zurück-zur-Stelle-Link im Glossar
+   ─────────────────────────────────────────────── */
+.glossar-backlink {
+  display: inline-block;
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.glossar-backlink:hover {
+  text-decoration: underline;
+}
+
 
 
 /* ───────────────────────────────────────────────

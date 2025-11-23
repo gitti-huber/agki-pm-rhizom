@@ -24,8 +24,8 @@
       }
 
       /* Abstand zwischen Einträgen */
-      dl dt {
-        font-weight: 600;
+      dl > dt {
+        font-weight: 600 !important;
         margin-top: 1rem;
       }
     </style>
@@ -367,6 +367,26 @@
               eingesetzt.
             </dd>
 
+            <dt id="rhizomatische-strukturen">Rhizomatische Strukturen</dt>
+            <dd>
+              Der Begriff der rhizomatischen Strukturen stammt von Gilles
+              Deleuze und Félix Guattari und bezeichnet ein Modell kultureller,
+              sozialer und begrifflicher Organisation, das nicht-hierarchisch,
+              offen und vielgestaltig verzweigt ist. Rhizome entwickeln sich
+              über Querverbindungen, Abzweigungen und emergente Muster, ohne
+              Zentrum, eindeutige Richtung oder feste Grenzen. In den Kultur-
+              und Sozialwissenschaften dient das Rhizom als heuristische Figur,
+              um Prozesse zu beschreiben, die sich über Netzwerke, Knotenpunkte
+              und seitliche Verbindungen entfalten. <br />
+              Für die Netzwerkanalyse künstlerischer Zusammenarbeit ist das
+              Rhizom ein besonders fruchtbares Bild: Es erlaubt, kreative Praxis
+              als dynamisches Beziehungsgeflecht zu begreifen, in dem
+              Kooperation, Austausch und neue Konstellationen stetig entstehen.
+              Damit verbindet sich die Theorie des Rhizoms eng mit
+              graphenbasierten Analysen und Visualisierungen, wie sie im
+              RHIZOM-Projekt eingesetzt werden.
+            </dd>
+
             <dt id="rolle">Rolle</dt>
             <dd>
               Art der Beteiligung einer Person an einem Projekt (z.&nbsp;B.
@@ -412,6 +432,103 @@
               Bedienungsfeature interaktiver Visualisierungen, das Nutzer:innen
               erlaubt, in Details zu navigieren oder Gesamtstrukturen zu
               erfassen.
+            </dd>
+
+            <dt id="art-world">Art World</dt>
+            <dd>
+              Von Howard S. Becker geprägter Begriff, der Kunstproduktion als
+              Ergebnis kollektiver, kooperativer Prozesse versteht. Eine Art
+              World umfasst alle Personen, Institutionen, Routinen und
+              materiellen Infrastrukturen, die an der Hervorbringung eines
+              Kunstwerks beteiligt sind.
+            </dd>
+
+            <dt id="consistent-lines-of-activity">
+              Consistent Lines of Activity
+            </dt>
+            <dd>
+              Begriff von Howard S. Becker, der beschreibt, dass soziale
+              Handlungen trotz situativer Offenheit häufig stabile,
+              wiederkehrende Muster aufweisen. Diese Beständigkeit ermöglicht
+              Koordination und Kooperation in Kunstwelten.
+            </dd>
+
+            <dt id="feld-bourdieu">Feld (Bourdieu)</dt>
+            <dd>
+              Bourdieus Konzept eines sozialen Feldes beschreibt einen
+              relational strukturierten sozialen Raum, in dem Akteure um
+              Positionen, symbolisches Kapital und Deutungshoheit konkurrieren.
+              Ein künstlerisches Feld produziert und reproduziert eigene Regeln
+              und Strukturen.
+            </dd>
+
+            <dt id="system-luhmann">System (Luhmann)</dt>
+            <dd>
+              In Luhmanns Theorie ein operativ geschlossenes,
+              selbstreferenzielles Kommunikationssystem. Das Kunstsystem
+              unterscheidet sich durch spezifische Formen ästhetischer
+              Beobachtung und Bewertung.
+            </dd>
+
+            <dt id="artworld-danto">Artworld (Danto)</dt>
+            <dd>
+              Begriff nach Arthur C. Danto, der die Gesamtheit der
+              theoretischen, institutionellen und interpretativen Rahmen
+              bezeichnet, die bestimmen, wann etwas als Kunst gilt. Der
+              Schwerpunkt liegt auf Bedeutungs- und Kontextstrukturen.
+            </dd>
+
+            <dt id="production-of-culture">
+              Production of Culture Perspective
+            </dt>
+            <dd>
+              Forschungsansatz zu institutionellen, organisatorischen und
+              infrastrukturellen Bedingungen kultureller Produktion (Richard A.
+              Peterson). Besonders relevant für die Untersuchung kultureller
+              Organisationsformen.
+            </dd>
+
+            <dt id="neo-institutionalismus">Neo-Institutionalismus</dt>
+            <dd>
+              Organisationssoziologischer Ansatz, der untersucht, wie
+              Institutionen Erwartungen, Rollen und Handlungen prägen. Im
+              Kunstkontext erklärt er Isomorphie und die Ausbildung stabiler
+              Praktiken.
+            </dd>
+
+            <dt id="interpretativer-rahmen">Interpretativer Rahmen</dt>
+            <dd>
+              Bedeutungs- und Kontextgefüge, das bestimmt, wie kulturelle
+              Phänomene verstanden, bewertet und eingeordnet werden. Zentral im
+              Artworld-Konzept von Danto.
+            </dd>
+
+            <dt id="symbolisches-kapital">Symbolisches Kapital</dt>
+            <dd>
+              Nach Pierre Bourdieu eine immaterielle Ressource aus Anerkennung,
+              Reputation, Legitimität und Prestige. Für die Positionierung im
+              Feld zentral.
+            </dd>
+
+            <dt id="institutionelle-logiken">Institutionelle Logiken</dt>
+            <dd>
+              Kulturell und organisatorisch geteilte Regeln, Erwartungen und
+              Muster, die Handlungen und Entscheidungen innerhalb von
+              Organisationen strukturieren.
+            </dd>
+
+            <dt id="relationale-muster">Relationale Muster</dt>
+            <dd>
+              Wiederkehrende Formen von Beziehungen, Positionen und
+              Interaktionen zwischen Akteuren. Grundbegriff der Social Network
+              Analysis.
+            </dd>
+
+            <dt id="soziale-netzwerktheorie">Soziale Netzwerktheorie</dt>
+            <dd>
+              Theorieperspektive, die soziale Phänomene als Resultat
+              relationaler Strukturen auffasst. Begründer ist Harrison White.
+              Grundlage moderner Netzwerkanalyse.
             </dd>
           </dl>
         </section>
@@ -506,6 +623,37 @@
         });
       });
     </script>
+
+    // =============================== // BACKLINKS //
+    ===============================
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const dl = document.querySelector("dl");
+  if (!dl) return;
+
+  // Prüfen, ob die aktuelle URL einen Glossar-Anchor enthält
+  const hasAnchor = window.location.hash.length > 1;
+
+  dl.querySelectorAll("dd").forEach(dd => {
+    const backlink = document.createElement("a");
+    backlink.className = "glossar-backlink";
+
+    if (hasAnchor) {
+      // Glossar wirklich über Begriff geöffnet → zurück zur Textstelle
+      backlink.textContent = "↩ Zurück zur Textstelle";
+      backlink.href = "javascript:window.history.back()";
+    } else {
+      // Benutzer kam über Menü oder direkt → nur nach oben
+      backlink.textContent = "↩ Nach oben";
+      backlink.href = "#top";
+    }
+
+    dd.appendChild(document.createElement("br"));
+    dd.appendChild(backlink);
+  });
+});
+</script>
+
 
     <script>
       // ===============================

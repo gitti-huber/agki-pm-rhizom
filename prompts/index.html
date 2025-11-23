@@ -1306,6 +1306,165 @@
   </p>
 </section>
 
+<p class="intro-note">
+          GPT, kannst du mir alles, worüber wir heute diskutiert haben, in sortierten Einträgen nach diesem Muster zusammenfassen? Setze dabei bitte nach dem bisher letzten Eintrag deine neuen Einträge nach demselben Muster fort:<br /><br />
+
+          [HTML-Muster eingefügt]
+        </p>
+
+<section class="entry">
+  <h3>Eintrag 33 – HTML-Formatierung & Infobox-Erstellung</h3>
+  <p>
+    Der Arbeitstag begann mit der Aufgabe, textbasierte Aufgabenstellungen
+    (1-Pager, Pitch-Konzept etc.) direkt in HTML zu überführen. Besonderes
+    Augenmerk lag darauf, die Vorgaben in ein Webformat einzubetten, sodass sie
+    problemlos in GitHub Pages integriert werden können. Das LLM übernahm die
+    komplette Transformation in sauberes, gut lesbares HTML.
+  </p>
+  <ul>
+    <li><strong>Ziel:</strong> Formatierung komplexer Aufgabenblöcke als HTML</li>
+    <li><strong>Prompt-Typ:</strong> Transformations-Prompt („Bitte in HTML“)</li>
+    <li><strong>Ergebnis:</strong> Vollständig formatierte HTML-Blöcke für Aufgaben</li>
+    <li><strong>Erkenntnis:</strong> Klare Vorgaben über Schriftgröße, Box-Stil 
+      und Layout verbessern die Konsistenz neuer Webkomponenten erheblich</li>
+  </ul>
+</section>
+
+
+<section class="entry">
+  <h3>Eintrag 34 – Entwicklung einer Info-Box mit kleiner Typografie</h3>
+  <p>
+    Anschließend wurde der Wunsch formuliert, die zuvor erzeugte HTML-Aufgabe in
+    eine dezente Infobox zu integrieren. Das LLM schlug verschiedene Varianten vor –
+    Nutzung bestehender Klassen wie <code>.note-box</code> oder Erstellung einer
+    neuen, spezielleren Klasse <code>.info-box-small</code>.
+  </p>
+  <ul>
+    <li><strong>Ziel:</strong> Einbettung von Aufgabenblöcken in stilistische Info-Boxen</li>
+    <li><strong>Prompt-Typ:</strong> Layout-/Stil-Prompt</li>
+    <li><strong>Ergebnis:</strong> Fertige HTML- und CSS-Snippets zur sofortigen Integration</li>
+    <li><strong>Erkenntnis:</strong> Web-Komponenten sollten modular entwickelt 
+      werden: kleine Boxen, klare Typografie, einheitliche Margins</li>
+  </ul>
+</section>
+
+
+<section class="entry">
+  <h3>Eintrag 35 – Glossar-Integration, automatische Verlinkung & ID-Management</h3>
+  <p>
+    Der nächste Schritt betraf das Glossar: Begriffe wie „rhizomatische Strukturen“ 
+    sollten automatisch erkannt und verlinkt werden. Das LLM analysierte die 
+    bestehende <code>glossar-linker.js</code> und integrierte neue Begriffe, IDs 
+    sowie Backlink-Mechanismen.
+  </p>
+  <ul>
+    <li><strong>Ziel:</strong> Erweiterung des Glossars um neue Begriffe + Automatik-Links</li>
+    <li><strong>Prompt-Typ:</strong> JS-Analyse & Mikropatching</li>
+    <li><strong>Ergebnis:</strong> Korrekt sortierte Glossar-Einträge & funktionsfähige Backlinks</li>
+    <li><strong>Erkenntnis:</strong> Selbst kleine Ungenauigkeiten im ID-Format 
+      (Groß-/Kleinschreibung, Bindestriche) verhindern automatische Verlinkung</li>
+  </ul>
+</section>
+
+
+<section class="entry">
+  <h3>Eintrag 36 – Backlink-Script, Timing-Logik & UX-Optimierung</h3>
+  <p>
+    Bei der Implementierung der Backlinks („Zurück zur Textstelle“) wurde ein 
+    komplexeres Verhalten notwendig: Backlinks sollten nur erscheinen, wenn die 
+    Seite über einen Glossar-Link geöffnet wird, und ansonsten verborgen bleiben.
+    Das LLM entwickelte dafür ein optimiertes JS-Snippet.
+  </p>
+  <ul>
+    <li><strong>Ziel:</strong> Kontextabhängige Backlinks ohne Störeffekte</li>
+    <li><strong>Prompt-Typ:</strong> UX-Prompt + Script-Optimierung</li>
+    <li><strong>Ergebnis:</strong> Präzises Backlink-Verhalten basierend auf URL-Parametern</li>
+    <li><strong>Erkenntnis:</strong> UX-Skripte benötigen klare Triggersignale 
+      (z. B. <code>?from=xyz</code>), um störfreie Bedingungen zu schaffen</li>
+  </ul>
+</section>
+
+
+<section class="entry">
+  <h3>Eintrag 37 – Fußnoten-Hervorhebung, CSS-Debugging & Timing-Probleme</h3>
+  <p>
+    Es folgte eine längere Debugging-Phase rund um die blaue Hervorhebung von 
+    Fußnoten. Das Problem: Hervorhebungen blieben bestehen oder verschwanden 
+    gar nicht. Das LLM entwickelte ein neues Modell: Statt CSS <code>:target</code> 
+    wurde eine JS-Klasse <code>.fn-highlight</code> eingeführt, die nach einem 
+    Timeout automatisch entfernt wird.
+  </p>
+  <ul>
+    <li><strong>Ziel:</strong> Kurzzeitige, klare Hervorhebung der angesprungenen Fußnote</li>
+    <li><strong>Prompt-Typ:</strong> CSS/JS-Debugging („Warum bleibt es blau?“)</li>
+    <li><strong>Ergebnis:</strong> Stabiles Highlighting mit sauberem Timeout</li>
+    <li><strong>Erkenntnis:</strong> <code>:target</code>-basiertes Styling ist 
+      für dynamische Systeme oft unzuverlässig; JS-gesteuerte Klassen sind robuster</li>
+  </ul>
+</section>
+
+
+<section class="entry">
+  <h3>Eintrag 38 – Analyse der CSS-Konflikte & Neuaufbau der Highlight-Sektion</h3>
+  <p>
+    Die Hervorhebung funktionierte zunächst nicht, weil die bestehende CSS-Datei 
+    alte, konkurrierende Regeln enthielt. Das LLM analysierte die komplette Datei, 
+    identifizierte Konflikte und baute die gesamte Highlight-Sektion neu – 
+    inklusive geschmeidigem Fade-out.
+  </p>
+  <ul>
+    <li><strong>Ziel:</strong> Saubere CSS-Basis ohne subtil konkurrierende Regeln</li>
+    <li><strong>Prompt-Typ:</strong> Vollanalyse einer externen CSS-Datei</li>
+    <li><strong>Ergebnis:</strong> Neu geschriebenes, fehlerfreies Highlight-CSS</li>
+    <li><strong>Erkenntnis:</strong> CSS-Konflikte entstehen oft durch alte 
+      Regeln, die nicht mehr gebraucht werden – Refactoring ist essenziell</li>
+  </ul>
+</section>
+
+
+<section class="entry">
+  <h3>Eintrag 39 – Debugging der Fußnoten-Nummerierung & Hash-Logik</h3>
+  <p>
+    Ein weiteres Problem betraf die automatische Renummerierung der Fußnoten: 
+    Manuelle Beispiele wie <code>[28]</code> verwiesen später auf falsche Ziele 
+    (<code>[29]</code>). Das LLM entwickelte ein zweistufiges System: automatische 
+    Nummerierung aller <code>sup.fn</code>-Links + Korrektur aller manuellen Beispiele.
+  </p>
+  <ul>
+    <li><strong>Ziel:</strong> Stabile, konfliktfreie Fußnoten-Nummerierung</li>
+    <li><strong>Prompt-Typ:</strong> Logik-Analyse & JS-Patching</li>
+    <li><strong>Ergebnis:</strong> Konsistente Synchronisierung von Verweisen und IDs</li>
+    <li><strong>Erkenntnis:</strong> Nummerierungslogik muss global gedacht werden – 
+      einzelne Abkürzungen führen schnell zu Inkonsistenzen</li>
+  </ul>
+</section>
+
+
+<section class="entry">
+  <h3>Eintrag 40 – Abschließende Meta-Reflexion: Fußnoten, Glossar, JS & Systemkohärenz</h3>
+  <p>
+    Der Abschluss der heutigen Arbeit machte deutlich, dass scheinbar kleine 
+    Web-Komponenten wie Fußnoten, Glossar-Links oder Backlinks komplexe 
+    Systeme mit vielen Abhängigkeiten sind. Das LLM half, aus Chaos ein 
+    konsistentes, vollständig integriertes System zu formen.
+  </p>
+  <ul>
+    <li><strong>Hauptthema:</strong> Systemische Kohärenz statt Einzelkorrekturen</li>
+    <li><strong>Reflexion:</strong> 
+      Fußnotenhighlight, automatische Nummerierung, Backlinks, Glossar-Links und 
+      Tooltip-Interaktionen greifen ineinander – nur ein holistischer Ansatz 
+      verhindert Fehlerketten.
+    </li>
+    <li><strong>Kern-Erkenntnis:</strong> 
+      Effektives Prompt Engineering ist nicht „Frage–Antwort“, sondern ein 
+      kontinuierlicher, systemischer Designprozess.
+    </li>
+    <li><strong>Outcome:</strong> Ein vollständig funktionierendes, dynamisches 
+      Web-Ökosystem für wissenschaftliche Hypertext-Arbeit.</li>
+  </ul>
+</section>
+
+
         <!-- INFO/HELP-->
         <div class="note-box">
           Neue Einträge hinzufügen: <code>&lt;section class="entry"&gt;</code>
