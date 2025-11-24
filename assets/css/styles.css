@@ -7,7 +7,7 @@ html {
 }
 
 :root {
-  --w: 900px;
+  --w: min(90vw, 1200px);
   --text: #1a1a1a;
   --muted: #555;
   --border: #d8d8d8;
@@ -564,10 +564,25 @@ body.scrolled .back-to-top {
   text-decoration-color: var(--accent-color-hover);
 }
 
-
 /* -----------------------------------------
    Images
 ----------------------------------------- */
+
+/* --- Home-Bild klein + zentriert + Lightbox-fähig --- */
+.home-figure {
+  max-width: 280px;
+  margin: 0 auto 2rem auto; /* zentrieren */
+  text-align: center;
+}
+
+.home-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
 
 /* Image */
 .image {
@@ -627,6 +642,15 @@ figure.image figcaption {
   height: 1em;          /* exakt so hoch wie der Text */
   width: auto;          /* Breite automatisch */
   vertical-align: -0.1em;  /* kleine optische Korrektur */
+}
+
+/* FIX: Zentrierung für Startseitenbild (überschreibt alle anderen figure-Regeln) */
+figure.home-figure,
+figure.home-figure img {
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
 }
 
 
@@ -905,6 +929,307 @@ figure.image figcaption {
   text-decoration: underline;
 }
 
+/* ───────────────────────────────────────────────
+   WIDE LAYOUT (für Visualisierungen)
+   Auf Seiten mit <body class="wide-layout">
+   ─────────────────────────────────────────────── */
+
+body.wide-layout header,
+body.wide-layout main,
+body.wide-layout article,
+body.wide-layout footer {
+  max-width: min(95vw, 1600px) !important;
+}
+
+body.wide-layout article {
+  padding: 0;            /* Kein Innenabstand */
+  border: none;          /* Keine Box-Umrandung */
+  box-shadow: none;
+  background: transparent;
+}
+
+/* Optionale Sidebar für Filter/Controls */
+/* Basistyle für Sidebar */
+.visual-controls {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  flex-shrink: 0;
+  height: fit-content;
+}
+
+/* Layout für Visualisierung + Controls */
+.visual-container {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.visual-pane {
+  flex: 1;
+  min-height: 600px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* === FIX 1: Linkes Controls-Panel sauber begrenzen === */
+
+.visual-controls {
+  width: 260px !important;
+  max-width: 260px !important;
+  box-sizing: border-box !important;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.visual-controls input[type="text"],
+.visual-controls select,
+.visual-controls input[type="range"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.visual-controls button {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* ───────────────────────────────────────────────
+   FIXES FÜR VISUALISIERUNGSSEITE (3-Spalten-Layout)
+   ─────────────────────────────────────────────── */
+
+.visual-container-3 {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+  align-items: flex-start;
+}
+
+/* Linkes Panel */
+.visual-controls {
+  width: 260px;
+  flex-shrink: 0;
+}
+
+/* Visualisierung in der Mitte */
+.visual-pane {
+  flex: 1;
+  min-height: 700px;        /* <<< WICHTIG – ohne das kommt 0px raus! */
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Sigma-Container direkt robuster machen */
+#sigma-container {
+  width: 100%;
+  height: 100%;
+  min-height: 700px;        /* <<< fallback, falls Parent nicht greift */
+}
+
+/* Rechtes Info-Panel */
+.info-sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  background: #fffbe6;
+  border: 1px solid #e0d689;
+  border-radius: 10px;
+  padding: 1rem;
+  height: fit-content;
+}
+
+/* Mobile: Info-Panel verstecken */
+@media (max-width: 900px) {
+  .info-sidebar {
+    display: none;
+  }
+}
+
+/* ===========================================================
+   HOME: Kachel-Grid
+   =========================================================== */
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Kacheln */
+.home-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-decoration: none;
+
+  color: var(--text);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: block;
+}
+
+.home-card,
+.home-card:hover,
+.home-card h2,
+.home-card p {
+  text-decoration: none !important;
+}
+
+
+/* Farbvarianten für Kacheln – Pastelltöne */
+.home-card:nth-child(1) {
+  background: #eef5ff; 
+  border-color: #c5d9ff;
+}
+
+.home-card:nth-child(2) {
+  background: #fff4e6;
+  border-color: #ffd8b5;
+}
+
+.home-card:nth-child(3) {
+  background: #e9fff3;
+  border-color: #b6f5d0;
+}
+
+.home-card:nth-child(4) {
+  background: #f6eaff;
+  border-color: #ddbfff;
+}
+
+.home-card:nth-child(5) {
+  background: #f2f2f2;
+  border-color: #dcdcdc;
+}
+
+/* Hover jeweils etwas kräftiger */
+.home-card:nth-child(1):hover { background: #dcebff; }
+.home-card:nth-child(2):hover { background: #ffe9cf; }
+.home-card:nth-child(3):hover { background: #d2ffe7; }
+.home-card:nth-child(4):hover { background: #ead9ff; }
+.home-card:nth-child(5):hover { background: #e5e5e5; }
+
+
+/* ===========================================================
+   ABOUT: Theoriekacheln für die 7 Traditionen
+   =========================================================== */
+
+.theory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.theory-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+
+  display: block;
+  text-decoration: none;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.2s ease;
+}
+
+/* Titel in der Kachel */
+.theory-card strong {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+/* leichte Pastellfarben für Abwechslung */
+.theory-card:nth-child(1) { background: #eef5ff; border-color: #c5d9ff; }
+.theory-card:nth-child(2) { background: #fff4e6; border-color: #ffd8b5; }
+.theory-card:nth-child(3) { background: #e9fff3; border-color: #b6f5d0; }
+.theory-card:nth-child(4) { background: #f6eaff; border-color: #ddbfff; }
+.theory-card:nth-child(5) { background: #f2f2f2; border-color: #dcdcdc; }
+.theory-card:nth-child(6) { background: #e8f7ff; border-color: #bde4ff; }
+.theory-card:nth-child(7) { background: #fff0f6; border-color: #ffd0e8; }
+
+/* Hover – NICHT unterstreichen, sondern subtil animieren */
+.theory-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-decoration: none !important;
+}
+
+
+/* Titel */
+.home-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.4rem;
+  font-size: 1.2rem;
+  color: var(--accent);
+}
+
+/* Beschreibung */
+.home-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
+  font-size: 0.95rem;
+}
+
+/* Hover-Effekt */
+.home-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-color: var(--accent);
+}
+
+/* Mobile Abstand */
+@media(max-width: 600px) {
+  .home-grid {
+    gap: 1rem;
+  }
+}
+
+/* ───────────────────────────────────────────────
+   Startseitentext einklappbar machen
+   ─────────────────────────────────────────────── */
+.collapsible-text {
+  position: relative;
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.collapsible-text.expanded .collapsible-content {
+  max-height: 600px; /* genug für die drei Absätze */
+}
+
+.collapsible-toggle {
+  margin-top: 0.8rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.collapsible-toggle:hover {
+  background: #1d4f8a;
+}
 
 
 /* ───────────────────────────────────────────────

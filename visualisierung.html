@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Netzwerkvisualisierung</title>
+
+  <!-- Hauptstylesheet -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body class="wide-layout">
+<a id="top"></a>
+
+<header data-date="30. Oktober 2025"
+        data-url="https://gitti-huber.github.io/agki-pm-rhizom">
+  
+  <h1>Netzwerkvisualisierung</h1>
+  <p class="subtitle">Interaktive Analyse der RHIZOM-Projektbeziehungen</p>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">Über das Projekt</a>
+    <a href="posts/index.html">Forschungsblog</a>
+    <span aria-current="page">Visualisierung</span>
+    <a href="prompts/index.html">Prompt Engineering Tagebuch</a>
+    <a href="glossar.html">Glossar</a>
+  </nav>
+</header>
+
+
+<!-- ======================
+     HAUPTINHALT
+========================= -->
+<main>
+<article>
+
+  <p class="meta">
+    Stand: <span id="today"></span> •
+    <span class="pill">Visualisierung</span>
+  </p>
+
+
+  <!-- ======================================================
+       3-Column-Layout (links Controls – Mitte Graph – rechts Info)
+       ====================================================== -->
+  <div class="visual-container-3">
+
+
+    <!-- ===========================================
+         LINKES PANEL: FILTER & STEUERUNG
+         =========================================== -->
+    <aside class="visual-controls">
+
+      <h3>Suche</h3>
+      <input id="search" type="text" placeholder="Name eingeben …" />
+
+      <h3>Zoom</h3>
+      <button id="zoom-in">+</button>
+      <button id="zoom-out">–</button>
+      <button id="zoom-reset">Reset</button>
+
+      <h3>Layout</h3>
+      <button id="layout-start">ForceAtlas2 Start</button>
+      <button id="layout-stop">Stop</button>
+
+      <h3>Label-Dichte</h3>
+      <input id="label-density" type="range" min="5" max="200" step="5" value="60" />
+
+      <h3>Nationalität</h3>
+      <select id="filter-nationality">
+        <option value="">Alle</option>
+      </select>
+
+      <h3>Typ</h3>
+      <select id="filter-type">
+        <option value="">Alle</option>
+        <option value="person">Person</option>
+        <option value="project">Projekt</option>
+      </select>
+
+      <h3>Filtersteuerung</h3>
+      <button id="filter-clear">Clear Filter</button>
+      <button id="filter-undo">Undo</button>
+
+    </aside>
+
+
+
+    <!-- ===========================================
+         MITTLERER BEREICH: VISUALISIERUNG
+         =========================================== -->
+    <div class="visual-pane">
+
+      <div id="sigma-container" style="width:100%; height:100%;"></div>
+
+      <!-- Legende -->
+      <div id="legend"
+           style="background:#f8f8f8;border:1px solid #ddd; padding:10px;
+                  margin:10px;border-radius:6px;font-size:0.9rem;">
+      </div>
+
+    </div>
+
+
+
+    <!-- ===========================================
+         RECHTES INFO-PANEL (fix, aber mobil versteckt)
+         =========================================== -->
+    <aside class="info-sidebar">
+      <h3>Knotendetails</h3>
+
+      <p><strong>Name:</strong> <span id="info-name">–</span></p>
+      <p><strong>Nationalität:</strong> <span id="info-nat">–</span></p>
+
+      <p><strong>Verbunden mit:</strong></p>
+      <ul id="info-projects"></ul>
+
+    </aside>
+
+  </div><!-- visual-container-3 end -->
+
+</article>
+</main>
+
+
+
+<!-- ======================================================
+     Footer
+========================================================= -->
+<footer>
+  <p>
+    © 2025 Rhizom-Projekt |
+    <a href="https://github.com/gitti-huber/agki-pm-rhizom">GitHub Repository</a>
+  </p>
+</footer>
+
+
+
+<!-- Datum automatisch -->
+<script>
+  document.getElementById("today").textContent =
+    new Date().toLocaleDateString("de-AT", {
+      year: "numeric", month: "long", day: "numeric"
+    });
+</script>
+
+<!-- Back-to-top Button -->
+<a href="#top" class="back-to-top">↑</a>
+
+<script>
+  document.addEventListener("scroll", () => {
+    document.body.classList.toggle("scrolled", window.scrollY > 200);
+  });
+</script>
+
+
+
+<!-- ======================================================
+     Sigma + Graphology
+========================================================= -->
+<script src="posts/graphology.min.js"></script>
+<script src="posts/sigma.js"></script>
+
+
+
+<!-- ======================================================
+     INTERAKTIVE NETZWERK-VISUALISIERUNG (komplett)
+========================================================= -->
+
+<script>
+function forceAtlas2(graph){
+  return {
+    start(){ console.warn("ForceAtlas2 (Platzhalter)"); },
+    stop(){},
+  };
+}
+
+(async function() {
+try {
+
+  /* -------------------------
+     GEXF laden
+     ------------------------- */
+  const response = await fetch("data/rhizom_gephi.gexf");
+  if (!response.ok) throw new Error("GEXF konnte nicht geladen werden.");
+  const gexfText = await response.text();
+
+
+  /* -------------------------
+     Attribute mappen
+     ------------------------- */
+  function buildNodeAttributeMap(xml) {
+    const map = {};
+    xml.querySelectorAll('attributes[class="node"] > attribute')
+       .forEach((att) => {
+         const id = att.getAttribute("id");
+         let title = att.getAttribute("title") || id;
+         if (title === "type") title = "node_type";
+         map[id] = title;
+       });
+    return map;
+  }
+
+
+  /* -------------------------
+     GEXF → Graphology
+     ------------------------- */
+  function parseGexf(gexfString) {
+    const parser = new DOMParser();
+    const xml = parser.parseFromString(gexfString, "application/xml");
+
+    const graph = new graphology.Graph({ type: "undirected" });
+    const attrMap = buildNodeAttributeMap(xml);
+
+    xml.querySelectorAll("node").forEach((n) => {
+      const id = n.getAttribute("id");
+      const attrs = {};
+
+      n.querySelectorAll("attvalues > attvalue").forEach((a) => {
+        const keyId = a.getAttribute("for");
+        const title = attrMap[keyId] || keyId;
+        attrs[title] = a.getAttribute("value");
+      });
+
+      const nodeType = attrs.node_type || null;
+
+      if (nodeType === "artist" && attrs.art_name)
+        attrs.label = attrs.art_name;
+      else if (nodeType === "project" && attrs.pro_title)
+        attrs.label = attrs.pro_title;
+      else
+        attrs.label = n.getAttribute("label") || id;
+
+      attrs.x = Math.random() * 1000;
+      attrs.y = Math.random() * 1000;
+      attrs.size = 5;
+
+      graph.addNode(id, attrs);
+    });
+
+    xml.querySelectorAll("edge").forEach((e) => {
+      const s = e.getAttribute("source");
+      const t = e.getAttribute("target");
+      if (graph.hasNode(s) && graph.hasNode(t)) graph.addEdge(s, t);
+    });
+
+    return graph;
+  }
+
+
+  /* -------------------------
+     Graph erzeugen
+     ------------------------- */
+  const graph = parseGexf(gexfText);
+  const renderer = new Sigma(graph, document.getElementById("sigma-container"));
+
+
+
+  /* -------------------------
+     Farben nach Nationalität
+     ------------------------- */
+  const palette = [
+    "#e41a1c","#377eb8","#4daf4a","#984ea3","#ff7f00","#ffff33",
+    "#a65628","#f781bf","#999999","#66c2a5","#fc8d62","#8da0cb",
+    "#e78ac3","#a6d854","#ffd92f","#e5c494","#b3b3b3"
+  ];
+
+  const colorMap = {};
+  let nextColor = 0;
+  const nationalities = new Set();
+
+  graph.forEachNode((n, attrs) => {
+    const natRaw = attrs.art_nationality || "Unbekannt";
+    const parts = natRaw.split(/[,/;]+/)
+                        .map(s => s.trim())
+                        .filter(Boolean);
+    const natList = parts.length ? parts : ["Unbekannt"];
+    const mainNat = natList[0];
+
+    if (!colorMap[mainNat]) {
+      colorMap[mainNat] = palette[nextColor % palette.length];
+      nextColor++;
+    }
+
+    graph.setNodeAttribute(n, "color", colorMap[mainNat]);
+    graph.setNodeAttribute(n, "_natList", natList);
+
+    natList.forEach(nat => nationalities.add(nat));
+  });
+
+
+  /* Projektfarbe überschreiben */
+  const PROJECT_COLOR = "#00ccff";
+  graph.forEachNode((n, attrs) => {
+    if (attrs.node_type === "project") {
+      graph.setNodeAttribute(n, "color", PROJECT_COLOR);
+      graph.setNodeAttribute(n, "size", 7);
+    }
+  });
+
+
+
+  /* -------------------------
+     Legende
+     ------------------------- */
+  const legend = document.getElementById("legend");
+  legend.innerHTML = "<strong>Farblegende:</strong>";
+
+  const legendContent = document.createElement("div");
+  legendContent.className = "legend-grid";
+
+  [...nationalities].sort().forEach((nat) => {
+    const item = document.createElement("div");
+    item.className = "legend-item";
+    item.innerHTML = `
+      <span class="legend-color" style="background:${colorMap[nat]}"></span>
+      <span>${nat}</span>
+    `;
+    legendContent.appendChild(item);
+  });
+
+  legend.appendChild(legendContent);
+
+
+
+  /* -------------------------
+     Suche
+     ------------------------- */
+  const searchInput = document.getElementById("search");
+  searchInput.addEventListener("input", () => {
+    const q = searchInput.value.toLowerCase();
+    graph.forEachNode((n, attrs) => {
+      const match = attrs.label.toLowerCase().includes(q);
+      graph.setNodeAttribute(n, "hidden", q && !match);
+    });
+  });
+
+
+
+  /* -------------------------
+     Zoom
+     ------------------------- */
+  const camera = renderer.getCamera();
+  document.getElementById("zoom-in").onclick = () =>
+    camera.animatedZoom({ duration: 300 });
+  document.getElementById("zoom-out").onclick = () =>
+    camera.animatedUnzoom({ duration: 300 });
+  document.getElementById("zoom-reset").onclick = () =>
+    camera.animatedReset({ duration: 300 });
+
+
+
+  /* -------------------------
+     Layout (FA2)
+     ------------------------- */
+  const layout = forceAtlas2(graph);
+  document.getElementById("layout-start").onclick = () => layout.start();
+  document.getElementById("layout-stop").onclick = () => layout.stop();
+
+
+
+  /* -------------------------
+     Labeldichte
+     ------------------------- */
+  const density = document.getElementById("label-density");
+  density.addEventListener("input", () =>
+    renderer.setSetting("labelGridCellSize", parseInt(density.value))
+  );
+
+
+
+  /* -------------------------
+     Filter (Nationalität & Typ)
+     ------------------------- */
+  const natFilter = document.getElementById("filter-nationality");
+  const typeFilter = document.getElementById("filter-type");
+
+  [...nationalities].sort().forEach((nat) => {
+    const opt = document.createElement("option");
+    opt.value = nat;
+    opt.textContent = nat;
+    natFilter.appendChild(opt);
+  });
+
+  function applyFilters() {
+    const fNat = natFilter.value;
+    const fType = typeFilter.value;
+
+    graph.forEachNode((n, attrs) => {
+      let hide = false;
+
+      const natList = attrs._natList || ["Unbekannt"];
+      const nodeType = attrs.node_type || "";
+
+      if (fNat && !natList.includes(fNat)) hide = true;
+      if (fType === "person" && nodeType !== "artist") hide = true;
+      if (fType === "project" && nodeType !== "project") hide = true;
+
+      graph.setNodeAttribute(n, "hidden", hide);
+    });
+  }
+
+  natFilter.onchange = applyFilters;
+  typeFilter.onchange = applyFilters;
+
+
+  /* Clear */
+  document.getElementById("filter-clear").onclick = () => {
+    searchInput.value = "";
+    natFilter.value = "";
+    typeFilter.value = "";
+    camera.animatedReset({ duration: 300 });
+
+    graph.forEachNode((n) =>
+      graph.setNodeAttribute(n, "hidden", false)
+    );
+
+    infoName.textContent = "–";
+    infoNat.textContent = "–";
+    infoProjects.innerHTML = "";
+  };
+
+
+  /* -------------------------
+     Undo
+     ------------------------- */
+  let lastState = null;
+
+  function saveState() {
+    lastState = {
+      search: searchInput.value,
+      nat: natFilter.value,
+      type: typeFilter.value,
+      camera: camera.getState(),
+    };
+  }
+
+  searchInput.addEventListener("input", saveState);
+  natFilter.addEventListener("change", saveState);
+  typeFilter.addEventListener("change", saveState);
+
+  document.getElementById("filter-undo").onclick = () => {
+    if (!lastState) return;
+
+    searchInput.value = lastState.search;
+    natFilter.value = lastState.nat;
+    typeFilter.value = lastState.type;
+
+    camera.animate(lastState.camera, { duration: 300 });
+    applyFilters();
+  };
+
+
+
+  /* -------------------------
+     Klick-Informationen (rechtes Panel)
+     ------------------------- */
+  const infoName = document.getElementById("info-name");
+  const infoNat = document.getElementById("info-nat");
+  const infoProjects = document.getElementById("info-projects");
+
+  renderer.on("clickNode", ({ node }) => {
+    const attrs = graph.getNodeAttributes(node);
+
+    infoName.textContent = attrs.label || "(ohne Name)";
+    infoNat.textContent = attrs.art_nationality || "Unbekannt";
+
+    infoProjects.innerHTML = "";
+    graph.forEachNeighbor(node, (n2, a2) => {
+      const li = document.createElement("li");
+      li.textContent = a2.label || n2;
+      infoProjects.appendChild(li);
+    });
+  });
+
+
+} catch (err) {
+  console.error("❌ Fehler:", err);
+}
+})();
+</script>
+
+
+<script src="assets/js/lightbox.js"></script>
+<script src="assets/js/glossar-linker.js"></script>
+
+</body>
+</html>

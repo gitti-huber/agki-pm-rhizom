@@ -31,11 +31,40 @@
           Stand: <span id="today"></span> • <span class="pill">About</span>
         </p>
 
+        <!-- Inhaltsverzeichnis -->
+        <nav class="toc toc-collapsed" aria-label="Inhaltsverzeichnis">
+          <button
+            class="toc-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="toc-inner"
+          >
+            Inhalt
+            <span class="toc-toggle-icon" aria-hidden="true">▾</span>
+          </button>
+
+          <div class="toc-inner" id="toc-inner">
+            <ul>
+              <li>
+                <a href="#projektzusammenfassung">Projektzusammenfassung</a>
+              </li>
+              <li><a href="#hintergrund">Hintergrund & Motivation</a></li>
+              <li><a href="#ziele">Ziele</a></li>
+              <li><a href="#methodischer-rahmen">Methodischer Rahmen</a></li>
+              <li><a href="#theoretischer-rahmen">Theoretischer Rahmen</a></li>
+              <li><a href="#komponenten-web">Komponenten der Website</a></li>
+              <li><a href="#ref-about">Quellen</a></li>
+            </ul>
+          </div>
+        </nav>
+
         <!-- ========================================== -->
         <!-- 1. Projektzusammenfassung -->
         <!-- ========================================== -->
 
-        <h2>Projektzusammenfassung</h2>
+        <h2 id="projektzusammenfassung" class="section">
+          Projektzusammenfassung
+        </h2>
 
         <p>
           Dieses Projekt untersucht die personellen und projektbezogenen
@@ -57,7 +86,7 @@
         <!-- 2. Hintergrund & Motivation -->
         <!-- ========================================== -->
 
-        <h2>Hintergrund & Motivation</h2>
+        <h2 id="hintergrund" class="section">Hintergrund & Motivation</h2>
 
         <p>
           RHIZOM agiert seit den späten 1980er-Jahren als transdisziplinärer,
@@ -80,10 +109,10 @@
         </p>
 
         <!-- ========================================== -->
-        <!-- 3. Ziele des Projekts -->
+        <!-- 3. Ziele -->
         <!-- ========================================== -->
 
-        <h2>Ziele des Projekts</h2>
+        <h2 id="ziele" class="section">Ziele</h2>
 
         <ul>
           <li>
@@ -120,7 +149,9 @@
         <!-- 4. Methodischer Rahmen -->
         <!-- ========================================== -->
 
-        <h2>Methodischer Rahmen (Digital Humanities)</h2>
+        <h2 id="methodischer-rahmen" class="section">
+          Methodischer Rahmen (Digital Humanities)
+        </h2>
 
         <p>
           Die Datengrundlage umfasst Webinhalte, PDF- und Word-Dokumente,
@@ -151,16 +182,59 @@
         <!-- 5. Theoretischer Rahmen -->
         <!-- ========================================== -->
 
-        <h2>Theoretische Orientierung</h2>
+        <h2 id="theoretischer-rahmen" class="section">
+          Theoretischer Rahmen (Kulturwissenschaften)
+        </h2>
+
+        <!-- 5. Kacheln Beginn -->
+        <section class="theory-grid">
+          <div class="theory-card">
+            <strong>Interaktionistischer Ansatz (Becker)</strong><br />
+            Kunst entsteht durch kooperative Netzwerke – „Art Worlds“.
+          </div>
+
+          <div class="theory-card">
+            <strong>Feldtheorie (Bourdieu)</strong><br />
+            Akteure ringen um symbolisches Kapital innerhalb eines Kunstfeldes.
+          </div>
+
+          <div class="theory-card">
+            <strong>Systemtheorie (Luhmann)</strong><br />
+            Kunst ist ein eigenes kommunikatives Funktionssystem.
+          </div>
+
+          <div class="theory-card">
+            <strong>Artworld (Danto)</strong><br />
+            Kunst entsteht durch Bedeutungsrahmen, nicht nur durch
+            Akteursnetzwerke.
+          </div>
+
+          <div class="theory-card">
+            <strong>Production of Culture (Peterson)</strong><br />
+            Kulturelle Produktion wird durch Organisationen & Infrastruktur
+            geprägt.
+          </div>
+
+          <div class="theory-card">
+            <strong>Neo-Institutionalismus (DiMaggio & Powell)</strong><br />
+            Kunstpraxis folgt institutionellen Logiken & Erwartungsstrukturen.
+          </div>
+
+          <div class="theory-card">
+            <strong>Soziale Netzwerktheorie (White)</strong><br />
+            Rollen & Bedeutungen entstehen durch relationale Muster.
+          </div>
+        </section>
+        <!-- 5. Kacheln Ende -->
 
         <p>
           Die Analyse der Projekt- und Personennetzwerke des RHIZOM basiert auf
-          einem theoretischen Rahmen, der zentrale Ansätze der Kunstsoziologie,
-          Organisationsforschung und sozialen Netzwerkanalyse miteinander
-          verbindet. Im Mittelpunkt steht die Frage, wie künstlerische
-          Zusammenarbeit organisiert wird, welche sozialen Strukturen sie
-          hervorbringt und wie diese Strukturen durch datenbasierte Verfahren
-          sichtbar gemacht werden können.
+          einem theoretischen Rahmen, der zentrale Ansätze der Kultur- und
+          Kunstsoziologie, Organisationsforschung und sozialen Netzwerkanalyse
+          miteinander verbindet. Im Mittelpunkt steht die Frage, wie
+          künstlerische Zusammenarbeit organisiert wird, welche sozialen
+          Strukturen sie hervorbringt und wie diese Strukturen durch
+          datenbasierte Verfahren sichtbar gemacht werden können.
         </p>
 
         <p>
@@ -347,7 +421,7 @@
         <!-- 6. Komponenten der Website -->
         <!-- ========================================== -->
 
-        <h2>Bestandteile dieser Website</h2>
+        <h2 id="komponenten-web" class="section">Komponenten der Website</h2>
 
         <ul>
           <li>
@@ -374,8 +448,8 @@
           </li>
         </ul>
 
-        <!-- Fußnoten-Liste -->
-        <h3>Quellen</h3>
+        <!-- Quellen -->
+        <h2 id="ref-about" class="section">Quellen</h2>
         <ol class="ref">
           <li id="r1">
             Kirchberg, Volker &amp; Zembylas, Tasos (2025).
@@ -411,6 +485,10 @@
           <li id="r10">
             Fuhse, Jan A. (2014).
             <em>Soziale Netzwerke. Konzepte und Forschungsmethoden</em>. UVK.
+          </li>
+          <li id="r11">
+            Deleuze, G. & Guattari, F. (1980).
+            <em>Mille plateaux</em>.
           </li>
         </ol>
 
@@ -449,6 +527,37 @@
       });
     </script>
 
-    <script src="/assets/js/glossar-linker.js"></script>
+    <script>
+      // ToC ein-/ausklappen + beim Anklicken von Links wieder schließen
+      document.addEventListener("DOMContentLoaded", function () {
+        const toc = document.querySelector(".toc");
+        const toggle = document.querySelector(".toc-toggle");
+        const icon = toggle ? toggle.querySelector(".toc-toggle-icon") : null;
+        const tocLinks = document.querySelectorAll(".toc-inner a");
+
+        if (!toc || !toggle) return;
+
+        // Toggle öffnen/schließen
+        toggle.addEventListener("click", function () {
+          const collapsed = toc.classList.toggle("toc-collapsed");
+          toggle.setAttribute("aria-expanded", String(!collapsed));
+          if (icon) {
+            icon.textContent = collapsed ? "▸" : "▾";
+          }
+        });
+
+        // Beim Klick auf einen Menüpunkt automatisch schließen
+        tocLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            toc.classList.add("toc-collapsed");
+            toggle.setAttribute("aria-expanded", "false");
+            if (icon) icon.textContent = "▸";
+          });
+        });
+      });
+    </script>
+
+    <script src="../assets/js/lightbox.js"></script>
+    <script src="../assets/js/glossar-linker.js"></script>
   </body>
 </html>
