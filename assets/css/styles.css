@@ -1231,6 +1231,83 @@ body.wide-layout article {
   background: #1d4f8a;
 }
 
+/* Abstand vor dem "Mehr anzeigen"-Button verringern */
+.collapsible-toggle {
+  margin-top: 0.3rem !important;   /* oder 0.2rem / 0 */
+}
+
+
+/* ===========================================================
+   HOME: kompakte Highlight-Box
+   =========================================================== */
+/* Highlight-Box kompakter machen */
+body.home .highlight-box {
+  padding: 0.5rem 0.8rem;    /* noch etwas kompakter */
+  margin-top: 0.4rem;     /* etwas weniger Abstand oben */
+  margin-bottom: 0.2rem;  /* etwas weniger Abstand unten */
+  font-size: 0.92rem;
+  line-height: 1.42;
+}
+
+/* Erster Absatz näher nach oben */
+body.home .highlight-box p:first-child {
+  margin-top: 0 !important;
+}
+
+/* Abstand vor dem 2. Absatz im ausgeklappten Bereich verringern */
+.collapsible-content p:first-child {
+  margin-top: 0.1rem !important;
+}
+
+/* Abstand zwischen Bild und Highlight-Box */
+body.home figure.figure-image {
+  margin-bottom: 1.2rem !important;
+}
+
+
+/* ───────────────────────────────────────────────
+   Map auf der Startseite
+   ─────────────────────────────────────────────── */
+#mini-map {
+  width: 100%;
+  height: 150px;            /* sehr schmal */
+  border-radius: 10px;
+  margin: 0.8rem auto 1rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+    cursor: zoom-in;
+  overflow: hidden;
+}
+
+/* Optional: Abschnitt kompakter gestalten */
+.mini-map-section h3 {
+  margin-bottom: 0.3rem;
+}
+
+/* --- Fullscreen Overlay --- */
+#map-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  display: none;          /* versteckt */
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+#big-map {
+  width: 90vw;
+  height: 80vh;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.2);
+  cursor: zoom-out;
+}
+
+
 
 /* ───────────────────────────────────────────────
    DRUCKANSICHT (automatisch bei Print/PDF)

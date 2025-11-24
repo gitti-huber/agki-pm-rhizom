@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Rhizomatische Strukturen im Kulturbereich</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   </head>
 
-  <body>
+  <body class="home">
     <a id="top"></a>
 
     <header
@@ -35,51 +36,49 @@
           Stand: <span id="today"></span> • <span class="pill">Home</span>
         </p>
 
-        <section class="section">
-          <!-- Image -->
-          <figure class="home-figure image-lightbox">
-            <img
-              src="./images/rhizom_wordcloud.png"
-              alt="Wordcloud https://rhizom.mur.at/"
-            />
-            <figcaption>
-              <a href="https://voyant-tools.org/" target="_blank"
-                >Voyant Tools</a
-              >
-              -Wordcloud
-            </figcaption>
-          </figure>
-        </section>
+        <section class="mini-map-section">
+    <div id="mini-map"></div>
+    <!-- Fullscreen-Karte -->
+<div id="map-overlay">
+  <div id="big-map"></div>
+</div>
+</section>
 
         <!-- Text Content -->
-<div class="highlight-box collapsible-text">
+        <div class="highlight-box collapsible-text">
+          <p>
+            Der seit 1988 bestehende Grazer Kulturverein
+            <img
+              src="./images/rhizom_logo_text.png"
+              alt="RHIZOM"
+              class="inline-logo"
+            />
+            bietet mit seiner transdisziplinären und kollektiven Arbeitsweise
+            ein ideales Fallbeispiel für netzwerkartige Organisationsformen in
+            der freien Kulturszene.
+          </p>
 
-  <p>
-    Der seit 1988 bestehende Grazer Kulturverein
-    <img src="./images/rhizom_logo_text.png" alt="RHIZOM" class="inline-logo" />
-    bietet mit seiner transdisziplinären und kollektiven Arbeitsweise
-    ein ideales Fallbeispiel für netzwerkartige Organisationsformen in
-    der freien Kulturszene.
-  </p>
+          <div class="collapsible-content">
+            <p>
+              Durch die Modellierung von Vereinsstruktur, Netzwerken und
+              Inhalten soll nachvollziehbar werden, wie Kooperationen entstehen,
+              ob und wie sich Rollen über die Zeit verschieben und welche
+              Personen oder Projekte als Knotenpunkte kultureller Aktivität
+              fungieren.
+            </p>
 
-  <div class="collapsible-content">
-    <p>
-      Durch die Modellierung von Vereinsstruktur, Netzwerken und Inhalten
-      soll nachvollziehbar werden, wie Kooperationen entstehen, ob und wie
-      sich Rollen über die Zeit verschieben und welche Personen oder Projekte
-      als Knotenpunkte kultureller Aktivität fungieren.
-    </p>
+            <p>
+              Das Projekt verbindet qualitative kulturwissenschaftliche
+              Fragestellungen mit quantitativen Methoden der Netzwerkanalyse und
+              leistet damit einen Beitrag zur digitalen Erschließung freier
+              Kunst- und Kulturarbeit in Österreich.
+            </p>
+          </div>
 
-    <p>
-      Das Projekt verbindet qualitative kulturwissenschaftliche
-      Fragestellungen mit quantitativen Methoden der Netzwerkanalyse und
-      leistet damit einen Beitrag zur digitalen Erschließung freier Kunst-
-      und Kulturarbeit in Österreich.
-    </p>
-  </div>
+          <button class="collapsible-toggle">Mehr anzeigen</button>
+        </div>
 
-  <button class="collapsible-toggle">Mehr anzeigen</button>
-</div>
+
         <!-- ============================
        Kachel-Grid
        ============================ -->
@@ -119,8 +118,6 @@
             </p>
           </a>
         </section>
-        
-
       </article>
     </main>
 
@@ -151,15 +148,84 @@
     </script>
 
     <script>
-document.querySelector(".collapsible-toggle").addEventListener("click", function() {
-  const box = document.querySelector(".collapsible-text");
-  box.classList.toggle("expanded");
-  this.textContent = box.classList.contains("expanded") ? "Weniger anzeigen" : "Mehr lesen";
+      document
+        .querySelector(".collapsible-toggle")
+        .addEventListener("click", function () {
+          const box = document.querySelector(".collapsible-text");
+          box.classList.toggle("expanded");
+          this.textContent = box.classList.contains("expanded")
+            ? "Weniger anzeigen"
+            : "Mehr anzeigen";
+        });
+    </script>
+
+
+    <!-- Leaflet zuerst laden! -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const coords = [47.07072, 15.43255];
+  const popupHTML = "<strong>RHIZOM</strong><br>Annenstraße 52<br>8020 Graz";
+
+  /* Mini-Karte */
+  const miniMap = L.map("mini-map", {
+    zoomControl: false,
+    attributionControl: false,
+    dragging: false,
+    scrollWheelZoom: false,
+    doubleClickZoom: false,
+    boxZoom: false,
+    keyboard: false,
+    tap: false
+  }).setView(coords, 17);
+
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png")
+    .addTo(miniMap);
+
+  const miniMarker = L.marker(coords)
+    .addTo(miniMap)
+    .bindPopup(popupHTML)
+    .openPopup();   // ← Popup sofort anzeigen
+
+
+  /* Fullscreen öffnen */
+  document.getElementById("mini-map").addEventListener("click", function () {
+    const overlay = document.getElementById("map-overlay");
+    overlay.style.display = "flex";
+
+    setTimeout(() => {
+      window.bigMap = L.map("big-map").setView(coords, 18);
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png")
+        .addTo(bigMap);
+
+      L.marker(coords)
+        .addTo(bigMap)
+        .bindPopup(popupHTML)
+        .openPopup();  // ← Popup sofort anzeigen
+    }, 50);
+  });
+
+
+  /* Fullscreen schließen */
+  document.getElementById("map-overlay").addEventListener("click", function () {
+    this.style.display = "none";
+
+    if (window.bigMap) {
+      window.bigMap.remove();
+      window.bigMap = null;
+    }
+
+    // ← Popup der Mini-Karte WIEDER erzwingen
+    setTimeout(() => {
+      miniMarker.openPopup();
+    }, 30); // kurzes Delay, damit Leaflet neu rendert
+  });
+
 });
 </script>
 
-
-    <script src="./assets/js/lightbox.js"></script>
+    <script src="./assets/js/lightbox_alter.js"></script>
     <script src="./assets/js/glossar-linker.js"></script>
   </body>
 </html>
