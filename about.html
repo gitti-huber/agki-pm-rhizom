@@ -178,13 +178,137 @@
           interaktiven Webvisualisierung explorierbar sind.
         </p>
 
+        <p>
+          Ein zentrales Werkzeug bei der Umsetzung ist die Software
+          <a href="https://gephi.org/" target="_blank">Gephi</a> zur
+          graphentheoretischen Analyse, ergänzt durch
+          <a href="https://www.sigmajs.org/" target="_blank">Sigma.js</a> für
+          die Webvisualisierung.
+        </p>
+
+        <p>
+          Die methodische Reflexion erfolgt im begleitenden
+          <a
+            href="https://gitti-huber.github.io/agki-pm-rhizom/posts/index.html"
+            >Forschungsblog</a
+          >
+          und im
+          <a
+            href="https://gitti-huber.github.io/agki-pm-rhizom/prompts/index.html"
+            >Prompt Engineering Tagebuch</a
+          >.
+        </p>
+
+        <div class="tool-logo-row">
+          <a href="https://openai.com/chatgpt" target="_blank" rel="noopener">
+            <img src="./images/ChatGPT_logo.png" alt="ChatGPT Logo" />
+          </a>
+
+          <a href="https://gephi.org/" target="_blank" rel="noopener">
+            <img src="./images/gephi_logo.svg" alt="Gephi Logo" />
+          </a>
+
+          <a href="https://sigmajs.org/" target="_blank" rel="noopener">
+            <img src="./images/sigma_logo.svg" alt="Sigma.js Logo" />
+          </a>
+        </div>
+
         <!-- ========================================== -->
         <!-- 5. Theoretischer Rahmen -->
         <!-- ========================================== -->
 
         <h2 id="theoretischer-rahmen" class="section">
-          Theoretischer Rahmen (Kulturwissenschaften)
+          Theoretischer Rahmen (DH & Kulturwissenschaften)
         </h2>
+
+        <p>
+          Für den wissenschaftstheretischen Hintergrund aus den DH wird auf
+          Network Science (bes. Newman 2018<sup class="fn"
+            ><a href="#r12"> [12]</a></sup
+          >; von Marcella Tambuscio in einer Lehrveranstaltung am 24.11.2025 als
+          <strong>"the bible of network science"</strong> bezeichnet) und
+          digitale Kulturwissenschaften (bes. Jannidis et al. 2017 als
+          <strong>DH-Standardwerk</strong>)<sup class="fn"
+            ><a href="#r13"> [13]</a></sup
+          >
+          verwiesen. In Zusammenhang mit <strong>Projektmanagement</strong> und
+          digitalen Methoden ist auch auf Cremer et al. (2024)<sup class="fn"
+            ><a href="#r14"> [14]</a></sup
+          >
+          hinzuweisen.
+        </p>
+
+        <!-- Kleine erweiterbare Galerie -->
+        <div class="mini-gallery">
+          <button class="gallery-prev">&#10094;</button>
+
+          <div class="mini-gallery-track">
+            <div class="gallery-item">
+              <img
+                src="./images/gallery/ref_Jannidis_et_al2017.jpg"
+                data-full="./images/gallery/ref_Jannidis_et_al2017.jpg"
+                alt="Der DH-Klassiker"
+              />
+              <p class="gallery-caption">DH-Klassiker</p>
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="./images/gallery/ref_Cremer_et_al2024.jpg"
+                data-full="./images/gallery/ref_Cremer_et_al2024.jpg"
+                alt=""
+              />
+              <p class="gallery-caption">DH & PM</p>
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="./images/gallery/ref_Newman2018.jpg"
+                data-full="./images/gallery/ref_Newman2018.jpg"
+                alt="The bible of network analysis"
+              />
+              <p class="gallery-caption">Netzwerk-Bibel</p>
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="./images/gallery/ref_Lemercier+Zalc2019.jpg"
+                data-full="./images/gallery/ref_Lemercier+Zalc2019.jpg"
+                alt=""
+              />
+              <p class="gallery-caption">Lemercier & Zalc</p>
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="./images/gallery/ref_Ahnert_et_al2020.jpg"
+                data-full="./images/gallery/ref_Ahnert_et_al2020.jpg"
+                alt="Ahnert et al. 2020"
+              />
+              <p class="gallery-caption">Ahnert et al.</p>
+            </div>
+          </div>
+
+          <button class="gallery-next">&#10095;</button>
+        </div>
+
+        <!-- Lightbox -->
+        <div id="gallery-lightbox">
+          <img id="gallery-lightbox-img" src="" alt="" />
+        </div>
+
+        <p>
+          Die Analyse der Projekt- und Personennetzwerke des Vereins RHIZOM
+          basiert auf einem theoretischen Rahmen, der zentrale Ansätze der
+          <strong
+            >Kultur- und Kunstsoziologie, Organisationsforschung und sozialen
+            Netzwerkanalyse</strong
+          >
+          miteinander verbindet. Im Mittelpunkt steht die Frage, wie
+          künstlerische Zusammenarbeit organisiert wird, welche sozialen
+          Strukturen sie hervorbringt und wie diese Strukturen durch
+          datenbasierte Verfahren sichtbar gemacht werden können.
+        </p>
 
         <!-- 5. Kacheln Beginn -->
         <section class="theory-grid">
@@ -226,16 +350,6 @@
           </div>
         </section>
         <!-- 5. Kacheln Ende -->
-
-        <p>
-          Die Analyse der Projekt- und Personennetzwerke des RHIZOM basiert auf
-          einem theoretischen Rahmen, der zentrale Ansätze der Kultur- und
-          Kunstsoziologie, Organisationsforschung und sozialen Netzwerkanalyse
-          miteinander verbindet. Im Mittelpunkt steht die Frage, wie
-          künstlerische Zusammenarbeit organisiert wird, welche sozialen
-          Strukturen sie hervorbringt und wie diese Strukturen durch
-          datenbasierte Verfahren sichtbar gemacht werden können.
-        </p>
 
         <p>
           Zugleich ist die Analyse von der von Deleuze und Guattari entwickelten
@@ -468,27 +582,45 @@
             Bourdieu, Pierre (1999). <em>Die Regeln der Kunst</em>.
           </li>
           <li id="r5">
-            Luhmann, Niklas (1995). <em>Die Kunst der Gesellschaft</em>.
+            Luhmann, Niklas 1995. <em>Die Kunst der Gesellschaft</em>.
           </li>
-          <li id="r6">Danto, Arthur C. (1964). „The Artworld“.</li>
+          <li id="r6">Danto, Arthur C. 1964. „The Artworld“.</li>
           <li id="r7">
-            Peterson, Richard A. (1976–2000).
+            Peterson, Richard A. 1976–2000.
             <em>Production of Culture</em>-Ansatz.
           </li>
           <li id="r8">
-            DiMaggio, Paul &amp; Powell, Walter W. (1983). „The Iron Cage
+            DiMaggio, Paul &amp; Powell, Walter W. 1983. „The Iron Cage
             Revisited“. Neo-Institutionalism.
           </li>
           <li id="r9">
-            White, Harrison C. (1992). <em>Identity and Control</em>.
+            White, Harrison C. 1992. <em>Identity and Control</em>.
           </li>
           <li id="r10">
-            Fuhse, Jan A. (2014).
+            Fuhse, Jan A. 2014.
             <em>Soziale Netzwerke. Konzepte und Forschungsmethoden</em>. UVK.
           </li>
           <li id="r11">
-            Deleuze, G. & Guattari, F. (1980).
+            Deleuze, Gilles & Guattari, Félix 1980.
             <em>Mille plateaux</em>.
+          </li>
+          <li id="r12">
+            Newman, Mark (2018).
+            <em>Networks: An Introduction.</em>. 2nd Edition. Oxford University
+            Press.
+          </li>
+          <li id="r13">
+            Jannidis, Fotis, Hubertus Kohle & Malte Rehbein (eds.) 2017.
+            <em>Digital Humanities. Eine Einführung</em>. Stuttgart: J.B.
+            Metzler.
+          </li>
+          <li id="r14">
+            Cremer, Fabian, Swantje Dogunke, Anna Maria Neubert & Thorsten
+            Wübbena (eds.) 2024.
+            <em
+              >Projektmanagement und Digital Humanities. Zur klugen Gestaltung
+              der Zusammenarbeit.</em
+            >. Bielefeld University Press.
           </li>
         </ol>
 
@@ -559,5 +691,54 @@
 
     <script src="../assets/js/lightbox.js"></script>
     <script src="../assets/js/glossar-linker.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        /* -----------------------
+     Slider / Karussell
+  ----------------------- */
+
+        const track = document.querySelector(".mini-gallery-track");
+        const items = document.querySelectorAll(".gallery-item");
+        const prev = document.querySelector(".gallery-prev");
+        const next = document.querySelector(".gallery-next");
+
+        let index = 0;
+
+        function updateGallery() {
+          const shift = -index * 180; // Breite pro Buchcover inkl. Abstand
+          track.style.transform = `translateX(${shift}px)`;
+        }
+
+        next.addEventListener("click", () => {
+          if (index < items.length - 1) index++;
+          updateGallery();
+        });
+
+        prev.addEventListener("click", () => {
+          if (index > 0) index--;
+          updateGallery();
+        });
+
+        /* -----------------------
+     Lightbox
+  ----------------------- */
+
+        const lightbox = document.getElementById("gallery-lightbox");
+        const lightboxImg = document.getElementById("gallery-lightbox-img");
+
+        document.querySelectorAll(".gallery-item img").forEach((img) => {
+          img.addEventListener("click", () => {
+            lightboxImg.src = img.dataset.full;
+            lightbox.style.display = "flex";
+          });
+        });
+
+        lightbox.addEventListener("click", () => {
+          lightbox.style.display = "none";
+          lightboxImg.src = "";
+        });
+      });
+    </script>
   </body>
 </html>

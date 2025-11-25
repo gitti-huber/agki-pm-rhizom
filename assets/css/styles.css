@@ -1054,6 +1054,53 @@ body.wide-layout article {
   }
 }
 
+/* ============================================
+   KOMPAKTES LINKES PANEL – VISUALISIERUNG
+   ============================================ */
+
+/* Abstand zwischen den Elementgruppen stark reduzieren */
+.visual-controls {
+  gap: 0.47rem !important;       /* vorher 1rem */
+  padding: 0.6rem 0.8rem !important;
+}
+
+/* Überschriften (h3) kleiner & kompakter */
+.visual-controls h3 {
+  font-size: 0.9rem;
+  margin: 0.4rem 0 0.2rem !important;
+  padding: 0;
+}
+
+/* Inputs & Selects: schmaler */
+.visual-controls input[type="text"],
+.visual-controls select,
+.visual-controls input[type="range"] {
+  padding: 0.25rem 0.35rem;
+  height: 28px;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem !important;
+}
+
+/* Range slider kompakter */
+.visual-controls input[type="range"] {
+  height: 22px;
+}
+
+/* Buttons kompakter */
+.visual-controls button {
+  padding: 0.35rem 0.5rem !important;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem;
+  height: 30px;
+  line-height: 1;
+}
+
+/* Extra: Abstand zwischen Buttons gering halten */
+.visual-controls button + button {
+  margin-top: 0.2rem;
+}
+
+
 /* ===========================================================
    HOME: Kachel-Grid
    =========================================================== */
@@ -1305,6 +1352,167 @@ body.home figure.figure-image {
   border: 1px solid var(--border);
   box-shadow: 0 4px 18px rgba(0,0,0,0.2);
   cursor: zoom-out;
+}
+
+/* ==========================================
+   Bild oben rechts im Header
+========================================== */
+
+/* Header muss Positionierungs-Kontext haben */
+header {
+  position: relative;
+}
+
+/* Link-Container für das Bild */
+.header-corner-link {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  display: block;
+  z-index: 50; /* über allem im Header */
+  cursor: pointer;
+}
+
+/* Bild selbst */
+.header-corner-image {
+  width: 120px;   /* anpassen */
+  height: auto;
+  display: block;
+  opacity: 0.95;
+  pointer-events: auto; /* wichtig! jetzt klickbar */
+}
+
+/* ------------------------------------------
+   Mini-Karussell Galerie (About-Seite)
+------------------------------------------ */
+.mini-gallery {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 1rem 0 2rem;
+  border-radius: 10px;
+}
+
+.mini-gallery-track {
+  display: flex;
+  gap: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* Hochformat-freundliche Darstellung */
+.mini-gallery img {
+  width: auto;            /* Breite automatisch */
+  height: 160px;          /* Höhe fix – ideal für Buchcover */
+  object-fit: contain;    /* NICHT zuschneiden! */
+  background: #fff;       /* optional: weißer Hintergrund */
+  padding: 6px;           /* schöner "Buchrahmen" */
+  border: 1px solid #ddd; 
+
+  border-radius: 8px;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.mini-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Buttons */
+.gallery-prev,
+.gallery-next {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  background: #ffffffd9;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 28px;
+  text-align: center;
+  z-index: 10;
+}
+
+.gallery-prev { left: 4px; }
+.gallery-next { right: 4px; }
+
+/* Lightbox */
+#gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+}
+
+#gallery-lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  cursor: zoom-out;
+}
+
+/* Einzelnes Buchcover + Titel */
+.gallery-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.gallery-item img {
+  height: 160px;
+  width: auto;
+  object-fit: contain;
+  background: #fff;
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.gallery-caption {
+  margin-top: 0.3rem;
+  font-size: 0.8rem;
+  text-align: center;
+  color: var(--muted);
+  max-width: 120px;
+  line-height: 1.2;
+}
+
+/* ------------------------------------------
+   Logo-Reihe (ChatGPT – Gephi – Sigma)
+------------------------------------------ */
+
+.tool-logo-row {
+  display: flex;
+  justify-content: center;   /* zentriert alle Logos */
+  align-items: center;
+  gap: 1.2rem;               /* Abstand zwischen Logos */
+  margin: 1rem 0 2rem;       /* etwas Luft oben/unten */
+}
+
+.tool-logo-row img {
+  height: 40px;              /* einheitliche kleine Größe */
+  width: auto;               /* Proportionen behalten */
+  opacity: 0.9;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  cursor: default;
+}
+
+.tool-logo-row img:hover {
+  transform: scale(1.06);
+  opacity: 1;
 }
 
 
