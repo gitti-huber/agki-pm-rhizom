@@ -1,0 +1,964 @@
+id,label,node_type,pro_year_begin,pro_year_end,ser_id,ser_title,eve_cat_id
+A_1,Andrzej Czeczot (†),artist,,,,,
+A_2,Andrzej Dudziński (†),artist,,,,,
+A_3,Anna Gałuszka,artist,,,,,
+A_4,Adrian Buschmann,artist,,,,,
+A_5,Adriana Marmorek,artist,,,,,
+A_6,AESOP,artist,,,,,
+A_7,Ahn In-Kun,artist,,,,,
+A_8,Aids Hilfe Moskau,artist,,,,,
+A_9,Alan Kline,artist,,,,,
+A_10,Albert Pall,artist,,,,,
+A_11,Alberto López Meza,artist,,,,,
+A_12,Alena Baich,artist,,,,,
+A_13,Aleš Zemene,artist,,,,,
+A_14,Alex Klein,artist,,,,,
+A_15,Alexander Kazakov,artist,,,,,
+A_16,Alexander Liaschenko Petljura,artist,,,,,
+A_17,Alexander Lugin,artist,,,,,
+A_18,Alexander Petrelli,artist,,,,,
+A_19,Alexandra Riewe,artist,,,,,
+A_20,Alfred Grasselli,artist,,,,,
+A_21,Alfred Lang,artist,,,,,
+A_22,Alfredo Gómez,artist,,,,,
+A_23,Ambra Polidori,artist,,,,,
+A_24,amici delle SVA (Robert Blazek),artist,,,,,
+A_25,An Chi-In,artist,,,,,
+A_26,An Moon-Shik,artist,,,,,
+A_27,Anchelka Mazur,artist,,,,,
+A_28,Andi Strauss,artist,,,,,
+A_29,André Tschinder,artist,,,,,
+A_30,Andrea Baumann,artist,,,,,
+A_31,Andrea Di Castro,artist,,,,,
+A_32,Andrea Schlemmer,artist,,,,,
+A_33,Andrea Sodomka,artist,,,,,
+A_34,Andrea Speetgens,artist,,,,,
+A_35,Andreas Gasser,artist,,,,,
+A_36,Andreas Klöckl,artist,,,,,
+A_37,Andreas Kurz,artist,,,,,
+A_38,Andreas Platzer,artist,,,,,
+A_39,Andreas Spiegl,artist,,,,,
+A_40,Andreas Unterweger,artist,,,,,
+A_41,Andreij Kislij,artist,,,,,
+A_42,Anette Sense,artist,,,,,
+A_43,Angá de la Luz,artist,,,,,
+A_44,Angélica Rodríguez,artist,,,,,
+A_45,Angelika Thon,artist,,,,,
+A_46,Anita Hofer,artist,,,,,
+A_47,Anita Witek,artist,,,,,
+A_48,Anja Wiese,artist,,,,,
+A_49,Anne Schmees,artist,,,,,
+A_50,Annelie Gahl,artist,,,,,
+A_51,Annette Giesriegl,artist,,,,,
+A_52,anschlaege,artist,,,,,
+A_53,Antal Lakner,artist,,,,,
+A_54,Anton Cierny,artist,,,,,
+A_55,Anton Lederer,artist,,,,,
+A_56,Anton Tkachenko,artist,,,,,
+A_57,Antonia Guerrero,artist,,,,,
+A_58,Antonio Albanés,artist,,,,,
+A_59,Aristarch Tscherneschov,artist,,,,,
+A_60,Armando Montoya,artist,,,,,
+A_61,Armin Pokorn,artist,,,,,
+A_62,Arsenije Jovanovic,artist,,,,,
+A_63,Assunta Abd El Azim Mohamed,artist,,,,,
+A_64,Azra Aksamija,artist,,,,,
+A_65,Bogusław Balicki,artist,,,,,
+A_66,Bogdan Bartkowski,artist,,,,,
+A_67,Baik Kum-Nam,artist,,,,,
+A_68,"Bananeros/as de Chinandega (Familia López Meza, Familia Morales, Jerónimo Lira, Francisco González y otros más)",artist,,,,,
+A_69,Barbara Musil,artist,,,,,
+A_70,Barbara Schmette,artist,,,,,
+A_71,Barbara Teubl,artist,,,,,
+A_72,Barbara Waschmann,artist,,,,,
+A_73,Bastian Schwind,artist,,,,,
+A_74,bb15,artist,,,,,
+A_75,Beate Schachinger,artist,,,,,
+A_76,Beatriz Franco,artist,,,,,
+A_77,Benjamin Klug,artist,,,,,
+A_78,Bernadette Moser,artist,,,,,
+A_79,Bernd Oppel,artist,,,,,
+A_80,Berndt Luef,artist,,,,,
+A_81,Bernhard Breuer,artist,,,,,
+A_82,Bernhard Hammer,artist,,,,,
+A_83,Bernhard Wolf,artist,,,,,
+A_84,Besucher*innen,artist,,,,,
+A_85,Bettina Landl,artist,,,,,
+A_86,Billy Roisz,artist,,,,,
+A_87,Birgit Jürgensen (†),artist,,,,,
+A_88,Birgit Pölzl,artist,,,,,
+A_89,Bojan Petrovic,artist,,,,,
+A_90,Boris Matrosov,artist,,,,,
+A_91,Bostjan Perovsek,artist,,,,,
+A_92,Branka Ćurčić,artist,,,,,
+A_93,Breda Susa,artist,,,,,
+A_94,Bronislava Anatolejevnaja Dubner,artist,,,,,
+A_95,Bruno Frei,artist,,,,,
+A_96,Bulbul,artist,,,,,
+A_97,"Cabinet Caligari (Peter Deutschmeister, Heinz Hutter, Leo Kreisel-Strausz)",artist,,,,,
+A_98,Cándida Meza Alvarado,artist,,,,,
+A_99,Carsten Stabenow – tuned city,artist,,,,,
+A_100,Catalina Peralta,artist,,,,,
+A_101,Catherine Rollier,artist,,,,,
+A_102,Catrin Bolt,artist,,,,,
+A_103,Celia Carolina López Meza,artist,,,,,
+A_104,Cho Choul-Ho,artist,,,,,
+A_105,Cho Tae-Hee,artist,,,,,
+A_106,Choi Eun-Kyu,artist,,,,,
+A_107,Choi Jae-Hwang,artist,,,,,
+A_108,Christian Bachler,artist,,,,,
+A_109,Christian KRI Kammerhofer,artist,,,,,
+A_110,Christian Ruck,artist,,,,,
+A_111,Christiane Spatt,artist,,,,,
+A_112,Christina Meissner,artist,,,,,
+A_113,Christina Werner,artist,,,,,
+A_114,Christine S. Prantauer,artist,,,,,
+A_115,Christine Ulm,artist,,,,,
+A_116,Christof Elpons,artist,,,,,
+A_117,Christoph Lissy,artist,,,,,
+A_118,Christoph Mauz,artist,,,,,
+A_119,Christoph Zarsel,artist,,,,,
+A_120,Christopher Grüner,artist,,,,,
+A_121,Christopher Kalwei,artist,,,,,
+A_122,Chung Chung-Soo,artist,,,,,
+A_123,Chung U-Chol,artist,,,,,
+A_124,Clarissa Wanko,artist,,,,,
+A_125,Claudia Märzendorfer,artist,,,,,
+A_126,Claudia Plank,artist,,,,,
+A_127,Clemens Pliem,artist,,,,,
+A_128,club real * Berlin,artist,,,,,
+A_129,Colectivo Veinti3,artist,,,,,
+A_130,Concha Jerez,artist,,,,,
+A_131,Conny Köberl,artist,,,,,
+A_132,Consuelo Mora Benard,artist,,,,,
+A_133,Cornelia Genschow,artist,,,,,
+A_134,Corona,artist,,,,,
+A_135,Cym (Simone van Groenestijn),artist,,,,,
+A_136,Dagmar Anna Hödl,artist,,,,,
+A_137,Daniil Filipov,artist,,,,,
+A_138,Darwin Andino,artist,,,,,
+A_139,Dave Allen,artist,,,,,
+A_140,David Kranzelbinder,artist,,,,,
+A_141,ddkern (Dieter Kern),artist,,,,,
+A_142,de player,artist,,,,,
+A_143,Dejan Dukic,artist,,,,,
+A_144,Dejan Lapanja,artist,,,,,
+A_145,Department München,artist,,,,,
+A_146,Roland derHunt/Ratti Rathmair,artist,,,,,
+A_147,"DI Martin Regelsberger, Kulturtechnik u. Wasserwirtschaft",artist,,,,,
+A_148,Diana Levin,artist,,,,,
+A_149,"Die Jugendlichen (J., A., K., O., M., I., und einige mehr)",artist,,,,,
+A_150,Die Sixtinische Kapelle _ Confuse the nuns,artist,,,,,
+A_151,Dieter Glawischnig,artist,,,,,
+A_152,Dietmar Hollenstein,artist,,,,,
+A_153,Dietmar Offenhuber,artist,,,,,
+A_154,Dimitry Nikolaev,artist,,,,,
+A_155,Dinah Geiger,artist,,,,,
+A_156,Donatella Ruttar,artist,,,,,
+A_157,Doris Prlić,artist,,,,,
+A_158,Dorothee Steinbauer,artist,,,,,
+A_159,Dr. Alfio Borzi,artist,,,,,
+A_160,Dr. Robert Pfaller,artist,,,,,
+A_161,Dr. Rudolf Muhr,artist,,,,,
+A_162,Dulce Gómez,artist,,,,,
+A_163,Duo MIMESYS,artist,,,,,
+A_164,Durgarski Pozdrav,artist,,,,,
+A_165,Dževad Hozo (†),artist,,,,,
+A_166,Edward Dwurnik (†),artist,,,,,
+A_167,Eugeniusz Get-Stankiewicz (†),artist,,,,,
+A_168,e.d gfrerer,artist,,,,,
+A_169,EAT Escuela Experimental de Arte (HN/COL),artist,,,,,
+A_170,Edda Strobl,artist,,,,,
+A_171,Edgar Honetschläger,artist,,,,,
+A_172,Edgar Sorgo,artist,,,,,
+A_173,Edgardo Antonio Vigo (†),artist,,,,,
+A_174,Edith Arbeláez,artist,,,,,
+A_175,Eduardo Vélez,artist,,,,,
+A_176,Ekaterina Rischykova,artist,,,,,
+A_177,"ekw 14,90",artist,,,,,
+A_178,Elektro Guzzi,artist,,,,,
+A_179,Elías Jiménez,artist,,,,,
+A_180,Elisabeth Auer,artist,,,,,
+A_181,Elisabeth Harnik,artist,,,,,
+A_182,Elisabeth Schimana,artist,,,,,
+A_183,Emil Krištof,artist,,,,,
+A_184,Emmi Rendl-Denk,artist,,,,,
+A_185,Erin Stewart,artist,,,,,
+A_186,Ernesto Rico-Schmidt,artist,,,,,
+A_187,Ernesto Salmerón,artist,,,,,
+A_188,Erwin Bohatsch,artist,,,,,
+A_189,Erwin Michenthaler,artist,,,,,
+A_190,Erwin Stache,artist,,,,,
+A_191,Esad Babačić,artist,,,,,
+A_192,Eva Brede,artist,,,,,
+A_193,Eva Choung-Fux,artist,,,,,
+A_194,Eva Rossmann,artist,,,,,
+A_195,Eva Ursprung,artist,,,,,
+A_196,Eva Wohlgemuth,artist,,,,,
+A_197,Eva-Maria Gugg,artist,,,,,
+A_198,Evelyn Schalk,artist,,,,,
+A_199,Ewald Oberleitner,artist,,,,,
+A_200,Ewald Puhr,artist,,,,,
+A_201,Falk Messerschmidt,artist,,,,,
+A_202,Faroe Gandur,artist,,,,,
+A_203,Felipe Ehrenberg,artist,,,,,
+A_204,Ferdinand Schmatz,artist,,,,,
+A_205,Fikret Libovac,artist,,,,,
+A_206,firn/Tom Weghofer,artist,,,,,
+A_207,Flora Neuwirth,artist,,,,,
+A_208,Florian 'Flo' Sorgo,artist,,,,,
+A_209,Francesco de Luca,artist,,,,,
+A_210,Francisco González (Chico Güirila),artist,,,,,
+A_211,Francisco Klinger Carvalho,artist,,,,,
+A_212,Francisco Londoño,artist,,,,,
+A_213,Franz Niegelhell,artist,,,,,
+A_214,Franzobel (Franz Stefan Griebl),artist,,,,,
+A_215,Freddy Isabel López Álvarez,artist,,,,,
+A_216,frei. improvisiert. jazz,artist,,,,,
+A_217,Frie Moschitz,artist,,,,,
+A_218,Frie Moschitz & groupe en suite,artist,,,,,
+A_219,Frie Reissig,artist,,,,,
+A_220,Fritz Bergler,artist,,,,,
+A_221,Fritz Fro,artist,,,,,
+A_222,Fritz Oberleitner,artist,,,,,
+A_223,Fugu and the Cosmic Mumu,artist,,,,,
+A_224,Grażyna Drzewińska,artist,,,,,
+A_225,Geari Schreilechner,artist,,,,,
+A_226,Genoveva Rückert,artist,,,,,
+A_227,Georg Jappe,artist,,,,,
+A_228,Gerd Jabourek,artist,,,,,
+A_229,Gerd Menia,artist,,,,,
+A_230,Gerhard Pilgram,artist,,,,,
+A_231,Gerhard Ruiss,artist,,,,,
+A_232,German Vinogradov,artist,,,,,
+A_233,Gernot Tscherteu,artist,,,,,
+A_234,Gert Langer,artist,,,,,
+A_235,Giberto Chen Carpentier,artist,,,,,
+A_236,Gilles Charalambos,artist,,,,,
+A_237,global bastards,artist,,,,,
+A_238,Gloria Posada,artist,,,,,
+A_239,Gloria Ribe,artist,,,,,
+A_240,Gomez-Strausz,artist,,,,,
+A_241,Gottfried Bechtold,artist,,,,,
+A_242,Gottfried Krienzer,artist,,,,,
+A_243,Grace Quintanilla,artist,,,,,
+A_244,Gregor Pokorny,artist,,,,,
+A_245,Gregorio Rocha,artist,,,,,
+A_246,Gruppe “Die Weisheit mit grossen Löffeln gegessen”,artist,,,,,
+A_247,Gruppe Norden,artist,,,,,
+A_248,Gudrun Bielz,artist,,,,,
+A_249,Gue Schmidt,artist,,,,,
+A_250,Günter Eichberger,artist,,,,,
+A_251,Gustav Böhm,artist,,,,,
+A_252,Gustavo Vázquez,artist,,,,,
+A_253,Henryk Tomaszewski,artist,,,,,
+A_254,H.J. Schubert,artist,,,,,
+A_255,Halt+Boring,artist,,,,,
+A_256,Hamza Alshafe,artist,,,,,
+A_257,Han Byung-Ki,artist,,,,,
+A_258,Hannes Priesch,artist,,,,,
+A_259,Hans Kuppelwieser,artist,,,,,
+A_260,Hans Puhr,artist,,,,,
+A_261,Hans Schabus,artist,,,,,
+A_262,Hans Werner Poschauko,artist,,,,,
+A_263,Harald Huskava,artist,,,,,
+A_264,Hari Bukovsec,artist,,,,,
+A_265,Hasan Solmaz,artist,,,,,
+A_266,Haydee Garcia,artist,,,,,
+A_267,Hector Aquilar,artist,,,,,
+A_268,Hedya Klein,artist,,,,,
+A_269,Heidi Ratschop,artist,,,,,
+A_270,HeiDi Richter,artist,,,,,
+A_271,Heidrun Langer,artist,,,,,
+A_272,Heidrun Zettelbauer,artist,,,,,
+A_273,Heimo Puschnigg (†),artist,,,,,
+A_274,Heimo Wallner,artist,,,,,
+A_275,Helga Glattfelder-Knöbl,artist,,,,,
+A_276,Helga Petrau-Heinzel,artist,,,,,
+A_277,Helmut Mark,artist,,,,,
+A_278,Helwig Brunner,artist,,,,,
+A_279,Heribert Hirschmann (†),artist,,,,,
+A_280,Hong Hyun-Chul,artist,,,,,
+A_281,Hong Kyoung-A,artist,,,,,
+A_282,Hong Seon-Kee,artist,,,,,
+A_283,Hubert Höllmüller,artist,,,,,
+A_284,Hugo Córdoba,artist,,,,,
+A_285,Hugo Ochoa,artist,,,,,
+A_286,Hunger auf Kunst und Kultur,artist,,,,,
+A_287,IG-Kultur Steiermark,artist,,,,,
+A_288,Ignacio Deserega,artist,,,,,
+A_289,Ilona Nemeth,artist,,,,,
+A_290,Infoladen Graz,artist,,,,,
+A_291,Inge Freidl,artist,,,,,
+A_292,Ingo Abeska,artist,,,,,
+A_293,Ira Mihalevic,artist,,,,,
+A_294,Irene del Socorro López Meza,artist,,,,,
+A_295,Irene López Meza,artist,,,,,
+A_296,Isabel Leveche,artist,,,,,
+A_297,Isabella Bordoni,artist,,,,,
+A_298,Isabella Hollauf,artist,,,,,
+A_299,Iván Avila,artist,,,,,
+A_300,Ivan Trenev,artist,,,,,
+A_301,Ivana Stefanovic,artist,,,,,
+A_302,Jacek Ćwikła,artist,,,,,
+A_303,Jerzy Czerniawski,artist,,,,,
+A_304,Jakub Erol (†),artist,,,,,
+A_305,Jarosław Jasiński,artist,,,,,
+A_306,Jan Młodożeniec,artist,,,,,
+A_307,Janusz Trzebiatowski,artist,,,,,
+A_308,"Jaime de Angulo, From Coyote Man and Old Doctor Loon",artist,,,,,
+A_309,Jaime Muñoz,artist,,,,,
+A_310,Jakob Schneidewind,artist,,,,,
+A_311,Jana Wisniewski,artist,,,,,
+A_312,Jeannot Schwartz,artist,,,,,
+A_313,Jennifer Margarita Lagos López,artist,,,,,
+A_314,Jens Tomkowitz,artist,,,,,
+A_315,Jeon Hyeong-Yeol,artist,,,,,
+A_316,Jeong Shin-Kong,artist,,,,,
+A_317,Jerónimo Lira,artist,,,,,
+A_318,Jikrgi Libovac,artist,,,,,
+A_319,Jochen Höller,artist,,,,,
+A_320,Joe & Andrew,artist,,,,,
+A_321,Jogi Hofmüller,artist,,,,,
+A_322,Johanna Glösl,artist,,,,,
+A_323,Johannes Heuer,artist,,,,,
+A_324,Johannes Stöckler,artist,,,,,
+A_325,John Preininger,artist,,,,,
+A_326,Jörg Klauber,artist,,,,,
+A_327,Jorge Lepez Vela,artist,,,,,
+A_328,José Iges,artist,,,,,
+A_329,José Manuel Pintado,artist,,,,,
+A_330,José Montealegre,artist,,,,,
+A_331,José Raúl Pérez,artist,,,,,
+A_332,Josef Dabernig,artist,,,,,
+A_333,Josef Flois,artist,,,,,
+A_334,Josef Fürpass,artist,,,,,
+A_335,Juan Carlos Mendoza,artist,,,,,
+A_336,Juana López Meza,artist,,,,,
+A_337,Judith Fegerl,artist,,,,,
+A_338,Julian Feyerabend,artist,,,,,
+A_339,Julie Monaco,artist,,,,,
+A_340,Jun Youn-Li,artist,,,,,
+A_341,Jung In-Wan,artist,,,,,
+A_342,Jürgen Schiefer,artist,,,,,
+A_343,Jutta Zniva,artist,,,,,
+A_344,Krzysztof Bednarski,artist,,,,,
+A_345,Krzysztof Grzesiak,artist,,,,,
+A_346,Karol Śliwka,artist,,,,,
+A_347,Krzysztof Tyczkowski,artist,,,,,
+A_348,Kang Chang-Yul,artist,,,,,
+A_349,Kang Jung-Hyun,artist,,,,,
+A_350,Kang Ku-Won,artist,,,,,
+A_351,Kang Kyung-Gu,artist,,,,,
+A_352,Karl Grünling,artist,,,,,
+A_353,Karl Heinz Dicht,artist,,,,,
+A_354,Karl Hikade,artist,,,,,
+A_355,Karl Schmoll,artist,,,,,
+A_356,Karl Stocker,artist,,,,,
+A_357,Karl Wilhelm Krbavac,artist,,,,,
+A_358,Karl-Heinz Bloyer,artist,,,,,
+A_359,Kartell Graz,artist,,,,,
+A_360,Katarina Juvančič,artist,,,,,
+A_361,Katarina Pejovic,artist,,,,,
+A_362,Katharina Bürgin,artist,,,,,
+A_363,Katharina Mraček-Gabalier,artist,,,,,
+A_364,Katharina Riese,artist,,,,,
+A_365,Kaye Mortley,artist,,,,,
+A_366,Keneth Martínez López,artist,,,,,
+A_367,Kim Cheol-Woo,artist,,,,,
+A_368,Kim Hae-Dong,artist,,,,,
+A_369,Kim In-Ha,artist,,,,,
+A_370,Kim Joung-Soo,artist,,,,,
+A_371,Kim Keun-Tai,artist,,,,,
+A_372,Kim Ki-Kwon,artist,,,,,
+A_373,Kim Kwang-Hyun,artist,,,,,
+A_374,Kim Moon-Hoe,artist,,,,,
+A_375,Kim Sun,artist,,,,,
+A_376,Kim Young-Sou,artist,,,,,
+A_377,Kim Yun-Hoon,artist,,,,,
+A_378,Klaus Lippitsch,artist,,,,,
+A_379,Klaus Obermaier,artist,,,,,
+A_380,Klemens Pliem,artist,,,,,
+A_381,Kolonie Wedding,artist,,,,,
+A_382,kompott,artist,,,,,
+A_383,Konstantin Zvezdochotov,artist,,,,,
+A_384,kozek hörlonski,artist,,,,,
+A_385,Krzysztof Malachowski,artist,,,,,
+A_386,kultuuritehas polymer,artist,,,,,
+A_387,Künstlergruppe Piedra del Sol (A/MEX),artist,,,,,
+A_388,Kurt Bauer,artist,,,,,
+A_389,Kurt Strohmeier,artist,,,,,
+A_390,Kvartet 4 U (Rož),artist,,,,,
+A_391,Leszek Drzewiński,artist,,,,,
+A_392,Label niesom,artist,,,,,
+A_393,Lale Rodgarkia-Dara,artist,,,,,
+A_394,Lalo Srkalovic,artist,,,,,
+A_395,Lamia Jabri,artist,,,,,
+A_396,Larissa Lasareva,artist,,,,,
+A_397,Larissa Zvezdochotova,artist,,,,,
+A_398,László Darvasi,artist,,,,,
+A_399,László Garaczi,artist,,,,,
+A_400,László Varvasovszky,artist,,,,,
+A_401,Lawrence Weiner (†),artist,,,,,
+A_402,Leana Yamileth López Álvarez,artist,,,,,
+A_403,Leandro Remigio López Meza,artist,,,,,
+A_404,Lee Byung-Chun,artist,,,,,
+A_405,Lee Doo-Seop,artist,,,,,
+A_406,Lee Hang,artist,,,,,
+A_407,Lee Jai-Min,artist,,,,,
+A_408,Lee Jin-Dong,artist,,,,,
+A_409,Lee Jong-Sun,artist,,,,,
+A_410,Lee Joo-Sung,artist,,,,,
+A_411,Lee Joung-Gun,artist,,,,,
+A_412,Lee Jung-Hoon,artist,,,,,
+A_413,Lee Keun-Myung,artist,,,,,
+A_414,Lee Kwang-Soo,artist,,,,,
+A_415,Lee Moon-Soo,artist,,,,,
+A_416,Lee Won-Il,artist,,,,,
+A_417,Leo Hainzl,artist,,,,,
+A_418,Leo Kreisel-Strausz (†),artist,,,,,
+A_419,Leon Hainzl & Gertraud Hasselbach,artist,,,,,
+A_420,Leonel Cerrato Jirón,artist,,,,,
+A_421,Léster Lagos López,artist,,,,,
+A_422,Lidia Zielińska,artist,,,,,
+A_423,Lidija Radojević,artist,,,,,
+A_424,Liesl Ujvary,artist,,,,,
+A_425,Lina Gärtner,artist,,,,,
+A_426,LONESOME HOT DUDES,artist,,,,,
+A_427,Lorena Campbell,artist,,,,,
+A_428,Lorenzo Armendáriz,artist,,,,,
+A_429,Lothar Lässer,artist,,,,,
+A_430,Lotte Lyon,artist,,,,,
+A_431,Luis E. FalconiI,artist,,,,,
+A_432,Luis Lupone,artist,,,,,
+A_433,Luka Ropret,artist,,,,,
+A_434,Lukas Cejpek,artist,,,,,
+A_435,M&S Architects – Uta Lambrette,artist,,,,,
+A_436,Mieczyslaw Górowski (†),artist,,,,,
+A_437,Maciej Majewski,artist,,,,,
+A_438,Mads Westrup,artist,,,,,
+A_439,Mag. Birgit Lesjak-Ladstaetter,artist,,,,,
+A_440,Magdalena Gasser,artist,,,,,
+A_441,Maia Gusberti,artist,,,,,
+A_442,Máisara Natividad López Meza,artist,,,,,
+A_443,Maja Osojnik,artist,,,,,
+A_444,Maksim Stolpovski,artist,,,,,
+A_445,Malis Stöger,artist,,,,,
+A_446,Manfred Engelmayr,artist,,,,,
+A_447,Manfred Kummer,artist,,,,,
+A_448,Manfred Stern,artist,,,,,
+A_449,Manuela Froudarakis,artist,,,,,
+A_450,Margit Franz,artist,,,,,
+A_451,Margit Maure,artist,,,,,
+A_452,Margret Kreidl,artist,,,,,
+A_453,Maria Hubinger,artist,,,,,
+A_454,Maria Slovakova,artist,,,,,
+A_455,Mariana Rosenberg,artist,,,,,
+A_456,Marianna Dellekamp,artist,,,,,
+A_457,Marilyn Collins,artist,,,,,
+A_458,Mario Mitzka,artist,,,,,
+A_459,Marko Maric,artist,,,,,
+A_460,Markus Dorner,artist,,,,,
+A_461,Markus Gfrerer,artist,,,,,
+A_462,Markus Haslinger,artist,,,,,
+A_463,Markus Pieber,artist,,,,,
+A_464,Markus Stieber,artist,,,,,
+A_465,Marlene Haring,artist,,,,,
+A_466,Marlene Persch,artist,,,,,
+A_467,Martin Breindl,artist,,,,,
+A_468,Martin Dickinger,artist,,,,,
+A_469,Martin G.Wanko,artist,,,,,
+A_470,Martin Honzik mit Pferd Bibi,artist,,,,,
+A_471,Martin Plass,artist,,,,,
+A_472,Martin Zrost,artist,,,,,
+A_473,Martina Cizek,artist,,,,,
+A_474,Maryluz Álvarez,artist,,,,,
+A_475,Matej Bundela-Havaj,artist,,,,,
+A_476,Mathias Fuchs,artist,,,,,
+A_477,Mathias Loibner,artist,,,,,
+A_478,Matjaž Pikalo,artist,,,,,
+A_479,Matthias Bernhard,artist,,,,,
+A_480,Maxwell Sibanda,artist,,,,,
+A_481,Michael Bergbaur,artist,,,,,
+A_482,Michael Fanta,artist,,,,,
+A_483,Michael Geyersbach,artist,,,,,
+A_484,Michaela Hampala (Museum der Wahrnehmung),artist,,,,,
+A_485,Michaela Niederkircher,artist,,,,,
+A_486,Michele Spanghero,artist,,,,,
+A_487,Miguel Ángel Morales,artist,,,,,
+A_488,mik,artist,,,,,
+A_489,Milo Strauss,artist,,,,,
+A_490,Mir Mar,artist,,,,,
+A_491,Mira Palmisano,artist,,,,,
+A_492,Miriam Bajtala,artist,,,,,
+A_493,Mirko Marić,artist,,,,,
+A_494,Misrad Šehic,artist,,,,,
+A_495,Moisés Mora,artist,,,,,
+A_496,Moke Klengel,artist,,,,,
+A_497,Monika Kummer-Pretterhofer,artist,,,,,
+A_498,Moreno Miorelli,artist,,,,,
+A_499,Moucle Blackout,artist,,,,,
+A_500,mur.at–initiative netzkultur,artist,,,,,
+A_501,Mustafa Gül,artist,,,,,
+A_502,Mustafa Skopljak (†),artist,,,,,
+A_503,N.N./Erfahrungen aus dem Wagenplatz-Umfeld (Wien),artist,,,,,
+A_504,Nadja Folger,artist,,,,,
+A_505,Natalia Pschenitschnikowa,artist,,,,,
+A_506,Nataša Konzilia,artist,,,,,
+A_507,Natascha Varonitsina Varona,artist,,,,,
+A_508,Natividad de la Concepción Meza Alvarado,artist,,,,,
+A_509,Nedim Ademovic,artist,,,,,
+A_510,Nestor Bravo,artist,,,,,
+A_511,Nick Acorne,artist,,,,,
+A_512,Nicole Pruckermayr,artist,,,,,
+A_513,Nicole Six,artist,,,,,
+A_514,Nikita Alexejev,artist,,,,,
+A_515,nomadenetappe,artist,,,,,
+A_516,Nora Bachel,artist,,,,,
+A_517,Norbert Math,artist,,,,,
+A_518,Nusret Pašić,artist,,,,,
+A_519,Oskar Humer,artist,,,,,
+A_520,Oskar Necoechea,artist,,,,,
+A_521,Osvaldo Cibils,artist,,,,,
+A_522,Oswald Oberhuber,artist,,,,,
+A_523,Pablo Morales y su hija Rosa Morales,artist,,,,,
+A_524,Paola Korosec,artist,,,,,
+A_525,Park Byung-Choon,artist,,,,,
+A_526,Park Jin-Yong,artist,,,,,
+A_527,Park Mi-Jung,artist,,,,,
+A_528,Park Mi-Sun,artist,,,,,
+A_529,Park Yong-Sun,artist,,,,,
+A_530,Park Yong-Woon,artist,,,,,
+A_531,Patricia Lagarde,artist,,,,,
+A_532,Patricia Van Dalen,artist,,,,,
+A_533,Patrick Dunst,artist,,,,,
+A_534,Paul Petritsch,artist,,,,,
+A_535,Paul Skrepek,artist,,,,,
+A_536,peanutz architekten,artist,,,,,
+A_537,Pedro Joaquín Losa,artist,,,,,
+A_538,"Personen aus Wissenschaft, Kunst und Handwerk",artist,,,,,
+A_539,Peter Battisti,artist,,,,,
+A_540,Peter Sandbichler,artist,,,,,
+A_541,Petra Kohlenprath,artist,,,,,
+A_542,Petra Leschanz,artist,,,,,
+A_543,Petra Music,artist,,,,,
+A_544,Pia Elizondo,artist,,,,,
+A_545,Pierre Doze,artist,,,,,
+A_546,Pierre Octave Poulin,artist,,,,,
+A_547,PITCHES CREW,artist,,,,,
+A_548,Pixie,artist,,,,,
+A_549,pixlel hotel,artist,,,,,
+A_550,Plattform Kunst ~ Öffentlichkeit,artist,,,,,
+A_551,Prima & Fagot,artist,,,,,
+A_552,Projekt Transfair „the golden roof” (Zwischenstand),artist,,,,,
+A_553,Proton Group,artist,,,,,
+A_554,Radio Freistadt,artist,,,,,
+A_555,Radio Fro,artist,,,,,
+A_556,"Radio Helsinki FM 92,6",artist,,,,,
+A_557,Rainer Ganahl,artist,,,,,
+A_558,Rainer Gottemeier,artist,,,,,
+A_559,Rainer Possert,artist,,,,,
+A_560,Rajiv Joshi,artist,,,,,
+A_561,Ralf Thon,artist,,,,,
+A_562,Raschid Mohammad,artist,,,,,
+A_563,raumlaborberlin,artist,,,,,
+A_564,Raumschiff Engelmayr,artist,,,,,
+A_565,Raymundo Sesma,artist,,,,,
+A_566,"rbw21 (Fritz Fro, Gue Schmidt)",artist,,,,,
+A_567,Regula Dettwiler,artist,,,,,
+A_568,Reinhard Handl,artist,,,,,
+A_569,Reinhard Winkler,artist,,,,,
+A_570,Reinhold Leitner,artist,,,,,
+A_571,Reinhold Schachner,artist,,,,,
+A_572,REIS,artist,,,,,
+A_573,Renate Eisenegger,artist,,,,,
+A_574,Renate Rosenbauer,artist,,,,,
+A_575,Renato Weinberger,artist,,,,,
+A_576,René Eisenegger,artist,,,,,
+A_577,Reni Hofmüller,artist,,,,,
+A_578,Resul Demir,artist,,,,,
+A_579,RHIZOM,artist,,,,,
+A_580,RHIZOM / tokyo – lijiang – graz – managua,artist,,,,,
+A_581,"RHIZOM 1996: Christian Bachler, Leo Kreisel",artist,,,,,
+A_582,"RHIZOM 2014: Mirko Maric, Angelika Thon, H.J. Schubert, Leo Kreisel-Strausz",artist,,,,,
+A_583,RHIZOM in Kooperation mit steirischer herbst (Veronika Kaup-Hasler als Intendantin),artist,,,,,
+A_584,RHIZOM kollektiv,artist,,,,,
+A_585,Ricardo Martínez,artist,,,,,
+A_586,Richard Kriesche,artist,,,,,
+A_587,Richard Reich,artist,,,,,
+A_588,Richard Winkler,artist,,,,,
+A_589,Richardas Norvila,artist,,,,,
+A_590,Robert Adrian X,artist,,,,,
+A_591,Robert Filipini,artist,,,,,
+A_592,Robert Lepenik,artist,,,,,
+A_593,Robert Pfurtscheller,artist,,,,,
+A_594,Robert Reinagl,artist,,,,,
+A_595,Robert Spour,artist,,,,,
+A_596,Robert Wendl,artist,,,,,
+A_597,Robert Wolf,artist,,,,,
+A_598,Robert Zahornicky,artist,,,,,
+A_599,Roberto Cortázar,artist,,,,,
+A_600,Roberto Guillén,artist,,,,,
+A_601,Roberto Montoya,artist,,,,,
+A_602,Roberto Paci Dalò,artist,,,,,
+A_603,Roberto Sarmiento,artist,,,,,
+A_604,Roland Jörg,artist,,,,,
+A_605,Rolf Lappert,artist,,,,,
+A_606,Romana Hagyo,artist,,,,,
+A_607,Rosa Hausleithner,artist,,,,,
+A_608,Rosa María Morales Palacio,artist,,,,,
+A_609,Roselies Haider,artist,,,,,
+A_610,Rosmarie Vogt-Rippmann,artist,,,,,
+A_611,Rostislav Jegorov,artist,,,,,
+A_612,Roza El-Hassan,artist,,,,,
+A_613,Rudi Klein,artist,,,,,
+A_614,Rudolf Härdi,artist,,,,,
+A_615,Ru-Feei Cheng,artist,,,,,
+A_616,Rupert Huber,artist,,,,,
+A_617,Ruth Cerha,artist,,,,,
+A_618,Stasys Eidrigevičius,artist,,,,,
+A_619,Sławomir Iwański,artist,,,,,
+A_620,Said Belfahin Saib,artist,,,,,
+A_621,Salim Obralić (†),artist,,,,,
+A_622,Salon Brösl,artist,,,,,
+A_623,Sam Auinger,artist,,,,,
+A_624,Verein zur Erhaltung und Pflege vom Aussterben bedrohter elektromagnetischer Gattungen,artist,,,,,
+A_625,Sandra Ziagos,artist,,,,,
+A_626,Sanela Pansinger,artist,,,,,
+A_627,Sarah Minter (†),artist,,,,,
+A_628,SCHLAUCH installation crew,artist,,,,,
+A_629,Schnabl,artist,,,,,
+A_630,Seid Hasanefendić (†),artist,,,,,
+A_631,Serhat Gül,artist,,,,,
+A_632,Severin Hirsch,artist,,,,,
+A_633,Shim Jai-Ku,artist,,,,,
+A_634,Shin Ho-Chul,artist,,,,,
+A_635,Shin Je-Nam,artist,,,,,
+A_636,Silke Maier-Gamauf,artist,,,,,
+A_637,Silvia Brandl,artist,,,,,
+A_638,Simona Koch,artist,,,,,
+A_639,Slobodan Kajkut,artist,,,,,
+A_640,Socorro López Meza (y su esposo),artist,,,,,
+A_641,Solawi Wieserhoisl-Kollektiv,artist,,,,,
+A_642,Solveig 'Sol' Haring,artist,,,,,
+A_643,Son Ah-Yoo,artist,,,,,
+A_644,Sophie Thun,artist,,,,,
+A_645,"Sportunion Aigen-Schlägl (Gabriele Pillinger, Manfred Leitner, Johann Engleder) und alle Spieler- und Spielerinnen",artist,,,,,
+A_646,"Sportunion St. Oswald (Manfred Radinger, Christine Pernsteiner) und alle Spieler- und Spielerinnen",artist,,,,,
+A_647,Stefanie Sargnagel,artist,,,,,
+A_648,Štěpánka Šimlová,artist,,,,,
+A_649,Stoffl Rath,artist,,,,,
+A_650,Sun Jong-Sun,artist,,,,,
+A_651,Surur Abdul-Hussain,artist,,,,,
+A_652,Susanna Niedermayr,artist,,,,,
+A_653,Susanne Gamauf,artist,,,,,
+A_654,Susanne Kavalar,artist,,,,,
+A_655,Susanne Possega,artist,,,,,
+A_656,Susanne Schuda,artist,,,,,
+A_657,Susanne Schwarz,artist,,,,,
+A_658,Sviatoslav Ponomarev,artist,,,,,
+A_659,Svitlana Zhitnya,artist,,,,,
+A_660,Sylvia Eckerman,artist,,,,,
+A_661,Tomasz Bogusławski,artist,,,,,
+A_662,Tadeusz Grabowski,artist,,,,,
+A_663,Tadeusz Jodłowski,artist,,,,,
+A_664,Tomasz Rumiński,artist,,,,,
+A_665,Tamara Maric,artist,,,,,
+A_666,Tanja Peball,artist,,,,,
+A_667,Tasillo Blittersdorf,artist,,,,,
+A_668,Tatjana Fiedler,artist,,,,,
+A_669,the planets,artist,,,,,
+A_670,THE STRIGGLES,artist,,,,,
+A_671,Thomas Brussig,artist,,,,,
+A_672,Thomas Kuschny,artist,,,,,
+A_673,Thomas Lackner,artist,,,,,
+A_674,Tina T./Erfahrungen aus diversen Hausbesetzungen,artist,,,,,
+A_675,Tom Feldhofer,artist,,,,,
+A_676,Tom Weghofer,artist,,,,,
+A_677,Tomas Hlavina,artist,,,,,
+A_678,Toni Schmale,artist,,,,,
+A_679,transparadiso,artist,,,,,
+A_680,Trio Pjotr,artist,,,,,
+A_681,"Trophäen: Rhizom (Leo Kreisel-Strausz, Christian Bachler)",artist,,,,,
+A_682,Tudor Bratu,artist,,,,,
+A_683,Tulio Restrepo,artist,,,,,
+A_684,Tym Korça,artist,,,,,
+A_685,u.a.,artist,,,,,
+A_686,Udo Bohnenberger,artist,,,,,
+A_687,Ugo Boscain,artist,,,,,
+A_688,Ulf Langheinrich,artist,,,,,
+A_689,Uli Vonbank-Schedler,artist,,,,,
+A_690,Ulla Klopf,artist,,,,,
+A_691,Ulrich Nausner,artist,,,,,
+A_692,Ulrich Tragatschnig,artist,,,,,
+A_693,Ulrike Rauch,artist,,,,,
+A_694,UNIKUM Universitätskulturzentrum Klagenfurt,artist,,,,,
+A_695,UniT Graz,artist,,,,,
+A_696,unortnung,artist,,,,,
+A_697,Ursula Kiesling,artist,,,,,
+A_698,Ursula Strauß,artist,,,,,
+A_699,Valentina Plach,artist,,,,,
+A_700,Vanesa Cvahte,artist,,,,,
+A_701,Veronika Dreier,artist,,,,,
+A_702,Vertreter*innen aus dem habiTAT-Netzwerk (A),artist,,,,,
+A_703,Vertreter*innen Cambium – Leben in Gemeinschaft (Fehring),artist,,,,,
+A_704,Vertreter*innen SchloR (Wien),artist,,,,,
+A_705,Vertreter*innen Willy*Fred (Linz),artist,,,,,
+A_706,Victor Gayol,artist,,,,,
+A_707,Viktor Snessar,artist,,,,,
+A_708,Viktoria Tremmel,artist,,,,,
+A_709,Vladimir Abramovitsch Dubner,artist,,,,,
+A_710,Wacław Klag,artist,,,,,
+A_711,Mieczysław Kościelniak,artist,,,,,
+A_712,Władysław Pluta,artist,,,,,
+A_713,Wiktor Sadowski,artist,,,,,
+A_714,Waldemar Świerzy,artist,,,,,
+A_715,Wiesław Wałkuski,artist,,,,,
+A_716,W. Wasilewski,artist,,,,,
+A_717,W. Wiedeński,artist,,,,,
+A_718,Wally Salner,artist,,,,,
+A_719,Walther Moser,artist,,,,,
+A_720,Warren Burt,artist,,,,,
+A_721,Wenzel Mraček,artist,,,,,
+A_722,wenzel-dnatek (derhunt+ddkern),artist,,,,,
+A_723,Werner Fenz (†),artist,,,,,
+A_724,Werner Hörtner (†),artist,,,,,
+A_725,Werner Kothgasser,artist,,,,,
+A_726,Werner Lang,artist,,,,,
+A_727,Werner Reiss,artist,,,,,
+A_728,Werner Würtinger,artist,,,,,
+A_729,Whang Hyo-Chang,artist,,,,,
+A_730,Winfried Ritsch,artist,,,,,
+A_731,Wolfgang Denk (†),artist,,,,,
+A_732,Wolfgang Musil,artist,,,,,
+A_733,Wolfgang Oeggl,artist,,,,,
+A_734,Wolfgang Purtscheller,artist,,,,,
+A_735,Wolfgang Sohm,artist,,,,,
+A_736,Wolfram Scheucher,artist,,,,,
+A_737,Wuggi Dopler,artist,,,,,
+A_738,XXKunstkabel,artist,,,,,
+A_739,Yamileth del Socorro Álvarez,artist,,,,,
+A_740,Yasuko Ueda,artist,,,,,
+A_741,Yeom Moon-Sun,artist,,,,,
+A_742,Yoo Tai-Su,artist,,,,,
+A_743,Yusri Raman,artist,,,,,
+A_744,Zita Oberwalder,artist,,,,,
+P_1,Gründung des Vereins RHIZOM,project,1988,1988,1.0,(no serie),12.0
+P_2,On the road – in public space,project,1989,ongoing,2.0,On the road – in public space,3.0
+P_3,Z A na B – Von A nach B,project,1989,1989,1.0,(no serie),11.0
+P_4,mural,project,1989,1989,3.0,Mural,23.0
+P_5,Polski Plakatu – Polnische Plakate,project,1990,1990,1.0,(no serie),27.0
+P_6,SOLINA 90,project,1990,1990,1.0,(no serie),25.0
+P_7,Aus-Art,project,1991,1991,1.0,(no serie),1.0
+P_8,Die Grenze,project,1991,1991,1.0,(no serie),19.0
+P_9,Petrowskji boulevard 12,project,1992,1992,1.0,(no serie),22.0
+P_10,Swiss R,project,1992,1992,1.0,(no serie),1.0
+P_11,Austria – Korea,project,1993,1993,1.0,(no serie),1.0
+P_12,IMAGO – Hidden Projects,project,1994,1994,1.0,(no serie),3.0
+P_13,Transfer,project,1994,1994,1.0,(no serie),1.0
+P_14,Direkt Maschin Moskau-Graz,project,1994,1994,1.0,(no serie),1.0
+P_15,¿Adónde? – wohin?,project,1995,1995,1.0,(no serie),1.0
+P_16,Brutstätte,project,1995,1995,1.0,(no serie),1.0
+P_17,…nach,project,1996,1996,1.0,(no serie),1.0
+P_18,Diffusion (chem.),project,1997,1997,1.0,(no serie),1.0
+P_19,Kokon,project,1997,1997,1.0,(no serie),16.0
+P_20,In situ,project,1998,1998,1.0,(no serie),22.0
+P_21,Interchange,project,1999,1999,1.0,(no serie),1.0
+P_22,zu atmen,project,1999,1999,1.0,(no serie),3.0
+P_23,inspiraciones – atemzüge,project,2000,2000,1.0,(no serie),3.0
+P_24,Hören ist Sehen,project,2000,2000,1.0,(no serie),22.0
+P_25,geöffnet – räume und geschichte(n) I,project,2001,2001,4.0,geöffnet! – räume und geschichte(n),3.0
+P_26,geöffnet – räume und geschichte(n) II,project,2001,2001,4.0,geöffnet! – räume und geschichte(n),3.0
+P_27,geöffnet – räume und geschichte(n) III,project,2001,ongoing,4.0,geöffnet! – räume und geschichte(n),3.0
+P_28,geöffnet – räume und geschichte(n) IV,project,2001,2001,4.0,geöffnet! – räume und geschichte(n),3.0
+P_29,geöffnet – räume und geschichte(n) V,project,2002,2002,4.0,geöffnet! – räume und geschichte(n),3.0
+P_30,geöffnet – räume und geschichte(n) VI,project,2002,2002,4.0,geöffnet! – räume und geschichte(n),3.0
+P_31,GrenzLeben,project,2002,2002,1.0,(no serie),22.0
+P_32,"hotel rhizom, STEREOREALITÄTEN, not.tour.no (subventionen sind fad)",project,2003,2003,1.0,(no serie),1.0
+P_33,geöffnet – räume und geschichte(n) VII,project,2003,2003,4.0,geöffnet! – räume und geschichte(n),3.0
+P_34,geöffnet – räume und geschichte(n) VIII,project,2003,2003,4.0,geöffnet! – räume und geschichte(n),3.0
+P_35,geöffnet! – räume und geschichte(n),project,2003,2006,4.0,geöffnet! – räume und geschichte(n),3.0
+P_36,versandhauskatalogprogrammmusik,project,2004,2004,1.0,(no serie),28.0
+P_37,Glück und Unglück 2,project,2004,2004,1.0,(no serie),22.0
+P_38,OUTofSPACE,project,2004,2004,1.0,(no serie),4.0
+P_39,cityTV – A.R.T. of reality,project,2005,2005,1.0,(no serie),22.0
+P_40,Querfeldein Fussballspiel,project,2005,2005,1.0,(no serie),13.0
+P_41,Postbus (A) – Autobus (CZ),project,2005,2005,1.0,(no serie),17.0
+P_42,RHIZOM zu Gast im Hotel Pupik (O.R.F. Schrattenberg),project,2005,2005,1.0,(no serie),22.0
+P_43,Herauslösen – einer Spur folgen – querverbinden – zwischen den Bildern lesen – dem Klang der Worte folgen (I),project,2005,2005,1.0,(no serie),22.0
+P_44,TTT Publikation & Präsentation (II),project,2005,2005,1.0,(no serie),28.0
+P_45,nowhere(wo)men_now here (wo)men,project,2005,2005,1.0,(no serie),1.0
+P_46,Die 3. Szene sind wir,project,2005,2005,1.0,(no serie),4.0
+P_47,Querfeldein Fussballspiel,project,2006,2006,1.0,(no serie),28.0
+P_48,"O(ffen).R(eal).F(undamental), Schrattenberg, Steiermark (I)",project,2006,2006,1.0,(no serie),22.0
+P_49,rhizom.lebend.geschichte,project,2006,2006,1.0,(no serie),22.0
+P_50,metrópolifónico,project,2007,2007,1.0,(no serie),32.0
+P_51,mille plateaux – (audio) clicks & (visual) cuts,project,2007,2007,5.0,Real City,22.0
+P_52,multiple base_public base_home base,project,2007,2007,1.0,(no serie),22.0
+P_53,public frequency sound converter,project,2007,2007,1.0,(no serie),32.0
+P_54,videoheadball,project,2007,2007,1.0,(no serie),22.0
+P_55,Weite suchen – 24-Stunden-Hotel Rhizom,project,2007,2007,1.0,(no serie),3.0
+P_56,"Plattform Kunst ~ Öffentlichkeit, Innsbruck, Tirol & e.d gfrerer, Graz (II)",project,2007,2007,1.0,(no serie),3.0
+P_57,Real City (under construction),project,2007,2007,5.0,Real City,3.0
+P_58,BulBul vs. Soundmogul,project,2008,2008,1.0,(no serie),3.0
+P_59,Wort halt still,project,2008,2008,6.0,non-realized projects,3.0
+P_60,my space (in global slices) (III),project,2008,2008,1.0,(no serie),1.0
+P_61,Volles Risiko,project,2008,2008,6.0,non-realized projects,1.0
+P_62,Verlasst die Stadt!,project,2008,2008,1.0,(no serie),9.0
+P_63,Land Art Cross Soccer – Videopräsentation,project,2008,2008,1.0,(no serie),28.0
+P_64,systems of a town,project,2008,2008,1.0,(no serie),1.0
+P_65,Geh weg | na poti | stand by (IV),project,2009,2009,1.0,(no serie),3.0
+P_66,mural final,project,2009,2009,3.0,Mural,3.0
+P_67,von hier aus,project,2009,2009,7.0,desde aquí – von hier aus,1.0
+P_68,Mark und Pein,project,2009,2009,1.0,(no serie),1.0
+P_69,von hier aus. erinnerung & wechselseitige verbindung – Augarten-Nord,project,2010,2010,7.0,desde aquí – von hier aus,3.0
+P_70,von hier aus. das wort,project,2010,2010,7.0,desde aquí – von hier aus,1.0
+P_71,von hier aus. Nicaragua-Österreich,project,2010,2010,7.0,desde aquí – von hier aus,1.0
+P_72,Reclaiming Space – Temporäre Zwischennutzungen_architekturforum oberösterreich,project,2010,2010,1.0,(no serie),11.0
+P_73,Shared Space – Perspektiven für eine neue Kultur des öffentlichen Raums_HDA Graz,project,2010,2010,1.0,(no serie),1.0
+P_74,mural fragmental,project,2010,2010,3.0,Mural,1.0
+P_75,von hier aus. efendi! itara dot. efendi!,project,2010,2010,7.0,desde aquí – von hier aus,3.0
+P_76,von hier aus. kopfraum,project,2010,2010,7.0,desde aquí – von hier aus,1.0
+P_77,Die Sixtinische Kapelle im Roten Gugl,project,2010,2010,7.0,desde aquí – von hier aus,3.0
+P_78,participation mystique,project,2011,ongoing,8.0,participation mystique,1.0
+P_79,sich mit fremden Federn schmücken,project,2011,2011,6.0,non-realized projects,3.0
+P_80,von hier aus. die straße,project,2011,2011,7.0,desde aquí – von hier aus,3.0
+P_81,mural final_peoples archive,project,2011,2011,3.0,Mural,3.0
+P_82,+25% = fair pay,project,2011,2011,1.0,(no serie),17.0
+P_83,von hier aus. jakominiplatz,project,2011,2011,7.0,desde aquí – von hier aus,3.0
+P_84,Die Sixtinische Kapelle (A),project,2011,2011,7.0,desde aquí – von hier aus,3.0
+P_85,murdock_stadt-raum-fluss,project,2011,2011,5.0,Real City,3.0
+P_86,Aussenposten „danks(c)hen“,project,2011,2011,1.0,(no serie),3.0
+P_87,Das Fluxus-Luxus-Prekariart „El Eden“,project,2011,2011,1.0,(no serie),3.0
+P_88,desde aquí. chinandega von hier aus graz,project,2011,2011,7.0,desde aquí – von hier aus,3.0
+P_89,desde aquí. von hier aus. Nicaragua-Österreich 1989-2011,project,2011,2011,7.0,desde aquí – von hier aus,28.0
+P_90,desde aquí. von hier aus. Nicaragua-Österreich 1989-2012,project,2011,2011,7.0,desde aquí – von hier aus,28.0
+P_91,EFEU,project,2012,2012,5.0,Real City,16.0
+P_92,„Den Blick nach oben richten“ Zeit-Ton extended_Ö1,project,2012,2012,5.0,Real City,31.0
+P_93,Vzpostavitev (Wiederherstellung),project,2012,2012,1.0,(no serie),3.0
+P_94,von hier aus. träumen,project,2012,2012,7.0,desde aquí – von hier aus,3.0
+P_95,„Zeit anfängt stehen“,project,2012,2012,1.0,(no serie),18.0
+P_96,Martin Amstutz (CH),project,2012,2012,1.0,(no serie),29.0
+P_97,participation mystique,project,2013,2013,8.0,participation mystique,39.0
+P_98,Die Sixtinische Kapelle LIVE,project,2013,2013,1.0,(no serie),2.0
+P_99,von hier aus. Managua-Chinandega,project,2013,2013,7.0,desde aquí – von hier aus,1.0
+P_100,raum UND,project,2013,2013,1.0,(no serie),1.0
+P_101,Topoló-Day – Vorstellung der Stazione di Topoló/Postaja Topolove,project,2013,2013,1.0,(no serie),28.0
+P_102,Amores – Flucht mit schlechten Schuhen,project,2013,2013,1.0,(no serie),26.0
+P_103,von hier aus. desde aquí. Nicaragua-Österreich 2013,project,2013,2013,7.0,desde aquí – von hier aus,3.0
+P_104,an.thon_durch und weg,project,2013,2013,1.0,(no serie),11.0
+P_105,Mirko Marić (Name verändert),project,2013,2013,1.0,(no serie),1.0
+P_106,On the road - Just in time,project,2013,2013,1.0,(no serie),1.0
+P_107,Café MILANO / Zwischenstation,project,2013,2013,1.0,(no serie),11.0
+P_108,von hier aus – Costa Rica,project,2014,2014,7.0,desde aquí – von hier aus,11.0
+P_109,SVA Social Venture Analyses im Luxus-Prekariat El Eden,project,2014,2014,9.0,SVA Social Venture Analyses,22.0
+P_110,retour,project,2014,2014,1.0,(no serie),1.0
+P_111,Titelhauptstadt ohne Gedächtnis – Politische Raumordnung in Graz,project,2014,2014,1.0,(no serie),17.0
+P_112,street(foto)works Jakoministraße,project,2014,2014,1.0,(no serie),39.0
+P_113,[maːləˈʀaɪ̯],project,2014,2014,1.0,(no serie),25.0
+P_114,On the road – in public space,project,2015,2015,2.0,On the road – in public space,39.0
+P_115,Earthworks – Pairidaeza,project,2015,2015,10.0,mark & pein – aktuelle kunst aus weitem land,17.0
+P_116,von hier aus.träumen – Salzburg,project,2015,2015,7.0,desde aquí – von hier aus,3.0
+P_117,retour – ein Veröffentlichungsprozess,project,2015,2015,1.0,(no serie),3.0
+P_118,Claudia Märzendorfer,project,2015,2015,1.0,(no serie),3.0
+P_119,Orchestrion des Zufalls,project,2015,2015,1.0,(no serie),13.0
+P_120,von hier aus. träumen – Wien,project,2015,2015,7.0,desde aquí – von hier aus,3.0
+P_121,…über Zwölftonmusik,project,2015,2015,1.0,(no serie),6.0
+P_122,Interferenzen – Auskünfte aus dem Gedächtnis einer slowenisch-deutsch schweigenden Familie,project,2015,2015,11.0,Interferenzen,18.0
+P_123,"articulations in space – Installation, Komposition, Uraufführung",project,2015,2015,1.0,(no serie),6.0
+P_124,Ingo Abeska,project,2015,2015,1.0,(no serie),11.0
+P_125,RAL 6024 „social gardening“ im Ökopark Fekonja,project,2015,2015,1.0,(no serie),3.0
+P_126,syriainstyria,project,2016,ongoing,1.0,(no serie),17.0
+P_127,Werden,project,2016,2016,1.0,(no serie),11.0
+P_128,RETROSPEKTMAG3-10,project,2016,2016,1.0,(no serie),28.0
+P_129,articulations in space II,project,2016,2016,1.0,(no serie),17.0
+P_130,Interferenzen Episode 9 Brojanka sem – meine Wurzeln im Loibltal,project,2016,2016,11.0,Interferenzen,1.0
+P_131,toene differente,project,2016,2016,1.0,(no serie),1.0
+P_132,Interferenzen. Brodi – Querungen _Episode 11,project,2016,2016,11.0,Interferenzen,18.0
+P_133,"RAL 6024 Traffic Green – „social gardening“/ Ökopark Fekonja, Graz",project,2016,2016,1.0,(no serie),28.0
+P_134,von hier aus / X. Bienal Centroamericana (CR),project,2016,2016,7.0,desde aquí – von hier aus,1.0
+P_135,von hier aus – XBienal (CR) – Dokumentation,project,2016,2016,7.0,desde aquí – von hier aus,8.0
+P_136,Mirko Marić – Doppelbilder,project,2016,2016,1.0,(no serie),11.0
+P_137,Bewegung 30.12.2016 – MOEBIUS_Frank & Heinz & Heinz & Frank,project,2016,2016,1.0,(no serie),1.0
+P_138,Interferenzen – Episode 15 proti severu–proti jugu/nordwärts–südwärts,project,2017,2017,11.0,Interferenzen,1.0
+P_139,Catrin Bolt – Kapitalistischer Imperativ,project,2017,2017,1.0,(no serie),11.0
+P_140,Open Call > Raum einnehmen,project,2017,2017,1.0,(no serie),1.0
+P_141,Slogans – Versuch einer Transmediation des Politsprech (SdV),project,2018,2018,12.0,Schwerkraft der Verhältnisse/Slogans,1.0
+P_142,Interferenzen – Črno na belem/Schwarz auf weiß,project,2018,2018,11.0,Interferenzen,1.0
+P_143,Purgatorium RHIZ* – ein Commons(Gemeingut)-Projekt 2020-2023,project,2020,ongoing,1.0,(no serie),1.0
+P_144,Offene Briefe/mails zur Räumungsklage Land Steiermark gegen RHIZOM,project,2017,2017,1.0,(no serie),17.0
+P_145,"über mut – neue bildnerische arbeiten von susanne schwarz, benjamin klug, eva-maria gugg, josef fürpaß",project,2017,2017,1.0,(no serie),11.0
+P_146,Exiles on Mainstream – Steirische Labels im Bereich neuer und nichtzuordenbarer Musiken,project,2017,2017,1.0,(no serie),1.0
+P_147,Sensor Board – Nick Acorne´s neues DIY-Sensorinstrument für elektronische Musik,project,2017,2017,1.0,(no serie),6.0
+P_148,Szenario Zukunft 5 trifft auf “the curtist and the arrator“ von Eva Brede,project,2017,2017,1.0,(no serie),11.0
+P_149,Claudia Märzendorfer – Solidaritätskonzert in 9inch mit Eisschallplatte. here`s to you,project,2017,2017,1.0,(no serie),7.0
+P_150,Raum einnehmen II. Ortswechsel–Raumbefragung–Nachbilder,project,2017,2017,1.0,(no serie),11.0
+P_151,Tym Korça. Satz 36: „Bitte helfen sie mir dann den Ausgang zu finden“,project,2017,2017,1.0,(no serie),1.0
+P_152,Interferenzen – Episode 16 proti severu–proti jugu /nordwärts–südwärts,project,2017,2017,11.0,Interferenzen,18.0
+P_153,"„quote, unquote“ Zita Oberwalder",project,2017,2017,1.0,(no serie),28.0
+P_154,Catrin Bolt – Fleckerlteppich,project,2017,2017,1.0,(no serie),1.0
+P_155,RHIZOM-Kunstankauf der Stadt Graz 2017,project,2017,2017,1.0,(no serie),1.0
+P_156,von hier aus. Nicaragua wohin? desde aquí. ¿Nicaragua adónde?,project,2018,ongoing,7.0,desde aquí – von hier aus,1.0
+P_157,„Die Schwerkraft der Verhältnisse“* (SdV),project,2018,2018,13.0,Schwerkraft der Verhältnisse,1.0
+P_158,FLAG_You can´t destroy our blues! (SdV),project,2018,2018,13.0,Schwerkraft der Verhältnisse,1.0
+P_159,Mirko Marić – Wiederholung/Denkraum (SdV),project,2018,2018,13.0,Schwerkraft der Verhältnisse,1.0
+P_160,Erwin Michenthaler – Vom Schindluder (SdV),project,2018,2018,13.0,Schwerkraft der Verhältnisse,1.0
+P_161,Beschissene Verhältnisse II und Installation PLAFOND (SdV),project,2018,2018,13.0,Schwerkraft der Verhältnisse,1.0
+P_162,„Die Wahrheit“ seit 1945 trifft auf eine goldene Zukunft (SdV),project,2018,2018,13.0,Schwerkraft der Verhältnisse,1.0
+P_163,Arbeiten gegen die Schwerkraft (SdV),project,2018,2018,13.0,Schwerkraft der Verhältnisse,1.0
+P_164,Earthworks – Pairidaeza II,project,2018,2018,1.0,(no serie),1.0
+P_165,Interferenzen – Episode 18,project,2018,2019,11.0,Interferenzen,1.0
+P_166,Interferenzen – Episode 19,project,2018,2019,11.0,Interferenzen,1.0
+P_167,Nationalstaat 101: Wie man eine Grenze dichtet,project,2018,2018,1.0,(no serie),1.0
+P_168,Interferenzen – Episode 20,project,2018,2018,11.0,Interferenzen,1.0
+P_169,Mirko Marić – Retroperspektive,project,2019,2019,1.0,(no serie),1.0
+P_170,Slogans II – Versuch einer Transmediation des Politsprech,project,2019,ongoing,14.0,Slogans,1.0
+P_171,Für die Vögel – ein Projekt von Claudia Märzendorfer,project,2019,2019,1.0,(no serie),1.0
+P_172,Erklärung der Vielen,project,2019,2019,1.0,(no serie),1.0
+P_173,An Schengens Rand,project,2019,2019,1.0,(no serie),1.0
+P_174,Billy Roisz – Signalkaskaden,project,2019,2019,1.0,(no serie),1.0
+P_175,Interferenzen – Episode 21,project,2019,2019,11.0,Interferenzen,1.0
+P_176,(Lost in) The Ratlines‘ Periphery – Florian Sorgo,project,2019,2019,1.0,(no serie),1.0
+P_177,durch a52,project,2019,2019,1.0,(no serie),1.0
+P_178,Interferenzen – Episode 22,project,2019,2019,11.0,Interferenzen,1.0
+P_179,Interferenzen – Episode 23,project,2019,2019,11.0,Interferenzen,1.0
+P_180,"a. sich in die stadt einschreiben.RHIZ* – ein Commons(Gemeingut) von a bis z, 2020 — open end",project,2020,ongoing,15.0,sich in die stadt einschreiben,1.0
+P_181,d. Ans Eingemachte – Praktiken selbstbestimmten Lebens,project,2020,ongoing,15.0,sich in die stadt einschreiben,1.0
+P_182,Honduras. Was ist das?,project,2020,ongoing,1.0,(no serie),1.0
+P_183,Seiten einer Medaille – Westnicaraguas CKD (Chronische Niereninsuffizienz)-Epidemie im Dialog der Weltbank,project,2020,2021,7.0,desde aquí – von hier aus,1.0
+P_184,Purgatorium RHIZ*,project,2020,2020,1.0,(no serie),1.0
+P_185,Seismografien und andere Erschütterungen,project,2020,2020,1.0,(no serie),1.0
+P_186,b. in den raum gezeichnet. (plurale Konstellationen),project,2020,2020,15.0,sich in die stadt einschreiben,1.0
+P_187,Mirko Marić 2020 mm,project,2020,2020,1.0,(no serie),1.0
+P_188,"Shelter – Gewerke, Einhausungen und temporäre Konstruktionen aus Holz",project,2020,2020,1.0,(no serie),1.0
+P_189,Interferenzen – Episode 24,project,2020,2020,11.0,Interferenzen,1.0
+P_190,Interferenzen – Episode 26,project,2020,2020,11.0,Interferenzen,1.0
+P_191,c. Umrundung der Form. Bodensprache Lehm,project,2021,2021,15.0,sich in die stadt einschreiben,1.0
+P_192,e. LIm > 63 µm,project,2021,2021,15.0,sich in die stadt einschreiben,1.0
+P_193,CHEWING GUM IN CLASS,project,2022,2022,1.0,(no serie),1.0
+P_194,SCHLAUCH – Geräusch bewohnbar machen,project,2022,2022,1.0,(no serie),16.0
+P_195,Нова реальність Neue Realität,project,2022,2022,1.0,(no serie),11.0
+P_196,betonix I,project,2022,2022,1.0,(no serie),40.0
+P_197,fragmentary rain,project,2022,2022,1.0,(no serie),26.0
+P_198,betonix II,project,2022,2022,1.0,(no serie),16.0
+P_199,von A nach B – 2022 mm,project,2022,2022,1.0,(no serie),16.0
+P_200,Interferenzen – Episode 25,project,2022,2022,11.0,Interferenzen,28.0
+P_201,Papiertier aufgefaltet,project,2022,2022,1.0,(no serie),8.0
+P_202,Stay,project,2022,2022,1.0,(no serie),16.0
+P_203,BRDN,project,2023,2023,1.0,(no serie),16.0
+P_204,"DIE DINGE, DIE WAREN oder Die [...]1 Digitalisierung des Alltags",project,2023,2023,1.0,(no serie),11.0
+P_205,DAS VERBORGENE ALBUM DER BEIDEN MATISSE,project,2023,2023,1.0,(no serie),14.0
+P_206,roaming,project,2023,2023,1.0,(no serie),6.0
+P_207,rostrot_monochrom,project,2023,2023,1.0,(no serie),11.0
+P_208,Tous ces mots pour toi qui sont restés en moi,project,2023,2023,1.0,(no serie),16.0
+P_209,f. Ans Eingemachte. Die Stadt freispielen,project,2023,2023,15.0,sich in die stadt einschreiben,13.0
+P_210,Die Gute Lücke,project,2024,2024,1.0,(no serie),16.0
+P_211,Über Bedingungen,project,2024,2024,1.0,(no serie),28.0
+P_212,Queerfeminismus am Land?,project,2024,2024,1.0,(no serie),28.0
+P_213,"20 JAHRE ROCK IS HELL, Heimo Wallner … und so fort",project,2024,2024,1.0,(no serie),7.0
+P_214,Jump! Cut.,project,(to be announced),(to be announced),1.0,(no serie),7.0
+P_215,Und was bitte ist jetzt so neu an diesen Neonazis?,project,2024,2024,1.0,(no serie),34.0
+P_216,Only Death is Real,project,2024,2024,1.0,(no serie),11.0
+P_217,siesta I-III,project,2024,2024,1.0,(no serie),7.0
+P_218,von hier aus: Leo Kreisel-Strausz,project,2024,2024,1.0,(no serie),11.0
+P_219,lebt. Gruppenausstellung für Leo Kreisel-Strausz,project,2024,2024,1.0,(no serie),11.0
