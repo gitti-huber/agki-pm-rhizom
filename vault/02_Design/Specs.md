@@ -1,0 +1,1817 @@
+# Specs – Technischer Steckbrief & Anforderungen
+
+> Beschreibung des technischen Setups, der Architektur und der nicht-funktionalen Anforderungen.
+
+## Systemübersicht
+
+- Statische Website auf GitHub Pages
+- HTML-Templates + CSS in `assets/`
+- Daten in `/data` (CSV/JSON/SQLite)
+- Analyse in Python-Notebooks (`/notebooks`)
+- Obsidian-Vault (`/vault`) als Wissens- und PM-Schicht
+
+## Nicht-funktionale Anforderungen (Auszug)
+
+- Ausreichende Performance für mittlere Netzwerke
+- Verständliche, zugängliche Visualisierung
+- Trennung von Daten, Analyse und Präsentation
+- Erweiterbarkeit für zusätzliche Jahre/Projekte/Rollen
+
+---
+
+## Original Website-Inhalte zu Kontext / Methodik / Forschungsfrage (1:1)
+
+### 02-projektkontext.html
+
+```html
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projektkontext</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <article>
+    <h1>Projektkontext</h1>
+    <p class="meta">Stand: 30. Oktober 2025</p>
+
+    <h2>Forschungshintergrund</h2>
+    <p>
+      Das Projekt <strong>„Rhizomatische Strukturen im Kulturbereich“</strong> ist im
+      Spannungsfeld von Kulturwissenschaften, Informationswissenschaft und Digital Humanities verortet.
+      Im Zentrum steht die Frage, wie kollektive, netzwerkartige Arbeitsformen in der freien Kulturszene
+      datenanalytisch beschrieben und visualisiert werden können.
+    </p>
+
+    <h2>Das Fallbeispiel RHIZOM</h2>
+    <p>
+      Der 1988 in Graz gegründete Verein <strong>RHIZOM</strong> arbeitet transdisziplinär an der Schnittstelle
+      von Kunst, Forschung und Vermittlung. Die Struktur des Vereins basiert auf fluiden Rollen und
+      temporären Kooperationen zwischen Künstler:innen, Forscher:innen und Kurator:innen. Diese
+      offene, prozessuale Organisationsform bietet ein ideales empirisches Beispiel, um
+      <em>rhizomatische Verflechtungen</em> im Kulturbereich sichtbar zu machen.
+    </p>
+
+    <h2>Ziele des Projekts</h2>
+    <ul>
+      <li>Rekonstruktion der personellen und projektbezogenen Netzwerke des Vereins RHIZOM</li>
+      <li>Analyse der Dynamik von Kooperationen und Rollenverschiebungen über die Zeit</li>
+      <li>Identifikation zentraler Akteur:innen und thematischer Knotenpunkte</li>
+    </ul>
+
+    <h2>Wissenschaftlicher Mehrwert</h2>
+    <p>
+      Durch die Kombination qualitativer kulturwissenschaftlicher Perspektiven mit quantitativen Methoden
+      der Netzwerkanalyse leistet das Projekt einen Beitrag zur digitalen Erschließung freier Kunst- und
+      Kulturarbeit in Österreich. Die entstehende Datenstruktur soll nicht nur analytisch, sondern auch
+      kuratorisch und forschungspraktisch nutzbar sein.
+    </p>
+
+    <p><a href="../index.html">← Zurück zur Startseite</a></p>
+  </article>
+</body>
+</html>
+
+
+```
+
+### 03-forschungsfrage.html
+
+```html
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>03 Forschungsfrage</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <article>
+    <h1>03 Forschungsfrage</h1>
+    <p class="meta">Stand: 30. October 2025</p>
+    
+<h2>Leitfrage</h2>
+<p>Wie lassen sich die personellen und projektbezogenen Netzwerke des Vereins RHIZOM datenbasiert rekonstruieren, 
+und welche Muster der Zusammenarbeit und Vernetzung lassen sich daraus über die Zeit erkennen?</p>
+
+    <p><a href="../index.html">← Zurück zur Startseite</a></p>
+  </article>
+</body>
+</html>
+
+```
+
+### 04-methodik.html
+
+```html
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <title>04 Methodik</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+  <article>
+    <h1>04 Methodik</h1>
+    <p class="meta">Stand: 30. October 2025</p>
+    
+<h2>Pipeline</h2>
+<ol>
+  <li>Datenerhebung: Webscraping, manuelle Korrektur</li>
+  <li>Automatische Verarbeitung (LLMs): NER, Disambiguierung, Themencluster</li>
+  <li>Netzwerkaufbau: Knoten (Personen/Projekte), Kanten (Beteiligungen/Kooperationen)</li>
+  <li>Visualisierung: interaktive Graphen</li>
+</ol>
+
+    <p><a href="../index.html">← Zurück zur Startseite</a></p>
+  </article>
+</body>
+</html>
+
+```
+
+### index.html
+
+```html
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Forschungsblog</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+  </head>
+
+  <body>
+    <a id="top"></a>
+    <header
+      data-date="30. Oktober 2025"
+      data-url="https://[username].github.io/agki-pm-rhizom"
+    >
+      <h1>Forschungsblog</h1>
+      <p class="subtitle">Laufende Dokumentation, Daten & Quellen</p>
+      <nav>
+        <a href="../index.html">Home</a>
+        <a href="../about.html">Über das Projekt</a>
+        <span aria-current="page">Forschungsblog</span>
+        <a href="../visualisierung.html">Visualisierung</a>
+        <a href="../prompts/index.html">Prompt Engineering Tagebuch</a>
+        <a href="../glossar.html">Glossar</a>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <p class="meta">
+          Stand: <span id="today"></span> •
+          <span class="pill">Forschungsblog</span>
+        </p>
+
+        <div class="llm-sharing-block">
+          <div class="llm-sharing-block_title">
+            Diesen Forschungsblog zusammenfassen mit:
+          </div>
+
+          <!-- ChatGPT -->
+          <a
+            target="_blank"
+            class="llm-sharing-block_btn"
+            href="https://chat.openai.com/?q=Bitte+fasse+diesen+Forschungsblog+zusammen%3A+https://gitti-huber.github.io/agki-pm-rhizom/posts/index.html"
+          >
+            🟣 ChatGPT
+          </a>
+
+          <!-- Perplexity -->
+          <a
+            target="_blank"
+            class="llm-sharing-block_btn"
+            href="https://www.perplexity.ai/search?q=Bitte+fasse+diesen+Forschungsblog+zusammen%3A+https%3A%2F%2Fgitti-huber.github.io%2Fagki-pm-rhizom%2Fposts%2Findex.html"
+          >
+            ❄️ Perplexity
+          </a>
+
+          <!-- Claude -->
+          <a
+            target="_blank"
+            class="llm-sharing-block_btn"
+            href="https://claude.ai/new?q=Bitte+fasse+diesen+Forschungsblog+zusammen%3A+https%3A%2F%2Fgitti-huber.github.io%2Fagki-pm-rhizom%2Fposts%2Findex.html"
+          >
+            🌟 Claude
+          </a>
+
+          <!-- Grok -->
+          <a
+            target="_blank"
+            class="llm-sharing-block_btn"
+            href="https://grok.com/?q=Bitte+fasse+diesen+Forschungsblog+zusammen%3A+https%3A%2F%2Fgitti-huber.github.io%2Fagki-pm-rhizom%2Fposts%2Findex.html"
+          >
+            ⭕ Grok
+          </a>
+        </div>
+
+        
+        <!-- Wordcloud -->
+        <section class="section">
+          <!-- Image -->
+          <figure class="figure-image image-lightbox">
+            <img
+              src="../images/rhizom_wordcloud.png"
+              data-lightbox-src="../images/rhizom_wordcloud.png"
+              alt="Wordcloud https://rhizom.mur.at/"
+            />
+            <figcaption>
+              <a href="https://voyant-tools.org/?corpus=179ad9cba825df58a8ad7ecb48814025" target="_blank"
+                >Voyant Tools</a
+              >
+              -Wordcloud
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- Inhaltsverzeichnis -->
+        <nav class="toc toc-collapsed" aria-label="Inhaltsverzeichnis">
+          <button
+            class="toc-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="toc-inner"
+          >
+            Inhalt
+            <span class="toc-toggle-icon" aria-hidden="true">▾</span>
+          </button>
+
+          <div class="toc-inner" id="toc-inner">
+            <ul>
+              <li><a href="#abstract">Einleitung</a></li>
+              <li><a href="#1pager">1-Pager-Projektkonzept</a></li>
+              <li><a href="#datenbasis">Datenbasis</a></li>
+              <li><a href="#kontext">Projektkontext</a></li>
+              <li><a href="#frage">Forschungsfrage</a></li>
+              <li><a href="#methodik">Methodik</a></li>
+              <li><a href="#netzwerkmodell">Netzwerkmodell</a></li>
+              <li><a href="#ergebnisse">Zwischenergebnisse</a></li>
+              <li><a href="#ref">Quellen</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <!--  Inhalt des Forschungsblogs -->
+
+        <!-- 1: Einleitung -->
+        <section id="abstract" class="section">
+          <h2>Einleitung</h2>
+
+          <p>
+            Dieser Blog ergänzt die
+            <a href="../about.html">Projektbeschreibung</a> um die praktische
+            Ebene. Er dokumentiert, wie das Projekt tatsächlich umgesetzt wird –
+            von der Datenarbeit bis zur Analyse und Visualisierung der
+            Ergebnisse:
+          </p>
+
+          <ul>
+            <li>Entstehung und Entwicklung der Datenbasis</li>
+            <li>Erkenntnisse aus der Arbeit mit Digital Humanities-Methoden</li>
+            <li>
+              Einsatz von LLMs zur Extraktion, Bereinigung und Modellierung
+            </li>
+            <li>
+              Dokumentation von Workflow-Entscheidungen und Herausforderungen
+            </li>
+            <li>Zwischenergebnisse, Visualisierungen und Interpretation</li>
+          </ul>
+
+          <p>
+            Der Blog ist damit als <strong>Laborjournal</strong> des Projekts
+            konzipiert: Er macht die laufende Forschung transparent, zeigt
+            methodische Überlegungen, reflektiert den Einsatz von KI-gestützten
+            Verfahren und hält die wichtigsten Zwischenschritte für die
+            Weiterarbeit fest.
+          </p>
+        </section>
+
+        <!-- 2: 1-Pager -->
+        <section id="1pager" class="section">
+          <h2>1-Pager-Projektkonzept</h2>
+
+          <div class="note-box" style="font-size: 0.85rem">
+            <h3>Aufgabe: 1-Pager &amp; Pitch Projektkonzept</h3>
+
+            <p><strong>Fälligkeitsdatum:</strong> 24.10.2025, 23:59 Uhr</p>
+
+            <p>
+              <strong>Beschreibung:</strong><br />
+              Entwicklung eines datengetriebenen Projektkonzepts (max. 1 Seite
+              A4, PDF oder DOCX).
+            </p>
+
+            <strong>Pflichtkomponenten:</strong>
+            <ol>
+              <li>
+                Datenbasis (Format, Umfang, Struktur, Aufbereitungsbedarf)
+              </li>
+              <li>Projektkontext (Forschungskontext)</li>
+              <li>Forschungsfrage (klar formuliert)</li>
+              <li>Geplanter Ansatz (LLM-Verarbeitung)</li>
+              <li>Output (Pflicht: Webdarstellung)</li>
+            </ol>
+
+            <p>
+              <strong>Pitch-Präsentation:</strong><br />
+              3–5 Minuten Präsentation am 28.10.2025. Fokus: Daten,
+              Forschungsfrage, geplante Entwicklung. Keine Folien erforderlich
+              (1-Pager wird projiziert).
+            </p>
+
+            <strong>Hinweise:</strong>
+            <ul>
+              <li>Eigene Daten verwenden</li>
+              <li>Projekt in eigener Fachdomäne entwickeln</li>
+              <li>Bewertung: Abgabe ja/nein, dann Feedback</li>
+              <li>Fragen: E-Mail an Christopher Pollin</li>
+            </ul>
+          </div>
+          <div class="section highlight-box">
+            <strong>1-Pager: ursprüngliche Version vom 24.10.2025</strong
+            ><br />Ausarbeitung des Projektkonzepts<br /><br />
+            <a
+              class="download-btn"
+              href="../data/rhizom_1pager.pdf"
+              target="_blank"
+            >
+              📄 rhizom_1pager.pdf (Projektkonzept)
+            </a>
+          </div>
+        </section>
+
+        <!-- 3: Datenbasis-->
+        <section id="datenbasis" class="section">
+          <h2>Datenbasis</h2>
+          <h4>Format, Umfang, Struktur, Aufbereitung</h4>
+
+          <p>
+            Der Aufbau der Datenbasis erfolgt aus öffentlich zugänglichen
+            Inhalten der kontinuierlich weiterentwickelten
+            <a
+              href="https://rhizom.mur.at/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >RHIZOM-Website</a
+            >
+            sowie aus bislang unveröffentlichten Materialien (Word, PDF,
+            Bilddaten).
+          </p>
+
+          <ul>
+            <li><strong>Zeitraum:</strong> 1988 bis heute (laufend)</li>
+            <li><strong>Umfang:</strong> 700+ Personen, 200+ Projekte</li>
+            <li>
+              <strong>Datenstruktur:</strong> Personen, Projekte,
+              Rollen/Beteiligungen, Kooperationen
+            </li>
+            <li><strong>Rohdatenformate:</strong> CSV, JSON, TXT</li>
+            <li><strong>Bereinigte Daten:</strong> Cleaned-CSV</li>
+            <li>
+              <strong>Metadaten:</strong> README.md, Dokumentation der
+              Datensätze
+            </li>
+            <li>
+              <strong>Speicherung & Versionierung:</strong> GitHub Repository
+            </li>
+            <li><strong>Datenlizenz:</strong> CC BY-SA (Open Data)</li>
+            <li><strong>Datensicherung:</strong> regelmäßige Backups</li>
+            <li><strong>Datenzugriff:</strong> öffentlich im Repo</li>
+            <li>
+              <strong>Qualitätssicherung:</strong> Plausibilitätsprüfungen,
+              Feedback-Integration
+            </li>
+            <li>
+              <strong>Langfristige Archivierung:</strong> Sicherstellung der
+              Nachnutzbarkeit
+            </li>
+          </ul>
+
+          <!-- INFO/HELP-->
+          <div class="note-box">
+            Siehe auch Datenordner im Repo: <code>/data/</code> (DB-Datei, Roh-
+            &amp; Cleaned-CSV-Dateien).
+          </div>
+        </section>
+
+        <!-- 4: Kontext -->
+        <section id="kontext" class="section">
+          <h2>Projektkontext</h2>
+          <p>
+            Das Projekt untersucht RHIZOM als langjährig aktiven Akteur der
+            freien Kulturarbeit, dessen kollaborative, selbstorganisierte und
+            transdisziplinäre Praxis seit 1988 eine einzigartige Dokumentations-
+            und Forschungsgrundlage bildet. Die vielschichtigen personellen und
+            projektbezogenen Beziehungsgeflechte ermöglichen einen
+            exemplarischen Blick auf Netzwerkstrukturen in der unabhängigen
+            Kulturszene und deren Wandel über mehrere Jahrzehnte. In Anlehnung
+            an das Konzept rhizomatischer Strukturen nach Deleuze/Guattari –
+            geprägt durch Nicht-Hierarchie, Vielheit und dynamische
+            Verknüpfungen – bietet RHIZOM ein ideales Fallbeispiel, um
+            kulturelle Organisationsformen jenseits linearer oder institutionell
+            fixierter Modelle zu analysieren. Die Verbindung
+            kulturwissenschaftlicher Perspektiven mit Methoden der Digital
+            Humanities – insbesondere Netzwerkanalyse, Datenmodellierung und
+            Visualisierung – erlaubt es, Muster der Zusammenarbeit,
+            Rollenentwicklungen und Dynamiken kultureller Praxis sichtbar zu
+            machen. RHIZOM fungiert somit einerseits als empirisches Beispiel
+            kollaborativer Kulturproduktion jenseits etablierter
+            institutioneller Strukturen und eröffnet andererseits ein
+            theoretisch ergiebiges Untersuchungsfeld für datenbasierte Analysen
+            rhizomatischer Kulturpraxis.
+          </p>
+        </section>
+
+        <!-- 5: Forschungsfrage -->
+        <section id="frage" class="section">
+          <h2>Forschungsfrage</h2>
+          <p>
+            Wie lassen sich die personellen und projektbezogenen Netzwerke des
+            Vereins RHIZOM datenbasiert rekonstruieren, und welche Muster der
+            Zusammenarbeit und Vernetzung lassen sich daraus über die Zeit
+            erkennen?
+          </p>
+        </section>
+
+        <!-- 6: Methodik -->
+        <section id="methodik" class="section">
+          <h2>Methodik</h2>
+
+          <ol>
+            <li>
+              <strong>Datenerhebung:</strong>
+              Webscraping, Extraktion aus Dokumenten, manuelle Ergänzungen und
+              Korrekturen
+            </li>
+
+            <li>
+              <strong>Datenaufbereitung:</strong>
+              Bereinigung von Namensvarianten und Dubletten, Normalisierung,
+              Disambiguierung, strukturelle Vereinheitlichung
+            </li>
+
+            <li>
+              <strong>Automatisierte Verarbeitung:</strong>
+              NER und Entitätenextraktion (LLMs), thematische Clusterbildung,
+              Validierung durch Hybridverfahren (automatisch + manuell)
+            </li>
+
+            <li>
+              <strong>Modellierung:</strong>
+              Aufbau einer relationalen Datenstruktur (Knoten =
+              Personen/Projekte, Kanten = Beteiligungen/Kooperationen)
+            </li>
+
+            <li>
+              <strong>Netzwerkanalyse:</strong>
+              Identifikation von Mustern der Zusammenarbeit, Zeitverläufe,
+              zentrale Akteur:innen, Clusterdynamiken
+            </li>
+
+            <li>
+              <strong>Visualisierung:</strong>
+              Interaktive Graphdarstellungen (Webvisualisierung)
+            </li>
+
+            <li>
+              <strong>Software & Reproduzierbarkeit:</strong>
+              Python, Pandas, OpenRefine, Jupyter; sämtliche Skripte im Ordner
+              <code>/notebooks/</code> versioniert
+            </li>
+          </ol>
+
+          <blockquote>
+            Hinweis: Alle Verarbeitungsschritte werden nachvollziehbar
+            dokumentiert, um Reproduzierbarkeit sicherzustellen.
+          </blockquote>
+        </section>
+
+        <!-- 7: Netzwerkmodell -->
+        <section id="netzwerkmodell" class="section">
+          <h2>Netzwerkmodell (Teil I)</h2>
+          <h3>Modelltheoretische Grundlagen</h3>
+          <p>
+            Die Konzeption des Datenmodells folgt einem modelltheoretischen
+            Verständnis im Sinne von Stachowiak (1973). Modelle sind demnach
+            <em>Abbildungen</em> eines Originals, jedoch stets verkürzt und auf
+            spezifische Zwecke hin konstruiert. Auch das hier entwickelte
+            Datenmodell erfasst den Kulturverein <strong>RHIZOM</strong> nicht
+            in seiner Gesamtheit, sondern bildet jene Aspekte ab, die für eine
+            datenbasierte Analyse kultureller Praxis relevant sind: Projekte,
+            beteiligte Personen, Rollen, Orte, Medienobjekte und
+            Veranstaltungsdaten.
+          </p>
+
+          <p>
+            Diese Verkürzung ist nicht nur unvermeidbar, sondern produktiv:
+            Durch die formale Modellierung werden Strukturen erkennbar, die in
+            den heterogenen Originaldaten nur implizit vorliegen. Im Sinne des
+            <em>pragmatischen Merkmals</em> nach Stachowiak richtet sich das
+            Modell damit auf den Untersuchungsschwerpunkt der Netzwerkanalyse
+            aus. Es dient zugleich als Dokumentationsgrundlage, als Werkzeug zum
+            Hypothesentesten und als Ausgangspunkt für Visualisierungen, die
+            kulturelle Zusammenhänge sichtbar machen.
+          </p>
+
+          <p>
+            Die Entwicklung des Modells erfolgte zunächst in Form eines
+            ER-Diagramms (ERDPlus), das mehrere Iterationen durchlief. Besonders
+            herausfordernd war die sinnvolle Trennung von Personengruppen,
+            Organisationsformen und Projektreihen sowie die Abbildung der
+            vielfältigen Medienobjekte. Erst durch die Aufspaltung der
+            ursprünglichen Sammelentitäten in differenzierte Tabellen – etwa für
+            <em>Künstler:innen</em>, <em>Mitglieder</em>,
+            <em>Kooperationspartner:innen</em>, <em>Orte</em> und
+            <em>Medientypen</em> – wurde eine Struktur möglich, die sowohl
+            konsistent als auch analytisch verwertbar ist.
+          </p>
+
+          <p>
+            Die resultierende Datenbank (<code>rhizom.db</code>) bildet nun die
+            Grundgesamtheit der erhobenen Informationen ab. Sie stellt sicher,
+            dass alle Projekte, Veranstaltungen, Objekte und beteiligten
+            Personen relational verknüpft erfasst werden. Das Netzwerk, das
+            später visualisiert wird, ergibt sich unmittelbar aus diesen
+            Relationen.
+          </p>
+
+          <div class="section highlight-box">
+            <strong>Ausführliche Dokumentation:</strong><br />
+            Ausarbeitung der modelltheoretischen Grundlagen und Beschreibung der
+            einzelnen Modellierungsentscheidungen<br /><br />
+            <a
+              class="download-btn"
+              href="../data/rhizom_text.pdf"
+              target="_blank"
+            >
+              📄 rhizom_text.pdf (Modelltheorie + Datenmodellierung)
+            </a>
+          </div>
+
+          <h2>Netzwerkmodell (Teil II)</h2>
+          <p>
+            Die Datenbasis des Projekts liegt als SQLite-Datenbank
+            (<code>rhizom.db</code>) vor und umfasst vier Kernbereiche:
+            Personen, Projekte, Rollen sowie konkrete Beteiligungsbeziehungen.
+            Die Tabellen bilden gemeinsam ein relationales Modell, das sowohl
+            individuelle Akteur:innen als auch projektbezogene Aktivitäten und
+            ihre zeitlichen Verläufe erfasst.
+          </p>
+
+          <h3>Datenstruktur</h3>
+          <ul>
+            <li>
+              <strong>persons</strong> – Stammdaten von Personen (ID, Name,
+              optionale Kurzbeschreibung/Bio).
+            </li>
+            <li>
+              <strong>projects</strong> – Projekte und Aktivitäten des Vereins
+              (ID, Titel, Typ/Kategorie, Jahr oder Zeitraum, Beschreibung).
+            </li>
+            <li>
+              <strong>roles</strong> – Mögliche Rollen innerhalb von Projekten
+              (z.&nbsp;B. Organisation, Mitarbeit, Konzept, Performance).
+            </li>
+            <li>
+              <strong>edges</strong> – Relationen zwischen Personen und
+              Projekten, bestehend aus:
+              <ul>
+                <li>person_id – Verweis auf eine Person</li>
+                <li>project_id – Verweis auf ein Projekt</li>
+                <li>role_id – zugeordnete Rolle</li>
+                <li>
+                  year_start / year_end – Zeitliche Eingrenzung der Beteiligung
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <p>
+            Die Tabelle <strong>edges</strong> bildet damit den zentralen
+            „Relationsteil“ des Modells: Sie verknüpft Personen mit Projekten,
+            differenziert nach Rolle und Zeitraum. Auf dieser Basis lassen sich
+            Netzwerkstrukturen rekonstruieren – etwa wiederkehrende
+            Kooperationen, Rollenverläufe oder Knotenpunkte hoher Aktivität.
+          </p>
+
+          <p class="intro-note">
+            Relationstypen ergeben sich implizit über die Kombination aus
+            person_id, project_id und role_id und können bei Bedarf erweitert
+            werden (z.&nbsp;B. um Kategorien wie Leitung, kuratorische
+            Mitarbeit, technische Unterstützung oder künstlerische Beteiligung).
+          </p>
+        </section>
+
+        <!-- 8: Ergebnisse (Platzhalter, wächst mit) -->
+        <section id="ergebnisse" class="section">
+          <h2>Zwischenergebnisse</h2>
+          <p>
+            <em>Platzhalter:</em> An dieser Stelle werden nach und nach Befunde,
+            Visualisierungen und interpretative Analysen ergänzt – etwa zur
+            <strong>Zentralität einzelner Akteur:innen</strong> im Netzwerk, zu
+            <strong>Rollenverläufen und Veränderungen über die Zeit</strong>
+            sowie zu
+            <strong>zeitlichen Entwicklungslinien und Projektclustern</strong>.
+          </p>
+
+          <h3 class="centered">ER-Diagramm</h3>
+          <!-- Image (ERD) -->
+          <figure class="image-lightbox">
+            <img src="../images/rhizom_erd.png" alt="ER-Diagramm" />
+            <figcaption>ER-Diagramm</figcaption>
+          </figure>
+
+          <h3 class="centered">Interaktive Netzwerkvisualisierung</h3>
+
+          <!-- 🔧 Bedienelemente für die Netzwerkvisualisierung -->
+          <div class="network-controls">
+            <!-- 🔎 Suche -->
+            <div class="control-group">
+              <label for="search">Suche nach Namen:</label>
+              <input id="search" type="text" placeholder="Name eingeben …" />
+            </div>
+
+            <!-- 🧭 Zoom -->
+            <div class="control-group">
+              <label>Zoom:</label>
+              <button id="zoom-in">+</button>
+              <button id="zoom-out">–</button>
+              <button id="zoom-reset">Reset</button>
+            </div>
+
+            <!-- 🧲 Layout -->
+            <div class="control-group">
+              <label>Layout (ForceAtlas2):</label>
+              <button id="layout-start">Start</button>
+              <button id="layout-stop">Stop</button>
+            </div>
+
+            <!-- 🏷 Label-Dichte -->
+            <div class="control-group">
+              <label for="label-density">Label-Dichte:</label>
+              <input
+                id="label-density"
+                type="range"
+                min="5"
+                max="200"
+                step="5"
+                value="60"
+              />
+            </div>
+
+            <!-- 🌍 Filter -->
+            <div class="control-group">
+              <label for="filter-nationality">Nationalität:</label>
+              <select id="filter-nationality">
+                <option value="">Alle</option>
+                <!-- JS füllt Optionen automatisch -->
+              </select>
+            </div>
+
+            <div class="control-group">
+              <label for="filter-type">Typ:</label>
+              <select id="filter-type">
+                <option value="">Alle</option>
+                <option value="person">Person</option>
+                <option value="project">Projekt</option>
+              </select>
+            </div>
+
+            <!-- 🧹 Filtersteuerung -->
+            <div class="control-group button-row">
+              <button id="filter-clear">Clear</button>
+              <button id="filter-undo">Undo</button>
+            </div>
+          </div>
+
+          <!-- 🔹 Farblegende -->
+          <div
+            id="legend"
+            style="
+              background: #f8f8f8;
+              border: 1px solid #ddd;
+              padding: 10px;
+              margin: 10px 0;
+              border-radius: 6px;
+              font-size: 0.9rem;
+            "
+          ></div>
+
+          <!-- 🔹 Info-Panel bei Klick -->
+          <div
+            id="info-panel"
+            style="
+              display: none;
+              background: #fffbe6;
+              border: 1px solid #e0d689;
+              padding: 12px;
+              margin: 10px 0 20px;
+              border-radius: 6px;
+            "
+          >
+            <h4 style="margin-top: 0">Ausgewählter Knoten</h4>
+            <p><strong>Name:</strong> <span id="info-name"></span></p>
+            <p><strong>Nationalität:</strong> <span id="info-nat"></span></p>
+            <p><strong>Verbunden mit:</strong></p>
+            <ul id="info-projects" style="margin-top: 5px"></ul>
+          </div>
+
+          <!-- Sigma Container -->
+          <div id="sigma-container" style="width: 100%; height: 700px"></div>
+
+          <h3 class="centered">Gephi-Snapshots</h3>
+          <!-- Image (Gephi-Snapshot 1) -->
+          <figure class="image-lightbox">
+            <img
+              src="../images/gephi_snapshots/snap01_artist_nationality.png"
+              alt="Gephi-Snapshot 1"
+            />
+            <figcaption>Gephi-Snapshot 1</figcaption>
+          </figure>
+
+          <!-- Image (Gephi-Snapshot 2) -->
+          <figure class="image-lightbox">
+            <img
+              src="../images/gephi_snapshots/snap02_artist_project_nationality.png"
+              alt="Gephi-Snapshot 2"
+            />
+            <figcaption>Gephi-Snapshot 2</figcaption>
+          </figure>
+        </section>
+
+        <!-- 9: Quellen -->
+        <section id="ref" class="section">
+          <h2>Quellen</h2>
+
+          <!-- Immer sichtbare Einträge -->
+          <ol class="ref">
+            <li id="r1">
+              RHIZOM – Vereinsmaterialien, interne Dokumente (unveröffentlicht).
+            </li>
+            <li id="r2">
+              Öffentliche Website-Inhalte des Vereins (Erhebungszeitraum:
+              fortlaufend).
+            </li>
+            <li id="r3">
+              Methodische Grundlagen: Netzwerkanalyse &amp; DH (Standardwerke,
+              werden fortlaufend ergänzt).
+            </li>
+          </ol>
+          <!-- Ausklappbare komplette Literaturliste -->
+          <details class="refs-collapsible">
+            <summary>Komplette Literaturliste anzeigen</summary>
+
+            <ol class="ref">
+              <li id="r4">
+                APIS Hub. n.d. “APIS Hub: Networks.” Austrian Centre for Digital
+                Humanities and Cultural Heritage.
+                https://apis-hub.acdh-dev.oeaw.ac.at/networks/apis.
+              </li>
+              <li id="r5">
+                Angelis, S., and K. Kotis. 2021. “Generating and Exploiting
+                Semantically Enriched, Integrated, Linked and Open Museum Data.”
+                In <i>Metadata and Semantic Research (MTSR 2020)</i>, edited by
+                E. Garoufallou and M. A. Ovalle-Perandones, 367–79.
+                Communications in Computer and Information Science 1355.
+                Springer. https://doi.org/10.1007/978-3-030-71903-6_34.
+              </li>
+              <li id="r6">
+                Arends, M., J. Froschauer, D. Goldfarb, D. Merkl, and M.
+                Weingartner. 2012. “Netzwerkanalyse von kunsthistorischen
+                Attributen anhand von Social Tags.” In
+                <i
+                  >EVA 2012 Berlin: Elektronische Medien & Kunst, Kultur,
+                  Historie</i
+                >, 138–44. arthistoricum.net.
+                https://doi.org/10.11588/arthistoricum.162.c1081.
+              </li>
+              <li id="r7">
+                artist-info. n.d. “artist-info: Your Place for Contemporary Art
+                Worldwide.” https://www.artist-info.com/.
+              </li>
+              <li id="r8">
+                Basov, N., J.-S. Lee, and A. Antoniuk. 2017. “Social Networks
+                and Construction of Culture: A Socio-Semantic Analysis of Art
+                Groups.” In <i>Complex Networks & Their Applications V</i>,
+                edited by H. Cherifi, S. Gaito, W. Quattrociocchi, and A. Sala,
+                785–96. Studies in Computational Intelligence 693. Springer.
+                https://doi.org/10.1007/978-3-319-50901-3_62.
+              </li>
+              <li id="r9">
+                Becker, H. S. 1960. “Notes on the Concept of Commitment.”
+                <i>American Journal of Sociology</i> 66 (1): 32–40.
+                https://doi.org/10.1086/222820.
+              </li>
+              <li id="r10">
+                Becker, H. S. 2008. <i>Art Worlds</i>. 25th anniversary ed.,
+                updated and expanded. University of California Press.
+              </li>
+              <li id="r11">
+                Borgatti, S. P., and D. S. Halgin. 2011. “On Network Theory.”
+                <i>Organization Science</i> 22 (5): 1168–81.
+                https://doi.org/10.1287/orsc.1100.0641.
+              </li>
+              <li id="r12">
+                Bourdieu, P. 1999.
+                <i
+                  >Die Regeln der Kunst: Genese und Struktur des literarischen
+                  Feldes</i
+                >. Suhrkamp.
+              </li>
+              <li id="r13">
+                Brüggemann, V., L. Kreiseler, and M. Dörk. 2017. “Museale
+                Bestände im Web: Eine Untersuchung von acht digitalen
+                Sammlungen.” In <i>EVA Berlin 2016</i>, 227–36.
+                arthistoricum.net.
+                https://doi.org/10.11588/arthistoricum.256.c3097.
+              </li>
+              <li id="r14">
+                Burgwinkel, D., ed. 2023.
+                <i>Basiswissen für die digitale Transformation</i>. De Gruyter
+                Oldenbourg.
+              </li>
+              <li id="r15">
+                “D3.1 Handbook of Good Practices for Digitalisation and
+                Promotion of Cultural Heritage.” 2022. SOS Heritage Project.
+                https://www.sos-heritage.eu/wp-content/uploads/2023/05/D3.1-Handbook-of-good-practices-for-digitalisation-and-promotion-of-cultural-heritage.pdf.
+              </li>
+              <li id="r16">
+                Danko, D. 2012. <i>Kunstsoziologie</i>. transcript.
+              </li>
+              <li id="r17">
+                Danko, D. 2015. <i>Zur Aktualität von Howard S. Becker</i>.
+                Springer VS.
+              </li>
+              <li id="r18">
+                Danto, A. C. 1964. “The Artworld.”
+                <i>The Journal of Philosophy</i> 61 (19): 571–84.
+              </li>
+              <li id="r19">
+                Fuhse, J. A. 2018. <i>Soziale Netzwerke</i>. 2nd ed. UTB/UVK.
+              </li>
+              <li id="r20">
+                Gasser, S. 2024. <i>Digitale Sammlungen</i>. transcript.
+              </li>
+              <li id="r21">
+                Gerhards, J., ed. 1997. <i>Soziologie der Kunst</i>.
+                Westdeutscher Verlag.
+              </li>
+              <li id="r22">
+                Giannini, T., and J. P. Bowen, eds. 2019.
+                <i>Museums and Digital Culture</i>. Springer.
+                https://doi.org/10.1007/978-3-319-97457-6.
+              </li>
+              <li id="r23">
+                Handbuch Repositorienmanagement. 2024. Edited by S. Blumesberger
+                et al. Vereinigung Österreichischer Bibliothekarinnen und
+                Bibliothekare.
+              </li>
+              <li id="r24">
+                Holst, C., ed. 2020. <i>Co-Creation im Kultursektor</i>.
+                Springer Gabler.
+              </li>
+              <li id="r25">
+                Holst, C., and A. Vogelsang. 2025.
+                <i>Digitale Transformation gestalten</i>. Fachstelle
+                Kulturvermittlung, Kanton Aargau.
+              </li>
+              <li id="r26">
+                Kim, G. 2018. “Open Data and Data Visualization in Arts
+                Organizations.” Arts Management and Technology Lab.
+                https://amt-lab.org/blog/2018/9/new-white-paper-open-data-and-data-visualization-in-arts-organizations.
+              </li>
+              <li id="r27">
+                Kirchberg, V., and T. Zembylas. 2025.
+                <i>The Social Organization of Arts</i>. mdwPress/transcript.
+                https://doi.org/10.14361/9783839472842.
+              </li>
+              <li id="r28">
+                Kolešnik, L., and S. Horvatinčić, eds. 2018.
+                <i>Modern and Contemporary Artists’ Networks</i>. Institute of
+                Art History.
+              </li>
+              <li id="r29">
+                Lüddemann, S. 2021. <i>Die neue Kunst der Gesellschaft</i>.
+                Springer VS.
+              </li>
+              <li id="r30">
+                Luhmann, N. 1995. <i>Die Kunst der Gesellschaft</i>. Suhrkamp.
+              </li>
+              <li id="r31">
+                McLevey, J., J. Scott, and P. J. Carrington, eds. 2023.
+                <i>The SAGE Handbook of Social Network Analysis</i>. 2nd ed.
+                SAGE.
+              </li>
+              <li id="r32">
+                Müller-Jentsch, W. 2012. <i>Die Kunst in der Gesellschaft</i>.
+                2nd ed. VS Verlag.
+              </li>
+              <li id="r33">
+                Pöllmann, L., and C. Hermann, eds. 2019.
+                <i>Der digitale Kulturbetrieb</i>. Springer Gabler.
+              </li>
+              <li id="r34">
+                Pollin, C. 2025. “System 1.42.” <i>Digital Humanities Craft</i>.
+                https://dhcraft.org/excellence/blog/System1-42/.
+              </li>
+              <li id="r35">
+                SDFB team. n.d. “Six Degrees of Francis Bacon.”
+                https://www.sixdegreesoffrancisbacon.com/.
+              </li>
+              <li id="r36">
+                Sievers, S., S. Pfaff, and K. Heid, eds. 2025.
+                <i>Jahrbuch für Kulturpolitik 2023/24</i>. Kulturpolitische
+                Gesellschaft/transcript.
+              </li>
+              <li id="r37">
+                Stalder, F. 2017. <i>Kultur der Digitalität</i>. Suhrkamp.
+              </li>
+              <li id="r38">
+                Tuscher, M., V. Filipov, T. Kamencek, R. Rosenberg, and S.
+                Miksch. 2025. “Nodes, Edges, and Artistic Wedges.”
+                <i>Computer Graphics Forum</i> 44 (3).
+                https://doi.org/10.1111/cgf.70154.
+              </li>
+              <li id="r39">
+                van Maanen, H. 2009. <i>How to Study Art Worlds</i>. Amsterdam
+                University Press.
+              </li>
+              <li id="r40">
+                Visualizing Art Networks. n.d. “Visualizing Art Networks.”
+                https://visualizingartnetworks.com/.
+              </li>
+              <li id="r41">
+                Abbott, J. (2024). <i>Everyday Data Visualization</i> [PDF].
+              </li>
+              <li id="r42">
+                Abbott, J. (2025).
+                <i>Datenvisualisierung im praktischen Einsatz</i> [EPUB].
+              </li>
+              <li id="r43">
+                (n. a.). (n. d.).
+                <i
+                  >A comprehensive guide to data visualisation in R for
+                  beginners</i
+                >
+                [URL].
+              </li>
+              <li id="r44">
+                Andry, N., et al. (2022).
+                <i>Les fondamentaux de la visualisation de données</i> [EPUB].
+              </li>
+              <li id="r45">
+                (n. a.). (n. d.).
+                <i>An incomplete guide to accessible data visualization</i>
+                [URL].
+              </li>
+              <li id="r46">
+                Banissi, E., &amp; Marchese, F. (2014).
+                <i>Information visualisation</i> [PDF].
+              </li>
+              <li id="r47">
+                Barker, S., &amp; Westfall, J. (2021).
+                <i>Pro Data Visualization Using R and JavaScript</i> [PDF].
+              </li>
+              <li id="r48">
+                Barrasa, J., &amp; Webber, J. (2023).
+                <i>Building knowledge graphs</i> [PDF].
+              </li>
+              <li id="r49">
+                Boaler, J., et al. (2022). <i>Mindset mathematics</i> [PDF].
+              </li>
+              <li id="r50">
+                Bock von Wülfingen, A. (2019). <i>Science in Color</i> [PDF].
+              </li>
+              <li id="r51">
+                Bowen, J., et al. (2013).
+                <i>Electronic visualisation in arts and culture</i> [PDF].
+              </li>
+              <li id="r52">
+                Brath, R. (2020). <i>Visualizing with text</i> [PDF].
+              </li>
+              <li id="r53">
+                Bremer, J., &amp; Wu, N. (2021). <i>Data Sketches</i> [PDF].
+              </li>
+              <li id="r54">Brooks, M. (2023). <i>ArtsIT</i> [PDF].</li>
+              <li id="r55">
+                Bubenhofer, N., &amp; Kupietz, M. (2018).
+                <i>Visualisierung sprachlicher Daten</i> [PDF].
+              </li>
+              <li id="r56">
+                Bulathwela, S., et al. (2023).
+                <i>Semantic AI in knowledge graphs</i> [PDF].
+              </li>
+              <li id="r57">
+                Camm, J., et al. (2022). <i>Data visualization</i> [PDF].
+              </li>
+              <li id="r58">
+                Carreira, J. (2016).
+                <i>Geospatial development by example with Python</i> [PDF].
+              </li>
+              <li id="r59">
+                Chen, M., et al. (2017).
+                <i>Information theory tools for visualization</i> [PDF].
+              </li>
+              <li id="r60">
+                Ciaburro, G. (2024). <i>MATLAB for machine learning</i> [PDF].
+              </li>
+              <li id="r61">
+                Cook, D. (2022).
+                <i
+                  >Fundamentals of HTML, SVG, CSS and JS for data
+                  visualization</i
+                >
+                [PDF].
+              </li>
+              <li id="r62">
+                (n. a.). (n. d.). <i>Cool infographics</i> [PDF].
+              </li>
+              <li id="r63">
+                (n. a.). (n. d.).
+                <i>D3.1 handbook of good practices for digitalisation</i> [PDF].
+              </li>
+              <li id="r64">
+                (n. a.). (n. d.).
+                <i>Data visualization &amp; mapping tools</i> [URL].
+              </li>
+              <li id="r65">
+                Dorling, D. (2012).
+                <i>The visualisation of spatial social structure</i> [PDF].
+              </li>
+              <li id="r66">
+                (n. a.). (n. d.). <i>Dynamic visualisation tools</i> [PDF].
+              </li>
+              <li id="r67">
+                Eagle, S. (2025). <i>From chaos to clarity</i> [PDF].
+              </li>
+              <li id="r68">
+                Estermann, B. (2023). <i>Mit Daten sprechen</i> [PDF].
+              </li>
+              <li id="r69">
+                Evergreen, S. (2020). <i>Effective data visualization</i> [PDF].
+              </li>
+              <li id="r70">
+                Ferreira, J. (2017). <i>A primer on process mining</i> [LNK].
+              </li>
+              <li id="r71">
+                Geoghan, M. (2016). <i>Visualizing technology</i> [PDF].
+              </li>
+              <li id="r72">
+                (n. a.). (2025). <i>Getting (more out of) graphics</i> [PDF].
+              </li>
+              <li id="r73">
+                Giannini, T., &amp; Bowen, J. (2019).
+                <i>Museums and digital culture</i> [PDF].
+              </li>
+              <li id="r74">
+                Grant, L. (2019). <i>Data visualization</i> [PDF].
+              </li>
+              <li id="r75">
+                Granville, V. (2022).
+                <i>The art of visualizing high dimensional data</i> [PDF].
+              </li>
+              <li id="r76">
+                Grosvenor, M., et al. (2021).
+                <i>Visualizing nutrition</i> [PDF].
+              </li>
+              <li id="r77">
+                Hammond, D. (2022). <i>Exploring graphs with Elixir</i> [PDF].
+              </li>
+              <li id="r78">
+                Hil, R., &amp; Lachenmeier, B. (2022).
+                <i>Visualizing complexity</i> [PDF].
+              </li>
+              <li id="r79">Hogan, A. (2020). <i>The web of data</i> [PDF].</li>
+              <li id="r80">
+                Hogan, A., et al. (2021). <i>Knowledge graphs</i> [PDF].
+              </li>
+              <li id="r81">
+                Ieno, E., &amp; Zuur, A. (2015).
+                <i>Beginner’s guide to data exploration</i> [PDF].
+              </li>
+              <li id="r82">
+                Isaacson, E. (2023). <i>Visualizing music</i> [EPUB].
+              </li>
+              <li id="r83">
+                Kahl, M., &amp; Zimmer, T. (2020).
+                <i>Interaktive Datenvisualisierung</i> [PDF].
+              </li>
+              <li id="r84">
+                (n. a.). (n. d.). <i>KI-basierte Textanalyse</i> [URL].
+              </li>
+              <li id="r85">
+                (n. a.). (n. d.).
+                <i>Knowledge graphs – foundations and applications</i> [URL].
+              </li>
+              <li id="r86">
+                Kolokolov, S., &amp; Zelensky, I. (2025).
+                <i>Data visualization with Power BI</i> [EPUB].
+              </li>
+              <li id="r87">
+                Kumar, A. (2022).
+                <i>The art of visualizing data in Google Data Studio</i> [PDF].
+              </li>
+              <li id="r88">
+                Lagnel, J. (2020). <i>Manuel de data visualisation</i> [PDF].
+              </li>
+              <li id="r89">
+                Marriott, J. (2025).
+                <i>The golden age of data visualization</i> [PDF].
+              </li>
+              <li id="r90">
+                McConnell, S. (2002). <i>Computer graphics companion</i> [PDF].
+              </li>
+              <li id="r91">
+                Memmert, D. (2009). <i>Sportinformatik</i> [PDF].
+              </li>
+              <li id="r92">
+                Meroño-Peñuela, A., et al. (2021).
+                <i>WebData APIs for knowledge graphs</i> [PDF].
+              </li>
+              <li id="r93">
+                Mitchell, M. (2021).
+                <i>Interpreting and visualizing regression models</i> [PDF].
+              </li>
+              <li id="r94">
+                Munzner, T. (2014).
+                <i>Visualization analysis and design</i> [PDF].
+              </li>
+              <li id="r95">
+                Murray, S. (2017).
+                <i>Interactive data visualization for the web</i> [PDF].
+              </li>
+              <li id="r96">
+                Organ, G. (2024).
+                <i>Data visualization for people of all ages</i> [PDF].
+              </li>
+              <li id="r97">
+                Paulheim, H., et al. (2023).
+                <i>Embedding knowledge graphs with RDF2vec</i> [PDF].
+              </li>
+              <li id="r98">
+                Piccoli, C. (2018).
+                <i>Visualizing cityscapes of classical antiquity</i> [PDF].
+              </li>
+              <li id="r99">
+                Prodromou, T. (2017).
+                <i>Data visualization and statistical literacy</i> [PDF].
+              </li>
+              <li id="r100">
+                Raieli, M., &amp; Iuculano, G. (2025).
+                <i>Building AI agents with LLMs</i> [PDF].
+              </li>
+              <li id="r101">
+                Raj, A., et al. (2022).
+                <i>Demystifying graph data science</i> [EPUB].
+              </li>
+              <li id="r102">
+                Richards, T. (2023). <i>Questions in dataviz</i> [PDF].
+              </li>
+              <li id="r103">
+                Sequeda, J., &amp; Lassila, O. (2021).
+                <i>Designing enterprise knowledge graphs</i> [PDF].
+              </li>
+              <li id="r104">
+                Serles, A., &amp; Fensel, D. (2024).
+                <i>An introduction to knowledge graphs</i> [PDF].
+              </li>
+              <li id="r105">
+                Stapelkamp, T. (2013). <i>Informationsvisualisierung</i> [PDF].
+              </li>
+              <li id="r106">
+                (n. a.). (n. d.). <i>The data visualisation catalogue</i> [URL].
+              </li>
+              <li id="r107">
+                (n. a.). (n. d.).
+                <i>TreeTagger – output visualisation module</i> [URL].
+              </li>
+              <li id="r108">
+                Ursyn, A. (n. d.).
+                <i>Graphical thinking for science and technology</i> [PDF].
+              </li>
+              <li id="r109">
+                Van der Post, R. (2024). <i>Data science with Rust</i> [PDF].
+              </li>
+              <li id="r110">
+                Vergadia, P. (2022). <i>Visualizing Google Cloud</i> [PDF].
+              </li>
+              <li id="r111">
+                Villazón-Terrazas, B., et al. (2022).
+                <i>Knowledge graphs and semantic web</i> [PDF].
+              </li>
+              <li id="r112">
+                Wills, L. (2020). <i>Data visualization made simple</i> [PDF].
+              </li>
+            </ol>
+          </details>
+
+          <!-- INFO/HELP-->
+          <div class="note-box">
+            Verweise im Text als Fußnoten: Beispiel&nbsp;<sup class="fn-example"
+              ><a href="#r28">[28]</a></sup
+            >
+          </div>
+        </section>
+
+        <p><a href="../index.html">← Zurück zur Startseite</a></p>
+      </article>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        © 2025 Rhizom-Projekt |
+        <a href="https://github.com/gitti-huber/agki-pm-rhizom"
+          >GitHub Repository</a
+        >
+      </p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        /* ----------------------------------------------------------
+     1) AUTOMATISCHE NUMMERIERUNG ALLER FOOTNOTE-LINKS
+     ---------------------------------------------------------- */
+
+        const textLinks = document.querySelectorAll('sup.fn a[href^="#r"]');
+        const numbering = new Map();
+        let counter = 1;
+
+        textLinks.forEach((link) => {
+          const href = link.getAttribute("href"); // "#r28"
+          if (!numbering.has(href)) numbering.set(href, counter++);
+          link.textContent = `[${numbering.get(href)}]`;
+        });
+
+        /* ----------------------------------------------------------
+     2) MANUELLE VERWEISE (z.B. in Infoboxen)
+        <a href="#r28">[28]</a>
+     ---------------------------------------------------------- */
+
+        const manualLinks = document.querySelectorAll(
+          'a[href^="#r"]:not(sup.fn a[href^="#r"])'
+        );
+
+        manualLinks.forEach((link) => {
+          const href = link.getAttribute("href");
+          const num = numbering.get(href);
+          if (num) link.textContent = `[${num}]`;
+        });
+
+        /* ----------------------------------------------------------
+     3) AUTOMATISCHES SCROLLEN + HIGHLIGHT
+     ---------------------------------------------------------- */
+
+        function highlightFootnote(id) {
+          const el = document.getElementById(id);
+          if (!el) return;
+
+          // Falls Fußnote in <details> steckt → öffnen
+          const box = el.closest("details");
+          if (box && !box.open) box.open = true;
+
+          // sanft scrollen
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+
+          // Highlight starten
+          el.classList.add("fn-highlight");
+
+          // Highlight wieder entfernen
+          setTimeout(() => el.classList.remove("fn-highlight"), 1600);
+        }
+
+        // Listener für automatische Verweise
+        textLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const id = link.getAttribute("href").substring(1);
+            highlightFootnote(id);
+          });
+        });
+
+        // Listener für manuelle Verweise
+        manualLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const id = link.getAttribute("href").substring(1);
+            highlightFootnote(id);
+          });
+        });
+      });
+    </script>
+
+    <!-- ② Tooltip-Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Tooltip-Element einmalig erzeugen
+        const tooltip = document.createElement("div");
+        tooltip.className = "fn-tooltip";
+        document.body.appendChild(tooltip);
+
+        // Alle Fußnotenlinks holen
+        const fnLinks = document.querySelectorAll('sup.fn a[href^="#r"]');
+
+        fnLinks.forEach((link) => {
+          link.addEventListener("mouseenter", (e) => {
+            const id = link.getAttribute("href").substring(1); // "r28"
+            const target = document.getElementById(id);
+            if (!target) return;
+
+            // Inhalt der Vorschau holen (nur Text, kein Nummernblock)
+            let preview = target.innerHTML.trim();
+
+            // → Nummer entfernen („[28] “)
+            preview = preview.replace(/^\[[0-9]+\]\s*/, "");
+
+            tooltip.innerHTML = preview;
+            tooltip.classList.add("show");
+
+            // Position über dem Mauszeiger
+            const rect = link.getBoundingClientRect();
+            tooltip.style.left = rect.left + window.scrollX + "px";
+            tooltip.style.top = rect.bottom + window.scrollY + 6 + "px";
+          });
+
+          link.addEventListener("mouseleave", () => {
+            tooltip.classList.remove("show");
+          });
+        });
+      });
+    </script>
+
+    <script>
+      // Datum automatisch setzen (lokalisiert)
+      document.getElementById("today").textContent =
+        new Date().toLocaleDateString("de-AT", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+
+      // ToC ein-/ausklappen + beim Anklicken von Links wieder schließen
+      document.addEventListener("DOMContentLoaded", function () {
+        const toc = document.querySelector(".toc");
+        const toggle = document.querySelector(".toc-toggle");
+        const icon = toggle ? toggle.querySelector(".toc-toggle-icon") : null;
+        const tocLinks = document.querySelectorAll(".toc-inner a");
+
+        if (!toc || !toggle) return;
+
+        // Toggle öffnen/schließen
+        toggle.addEventListener("click", function () {
+          const collapsed = toc.classList.toggle("toc-collapsed");
+          toggle.setAttribute("aria-expanded", String(!collapsed));
+          if (icon) {
+            icon.textContent = collapsed ? "▸" : "▾";
+          }
+        });
+
+        // Beim Klick auf einen Menüpunkt automatisch schließen
+        tocLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            toc.classList.add("toc-collapsed");
+            toggle.setAttribute("aria-expanded", "false");
+            if (icon) icon.textContent = "▸";
+          });
+        });
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const footnoteLinks = document.querySelectorAll('sup.fn a[href^="#r"]');
+
+        footnoteLinks.forEach(function (link) {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const href = link.getAttribute("href");
+            const id = href.substring(1);
+            const target = document.getElementById(id);
+            if (!target) return;
+
+            const parentDetails = target.closest("details");
+            if (parentDetails && !parentDetails.open) {
+              parentDetails.open = true;
+            }
+
+            // kurzes Delay → Details öffnen zuerst
+            setTimeout(function () {
+              target.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+
+              // 1️⃣ Hash setzen → löst :target aus
+              location.hash = id;
+
+              // 2️⃣ Hash nach 1500ms auf Dummy umstellen → :target deaktiviert sich
+              setTimeout(() => {
+                if (location.hash) {
+                  history.replaceState(null, "", "#_");
+                }
+              }, 1500);
+            }, 50);
+          });
+        });
+      });
+    </script>
+
+    <a href="#top" class="back-to-top">↑</a>
+    <script>
+      document.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          document.body.classList.add("scrolled");
+        } else {
+          document.body.classList.remove("scrolled");
+        }
+      });
+    </script>
+
+    <script src="./graphology.min.js"></script>
+    <script src="./sigma.js"></script>
+
+    <script>
+      /* ============================================================
+   ForceAtlas2 – Platzhalter (damit keine Fehlermeldungen kommen)
+   ============================================================ */
+      function forceAtlas2(graph, settings) {
+        return {
+          start() {
+            console.warn(
+              "ForceAtlas2: Platzhalter aktiv. In der GitHub-Version läuft kein echtes FA2-Layout."
+            );
+          },
+          stop() {},
+        };
+      }
+
+      /* ============================================================
+   Interaktive Netzwerkvisualisierung
+   ============================================================ */
+      (async function () {
+        try {
+          /* ------------------------------------------------------------
+       GEXF-Datei laden
+       ------------------------------------------------------------ */
+          const response = await fetch("../data/rhizom_gephi.gexf");
+          if (!response.ok)
+            throw new Error("Konnte GEXF nicht laden: " + response.status);
+          const gexfText = await response.text();
+
+          /* ------------------------------------------------------------
+       Mapping der <attributes> – wir ersetzen "type" → "node_type"
+       ------------------------------------------------------------ */
+          function buildNodeAttributeMap(xml) {
+            const map = {};
+            xml
+              .querySelectorAll('attributes[class="node"] > attribute')
+              .forEach((att) => {
+                const id = att.getAttribute("id");
+                let title = att.getAttribute("title") || id;
+
+                // SIGMA FIX: niemals "type" als Attribut einlesen → Crash!
+                if (title === "type") title = "node_type";
+
+                map[id] = title;
+              });
+            return map;
+          }
+
+          /* ------------------------------------------------------------
+       GEXF parsen → graphology-Graph erzeugen
+       ------------------------------------------------------------ */
+          function parseGexf(gexfString) {
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(gexfString, "application/xml");
+
+            const graph = new graphology.Graph({ type: "undirected" });
+            const attrMap = buildNodeAttributeMap(xml);
+
+            xml.querySelectorAll("node").forEach((n) => {
+              const id = n.getAttribute("id");
+              const attrs = {};
+
+              // Attribute lesen
+              n.querySelectorAll("attvalues > attvalue").forEach((a) => {
+                const keyId = a.getAttribute("for");
+                const title = attrMap[keyId] || keyId;
+                attrs[title] = a.getAttribute("value");
+              });
+
+              // node_type (artist/project)
+              const nodeType = attrs.node_type || null;
+
+              // Sichtbares Label korrekt setzen
+              if (nodeType === "artist" && attrs.art_name) {
+                attrs.label = attrs.art_name;
+              } else if (nodeType === "project" && attrs.pro_title) {
+                attrs.label = attrs.pro_title;
+              } else {
+                attrs.label = n.getAttribute("label") || id;
+              }
+
+              // Startposition
+              attrs.x = Math.random() * 1000;
+              attrs.y = Math.random() * 1000;
+              attrs.size = 5;
+
+              // WICHTIG: Kein attrs.type setzen → sonst SIGMA-Absturz
+              graph.addNode(id, attrs);
+            });
+
+            // Kanten
+            xml.querySelectorAll("edge").forEach((e) => {
+              const s = e.getAttribute("source");
+              const t = e.getAttribute("target");
+              if (graph.hasNode(s) && graph.hasNode(t)) graph.addEdge(s, t);
+            });
+
+            return graph;
+          }
+
+          /* ------------------------------------------------------------
+       Graph erzeugen & Sigma starten
+       ------------------------------------------------------------ */
+          const graph = parseGexf(gexfText);
+          const container = document.getElementById("sigma-container");
+          const renderer = new Sigma(graph, container);
+
+          /* ------------------------------------------------------------
+       Farbcodierung nach art_nationality
+       ------------------------------------------------------------ */
+          // 🎨 Farbpalette
+          const palette = [
+            "#e41a1c",
+            "#377eb8",
+            "#4daf4a",
+            "#984ea3",
+            "#ff7f00",
+            "#ffff33",
+            "#a65628",
+            "#f781bf",
+            "#999999",
+
+            "#66c2a5",
+            "#fc8d62",
+            "#8da0cb",
+            "#e78ac3",
+            "#a6d854",
+            "#ffd92f",
+            "#e5c494",
+            "#b3b3b3",
+
+            "#1b9e77",
+            "#d95f02",
+            "#7570b3",
+            "#e7298a",
+            "#66a61e",
+            "#e6ab02",
+            "#a6761d",
+            "#666666",
+
+            "#8dd3c7",
+            "#ffffb3",
+            "#bebada",
+            "#fb8072",
+            "#80b1d3",
+            "#fdb462",
+            "#b3de69",
+            "#fccde5",
+          ];
+
+          const colorMap = {};
+          let nextColor = 0;
+          const nationalities = new Set();
+
+          // 2) Nationalitäten-Farben
+          graph.forEachNode((n, attrs) => {
+            const natRaw = attrs.art_nationality || "Unbekannt";
+            const parts = natRaw
+              .split(/[,/;]+/)
+              .map((s) => s.trim())
+              .filter(Boolean);
+            const natList = parts.length ? parts : ["Unbekannt"];
+            const mainNat = natList[0];
+
+            if (!colorMap[mainNat]) {
+              colorMap[mainNat] = palette[nextColor % palette.length];
+              nextColor++;
+            }
+
+            graph.setNodeAttribute(n, "color", colorMap[mainNat]);
+            graph.setNodeAttribute(n, "_natList", natList);
+            natList.forEach((nat) => nationalities.add(nat));
+          });
+
+          // 3) Projektfarbe **ZU ALLERLETZT überschreiben**
+          const PROJECT_COLOR = "#00ccff"; // <— HIER ändern
+
+          graph.forEachNode((n, attrs) => {
+            if (attrs.node_type === "project") {
+              graph.setNodeAttribute(n, "color", PROJECT_COLOR);
+              graph.setNodeAttribute(n, "size", 7);
+            }
+          });
+
+          /* ------------------------------------------------------------
+       Farblegende
+       ------------------------------------------------------------ */
+          legend.innerHTML = "<strong>Farblegende:</strong>";
+
+          const legendContent = document.createElement("div");
+          legendContent.className = "legend-grid";
+
+          [...nationalities].sort().forEach((nat) => {
+            const item = document.createElement("div");
+            item.className = "legend-item";
+            item.innerHTML = `
+    <span class="legend-color" style="background:${colorMap[nat]}"></span>
+    <span class="legend-label">${nat}</span>
+  `;
+            legendContent.appendChild(item);
+          });
+
+          legend.appendChild(legendContent);
+
+          /* ------------------------------------------------------------
+       Labelverhalten
+       ------------------------------------------------------------ */
+          renderer.setSetting("labelRenderedSizeThreshold", 0);
+          renderer.setSetting("labelGridCellSize", 60);
+
+          renderer.on("enterNode", (e) =>
+            graph.setNodeAttribute(e.node, "highlighted", true)
+          );
+          renderer.on("leaveNode", (e) =>
+            graph.setNodeAttribute(e.node, "highlighted", false)
+          );
+
+          /* ------------------------------------------------------------
+       Suche (Künstler*innen + Projektnamen)
+       ------------------------------------------------------------ */
+          const searchInput = document.getElementById("search");
+          if (searchInput) {
+            searchInput.addEventListener("input", () => {
+              const query = searchInput.value.toLowerCase();
+              graph.forEachNode((n, attrs) => {
+                const match = attrs.label.toLowerCase().includes(query);
+                graph.setNodeAttribute(n, "hidden", query && !match);
+              });
+            });
+          }
+
+          /* ------------------------------------------------------------
+       Zoom
+       ------------------------------------------------------------ */
+          const camera = renderer.getCamera();
+          document.getElementById("zoom-in").onclick = () =>
+            camera.animatedZoom({ duration: 300 });
+          document.getElementById("zoom-out").onclick = () =>
+            camera.animatedUnzoom({ duration: 300 });
+          document.getElementById("zoom-reset").onclick = () =>
+            camera.animatedReset({ duration: 300 });
+
+          /* ------------------------------------------------------------
+       ForceAtlas2 (Platzhalter)
+       ------------------------------------------------------------ */
+          const layout = forceAtlas2(graph, { settings: { slowDown: 10 } });
+          document.getElementById("layout-start").onclick = () =>
+            layout.start();
+          document.getElementById("layout-stop").onclick = () => layout.stop();
+
+          /* ------------------------------------------------------------
+       Label-Dichte
+       ------------------------------------------------------------ */
+          const density = document.getElementById("label-density");
+          density.addEventListener("input", () => {
+            const val = parseInt(density.value);
+            renderer.setSetting("labelGridCellSize", val);
+          });
+
+          /* ------------------------------------------------------------
+       Dropdown-Filter (Nationalität + Typ)
+       ------------------------------------------------------------ */
+          const natFilter = document.getElementById("filter-nationality");
+          const typeFilter = document.getElementById("filter-type");
+
+          // Nationalitäten-Optionen automatisch füllen
+          [...nationalities].sort().forEach((nat) => {
+            const opt = document.createElement("option");
+            opt.value = nat;
+            opt.textContent = nat;
+            natFilter.appendChild(opt);
+          });
+
+          function applyFilters() {
+            const fNat = natFilter.value;
+            const fType = typeFilter.value;
+
+            graph.forEachNode((n, attrs) => {
+              let hide = false;
+
+              // korrektes Array verwenden
+              const natList = attrs._natList || ["Unbekannt"];
+              const nodeType = attrs.node_type || "";
+
+              // 1) Nationalität-Filter berücksichtigt Mehrfachwerte
+              if (fNat && !natList.includes(fNat)) hide = true;
+
+              // 2) Typ-Filter
+              if (fType === "person" && nodeType !== "artist") hide = true;
+              if (fType === "project" && nodeType !== "project") hide = true;
+
+              graph.setNodeAttribute(n, "hidden", hide);
+            });
+          }
+
+          natFilter.onchange = applyFilters;
+          typeFilter.onchange = applyFilters;
+
+          document.getElementById("filter-clear").onclick = () => {
+            searchInput.value = "";
+            natFilter.value = "";
+            typeFilter.value = "";
+            camera.animatedReset({ duration: 300 });
+
+            graph.forEachNode((n) =>
+              graph.setNodeAttribute(n, "hidden", false)
+            );
+
+            document.getElementById("info-panel").style.display = "none";
+          };
+
+          /* ============================================================
+   Undo-Funktion – merkt sich vorherige Suche / Filter / Kamera
+   ============================================================ */
+          let lastState = null;
+
+          function saveState() {
+            lastState = {
+              search: searchInput.value,
+              nat: natFilter.value,
+              type: typeFilter.value,
+              camera: camera.getState(),
+            };
+          }
+
+          // Bei jeder Filter-/Suchänderung Zustand merken
+          searchInput.addEventListener("input", saveState);
+          natFilter.addEventListener("change", saveState);
+          typeFilter.addEventListener("change", saveState);
+
+          // Undo-Button
+          document.getElementById("filter-undo").onclick = () => {
+            if (!lastState) return;
+
+            searchInput.value = lastState.search;
+            natFilter.value = lastState.nat;
+            typeFilter.value = lastState.type;
+
+            camera.animate(lastState.camera, { duration: 300 });
+
+            applyFilters();
+          };
+
+          /* ------------------------------------------------------------
+       Klick-Panel
+       ------------------------------------------------------------ */
+          const panel = document.getElementById("info-panel");
+          const infoName = document.getElementById("info-name");
+          const infoNat = document.getElementById("info-nat");
+          const infoProjects = document.getElementById("info-projects");
+
+          renderer.on("clickNode", ({ node }) => {
+            const attrs = graph.getNodeAttributes(node);
+
+            infoName.textContent = attrs.label || "(ohne Name)";
+            infoNat.textContent = attrs.art_nationality || "Unbekannt";
+
+            infoProjects.innerHTML = "";
+            graph.forEachNeighbor(node, (n2, a2) => {
+              const li = document.createElement("li");
+              li.textContent = a2.label || n2;
+              infoProjects.appendChild(li);
+            });
+
+            panel.style.display = "block";
+          });
+        } catch (err) {
+          console.error("❌ Fehler beim Laden/Verarbeiten des Graphen:", err);
+        }
+      })();
+    </script>
+
+    <script src="../assets/js/lightbox.js"></script>
+    <script src="../assets/js/glossar-linker.js"></script>
+  </body>
+</html>
+
+```
