@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
   <head>
     <meta charset="utf-8" />
@@ -63,10 +63,8 @@
           >
             🌟 Claude
           </a>
-
         </div>
 
-        
         <!-- Wordcloud -->
         <section class="section">
           <!-- Image -->
@@ -77,12 +75,21 @@
               alt="Wordcloud https://rhizom.mur.at/"
             />
             <figcaption>
-              <a href="https://voyant-tools.org/?corpus=179ad9cba825df58a8ad7ecb48814025" target="_blank"
+              <a
+                href="https://voyant-tools.org/?corpus=179ad9cba825df58a8ad7ecb48814025"
+                target="_blank"
                 >Voyant Tools</a
               >
-              -Wordcloud<br>
-              <strong>Beispiel für die Nutzung von Voyant Tools zur Textanalyse öffentlicher Webinhalte</strong><br>
-              Inhalte der <a href="https://rhizom.mur.at/" target="_blank">RHIZOM-Startseite</a> (Stand: Oktober 2025)
+              -Wordcloud<br />
+              <strong
+                >Beispiel für die Nutzung von Voyant Tools zur Textanalyse
+                öffentlicher Webinhalte</strong
+              ><br />
+              Inhalte der
+              <a href="https://rhizom.mur.at/" target="_blank"
+                >RHIZOM-Startseite</a
+              >
+              (Stand: Oktober 2025)
             </figcaption>
           </figure>
         </section>
@@ -104,11 +111,12 @@
               <li><a href="#abstract">Einleitung</a></li>
               <li><a href="#1pager">1-Pager-Projektkonzept</a></li>
               <li><a href="#datenbasis">Datenbasis</a></li>
-              <li><a href="#kontext">Projektkontext</a></li>
               <li><a href="#frage">Forschungsfrage</a></li>
               <li><a href="#methodik">Methodik</a></li>
-              <li><a href="#netzwerkmodell">Netzwerkmodell</a></li>
-              <li><a href="#ergebnisse">Zwischenergebnisse</a></li>
+              <li><a href="#modellierung">Modellierung</a></li>
+              <li>
+                <a href="#ergebnisse">Netzwerkporträt (Zwischenergebnisse)</a>
+              </li>
               <li><a href="#ref">Quellen</a></li>
             </ul>
           </div>
@@ -122,30 +130,17 @@
 
           <p>
             Dieser Blog ergänzt den
-            <a href="../about.html">theoretischen Forschungsblog</a> um die praktische
-            Ebene. Er dokumentiert, wie das Projekt tatsächlich umgesetzt wird –
-            von der Datenarbeit bis zur Analyse und Visualisierung der
-            Ergebnisse:
+            <a href="../about.html">theoretischen Forschungsblog</a> um die
+            angewandte Ebene. Er dokumentiert die einzelnen Phasen der
+            praktischen Umsetzung – von Entstehung und Entwicklung der
+            Datenbasis bis zur Visualisierung des Netzwerks.
           </p>
 
-          <ul>
-            <li>Entstehung und Entwicklung der Datenbasis</li>
-            <li>Erkenntnisse aus der Arbeit mit Digital Humanities-Methoden</li>
-            <li>
-              Einsatz von LLMs zur Extraktion, Bereinigung und Modellierung
-            </li>
-            <li>
-              Dokumentation von Workflow-Entscheidungen und Herausforderungen
-            </li>
-            <li>Zwischenergebnisse, Visualisierungen und Interpretation</li>
-          </ul>
-
           <p>
-            Der Blog ist damit als <strong>Laborjournal</strong> des Projekts
-            konzipiert: Er macht die laufende Forschung transparent, zeigt
-            methodische Überlegungen, reflektiert den Einsatz von KI-gestützten
-            Verfahren und hält die wichtigsten Zwischenschritte für die
-            Weiterarbeit fest.
+            Der angewandte Forschungsblog ist damit als
+            <strong>Laborjournal</strong> des Projekts konzipiert: Er macht die
+            laufende Entwicklung transparent und hält die wichtigsten
+            Zwischenschritte fest.
           </p>
         </section>
 
@@ -154,9 +149,9 @@
           <h2>1-Pager-Projektkonzept</h2>
 
           <div>
- 
             <p>
-              Entwicklung eines datengetriebenen Projektkonzepts (max. 1 Seite) mit folgenden Komponenten:
+              Zu Beginn wurde ein datengetriebenes Projektkonzept mit folgenden
+              Komponenten entwickelt:
             </p>
             <ol>
               <li>
@@ -167,7 +162,6 @@
               <li>Geplanter Ansatz (LLM-Verarbeitung)</li>
               <li>Output (Webdarstellung)</li>
             </ol>
-
           </div>
           <div class="section highlight-box">
             <strong>1-Pager: ursprüngliche Version vom 24.10.2025</strong
@@ -185,7 +179,8 @@
         <!-- 3: Datenbasis-->
         <section id="datenbasis" class="section">
           <h2>Datenbasis</h2>
-          <h4>Format, Umfang, Struktur, Aufbereitung</h4>
+
+          <h3 class="centered">Datenquelle</h3>
 
           <p>
             Der Aufbau der Datenbasis erfolgt aus öffentlich zugänglichen
@@ -195,78 +190,41 @@
               target="_blank"
               rel="noopener noreferrer"
               >RHIZOM-Website</a
-            >
-            sowie aus bislang unveröffentlichten Materialien (Word, PDF,
-            Bilddaten).
+            >, aus bislang unveröffentlichten Materialien (Word, PDF, Bilddaten)
+            sowie aus Inhalten aus dem Vereinsarchiv (haptisch in Kisten).
           </p>
 
-          <ul>
-            <li><strong>Zeitraum:</strong> 1988 bis heute (laufend)</li>
-            <li><strong>Umfang:</strong> 700+ Personen, 200+ Projekte</li>
-            <li>
-              <strong>Datenstruktur:</strong> Personen, Projekte,
-              Rollen/Beteiligungen, Kooperationen
-            </li>
-            <li><strong>Rohdatenformate:</strong> CSV, JSON, TXT</li>
-            <li><strong>Bereinigte Daten:</strong> Cleaned-CSV</li>
-            <li>
-              <strong>Metadaten:</strong> README.md, Dokumentation der
-              Datensätze
-            </li>
-            <li>
-              <strong>Speicherung & Versionierung:</strong> GitHub Repository
-            </li>
-            <li><strong>Datenlizenz:</strong> CC BY-SA (Open Data)</li>
-            <li><strong>Datensicherung:</strong> regelmäßige Backups</li>
-            <li><strong>Datenzugriff:</strong> öffentlich im Repo</li>
-            <li>
-              <strong>Qualitätssicherung:</strong> Plausibilitätsprüfungen,
-              Feedback-Integration
-            </li>
-            <li>
-              <strong>Langfristige Archivierung:</strong> Sicherstellung der
-              Nachnutzbarkeit
-            </li>
-          </ul>
+          <!-- Image (Kisten im RHIZOM-Archiv) -->
+          <figure class="image-lightbox-small">
+            <img src="../images/kisten.jpg" alt="Kisten im RHIZOM-Archiv" />
+            <figcaption>Kisten im RHIZOM-Archiv</figcaption>
+          </figure>
+
+          <h3 class="centered">Datenumfang</h3>
+          <!-- Image (Datenumfang) -->
+          <figure class="image-lightbox-small">
+            <img src="../images/datenumfang.png" alt="Datenumfang" />
+            <figcaption>Datenumfang</figcaption>
+          </figure>
+
+          <h3 class="centered">Dateiformate, Datenstruktur & Metadaten</h3>
+          <p>
+            Die Dateiformate umfassen Textdaten (Word, PDF, HTML) und Bild- &
+            Videodaten in diversen Dateiformaten. Es handelt sich großteils um
+            unstrukturierte Daten mit fehlenden Metadaten. Daraus ergibt sich
+            ein hoher und zeitintensiver Aufbereitungsbedarf.
+          </p>
 
           <!-- INFO/HELP-->
-          <div class="note-box">
-            Siehe auch Datenordner im Repo: <code>/data/</code> (DB-Datei, Roh-
-            &amp; Cleaned-CSV-Dateien).
-          </div>
-        </section>
-
-        <!-- 4: Kontext -->
-        <section id="kontext" class="section">
-          <h2>Projektkontext</h2>
-          <p>
-            Das Projekt untersucht RHIZOM als langjährig aktiven Akteur der
-            freien Kulturarbeit, dessen kollaborative, selbstorganisierte und
-            transdisziplinäre Praxis seit 1988 eine einzigartige Dokumentations-
-            und Forschungsgrundlage bildet. Die vielschichtigen personellen und
-            projektbezogenen Beziehungsgeflechte ermöglichen einen
-            exemplarischen Blick auf Netzwerkstrukturen in der unabhängigen
-            Kulturszene und deren Wandel über mehrere Jahrzehnte. In Anlehnung
-            an das Konzept rhizomatischer Strukturen nach Deleuze/Guattari –
-            geprägt durch Nicht-Hierarchie, Vielheit und dynamische
-            Verknüpfungen – bietet RHIZOM ein ideales Fallbeispiel, um
-            kulturelle Organisationsformen jenseits linearer oder institutionell
-            fixierter Modelle zu analysieren. Die Verbindung
-            kulturwissenschaftlicher Perspektiven mit Methoden der Digital
-            Humanities – insbesondere Netzwerkanalyse, Datenmodellierung und
-            Visualisierung – erlaubt es, Muster der Zusammenarbeit,
-            Rollenentwicklungen und Dynamiken kultureller Praxis sichtbar zu
-            machen. RHIZOM fungiert somit einerseits als empirisches Beispiel
-            kollaborativer Kulturproduktion jenseits etablierter
-            institutioneller Strukturen und eröffnet andererseits ein
-            theoretisch ergiebiges Untersuchungsfeld für datenbasierte Analysen
-            rhizomatischer Kulturpraxis.
-          </p>
+          <div class="note-box">Datenordner im Repo: <code>/data/</code></div>
         </section>
 
         <!-- 5: Forschungsfrage -->
         <section id="frage" class="section">
           <h2>Forschungsfrage</h2>
+        </section>
+
+        <section class="home-card">
           <p>
             Wie lassen sich die personellen und projektbezogenen Netzwerke des
             Vereins RHIZOM datenbasiert rekonstruieren, und welche Muster der
@@ -278,82 +236,29 @@
         <!-- 6: Methodik -->
         <section id="methodik" class="section">
           <h2>Methodik</h2>
-
-          <ol>
-            <li>
-              <strong>Datenerhebung:</strong>
-              Webscraping, Extraktion aus Dokumenten, manuelle Ergänzungen und
-              Korrekturen
-            </li>
-
-            <li>
-              <strong>Datenaufbereitung:</strong>
-              Bereinigung von Namensvarianten und Dubletten, Normalisierung,
-              Disambiguierung, strukturelle Vereinheitlichung
-            </li>
-
-            <li>
-              <strong>Automatisierte Verarbeitung:</strong>
-              NER und Entitätenextraktion (LLMs), thematische Clusterbildung,
-              Validierung durch Hybridverfahren (automatisch + manuell)
-            </li>
-
-            <li>
-              <strong>Modellierung:</strong>
-              Aufbau einer relationalen Datenstruktur (Knoten =
-              Personen/Projekte, Kanten = Beteiligungen/Kooperationen)
-            </li>
-
-            <li>
-              <strong>Netzwerkanalyse:</strong>
-              Identifikation von Mustern der Zusammenarbeit, Zeitverläufe,
-              zentrale Akteur:innen, Clusterdynamiken
-            </li>
-
-            <li>
-              <strong>Visualisierung:</strong>
-              Interaktive Graphdarstellungen (Webvisualisierung)
-            </li>
-
-            <li>
-              <strong>Software & Reproduzierbarkeit:</strong>
-              Python, Pandas, OpenRefine, Jupyter; sämtliche Skripte im Ordner
-              <code>/notebooks/</code> versioniert
-            </li>
-          </ol>
-
-          <blockquote>
-            Hinweis: Alle Verarbeitungsschritte werden nachvollziehbar
-            dokumentiert, um Reproduzierbarkeit sicherzustellen.
-          </blockquote>
+          <p>
+            Durch Modellierung von Strukturen und Inhalten und deren
+            Visualisierung soll nachvollziehbar werden, wie Kooperationen
+            entstehen, wie sich Rollen über die Zeit verschieben und welche
+            Personen / Projekte als Knotenpunkte kultureller Aktivität
+            fungieren.
+          </p>
+          <p>
+            Nicht nur die Künstler:innen selbst, sondern alle beteiligten
+            Personen sollen dabei berücksichtigt werden: Vereinsmitglieder,
+            Kooperationspartner:innen, Unterstützer:innen in den Bereichen
+            Technik, Support/Künstler:innenbetreuung, Einkauf (von Material,
+            Verpflegung, etc.), Transport, Dokumentation der Veranstaltungen
+            (Texte, Fotos, Videos) bis hin zu all jenen, die den Putzdienst
+            verrichten.
+          </p>
         </section>
 
         <!-- 7: Netzwerkmodell -->
-        <section id="netzwerkmodell" class="section">
-          <h2>Netzwerkmodell (Teil I)</h2>
-          <h3>Modelltheoretische Grundlagen</h3>
-          <p>
-            Die Konzeption des Datenmodells folgt einem modelltheoretischen
-            Verständnis im Sinne von Stachowiak (1973). Modelle sind demnach
-            <em>Abbildungen</em> eines Originals, jedoch stets verkürzt und auf
-            spezifische Zwecke hin konstruiert. Auch das hier entwickelte
-            Datenmodell erfasst den Kulturverein <strong>RHIZOM</strong> nicht
-            in seiner Gesamtheit, sondern bildet jene Aspekte ab, die für eine
-            datenbasierte Analyse kultureller Praxis relevant sind: Projekte,
-            beteiligte Personen, Rollen, Orte, Medienobjekte und
-            Veranstaltungsdaten.
-          </p>
+        <section id="modellierung" class="section">
+          <h2>Modellierung</h2>
 
-          <p>
-            Diese Verkürzung ist nicht nur unvermeidbar, sondern produktiv:
-            Durch die formale Modellierung werden Strukturen erkennbar, die in
-            den heterogenen Originaldaten nur implizit vorliegen. Im Sinne des
-            <em>pragmatischen Merkmals</em> nach Stachowiak richtet sich das
-            Modell damit auf den Untersuchungsschwerpunkt der Netzwerkanalyse
-            aus. Es dient zugleich als Dokumentationsgrundlage, als Werkzeug zum
-            Hypothesentesten und als Ausgangspunkt für Visualisierungen, die
-            kulturelle Zusammenhänge sichtbar machen.
-          </p>
+          <h3 class="centered">ER-Diagramm</h3>
 
           <p>
             Die Entwicklung des Modells erfolgte zunächst in Form eines
@@ -361,24 +266,31 @@
             herausfordernd war die sinnvolle Trennung von Personengruppen,
             Organisationsformen und Projektreihen sowie die Abbildung der
             vielfältigen Medienobjekte. Erst durch die Aufspaltung der
-            ursprünglichen Sammelentitäten in differenzierte Tabellen – etwa für
-            <em>Künstler:innen</em>, <em>Mitglieder</em>,
-            <em>Kooperationspartner:innen</em>, <em>Orte</em> und
-            <em>Medientypen</em> – wurde eine Struktur möglich, die sowohl
-            konsistent als auch analytisch verwertbar ist.
+            ursprünglichen Sammelentitäten in differenzierte Tabellen wurde eine
+            Struktur möglich, die sowohl konsistent als auch analytisch
+            verwertbar ist.
           </p>
 
+          <!-- Image (ERD) -->
+          <figure class="image-lightbox">
+            <img src="../images/rhizom_erd.png" alt="ER-Diagramm" />
+            <figcaption>ER-Diagramm</figcaption>
+          </figure>
+
+          <h3 class="centered">SQLite-Datenbank</h3>
           <p>
-            Die resultierende Datenbank (<code>rhizom.db</code>) bildet nun die
-            Grundgesamtheit der erhobenen Informationen ab. Sie stellt sicher,
-            dass alle Projekte, Veranstaltungen, Objekte und beteiligten
-            Personen relational verknüpft erfasst werden. Das Netzwerk, das
-            später visualisiert wird, ergibt sich unmittelbar aus diesen
-            Relationen.
+            Die resultierende SQLite-Datenbank (<code>rhizom.db</code> im
+            Repo-Ordner <code>data</code>) bildet die Grundgesamtheit der
+            erhobenen Informationen ab. Sie stellt sicher, dass alle Projekte,
+            Veranstaltungen, Objekte und beteiligten Personen relational
+            verknüpft erfasst werden. Das Netzwerk, das später visualisiert
+            wird, ergibt sich unmittelbar aus diesen Relationen.
           </p>
 
           <div class="section highlight-box">
-            <strong>Ausführliche Dokumentation:</strong><br />
+            <strong
+              >Ausführliche Dokumentation des Modellierungsprozesses:</strong
+            ><br />
             Ausarbeitung der modelltheoretischen Grundlagen und Beschreibung der
             einzelnen Modellierungsentscheidungen<br /><br />
             <a
@@ -389,8 +301,7 @@
               📄 rhizom_text.pdf (Modelltheorie + Datenmodellierung)
             </a>
           </div>
-
-          <h2>Netzwerkmodell (Teil II)</h2>
+          <h2>Netzwerkporträt (Zwischenergebnisse)</h2>
           <p>
             Die Datenbasis des Projekts liegt als SQLite-Datenbank
             (<code>rhizom.db</code>) vor und umfasst vier Kernbereiche:
@@ -400,166 +311,27 @@
             ihre zeitlichen Verläufe erfasst.
           </p>
 
-          <h3>Datenstruktur</h3>
-          <ul>
-            <li>
-              <strong>persons</strong> – Stammdaten von Personen (ID, Name,
-              optionale Kurzbeschreibung/Bio).
-            </li>
-            <li>
-              <strong>projects</strong> – Projekte und Aktivitäten des Vereins
-              (ID, Titel, Typ/Kategorie, Jahr oder Zeitraum, Beschreibung).
-            </li>
-            <li>
-              <strong>roles</strong> – Mögliche Rollen innerhalb von Projekten
-              (z.&nbsp;B. Organisation, Mitarbeit, Konzept, Performance).
-            </li>
-            <li>
-              <strong>edges</strong> – Relationen zwischen Personen und
-              Projekten, bestehend aus:
-              <ul>
-                <li>person_id – Verweis auf eine Person</li>
-                <li>project_id – Verweis auf ein Projekt</li>
-                <li>role_id – zugeordnete Rolle</li>
-                <li>
-                  year_start / year_end – Zeitliche Eingrenzung der Beteiligung
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <!-- 8: Ergebnisse (Platzhalter, wächst mit) -->
+          <section id="ergebnisse" class="section">
+            <h3 class="centered">Interaktive Netzwerkvisualisierung</h3>
 
-          <p>
-            Die Tabelle <strong>edges</strong> bildet damit den zentralen
-            „Relationsteil“ des Modells: Sie verknüpft Personen mit Projekten,
-            differenziert nach Rolle und Zeitraum. Auf dieser Basis lassen sich
-            Netzwerkstrukturen rekonstruieren – etwa wiederkehrende
-            Kooperationen, Rollenverläufe oder Knotenpunkte hoher Aktivität.
-          </p>
-
-          <p class="intro-note">
-            Relationstypen ergeben sich implizit über die Kombination aus
-            person_id, project_id und role_id und können bei Bedarf erweitert
-            werden (z.&nbsp;B. um Kategorien wie Leitung, kuratorische
-            Mitarbeit, technische Unterstützung oder künstlerische Beteiligung).
-          </p>
-        </section>
-
-        <!-- 8: Ergebnisse (Platzhalter, wächst mit) -->
-        <section id="ergebnisse" class="section">
-          <h2>Zwischenergebnisse</h2>
-          <p>
-            <em>Platzhalter:</em> An dieser Stelle werden nach und nach Befunde,
-            Visualisierungen und interpretative Analysen ergänzt – etwa zur
-            <strong>Zentralität einzelner Akteur:innen</strong> im Netzwerk, zu
-            <strong>Rollenverläufen und Veränderungen über die Zeit</strong>
-            sowie zu
-            <strong>zeitlichen Entwicklungslinien und Projektclustern</strong>.
-          </p>
-
-          <h3 class="centered">ER-Diagramm</h3>
-          <!-- Image (ERD) -->
-          <figure class="image-lightbox">
-            <img src="../images/rhizom_erd.png" alt="ER-Diagramm" />
-            <figcaption>ER-Diagramm</figcaption>
-          </figure>
-
-          <h3 class="centered">Interaktive Netzwerkvisualisierung</h3>
-
-          <!-- 🔧 Bedienelemente für die Netzwerkvisualisierung -->
-          <div class="network-controls">
-            <!-- 🔎 Suche -->
-            <div class="control-group">
-              <label for="search">Suche nach Namen:</label>
-              <input id="search" type="text" placeholder="Name eingeben …" />
-            </div>
-
-            <!-- 🧭 Zoom -->
-            <div class="control-group">
-              <label>Zoom:</label>
-              <button id="zoom-in">+</button>
-              <button id="zoom-out">–</button>
-              <button id="zoom-reset">Reset</button>
-            </div>
-
-            <!-- 🧲 Layout -->
-            <div class="control-group">
-              <label>Layout (ForceAtlas2):</label>
-              <button id="layout-start">Start</button>
-              <button id="layout-stop">Stop</button>
-            </div>
-
-            <!-- 🏷 Label-Dichte -->
-            <div class="control-group">
-              <label for="label-density">Label-Dichte:</label>
-              <input
-                id="label-density"
-                type="range"
-                min="5"
-                max="200"
-                step="5"
-                value="60"
-              />
-            </div>
-
-            <!-- 🌍 Filter -->
-            <div class="control-group">
-              <label for="filter-nationality">Nationalität:</label>
-              <select id="filter-nationality">
-                <option value="">Alle</option>
-                <!-- JS füllt Optionen automatisch -->
-              </select>
-            </div>
-
-            <div class="control-group">
-              <label for="filter-type">Typ:</label>
-              <select id="filter-type">
-                <option value="">Alle</option>
-                <option value="person">Person</option>
-                <option value="project">Projekt</option>
-              </select>
-            </div>
-
-            <!-- 🧹 Filtersteuerung -->
-            <div class="control-group button-row">
-              <button id="filter-clear">Clear</button>
-              <button id="filter-undo">Undo</button>
-            </div>
-          </div>
-
-          <!-- 🔹 Farblegende -->
-          <div
-            id="legend"
-            style="
-              background: #f8f8f8;
-              border: 1px solid #ddd;
-              padding: 10px;
-              margin: 10px 0;
-              border-radius: 6px;
-              font-size: 0.9rem;
-            "
-          ></div>
-
-          <!-- 🔹 Info-Panel bei Klick -->
-          <div
-            id="info-panel"
-            style="
-              display: none;
-              background: #fffbe6;
-              border: 1px solid #e0d689;
-              padding: 12px;
-              margin: 10px 0 20px;
-              border-radius: 6px;
-            "
-          >
-            <h4 style="margin-top: 0">Ausgewählter Knoten</h4>
-            <p><strong>Name:</strong> <span id="info-name"></span></p>
-            <p><strong>Nationalität:</strong> <span id="info-nat"></span></p>
-            <p><strong>Verbunden mit:</strong></p>
-            <ul id="info-projects" style="margin-top: 5px"></ul>
-          </div>
-
-          <!-- Sigma Container -->
-          <div id="sigma-container" style="width: 100%; height: 700px"></div>
+            <p class="intro-note">
+              Da die Datenerfassungen der beiden Entitäten "involved_artists"
+              und "projects" am weitesten fortgeschritten ist und in der
+              Hilfstabelle "relation_involved_projects" bereits alle bisher
+              erfassten Künstler:innen mit Projekten verknüpft sind,
+              konzentriert sich die erste Netzwerkvisualisierung auf diese
+              beiden Entitäten. Künftige Erweiterungen der Datenbasis werden es
+              ermöglichen, weitere Entitäten und Beziehungen in das
+              Netzwerkmodell zu integrieren.
+            </p>
+          </section>
+          <section class="home-card">
+            <p>
+              🔎 Link zur
+              <a href="../visualisierung.html">Netzwerkvisualisierung</a>
+            </p>
+          </section>
 
           <h3 class="centered">Gephi-Snapshots</h3>
           <!-- Image (Gephi-Snapshot 1) -->
@@ -581,6 +353,168 @@
           </figure>
         </section>
 
+        <section id="netzwerkanalytische-masse"></section>
+        <h3 class="centered">Netzwerkanalytische Maße</h3>
+
+        <p>
+          Tabellen <code>projects</code>, <code>involved_artists</code> und
+          <code>artists_projects_relation</code> &rarr; Netzwerk
+        </p>
+
+        <ul>
+          <li>
+            <strong>Artist&ndash;Artist-Netz:</strong>
+            zwei Künstler:innen sind durch eine Kante verbunden, wenn sie
+            gemeinsam an mindestens einem Projekt beteiligt waren
+            <br />
+            <em>(Kantengewicht = Anzahl gemeinsamer Projekte)</em>
+          </li>
+          <li>
+            <strong>Project&ndash;Project-Netz:</strong>
+            zwei Projekte sind durch eine Kante verbunden, wenn sie sich
+            mindestens eine:n Künstler:in teilen
+            <br />
+            <em>(Kantengewicht = Anzahl gemeinsamer Künstler:innen)</em>
+          </li>
+        </ul>
+
+        <h2>1. Zentralitätsmaße</h2>
+
+        <h3>
+          WOZU? &ndash; Zur Identifikation zentraler Akteur:innen und Projekte
+        </h3>
+
+        <h4>Degree Centrality</h4>
+        <p>
+          Mit der Degree Centrality lässt sich veranschaulichen, mit wie vielen
+          anderen Künstler:innen eine Person direkt über gemeinsame Projekte
+          verbunden ist.
+        </p>
+        <p>
+          Hohe Degree-Werte zeichnen Künstler:innen aus, die mit vielen
+          verschiedenen Kolleg:innen gearbeitet haben und über Jahre hinweg
+          besonders stark in die Aktivitäten des Vereins eingebunden waren.
+        </p>
+        <p>
+          Analog kann die Degree Centrality im Project&ndash;Project-Netz
+          genutzt werden, um Projekte zu identifizieren, die über gemeinsame
+          Beteiligte stark mit anderen Projekten verknüpft sind und als zentrale
+          Projekt-Knotenpunkte gelten können.
+        </p>
+
+        <h4>Betweenness Centrality</h4>
+        <p>
+          Die Betweenness Centrality misst, wie häufig ein Knoten auf kürzestem
+          Wege zwischen anderen Knoten liegt. Im Artist&ndash;Artist-Netz lassen
+          sich damit Künstler:innen finden, die Brücken zwischen ansonsten
+          schwächer verbundenen Gruppen bilden (z.B. zwischen verschiedenen
+          Serien, thematischen Strängen oder Generationen). Diese Künstler:innen
+          fungieren als Schlüsselpersonen für Vermittlung und Austausch.
+        </p>
+        <p>
+          Im Project&ndash;Project-Netz weisen Projekte mit hoher Betweenness
+          Centrality auf Projekt-Scharnierstellen hin, an denen beispielsweise
+          Künstler:innen aus unterschiedlichen Milieus zusammengebracht werden.
+        </p>
+
+        <p>
+          <strong>Beispiele mit eigenen Daten aus Gephi Lite:</strong>
+          <code>rhizom_artist_artist.gexf</code>
+        </p>
+
+        <!-- Tabelle aus dem Word-Dokument als 2-Spalten-Layout -->
+        <div
+          class="gephi-steps"
+          style="
+            display: grid;
+            gap: 1.25rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          "
+        >
+          <figure class="gephi-step" style="margin: 0">
+            <figcaption>
+              <strong>1) Laden der Datei</strong><br />
+              unstrukturierte Ansicht
+            </figcaption>
+            <!-- Platzhalterbild: src austauschen -->
+            <img
+              src="../images/0_start.png"
+              alt="Platzhalter: Screenshot Gephi Schritt 1"
+              style="width: 100%; height: auto; border-radius: 12px"
+            />
+          </figure>
+
+          <figure class="gephi-step" style="margin: 0">
+            <figcaption>
+              <strong>2) Layout &gt; ForceAtlas2 &gt; Start &gt; Stop</strong
+              ><br />
+              erkennbare Cluster<br />
+              <strong>3) Metrics &gt; Degree &gt; Compute metric</strong><br />
+              Data-Spalte &quot;degree&quot; angelegt<br />
+              Appearance &gt; Nodes &gt; Size: Set size from&hellip; degree<br />
+              Knoten stark vernetzter Künstler:innen sind größer, periphererer
+              kleiner
+            </figcaption>
+            <!-- Platzhalterbild: src austauschen -->
+            <img
+              src="../images/3_degree_nodes.png"
+              alt="Platzhalter: Screenshot Gephi Schritt 2 und 3"
+              style="width: 100%; height: auto; border-radius: 12px"
+            />
+          </figure>
+
+          <figure class="gephi-step" style="margin: 0">
+            <figcaption>
+              <strong
+                >4) Appearance &gt; Nodes &gt; Color: Set color from...
+                art_nationality</strong
+              ><br />
+              Farbskala nach dem Attribut &quot;Nationalität der
+              Künstler:innen&quot;
+            </figcaption>
+            <!-- Platzhalterbild: src austauschen -->
+            <img
+              src="../images/2_degree.png"
+              alt="Platzhalter: Screenshot Gephi Schritt 4"
+              style="width: 100%; height: auto; border-radius: 12px"
+            />
+          </figure>
+
+          <figure class="gephi-step" style="margin: 0">
+            <figcaption>
+              <strong
+                >5) Metrics &gt; Betweenness Centrality &gt; Compute metric &gt;
+                Data-Spalte "betweennessCentrality", Appearance &gt; Nodes &gt;
+                Size: Set size from… betweennessCentrality + min/max-Werte
+                anpassen </strong
+              ><br />
+              Knoten mit Vermittlerpositionen sind groß<br />
+              (Brücken zwischen Communities)
+            </figcaption>
+            <!-- Platzhalterbild: src austauschen -->
+            <img
+              src="../images/2_degree.png"
+              alt="Platzhalter: Screenshot Gephi Schritt 5"
+              style="width: 100%; height: auto; border-radius: 12px"
+            />
+          </figure>
+
+          <figure class="gephi-step" style="margin: 0">
+            <figcaption>
+              <strong
+                >6) Filters &gt; Add Filter &gt; Nodes attributes &gt; art_year_birth From 1933 To 1945</strong
+              ><br />
+              alle 1933-1945 Geborenen
+            </figcaption>
+            <!-- Platzhalterbild: src austauschen -->
+            <img
+              src="../images/5_filters.png"
+              alt="Platzhalter: Screenshot Gephi Schritt 6"
+              style="width: 100%; height: auto; border-radius: 12px"
+            />
+          </figure>
+        </div>
+
         <!-- 9: Quellen -->
         <section id="ref" class="section">
           <h2>Quellen</h2>
@@ -601,7 +535,11 @@
           </ol>
           <!-- Ausklappbare komplette Literaturliste -->
           <details class="refs-collapsible">
-            <summary>Komplette Literaturliste anzeigen</summary>
+            <summary>
+              Komplette Literaturliste anzeigen (KI-generiert - wird zu einem
+              späteren Zeitpunkt bereingt und ergänzt und vorläufig als
+              Dummy-Text behalten)
+            </summary>
 
             <ol class="ref">
               <li id="r4">
@@ -1091,7 +1029,7 @@
      ---------------------------------------------------------- */
 
         const manualLinks = document.querySelectorAll(
-          'a[href^="#r"]:not(sup.fn a[href^="#r"])'
+          'a[href^="#r"]:not(sup.fn a[href^="#r"])',
         );
 
         manualLinks.forEach((link) => {
@@ -1281,7 +1219,7 @@
         return {
           start() {
             console.warn(
-              "ForceAtlas2: Platzhalter aktiv. In der GitHub-Version läuft kein echtes FA2-Layout."
+              "ForceAtlas2: Platzhalter aktiv. In der GitHub-Version läuft kein echtes FA2-Layout.",
             );
           },
           stop() {},
@@ -1483,10 +1421,10 @@
           renderer.setSetting("labelGridCellSize", 60);
 
           renderer.on("enterNode", (e) =>
-            graph.setNodeAttribute(e.node, "highlighted", true)
+            graph.setNodeAttribute(e.node, "highlighted", true),
           );
           renderer.on("leaveNode", (e) =>
-            graph.setNodeAttribute(e.node, "highlighted", false)
+            graph.setNodeAttribute(e.node, "highlighted", false),
           );
 
           /* ------------------------------------------------------------
@@ -1577,7 +1515,7 @@
             camera.animatedReset({ duration: 300 });
 
             graph.forEachNode((n) =>
-              graph.setNodeAttribute(n, "hidden", false)
+              graph.setNodeAttribute(n, "hidden", false),
             );
 
             document.getElementById("info-panel").style.display = "none";

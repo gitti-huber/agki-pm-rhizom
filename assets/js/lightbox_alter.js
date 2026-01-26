@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const overlayImage = overlay.querySelector("img");
 
   // Bild anklicken → Lightbox öffnen
-  document.querySelectorAll(".image-lightbox img").forEach(img => {
+  document.querySelectorAll(".image-lightbox img, .image-lightbox-small img").forEach(img => {
     img.addEventListener("click", () => {
       // NEU: zuerst data-lightbox-src, sonst fallback auf normales Bild
       overlayImage.src = img.dataset.lightboxSrc || img.src;

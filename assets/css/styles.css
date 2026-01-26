@@ -722,6 +722,7 @@ figure.home-figure img {
 ----------------------------------------- */
 
 /* Container für Bilder mit Lightbox */
+/* großes Bild */
 .image-lightbox {
   margin: 2rem 0;
   text-align: center;
@@ -730,6 +731,21 @@ figure.home-figure img {
 
 .image-lightbox img {
   width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  transition: opacity 0.3s ease;
+}
+
+/* kleines Bild */
+.image-lightbox-small {
+  margin: 2rem 0;
+  text-align: center;
+  cursor: zoom-in;
+}
+.image-lightbox-small img {
+  width: 100%;
+  max-width: 520px;      /* <- HIER Größe anpassen */
   height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.15);
@@ -1515,7 +1531,47 @@ header {
   opacity: 1;
 }
 
+/* ------------------------------------------
+   gephi-steps
+------------------------------------------ */
+.gephi-steps{
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+  /*align-items: stretch;  /* oder die Zeile ganz löschen */
+}
 
+@media (min-width: 700px){
+  .gephi-steps{ grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1100px){
+  .gephi-steps{ grid-template-columns: repeat(3, 1fr); }
+}
+
+.gephi-step{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.gephi-step img{
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* ggf. anpassen */
+  object-fit: contain;    /* kein Abschneiden */
+  background: #fff;       /* optional */
+  border-radius: 12px;
+  display: block;
+}
+
+.gephi-steps{
+  grid-auto-rows: 1fr;
+}
+
+.gephi-step{
+  height: 100%;
+}
 
 /* ───────────────────────────────────────────────
    DRUCKANSICHT (automatisch bei Print/PDF)
