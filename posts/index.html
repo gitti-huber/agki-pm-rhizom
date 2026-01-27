@@ -190,8 +190,8 @@
               target="_blank"
               rel="noopener noreferrer"
               >RHIZOM-Website</a
-            >, aus bislang unveröffentlichten Materialien (Word, PDF, Bilddaten)
-            sowie aus Inhalten aus dem Vereinsarchiv (haptisch in Kisten).
+            >, aus bislang unveröffentlichten digitalen Materialien sowie aus
+            Inhalten aus dem Vereinsarchiv (haptisch in Kisten).
           </p>
 
           <!-- Image (Kisten im RHIZOM-Archiv) -->
@@ -209,10 +209,11 @@
 
           <h3 class="centered">Dateiformate, Datenstruktur & Metadaten</h3>
           <p>
-            Die Dateiformate umfassen Textdaten (Word, PDF, HTML) und Bild- &
-            Videodaten in diversen Dateiformaten. Es handelt sich großteils um
-            unstrukturierte Daten mit fehlenden Metadaten. Daraus ergibt sich
-            ein hoher und zeitintensiver Aufbereitungsbedarf.
+            Die Dateiformate umfassen Textdaten (Word, PDF, HTML, selten auch
+            reinen Text) und Bild- & Videodaten in diversen Dateiformaten. Es
+            handelt sich großteils um unstrukturierte Daten mit fehlenden
+            Metadaten. Daraus ergibt sich ein hoher und zeitintensiver
+            Aufbereitungsbedarf.
           </p>
 
           <!-- INFO/HELP-->
@@ -251,6 +252,11 @@
             Verpflegung, etc.), Transport, Dokumentation der Veranstaltungen
             (Texte, Fotos, Videos) bis hin zu all jenen, die den Putzdienst
             verrichten.
+          </p>
+          <p>
+            Für den detaillierten methodischen Rahmen und den theoretischen
+            Hintergrund siehe den
+            <a href="../about.html">Forschungsblog (theoretisch).</a>
           </p>
         </section>
 
@@ -502,7 +508,8 @@
           <figure class="gephi-step" style="margin: 0">
             <figcaption>
               <strong
-                >6) Filters &gt; Add Filter &gt; Nodes attributes &gt; art_year_birth From 1933 To 1945</strong
+                >6) Filters &gt; Add Filter &gt; Nodes attributes &gt;
+                art_year_birth From 1933 To 1945</strong
               ><br />
               alle 1933-1945 Geborenen
             </figcaption>
@@ -514,6 +521,44 @@
             />
           </figure>
         </div>
+
+        <p>
+          Weitere Zentralitätsmaße wären
+          <strong>Eigenvektor-Zentralität</strong> oder
+          <strong>PageRank</strong>. Dabei würde nicht nur die Anzahl der
+          Verbindungen, sondern auch die Zentralität der Nachbar:innen
+          berücksichtigt werden. Im Artist–Artist-Netz könnten damit
+          Künstler:innen identifiziert werden, die besonders eng mit anderen
+          zentralen Personen zusammenarbeiten und dadurch eine Art "Hub" im
+          Netzwerk bilden. Auf Projektebene ließen sich analog Projekte
+          identifizieren, die mit anderen stark vernetzten Projekten verbunden
+          sind, etwa zentrale Veranstaltungsreihen oder Ausstellungsformate.
+        </p>
+
+        <h2>2. Community-Maße</h2>
+
+        <h3>
+          WOZU? &ndash; Zur Identifikation von Projekt- und
+          Künstler:innen-Clustern
+        </h3>
+
+        <h4>Louvain community detection</h4>
+        <p>
+          Community detection algorithms dienen dazu, Community-Cluster
+          ausfindig zu machen. Hierfür eignet sich beispielsweise der auf
+          Modularität basierende Louvain-Algorithmus. Im Artist–Artist-Netz
+          könnten damit Gruppen von Künstler:innen identifiziert werden, die
+          untereinander besonders häufig zusammenarbeiten. Diese Communities
+          ließen sich in weiterer Folge mit Metadaten wie Serienzugehörigkeit,
+          Projektkategorien oder Zeiträumen in Beziehung setzen, um etwa
+          Serien-spezifische Gruppen, thematische Schwerpunkte oder zeitliche
+          Phasen der Zusammenarbeit sichtbar zu machen. Im Project–Project-Netz
+          könnten mit Community-Maßen Projektcluster erkannt werden, die über
+          gemeinsame Künstler:innen eng miteinander verbunden sind. Diese
+          Cluster könnten wiederum auf einzelne Segmente wie
+          Public-Space-Projekte, spezifische Serien oder bestimmte
+          Zeitabschnitte hinweisen.
+        </p>
 
         <!-- 9: Quellen -->
         <section id="ref" class="section">
@@ -537,8 +582,8 @@
           <details class="refs-collapsible">
             <summary>
               Komplette Literaturliste anzeigen (KI-generiert - wird zu einem
-              späteren Zeitpunkt bereingt und ergänzt und vorläufig als
-              Dummy-Text behalten)
+              späteren Zeitpunkt im theoretischen Forschungsblog bereinigt und
+              ergänzt und vorläufig als Dummy-Text behalten)
             </summary>
 
             <ol class="ref">
